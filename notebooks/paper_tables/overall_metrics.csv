@@ -1,0 +1,11 @@
+Metric,Value
+tp,114.0
+fp,116.0
+tn,1246.0
+fn,234.0
+precision,0.4956521739130435
+recall,0.3275862068965517
+accuracy,0.7953216374269005
+f1,0.3944636678200692
+total_repos,192.0
+total_patterns_evaluated,1710.0

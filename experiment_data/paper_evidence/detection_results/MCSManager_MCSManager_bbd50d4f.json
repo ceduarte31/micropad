@@ -1,0 +1,210 @@
+{
+  "summary": {
+    "repository_name": "MCSManager/MCSManager",
+    "detected_patterns": [
+      "Service registry",
+      "Service instance per container",
+      "Multiple service instances per host"
+    ],
+    "total_patterns_scanned": 9,
+    "timestamp": "2025-10-28T12:31:44.278796",
+    "run_id": "bbd50d4f"
+  },
+  "patterns": {
+    "Server-side service discovery": false,
+    "Service registry": true,
+    "3rd Party Registration": false,
+    "Single Service Instance per Host": false,
+    "Service instance per container": true,
+    "Multiple service instances per host": true,
+    "Service deployment platform": false,
+    "Service instance per VM": false,
+    "Service mesh": false
+  },
+  "scanned_files_per_pattern": {
+    "Server-side service discovery": [
+      "/data/repos/MCSManager/daemon/src/routers/Instance_router.ts",
+      "/data/repos/MCSManager/daemon/src/routers/auth_router.ts",
+      "/data/repos/MCSManager/daemon/src/routers/environment_router.ts",
+      "/data/repos/MCSManager/daemon/src/routers/file_router.ts",
+      "/data/repos/MCSManager/daemon/src/routers/http_router.ts",
+      "/data/repos/MCSManager/daemon/src/routers/info_router.ts",
+      "/data/repos/MCSManager/daemon/src/routers/instance_event_router.ts",
+      "/data/repos/MCSManager/daemon/src/routers/passport_router.ts",
+      "/data/repos/MCSManager/daemon/src/routers/schedule_router.ts",
+      "/data/repos/MCSManager/daemon/src/routers/stream_router.ts",
+      "/data/repos/MCSManager/daemon/src/service/docker_service.ts",
+      "/data/repos/MCSManager/daemon/src/service/download.ts",
+      "/data/repos/MCSManager/daemon/src/service/file_router_service.ts",
+      "/data/repos/MCSManager/daemon/src/service/http.ts",
+      "/data/repos/MCSManager/daemon/src/service/instance_update_action.ts",
+      "/data/repos/MCSManager/daemon/src/service/log.ts",
+      "/data/repos/MCSManager/daemon/src/service/router.ts",
+      "/data/repos/MCSManager/daemon/src/service/system_file.ts",
+      "/data/repos/MCSManager/daemon/src/service/system_instance.ts",
+      "/data/repos/MCSManager/daemon/src/service/system_instance_control.ts",
+      "/data/repos/MCSManager/daemon/src/service/version.ts",
+      "/data/repos/MCSManager/panel/src/app/routers/daemon_router.ts",
+      "/data/repos/MCSManager/panel/src/app/routers/environment_router.ts",
+      "/data/repos/MCSManager/panel/src/app/routers/filemananger_router.ts",
+      "/data/repos/MCSManager/panel/src/app/routers/general_user_router.ts",
+      "/data/repos/MCSManager/panel/src/app/routers/instance_admin_router.ts",
+      "/data/repos/MCSManager/panel/src/app/routers/instance_exchange_router.ts",
+      "/data/repos/MCSManager/panel/src/app/routers/instance_operate_router.ts",
+      "/data/repos/MCSManager/panel/src/app/routers/login_router.ts",
+      "/data/repos/MCSManager/panel/src/app/routers/manage_user_router.ts",
+      "/data/repos/MCSManager/panel/src/app/routers/overview_router.ts",
+      "/data/repos/MCSManager/panel/src/app/routers/schedule_router.ts",
+      "/data/repos/MCSManager/panel/src/app/routers/settings_router.ts",
+      "/data/repos/MCSManager/panel/src/app/routers/socket_router.ts",
+      "/data/repos/MCSManager/panel/src/app/routers/user_overview_router.ts",
+      "/data/repos/MCSManager/panel/src/app/service/frontend_layout.ts",
+      "/data/repos/MCSManager/panel/src/app/service/remote_service.ts",
+      "/data/repos/MCSManager/panel/src/app/service/version_adapter.ts"
+    ],
+    "Service registry": [
+      "/data/repos/MCSManager/daemon/src/routers/Instance_router.ts",
+      "/data/repos/MCSManager/daemon/src/routers/auth_router.ts",
+      "/data/repos/MCSManager/daemon/src/routers/environment_router.ts",
+      "/data/repos/MCSManager/panel/src/app/routers/daemon_router.ts",
+      "/data/repos/MCSManager/panel/src/app/routers/overview_router.ts",
+      "/data/repos/MCSManager/panel/src/app/service/frontend_layout.ts",
+      "/data/repos/MCSManager/panel/src/app/service/operation_logger.ts",
+      "/data/repos/MCSManager/panel/src/app/service/remote_service.ts",
+      "/data/repos/MCSManager/panel/src/app/service/user_service.ts",
+      "/data/repos/MCSManager/panel/src/app/service/version_adapter.ts"
+    ],
+    "3rd Party Registration": [
+      "/data/repos/MCSManager/README.md",
+      "/data/repos/MCSManager/common/src/index.ts",
+      "/data/repos/MCSManager/daemon/src/app.ts",
+      "/data/repos/MCSManager/daemon/src/routers/Instance_router.ts",
+      "/data/repos/MCSManager/daemon/src/routers/http_router.ts",
+      "/data/repos/MCSManager/daemon/src/routers/info_router.ts",
+      "/data/repos/MCSManager/example.docker-compose.yml",
+      "/data/repos/MCSManager/frontend/src/App.vue",
+      "/data/repos/MCSManager/frontend/src/main.ts",
+      "/data/repos/MCSManager/package.json",
+      "/data/repos/MCSManager/panel/src/app/service/remote_service.ts",
+      "/data/repos/MCSManager/panel/src/app/service/user_service.ts"
+    ],
+    "Single Service Instance per Host": [
+      "/data/repos/MCSManager/daemon/src/service/system_file.ts",
+      "/data/repos/MCSManager/daemon/src/service/system_instance.ts",
+      "/data/repos/MCSManager/daemon/src/service/system_instance_control.ts",
+      "/data/repos/MCSManager/daemon/src/service/system_visual_data.ts",
+      "/data/repos/MCSManager/prod-scripts/linux/install.sh",
+      "/data/repos/MCSManager/prod-scripts/linux/start-daemon.sh",
+      "/data/repos/MCSManager/prod-scripts/linux/start-web.sh"
+    ],
+    "Service instance per container": [
+      "/data/repos/MCSManager/dockerfile/daemon.dockerfile",
+      "/data/repos/MCSManager/dockerfile/web.dockerfile",
+      "/data/repos/MCSManager/example.docker-compose.yml",
+      "/data/repos/MCSManager/prod-scripts/linux/start-daemon.sh",
+      "/data/repos/MCSManager/prod-scripts/linux/start-web.sh"
+    ],
+    "Multiple service instances per host": [
+      "/data/repos/MCSManager/daemon/src/app.ts",
+      "/data/repos/MCSManager/daemon/src/entity/instance/Instance_config.ts",
+      "/data/repos/MCSManager/daemon/src/entity/instance/instance.ts",
+      "/data/repos/MCSManager/daemon/src/entity/instance/interface.ts",
+      "/data/repos/MCSManager/daemon/src/entity/instance/life_cycle.ts",
+      "/data/repos/MCSManager/daemon/src/routers/Instance_router.ts",
+      "/data/repos/MCSManager/daemon/src/service/docker_process_service.ts",
+      "/data/repos/MCSManager/daemon/src/service/docker_service.ts",
+      "/data/repos/MCSManager/daemon/src/service/log.ts",
+      "/data/repos/MCSManager/daemon/src/service/protocol.ts",
+      "/data/repos/MCSManager/daemon/src/service/system_instance.ts",
+      "/data/repos/MCSManager/daemon/src/service/system_instance_control.ts",
+      "/data/repos/MCSManager/daemon/src/service/upload_manager.ts",
+      "/data/repos/MCSManager/daemon/webpack.config.js",
+      "/data/repos/MCSManager/dockerfile/daemon.dockerfile",
+      "/data/repos/MCSManager/dockerfile/web.dockerfile",
+      "/data/repos/MCSManager/example.docker-compose.yml",
+      "/data/repos/MCSManager/prod-scripts/linux/start-daemon.sh",
+      "/data/repos/MCSManager/prod-scripts/linux/start-web.sh",
+      "/data/repos/MCSManager/prod-scripts/windows/start.bat"
+    ],
+    "Service deployment platform": [
+      "/data/repos/MCSManager/build.bat",
+      "/data/repos/MCSManager/build.sh",
+      "/data/repos/MCSManager/dockerfile/daemon.dockerfile",
+      "/data/repos/MCSManager/dockerfile/web.dockerfile",
+      "/data/repos/MCSManager/example.docker-compose.yml",
+      "/data/repos/MCSManager/prod-scripts/linux/start-daemon.sh",
+      "/data/repos/MCSManager/prod-scripts/linux/start-web.sh",
+      "/data/repos/MCSManager/prod-scripts/windows/start.bat"
+    ],
+    "Service instance per VM": [
+      "/data/repos/MCSManager/.github/workflows/codeql.yml",
+      "/data/repos/MCSManager/.github/workflows/docker.yml",
+      "/data/repos/MCSManager/.github/workflows/release.yml",
+      "/data/repos/MCSManager/.github/workflows/webpack.yml"
+    ],
+    "Service mesh": [
+      "/data/repos/MCSManager/.github/workflows/codeql.yml",
+      "/data/repos/MCSManager/.github/workflows/docker.yml",
+      "/data/repos/MCSManager/.github/workflows/release.yml",
+      "/data/repos/MCSManager/.github/workflows/webpack.yml",
+      "/data/repos/MCSManager/.vscode/settings.json",
+      "/data/repos/MCSManager/common/package.json",
+      "/data/repos/MCSManager/common/tsconfig.json",
+      "/data/repos/MCSManager/daemon/nodemon.json",
+      "/data/repos/MCSManager/daemon/package.json",
+      "/data/repos/MCSManager/daemon/tsconfig.json",
+      "/data/repos/MCSManager/frontend/package.json",
+      "/data/repos/MCSManager/frontend/tsconfig.app.json",
+      "/data/repos/MCSManager/frontend/tsconfig.json",
+      "/data/repos/MCSManager/frontend/tsconfig.node.json",
+      "/data/repos/MCSManager/frontend/tsconfig.vitest.json",
+      "/data/repos/MCSManager/languages/de_DE.json",
+      "/data/repos/MCSManager/languages/en_US.json",
+      "/data/repos/MCSManager/languages/es_ES.json",
+      "/data/repos/MCSManager/languages/fr_FR.json",
+      "/data/repos/MCSManager/languages/ja_JP.json",
+      "/data/repos/MCSManager/languages/ko_KR.json",
+      "/data/repos/MCSManager/languages/pt_BR.json",
+      "/data/repos/MCSManager/languages/ru_RU.json",
+      "/data/repos/MCSManager/languages/th_TH.json",
+      "/data/repos/MCSManager/languages/tr_TR.json",
+      "/data/repos/MCSManager/languages/zh_CN.json",
+      "/data/repos/MCSManager/languages/zh_TW.json",
+      "/data/repos/MCSManager/package.json",
+      "/data/repos/MCSManager/panel/nodemon.json",
+      "/data/repos/MCSManager/panel/package.json",
+      "/data/repos/MCSManager/panel/tsconfig.json",
+      "/data/repos/MCSManager/scripts/package.json"
+    ]
+  },
+  "_metadata": {
+    "experiment": {
+      "run_number": 1
+    },
+    "reproducibility": {
+      "configuration": {
+        "thresholds": {
+          "high_priority": 0.5,
+          "medium_priority": 0.3,
+          "min_priority_score": 0.1,
+          "judge_confidence": 5
+        },
+        "weight_scheme": "llm_dominant",
+        "random_seed": 1761654704
+      }
+    },
+    "models": {
+      "planner": "gpt-5-nano-2025-08-07",
+      "investigator": "gpt-5-nano-2025-08-07",
+      "judge": "gpt-5-nano-2025-08-07",
+      "embedding": "jinaai/jina-embeddings-v2-base-code"
+    },
+    "priority_weights": {
+      "keyword": 0.2,
+      "embedding": 0.1,
+      "graph": 0.0,
+      "llm": 0.7
+    },
+    "source_log": "detection_20251028_123144.log"
+  }
+}

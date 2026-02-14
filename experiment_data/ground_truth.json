@@ -1,0 +1,4372 @@
+{
+  "HiDiHo01/Buienalarm": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": false,
+      "Service deployment platform": true,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "HiDiHo01/Buienalarm",
+      "name": "HiDiHo01/Buienalarm",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 2
+    }
+  },
+  "distantcam/AutoCtor": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "distantcam/AutoCtor",
+      "name": "distantcam/AutoCtor",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "FinalForEach/Cosmic-Reach-Localization": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "FinalForEach/Cosmic-Reach-Localization",
+      "name": "FinalForEach/Cosmic-Reach-Localization",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "PowerShell/DSC": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": true,
+      "Service instance per container": false,
+      "Service instance per VM": true,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "PowerShell/DSC",
+      "name": "PowerShell/DSC",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 2
+    }
+  },
+  "teo-tsirpanis/Farkle": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "teo-tsirpanis/Farkle",
+      "name": "teo-tsirpanis/Farkle",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "1Solon/Home-Server-Configuration": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": true,
+      "Service deployment platform": true,
+      "Service instance per container": true,
+      "Service instance per VM": false,
+      "Service mesh": true,
+      "Service registry": true,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "1Solon/Home-Server-Configuration",
+      "name": "1Solon/Home-Server-Configuration",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 6
+    }
+  },
+  "Frolic-chat/Frolic": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": true,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "Frolic-chat/Frolic",
+      "name": "Frolic-chat/Frolic",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 1
+    }
+  },
+  "ForNeVeR/AvaloniaRider": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "ForNeVeR/AvaloniaRider",
+      "name": "ForNeVeR/AvaloniaRider",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "joedwards32/CS2": {
+    "patterns": {
+      "3rd Party Registration": true,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": true,
+      "Service deployment platform": false,
+      "Service instance per container": true,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": true,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "joedwards32/CS2",
+      "name": "joedwards32/CS2",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 5
+    }
+  },
+  "euslisp/EusLisp": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "euslisp/EusLisp",
+      "name": "euslisp/EusLisp",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "hydro-dev/Hydro": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": true,
+      "Service instance per VM": true,
+      "Service mesh": true,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "hydro-dev/Hydro",
+      "name": "hydro-dev/Hydro",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 5
+    }
+  },
+  "MCSManager/MCSManager": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": true,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "MCSManager/MCSManager",
+      "name": "MCSManager/MCSManager",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 3
+    }
+  },
+  "Pennyw0rth/NetExec": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": true,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "Pennyw0rth/NetExec",
+      "name": "Pennyw0rth/NetExec",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 2
+    }
+  },
+  "ImranR98/Obtainium": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "ImranR98/Obtainium",
+      "name": "ImranR98/Obtainium",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "ology/Music": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "ology/Music",
+      "name": "ology/Music",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "EWSoftware/SHFB": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "EWSoftware/SHFB",
+      "name": "EWSoftware/SHFB",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "HKUDS/LightRAG": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": true,
+      "Service instance per VM": true,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "HKUDS/LightRAG",
+      "name": "HKUDS/LightRAG",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 4
+    }
+  },
+  "StephanU/MyGekko": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "StephanU/MyGekko",
+      "name": "StephanU/MyGekko",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "SergioRibera/Simplemoji": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "SergioRibera/Simplemoji",
+      "name": "SergioRibera/Simplemoji",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "lipku/LiveTalking": {
+    "patterns": {
+      "3rd Party Registration": true,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": true,
+      "Service deployment platform": true,
+      "Service instance per container": true,
+      "Service instance per VM": false,
+      "Service mesh": true,
+      "Service registry": true,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "lipku/LiveTalking",
+      "name": "lipku/LiveTalking",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 7
+    }
+  },
+  "shibatch/SSRC": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "shibatch/SSRC",
+      "name": "shibatch/SSRC",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 2
+    }
+  },
+  "PerformanC/ReZygisk": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "PerformanC/ReZygisk",
+      "name": "PerformanC/ReZygisk",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 1
+    }
+  },
+  "TeamNewPipe/NewPipe": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "TeamNewPipe/NewPipe",
+      "name": "TeamNewPipe/NewPipe",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "aperechnev/ChessKit": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "aperechnev/ChessKit",
+      "name": "aperechnev/ChessKit",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "nhasan/FlightIntel": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": true,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "nhasan/FlightIntel",
+      "name": "nhasan/FlightIntel",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 2
+    }
+  },
+  "Path-of-Terraria/PathOfTerraria": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "Path-of-Terraria/PathOfTerraria",
+      "name": "Path-of-Terraria/PathOfTerraria",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 1
+    }
+  },
+  "acim/go-reflex": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "acim/go-reflex",
+      "name": "acim/go-reflex",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "ADOdb/ADOdb": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "ADOdb/ADOdb",
+      "name": "ADOdb/ADOdb",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "TheNathannator/RB4InstrumentMapper": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "TheNathannator/RB4InstrumentMapper",
+      "name": "TheNathannator/RB4InstrumentMapper",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "SkyUOI/OurChat": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": false,
+      "Service deployment platform": true,
+      "Service instance per container": true,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": true,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "SkyUOI/OurChat",
+      "name": "SkyUOI/OurChat",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 4
+    }
+  },
+  "QuentinFuxa/WhisperLiveKit": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": true,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "QuentinFuxa/WhisperLiveKit",
+      "name": "QuentinFuxa/WhisperLiveKit",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 2
+    }
+  },
+  "aha-oida/aha-secret": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": true,
+      "Service instance per VM": true,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "aha-oida/aha-secret",
+      "name": "aha-oida/aha-secret",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 3
+    }
+  },
+  "PHPMailer/PHPMailer": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "PHPMailer/PHPMailer",
+      "name": "PHPMailer/PHPMailer",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "sappho192/Tokenizers.DotNet": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "sappho192/Tokenizers.DotNet",
+      "name": "sappho192/Tokenizers.DotNet",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 2
+    }
+  },
+  "AprilRobotics/apriltag": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "AprilRobotics/apriltag",
+      "name": "AprilRobotics/apriltag",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "zwldarren/akshare-one": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": true,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "zwldarren/akshare-one",
+      "name": "zwldarren/akshare-one",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 2
+    }
+  },
+  "throneproj/Throne": {
+    "patterns": {
+      "3rd Party Registration": true,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "throneproj/Throne",
+      "name": "throneproj/Throne",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 2
+    }
+  },
+  "pluja/awesome-privacy": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": true,
+      "Service deployment platform": true,
+      "Service instance per container": true,
+      "Service instance per VM": true,
+      "Service mesh": true,
+      "Service registry": true,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "pluja/awesome-privacy",
+      "name": "pluja/awesome-privacy",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 8
+    }
+  },
+  "Yubico/Yubico.NET.SDK": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "Yubico/Yubico.NET.SDK",
+      "name": "Yubico/Yubico.NET.SDK",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 1
+    }
+  },
+  "phi-ag/argon2": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "phi-ag/argon2",
+      "name": "phi-ag/argon2",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "google/aarch64-esr-decoder": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "google/aarch64-esr-decoder",
+      "name": "google/aarch64-esr-decoder",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator",
+      "name": "GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "Strumenta/antlr-kotlin": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": true,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "Strumenta/antlr-kotlin",
+      "name": "Strumenta/antlr-kotlin",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 1
+    }
+  },
+  "biblioverse/biblioteca": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": true,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "biblioverse/biblioteca",
+      "name": "biblioverse/biblioteca",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 2
+    }
+  },
+  "cms-sw/cmsdist": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "cms-sw/cmsdist",
+      "name": "cms-sw/cmsdist",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "KevinnZou/compose-webview-multiplatform": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "KevinnZou/compose-webview-multiplatform",
+      "name": "KevinnZou/compose-webview-multiplatform",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 1
+    }
+  },
+  "btcpayserver/btcpayserver": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": true,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "btcpayserver/btcpayserver",
+      "name": "btcpayserver/btcpayserver",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 2
+    }
+  },
+  "GoogleCloudPlatform/accelerated-platforms": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": false,
+      "Service deployment platform": true,
+      "Service instance per container": true,
+      "Service instance per VM": false,
+      "Service mesh": true,
+      "Service registry": true,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "GoogleCloudPlatform/accelerated-platforms",
+      "name": "GoogleCloudPlatform/accelerated-platforms",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 5
+    }
+  },
+  "MindfulLearner/dima-portfolio": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": true,
+      "Service deployment platform": true,
+      "Service instance per container": false,
+      "Service instance per VM": true,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "MindfulLearner/dima-portfolio",
+      "name": "MindfulLearner/dima-portfolio",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 4
+    }
+  },
+  "thephpleague/commonmark": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "thephpleague/commonmark",
+      "name": "thephpleague/commonmark",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "Freika/dawarich": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": true,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "Freika/dawarich",
+      "name": "Freika/dawarich",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 2
+    }
+  },
+  "phcurado/daisy_ui_components": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "phcurado/daisy_ui_components",
+      "name": "phcurado/daisy_ui_components",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "nextcloud/contacts": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "nextcloud/contacts",
+      "name": "nextcloud/contacts",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 1
+    }
+  },
+  "academicpages/academicpages.github.io": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "academicpages/academicpages.github.io",
+      "name": "academicpages/academicpages.github.io",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "Olical/conjure": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "Olical/conjure",
+      "name": "Olical/conjure",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "RoboJackets/apiary": {
+    "patterns": {
+      "3rd Party Registration": true,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": true,
+      "Service deployment platform": true,
+      "Service instance per container": true,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": true,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "RoboJackets/apiary",
+      "name": "RoboJackets/apiary",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 6
+    }
+  },
+  "bnjbvr/cargo-machete": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": true,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "bnjbvr/cargo-machete",
+      "name": "bnjbvr/cargo-machete",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 2
+    }
+  },
+  "openshift/csi-operator": {
+    "patterns": {
+      "3rd Party Registration": true,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": false,
+      "Service deployment platform": true,
+      "Service instance per container": true,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": true,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "openshift/csi-operator",
+      "name": "openshift/csi-operator",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 6
+    }
+  },
+  "LukeGus/Termix": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": true,
+      "Service instance per VM": false,
+      "Service mesh": true,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "LukeGus/Termix",
+      "name": "LukeGus/Termix",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 3
+    }
+  },
+  "Zavy86/WikiDocs": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": true,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "Zavy86/WikiDocs",
+      "name": "Zavy86/WikiDocs",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 2
+    }
+  },
+  "plbstl/first-contribution": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "plbstl/first-contribution",
+      "name": "plbstl/first-contribution",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "VoucherDesenvSenacHub/galeria-voucher": {
+    "patterns": {
+      "3rd Party Registration": true,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": true,
+      "Service deployment platform": true,
+      "Service instance per container": true,
+      "Service instance per VM": false,
+      "Service mesh": true,
+      "Service registry": true,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "VoucherDesenvSenacHub/galeria-voucher",
+      "name": "VoucherDesenvSenacHub/galeria-voucher",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 7
+    }
+  },
+  "microsoft/azure-devops-extension-tasks": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "microsoft/azure-devops-extension-tasks",
+      "name": "microsoft/azure-devops-extension-tasks",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "Azure/aaz": {
+    "patterns": {
+      "3rd Party Registration": true,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": true,
+      "Service deployment platform": true,
+      "Service instance per container": true,
+      "Service instance per VM": true,
+      "Service mesh": true,
+      "Service registry": true,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "Azure/aaz",
+      "name": "Azure/aaz",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 9
+    }
+  },
+  "gyroflow/gyroflow": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "gyroflow/gyroflow",
+      "name": "gyroflow/gyroflow",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "hcengineering/huly-selfhost": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": true,
+      "Service deployment platform": true,
+      "Service instance per container": true,
+      "Service instance per VM": false,
+      "Service mesh": true,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "hcengineering/huly-selfhost",
+      "name": "hcengineering/huly-selfhost",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 5
+    }
+  },
+  "webpro-nl/knip": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "webpro-nl/knip",
+      "name": "webpro-nl/knip",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "jellyfin/jellyfin-ffmpeg": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": true,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "jellyfin/jellyfin-ffmpeg",
+      "name": "jellyfin/jellyfin-ffmpeg",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 2
+    }
+  },
+  "vuejs/language-tools": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "vuejs/language-tools",
+      "name": "vuejs/language-tools",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 1
+    }
+  },
+  "haskell/hie-bios": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "haskell/hie-bios",
+      "name": "haskell/hie-bios",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 1
+    }
+  },
+  "KDE/kde-linux": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "KDE/kde-linux",
+      "name": "KDE/kde-linux",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "carrot-hu23/dst-admin-go": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": true,
+      "Service instance per VM": true,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "carrot-hu23/dst-admin-go",
+      "name": "carrot-hu23/dst-admin-go",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 3
+    }
+  },
+  "utilityai/llama-cpp-rs": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "utilityai/llama-cpp-rs",
+      "name": "utilityai/llama-cpp-rs",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 1
+    }
+  },
+  "lyfe00011/levanter": {
+    "patterns": {
+      "3rd Party Registration": true,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": true,
+      "Service deployment platform": true,
+      "Service instance per container": true,
+      "Service instance per VM": true,
+      "Service mesh": true,
+      "Service registry": true,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "lyfe00011/levanter",
+      "name": "lyfe00011/levanter",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 9
+    }
+  },
+  "Delgan/loguru": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "Delgan/loguru",
+      "name": "Delgan/loguru",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "yuin/goldmark": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "yuin/goldmark",
+      "name": "yuin/goldmark",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "globus/globus-compute": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": false,
+      "Service deployment platform": true,
+      "Service instance per container": true,
+      "Service instance per VM": true,
+      "Service mesh": false,
+      "Service registry": true,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "globus/globus-compute",
+      "name": "globus/globus-compute",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 6
+    }
+  },
+  "lite-xl/lite-xl": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "lite-xl/lite-xl",
+      "name": "lite-xl/lite-xl",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "malwaredb/malwaredb-rs": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": true,
+      "Service instance per container": true,
+      "Service instance per VM": true,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "malwaredb/malwaredb-rs",
+      "name": "malwaredb/malwaredb-rs",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 4
+    }
+  },
+  "FlexMeasures/flexmeasures": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": false,
+      "Service deployment platform": true,
+      "Service instance per container": true,
+      "Service instance per VM": true,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "FlexMeasures/flexmeasures",
+      "name": "FlexMeasures/flexmeasures",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 4
+    }
+  },
+  "pgerke/homebridge-freeathome-local-api": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": true,
+      "Service instance per VM": true,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "pgerke/homebridge-freeathome-local-api",
+      "name": "pgerke/homebridge-freeathome-local-api",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 4
+    }
+  },
+  "typelevel/fs2": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "typelevel/fs2",
+      "name": "typelevel/fs2",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "MusculoskeletalAtlasProject/mapclient": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "MusculoskeletalAtlasProject/mapclient",
+      "name": "MusculoskeletalAtlasProject/mapclient",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "0x2142/frigate-notify": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": true,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "0x2142/frigate-notify",
+      "name": "0x2142/frigate-notify",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 2
+    }
+  },
+  "pangenome/impg": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": true,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "pangenome/impg",
+      "name": "pangenome/impg",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 2
+    }
+  },
+  "adamzammit/limesurvey-docker": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": true,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "adamzammit/limesurvey-docker",
+      "name": "adamzammit/limesurvey-docker",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 1
+    }
+  },
+  "suyash-thakur/js-good-first-issues-finder": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": true,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "suyash-thakur/js-good-first-issues-finder",
+      "name": "suyash-thakur/js-good-first-issues-finder",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 2
+    }
+  },
+  "josueBarretogit/manga-tui": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "josueBarretogit/manga-tui",
+      "name": "josueBarretogit/manga-tui",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "NotoChen/Jetbrains-Help": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": false,
+      "Service deployment platform": true,
+      "Service instance per container": true,
+      "Service instance per VM": true,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "NotoChen/Jetbrains-Help",
+      "name": "NotoChen/Jetbrains-Help",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 5
+    }
+  },
+  "cshum/imagor": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": true,
+      "Service instance per container": true,
+      "Service instance per VM": true,
+      "Service mesh": false,
+      "Service registry": true,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "cshum/imagor",
+      "name": "cshum/imagor",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 5
+    }
+  },
+  "open-webui/mcpo": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": true,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "open-webui/mcpo",
+      "name": "open-webui/mcpo",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 2
+    }
+  },
+  "mobilecoinfoundation/mobilecoin": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": true,
+      "Service instance per container": true,
+      "Service instance per VM": false,
+      "Service mesh": true,
+      "Service registry": true,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "mobilecoinfoundation/mobilecoin",
+      "name": "mobilecoinfoundation/mobilecoin",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 5
+    }
+  },
+  "felladrin/MiniSearch": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "felladrin/MiniSearch",
+      "name": "felladrin/MiniSearch",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "m1k1o/neko": {
+    "patterns": {
+      "3rd Party Registration": true,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": false,
+      "Service deployment platform": true,
+      "Service instance per container": false,
+      "Service instance per VM": true,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "m1k1o/neko",
+      "name": "m1k1o/neko",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 4
+    }
+  },
+  "nanvix/nanvix": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": false,
+      "Service deployment platform": true,
+      "Service instance per container": true,
+      "Service instance per VM": true,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "nanvix/nanvix",
+      "name": "nanvix/nanvix",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 5
+    }
+  },
+  "mquintus/l33tcode-testcase-generator": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": true,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "mquintus/l33tcode-testcase-generator",
+      "name": "mquintus/l33tcode-testcase-generator",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 2
+    }
+  },
+  "datastax/langflow-client-ts": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "datastax/langflow-client-ts",
+      "name": "datastax/langflow-client-ts",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 1
+    }
+  },
+  "http4s/http4s": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": true,
+      "Service deployment platform": true,
+      "Service instance per container": true,
+      "Service instance per VM": true,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "http4s/http4s",
+      "name": "http4s/http4s",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 5
+    }
+  },
+  "leviarista/github-profile-header-generator": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "leviarista/github-profile-header-generator",
+      "name": "leviarista/github-profile-header-generator",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "SocketSomeone/nestjs-resilience": {
+    "patterns": {
+      "3rd Party Registration": true,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": true,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "SocketSomeone/nestjs-resilience",
+      "name": "SocketSomeone/nestjs-resilience",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 2
+    }
+  },
+  "iiab/iiab": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": true,
+      "Service instance per container": false,
+      "Service instance per VM": true,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "iiab/iiab",
+      "name": "iiab/iiab",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 3
+    }
+  },
+  "xjh22222228/nav": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "xjh22222228/nav",
+      "name": "xjh22222228/nav",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 1
+    }
+  },
+  "mostafaalagamy/Metrolist": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "mostafaalagamy/Metrolist",
+      "name": "mostafaalagamy/Metrolist",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "fuzziqersoftware/newserv": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": true,
+      "Service instance per VM": true,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "fuzziqersoftware/newserv",
+      "name": "fuzziqersoftware/newserv",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 3
+    }
+  },
+  "TheTumultuousUnicornOfDarkness/CPU-X": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "TheTumultuousUnicornOfDarkness/CPU-X",
+      "name": "TheTumultuousUnicornOfDarkness/CPU-X",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "civictheme/monorepo-drupal": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": false,
+      "Service deployment platform": true,
+      "Service instance per container": true,
+      "Service instance per VM": false,
+      "Service mesh": true,
+      "Service registry": true,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "civictheme/monorepo-drupal",
+      "name": "civictheme/monorepo-drupal",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 5
+    }
+  },
+  "eko5624/mpv-win64": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "eko5624/mpv-win64",
+      "name": "eko5624/mpv-win64",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "tomtomwombat/fastbloom": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "tomtomwombat/fastbloom",
+      "name": "tomtomwombat/fastbloom",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "vishvananda/netlink": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": true,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "vishvananda/netlink",
+      "name": "vishvananda/netlink",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 2
+    }
+  },
+  "MIT-SPARK/config_utilities": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "MIT-SPARK/config_utilities",
+      "name": "MIT-SPARK/config_utilities",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "Koishi-Satori/EirinFixed": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "Koishi-Satori/EirinFixed",
+      "name": "Koishi-Satori/EirinFixed",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 1
+    }
+  },
+  "osbuild/bootc-image-builder": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "osbuild/bootc-image-builder",
+      "name": "osbuild/bootc-image-builder",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "Snawoot/opera-proxy": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "Snawoot/opera-proxy",
+      "name": "Snawoot/opera-proxy",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 1
+    }
+  },
+  "redimp/otterwiki": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": true,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "redimp/otterwiki",
+      "name": "redimp/otterwiki",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 3
+    }
+  },
+  "online-go/online-go.com": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": true,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "online-go/online-go.com",
+      "name": "online-go/online-go.com",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 2
+    }
+  },
+  "MunGell/awesome-for-beginners": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "MunGell/awesome-for-beginners",
+      "name": "MunGell/awesome-for-beginners",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 1
+    }
+  },
+  "misbahansori/originui-vue": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "misbahansori/originui-vue",
+      "name": "misbahansori/originui-vue",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "wikimedia/mediawiki-extensions-Scribunto": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "wikimedia/mediawiki-extensions-Scribunto",
+      "name": "wikimedia/mediawiki-extensions-Scribunto",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "pandas-dev/pandas-stubs": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "pandas-dev/pandas-stubs",
+      "name": "pandas-dev/pandas-stubs",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "pylint-dev/pylint": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "pylint-dev/pylint",
+      "name": "pylint-dev/pylint",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "welovemedia/ffmate": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": false,
+      "Service deployment platform": true,
+      "Service instance per container": true,
+      "Service instance per VM": false,
+      "Service mesh": true,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "welovemedia/ffmate",
+      "name": "welovemedia/ffmate",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 4
+    }
+  },
+  "ripple/craft": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "ripple/craft",
+      "name": "ripple/craft",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "jsinger67/parol": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "jsinger67/parol",
+      "name": "jsinger67/parol",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "android/nowinandroid": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "android/nowinandroid",
+      "name": "android/nowinandroid",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "DavidHDev/react-bits": {
+    "patterns": {
+      "3rd Party Registration": true,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": true,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": true,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "DavidHDev/react-bits",
+      "name": "DavidHDev/react-bits",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 4
+    }
+  },
+  "DrKJeff16/project.nvim": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": true,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": true,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "DrKJeff16/project.nvim",
+      "name": "DrKJeff16/project.nvim",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 2
+    }
+  },
+  "renode/renode": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": true,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "renode/renode",
+      "name": "renode/renode",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 1
+    }
+  },
+  "lloydrichards/shadcn-storybook-registry": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": true,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "lloydrichards/shadcn-storybook-registry",
+      "name": "lloydrichards/shadcn-storybook-registry",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 1
+    }
+  },
+  "Part-DB/Part-DB-server": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": true,
+      "Service instance per container": true,
+      "Service instance per VM": true,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "Part-DB/Part-DB-server",
+      "name": "Part-DB/Part-DB-server",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 3
+    }
+  },
+  "awslabs/cdk-eks-blueprints": {
+    "patterns": {
+      "3rd Party Registration": true,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": true,
+      "Service deployment platform": true,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": true,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "awslabs/cdk-eks-blueprints",
+      "name": "awslabs/cdk-eks-blueprints",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 4
+    }
+  },
+  "gaureshpai/hseruag": {
+    "patterns": {
+      "3rd Party Registration": true,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": true,
+      "Service deployment platform": false,
+      "Service instance per container": true,
+      "Service instance per VM": false,
+      "Service mesh": true,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "gaureshpai/hseruag",
+      "name": "gaureshpai/hseruag",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 6
+    }
+  },
+  "micahkepe/radion": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "micahkepe/radion",
+      "name": "micahkepe/radion",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "ibizaman/skarabox": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": true,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "ibizaman/skarabox",
+      "name": "ibizaman/skarabox",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 2
+    }
+  },
+  "hafaio/repub": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "hafaio/repub",
+      "name": "hafaio/repub",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "coinjar/react-native-wagmi-charts": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "coinjar/react-native-wagmi-charts",
+      "name": "coinjar/react-native-wagmi-charts",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "cornradio/pausemygame": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "cornradio/pausemygame",
+      "name": "cornradio/pausemygame",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "opencontainers/runc": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "opencontainers/runc",
+      "name": "opencontainers/runc",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "Oaklight/onehub_prices": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": true,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "Oaklight/onehub_prices",
+      "name": "Oaklight/onehub_prices",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 1
+    }
+  },
+  "Comfy-Org/registry-web": {
+    "patterns": {
+      "3rd Party Registration": true,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": false,
+      "Service deployment platform": true,
+      "Service instance per container": true,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": true,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "Comfy-Org/registry-web",
+      "name": "Comfy-Org/registry-web",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 6
+    }
+  },
+  "kortix-ai/suna": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": true,
+      "Service instance per container": true,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": true,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "kortix-ai/suna",
+      "name": "kortix-ai/suna",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 3
+    }
+  },
+  "disneystreaming/smithy4s": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "disneystreaming/smithy4s",
+      "name": "disneystreaming/smithy4s",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "Hydepwns/raxol": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "Hydepwns/raxol",
+      "name": "Hydepwns/raxol",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 2
+    }
+  },
+  "spring-rs/spring-rs": {
+    "patterns": {
+      "3rd Party Registration": true,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": false,
+      "Service deployment platform": true,
+      "Service instance per container": true,
+      "Service instance per VM": true,
+      "Service mesh": false,
+      "Service registry": true,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "spring-rs/spring-rs",
+      "name": "spring-rs/spring-rs",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 7
+    }
+  },
+  "sheepzh/time-tracker-4-browser": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "sheepzh/time-tracker-4-browser",
+      "name": "sheepzh/time-tracker-4-browser",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "tramhao/termusic": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "tramhao/termusic",
+      "name": "tramhao/termusic",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "stratis-storage/stratis-cli": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "stratis-storage/stratis-cli",
+      "name": "stratis-storage/stratis-cli",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "lpradel/steam-web-api-java": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "lpradel/steam-web-api-java",
+      "name": "lpradel/steam-web-api-java",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 1
+    }
+  },
+  "scalacenter/scala-debug-adapter": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": true,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "scalacenter/scala-debug-adapter",
+      "name": "scalacenter/scala-debug-adapter",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 1
+    }
+  },
+  "kelseykm/vcard4": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "kelseykm/vcard4",
+      "name": "kelseykm/vcard4",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "karlseguin/websocket.zig": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "karlseguin/websocket.zig",
+      "name": "karlseguin/websocket.zig",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "thrushlang/thrushc": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": true,
+      "Service instance per container": false,
+      "Service instance per VM": true,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "thrushlang/thrushc",
+      "name": "thrushlang/thrushc",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 3
+    }
+  },
+  "swcarpentry/shell-novice": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "swcarpentry/shell-novice",
+      "name": "swcarpentry/shell-novice",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "MultiMote/niimblue": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": true,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "MultiMote/niimblue",
+      "name": "MultiMote/niimblue",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 2
+    }
+  },
+  "shshemi/tabiew": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "shshemi/tabiew",
+      "name": "shshemi/tabiew",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "pact-foundation/pact-python": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "pact-foundation/pact-python",
+      "name": "pact-foundation/pact-python",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "trpc/trpc": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": true,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "trpc/trpc",
+      "name": "trpc/trpc",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 3
+    }
+  },
+  "boyter/scc": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "boyter/scc",
+      "name": "boyter/scc",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "konflux-ci/integration-service": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": true,
+      "Service instance per container": true,
+      "Service instance per VM": false,
+      "Service mesh": true,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "konflux-ci/integration-service",
+      "name": "konflux-ci/integration-service",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 3
+    }
+  },
+  "Cantara/xorcery": {
+    "patterns": {
+      "3rd Party Registration": true,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": true,
+      "Service deployment platform": false,
+      "Service instance per container": true,
+      "Service instance per VM": true,
+      "Service mesh": true,
+      "Service registry": true,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "Cantara/xorcery",
+      "name": "Cantara/xorcery",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 8
+    }
+  },
+  "xapi-project/xen-api": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": true,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "xapi-project/xen-api",
+      "name": "xapi-project/xen-api",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 1
+    }
+  },
+  "Abhinandan-Kushwaha/react-native-gifted-charts": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": true,
+      "Service instance per container": true,
+      "Service instance per VM": true,
+      "Service mesh": false,
+      "Service registry": true,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "Abhinandan-Kushwaha/react-native-gifted-charts",
+      "name": "Abhinandan-Kushwaha/react-native-gifted-charts",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 5
+    }
+  },
+  "Giveth/impact-graph": {
+    "patterns": {
+      "3rd Party Registration": true,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": true,
+      "Service deployment platform": false,
+      "Service instance per container": true,
+      "Service instance per VM": true,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "Giveth/impact-graph",
+      "name": "Giveth/impact-graph",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 5
+    }
+  },
+  "resf/distro-tools": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": true,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "resf/distro-tools",
+      "name": "resf/distro-tools",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 2
+    }
+  },
+  "wpovernight/woocommerce-pdf-invoices-packing-slips": {
+    "patterns": {
+      "3rd Party Registration": true,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": false,
+      "Service deployment platform": true,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "wpovernight/woocommerce-pdf-invoices-packing-slips",
+      "name": "wpovernight/woocommerce-pdf-invoices-packing-slips",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 3
+    }
+  },
+  "firecrawl/firecrawl-mcp-server": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": true,
+      "Service mesh": true,
+      "Service registry": true,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "firecrawl/firecrawl-mcp-server",
+      "name": "firecrawl/firecrawl-mcp-server",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 4
+    }
+  },
+  "eeditiones/tei-publisher-components": {
+    "patterns": {
+      "3rd Party Registration": true,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": true,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "eeditiones/tei-publisher-components",
+      "name": "eeditiones/tei-publisher-components",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 2
+    }
+  },
+  "accrescent/accrescent": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": true,
+      "Service deployment platform": true,
+      "Service instance per container": true,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": true,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "accrescent/accrescent",
+      "name": "accrescent/accrescent",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 5
+    }
+  },
+  "CloudCannon/rosey": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "CloudCannon/rosey",
+      "name": "CloudCannon/rosey",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "chigwell/telegram-mcp": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "chigwell/telegram-mcp",
+      "name": "chigwell/telegram-mcp",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "richgrov/simulo": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "richgrov/simulo",
+      "name": "richgrov/simulo",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "xuxueli/xxl-job": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": true,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": true,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "xuxueli/xxl-job",
+      "name": "xuxueli/xxl-job",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 3
+    }
+  },
+  "payjoin/rust-payjoin": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "payjoin/rust-payjoin",
+      "name": "payjoin/rust-payjoin",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 1
+    }
+  },
+  "mhogomchungu/media-downloader": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "mhogomchungu/media-downloader",
+      "name": "mhogomchungu/media-downloader",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "PretendoNetwork/BOSS": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": false,
+      "Service deployment platform": true,
+      "Service instance per container": true,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "PretendoNetwork/BOSS",
+      "name": "PretendoNetwork/BOSS",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 3
+    }
+  },
+  "remsky/Kokoro-FastAPI": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": false,
+      "Service deployment platform": true,
+      "Service instance per container": true,
+      "Service instance per VM": true,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "remsky/Kokoro-FastAPI",
+      "name": "remsky/Kokoro-FastAPI",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 5
+    }
+  },
+  "HuLaSpark/HuLa": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "HuLaSpark/HuLa",
+      "name": "HuLaSpark/HuLa",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "EarthyScience/Browzarr": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "EarthyScience/Browzarr",
+      "name": "EarthyScience/Browzarr",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "Cleanuparr/Cleanuparr": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": true,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "Cleanuparr/Cleanuparr",
+      "name": "Cleanuparr/Cleanuparr",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 2
+    }
+  },
+  "JaKooLit/NixOS-Hyprland": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "JaKooLit/NixOS-Hyprland",
+      "name": "JaKooLit/NixOS-Hyprland",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "joswayski/averagedatabase": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": false,
+      "Service deployment platform": true,
+      "Service instance per container": true,
+      "Service instance per VM": false,
+      "Service mesh": true,
+      "Service registry": true,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "joswayski/averagedatabase",
+      "name": "joswayski/averagedatabase",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 5
+    }
+  },
+  "romanvht/ByeByeDPI": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "romanvht/ByeByeDPI",
+      "name": "romanvht/ByeByeDPI",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "Orinks/AccessiWeather": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": true,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "Orinks/AccessiWeather",
+      "name": "Orinks/AccessiWeather",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 1
+    }
+  },
+  "IAS-Astrophysics/athenak": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "IAS-Astrophysics/athenak",
+      "name": "IAS-Astrophysics/athenak",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "SimonScholz/qr-code-with-logo": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": true,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "SimonScholz/qr-code-with-logo",
+      "name": "SimonScholz/qr-code-with-logo",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 1
+    }
+  },
+  "MewPurPur/GodSVG": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "MewPurPur/GodSVG",
+      "name": "MewPurPur/GodSVG",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "wgzhao/Addax": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "wgzhao/Addax",
+      "name": "wgzhao/Addax",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 1
+    }
+  },
+  "DeepMIMO/DeepMIMO": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "DeepMIMO/DeepMIMO",
+      "name": "DeepMIMO/DeepMIMO",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  },
+  "mcollovati/quarkus-hilla": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": true,
+      "Service instance per VM": true,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "mcollovati/quarkus-hilla",
+      "name": "mcollovati/quarkus-hilla",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 4
+    }
+  },
+  "jinek/Consolonia": {
+    "patterns": {
+      "3rd Party Registration": true,
+      "Multiple service instances per host": true,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": true
+    },
+    "metadata": {
+      "full_name": "jinek/Consolonia",
+      "name": "jinek/Consolonia",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 3
+    }
+  },
+  "netwide-assembler/nasm": {
+    "patterns": {
+      "3rd Party Registration": false,
+      "Multiple service instances per host": false,
+      "Server-side service discovery": false,
+      "Service deployment platform": false,
+      "Service instance per container": false,
+      "Service instance per VM": false,
+      "Service mesh": false,
+      "Service registry": false,
+      "Single Service Instance per Host": false
+    },
+    "metadata": {
+      "full_name": "netwide-assembler/nasm",
+      "name": "netwide-assembler/nasm",
+      "owner": "",
+      "html_url": "",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "patterns_present_count": 0
+    }
+  }
+}

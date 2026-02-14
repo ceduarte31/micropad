@@ -1,0 +1,180 @@
+{
+  "summary": {
+    "repository_name": "Cleanuparr/Cleanuparr",
+    "detected_patterns": [
+      "Single Service Instance per Host",
+      "Service deployment platform"
+    ],
+    "total_patterns_scanned": 9,
+    "timestamp": "2025-10-27T17:20:39.252106",
+    "run_id": "9c667c31"
+  },
+  "patterns": {
+    "Server-side service discovery": false,
+    "Service registry": false,
+    "3rd Party Registration": false,
+    "Single Service Instance per Host": true,
+    "Service instance per container": false,
+    "Multiple service instances per host": false,
+    "Service deployment platform": true,
+    "Service instance per VM": false,
+    "Service mesh": false
+  },
+  "scanned_files_per_pattern": {
+    "Server-side service discovery": [
+      "/data/repos/Cleanuparr/.github/workflows/build-docker.yml",
+      "/data/repos/Cleanuparr/.github/workflows/build-executable.yml",
+      "/data/repos/Cleanuparr/.github/workflows/build-macos-arm-installer.yml",
+      "/data/repos/Cleanuparr/.github/workflows/build-macos-intel-installer.yml",
+      "/data/repos/Cleanuparr/.github/workflows/build-windows-installer.yml",
+      "/data/repos/Cleanuparr/.github/workflows/cloudflare-pages-blocklists.yml",
+      "/data/repos/Cleanuparr/.github/workflows/cloudflare-pages-status.yml",
+      "/data/repos/Cleanuparr/.github/workflows/docs.yml",
+      "/data/repos/Cleanuparr/.github/workflows/release.yml"
+    ],
+    "Service registry": [
+      "/data/repos/Cleanuparr/.github/PULL_REQUEST_TEMPLATE.md",
+      "/data/repos/Cleanuparr/.github/workflows/build-docker.yml",
+      "/data/repos/Cleanuparr/.github/workflows/build-executable.yml",
+      "/data/repos/Cleanuparr/.github/workflows/build-macos-arm-installer.yml",
+      "/data/repos/Cleanuparr/.github/workflows/build-macos-intel-installer.yml",
+      "/data/repos/Cleanuparr/.github/workflows/build-windows-installer.yml",
+      "/data/repos/Cleanuparr/.github/workflows/cloudflare-pages-blocklists.yml",
+      "/data/repos/Cleanuparr/.github/workflows/cloudflare-pages-status.yml",
+      "/data/repos/Cleanuparr/.github/workflows/docs.yml",
+      "/data/repos/Cleanuparr/.github/workflows/release.yml",
+      "/data/repos/Cleanuparr/CONTRIBUTING.md",
+      "/data/repos/Cleanuparr/README.md",
+      "/data/repos/Cleanuparr/code/entrypoint.sh",
+      "/data/repos/Cleanuparr/code/frontend/README.md",
+      "/data/repos/Cleanuparr/code/frontend/eslint.config.js",
+      "/data/repos/Cleanuparr/docs/README.md"
+    ],
+    "3rd Party Registration": [
+      "/data/repos/Cleanuparr/.github/FUNDING.yml",
+      "/data/repos/Cleanuparr/.github/ISSUE_TEMPLATE/1-bug.yml",
+      "/data/repos/Cleanuparr/.github/ISSUE_TEMPLATE/2-feature.yml",
+      "/data/repos/Cleanuparr/.github/ISSUE_TEMPLATE/3-help.yml",
+      "/data/repos/Cleanuparr/.github/ISSUE_TEMPLATE/config.yml",
+      "/data/repos/Cleanuparr/.github/workflows/build-docker.yml",
+      "/data/repos/Cleanuparr/.github/workflows/build-executable.yml",
+      "/data/repos/Cleanuparr/.github/workflows/build-macos-arm-installer.yml",
+      "/data/repos/Cleanuparr/.github/workflows/build-macos-intel-installer.yml",
+      "/data/repos/Cleanuparr/.github/workflows/build-windows-installer.yml",
+      "/data/repos/Cleanuparr/.github/workflows/cloudflare-pages-blocklists.yml",
+      "/data/repos/Cleanuparr/.github/workflows/cloudflare-pages-status.yml",
+      "/data/repos/Cleanuparr/.github/workflows/docs.yml",
+      "/data/repos/Cleanuparr/.github/workflows/release.yml",
+      "/data/repos/Cleanuparr/code/frontend/.vscode/extensions.json",
+      "/data/repos/Cleanuparr/code/frontend/.vscode/launch.json",
+      "/data/repos/Cleanuparr/code/frontend/.vscode/tasks.json",
+      "/data/repos/Cleanuparr/code/frontend/angular.json",
+      "/data/repos/Cleanuparr/code/frontend/ngsw-config.json",
+      "/data/repos/Cleanuparr/code/frontend/package.json",
+      "/data/repos/Cleanuparr/code/frontend/tsconfig.app.json",
+      "/data/repos/Cleanuparr/code/frontend/tsconfig.json",
+      "/data/repos/Cleanuparr/code/frontend/tsconfig.spec.json",
+      "/data/repos/Cleanuparr/docs/docs/configuration/_category_.json",
+      "/data/repos/Cleanuparr/docs/docs/installation/_category_.json",
+      "/data/repos/Cleanuparr/docs/docs/setup-scenarios/_category_.json",
+      "/data/repos/Cleanuparr/docs/package.json",
+      "/data/repos/Cleanuparr/docs/tsconfig.json"
+    ],
+    "Single Service Instance per Host": [
+      "/data/repos/Cleanuparr/.github/workflows/build-docker.yml",
+      "/data/repos/Cleanuparr/.github/workflows/build-executable.yml",
+      "/data/repos/Cleanuparr/.github/workflows/build-macos-arm-installer.yml",
+      "/data/repos/Cleanuparr/.github/workflows/build-macos-intel-installer.yml",
+      "/data/repos/Cleanuparr/.github/workflows/build-windows-installer.yml",
+      "/data/repos/Cleanuparr/.github/workflows/cloudflare-pages-blocklists.yml",
+      "/data/repos/Cleanuparr/.github/workflows/cloudflare-pages-status.yml",
+      "/data/repos/Cleanuparr/.github/workflows/docs.yml",
+      "/data/repos/Cleanuparr/.github/workflows/release.yml"
+    ],
+    "Service instance per container": [
+      "/data/repos/Cleanuparr/.github/workflows/build-docker.yml",
+      "/data/repos/Cleanuparr/code/Dockerfile",
+      "/data/repos/Cleanuparr/code/entrypoint.sh"
+    ],
+    "Multiple service instances per host": [
+      "/data/repos/Cleanuparr/code/Makefile",
+      "/data/repos/Cleanuparr/code/entrypoint.sh"
+    ],
+    "Service deployment platform": [
+      "/data/repos/Cleanuparr/.github/workflows/build-docker.yml",
+      "/data/repos/Cleanuparr/.github/workflows/build-executable.yml",
+      "/data/repos/Cleanuparr/.github/workflows/build-macos-arm-installer.yml",
+      "/data/repos/Cleanuparr/.github/workflows/build-macos-intel-installer.yml",
+      "/data/repos/Cleanuparr/.github/workflows/build-windows-installer.yml",
+      "/data/repos/Cleanuparr/code/Dockerfile",
+      "/data/repos/Cleanuparr/code/entrypoint.sh"
+    ],
+    "Service instance per VM": [
+      "/data/repos/Cleanuparr/.github/workflows/build-docker.yml",
+      "/data/repos/Cleanuparr/.github/workflows/build-executable.yml",
+      "/data/repos/Cleanuparr/.github/workflows/build-macos-arm-installer.yml",
+      "/data/repos/Cleanuparr/.github/workflows/build-macos-intel-installer.yml",
+      "/data/repos/Cleanuparr/.github/workflows/build-windows-installer.yml",
+      "/data/repos/Cleanuparr/.github/workflows/cloudflare-pages-blocklists.yml",
+      "/data/repos/Cleanuparr/.github/workflows/cloudflare-pages-status.yml",
+      "/data/repos/Cleanuparr/.github/workflows/docs.yml",
+      "/data/repos/Cleanuparr/.github/workflows/release.yml",
+      "/data/repos/Cleanuparr/code/Makefile"
+    ],
+    "Service mesh": [
+      "/data/repos/Cleanuparr/.github/workflows/build-docker.yml",
+      "/data/repos/Cleanuparr/.github/workflows/build-executable.yml",
+      "/data/repos/Cleanuparr/.github/workflows/build-macos-arm-installer.yml",
+      "/data/repos/Cleanuparr/.github/workflows/build-macos-intel-installer.yml",
+      "/data/repos/Cleanuparr/.github/workflows/build-windows-installer.yml",
+      "/data/repos/Cleanuparr/.github/workflows/cloudflare-pages-blocklists.yml",
+      "/data/repos/Cleanuparr/.github/workflows/cloudflare-pages-status.yml",
+      "/data/repos/Cleanuparr/.github/workflows/docs.yml",
+      "/data/repos/Cleanuparr/.github/workflows/release.yml",
+      "/data/repos/Cleanuparr/code/frontend/.vscode/extensions.json",
+      "/data/repos/Cleanuparr/code/frontend/.vscode/launch.json",
+      "/data/repos/Cleanuparr/code/frontend/.vscode/tasks.json",
+      "/data/repos/Cleanuparr/code/frontend/angular.json",
+      "/data/repos/Cleanuparr/code/frontend/ngsw-config.json",
+      "/data/repos/Cleanuparr/code/frontend/package.json",
+      "/data/repos/Cleanuparr/code/frontend/tsconfig.app.json",
+      "/data/repos/Cleanuparr/code/frontend/tsconfig.json",
+      "/data/repos/Cleanuparr/code/frontend/tsconfig.spec.json",
+      "/data/repos/Cleanuparr/docs/docs/configuration/_category_.json",
+      "/data/repos/Cleanuparr/docs/docs/installation/_category_.json",
+      "/data/repos/Cleanuparr/docs/docs/setup-scenarios/_category_.json",
+      "/data/repos/Cleanuparr/docs/package.json",
+      "/data/repos/Cleanuparr/docs/tsconfig.json"
+    ]
+  },
+  "_metadata": {
+    "experiment": {
+      "run_number": 1
+    },
+    "reproducibility": {
+      "configuration": {
+        "thresholds": {
+          "high_priority": 0.5,
+          "medium_priority": 0.3,
+          "min_priority_score": 0.1,
+          "judge_confidence": 5
+        },
+        "weight_scheme": "llm_dominant",
+        "random_seed": 1761585639
+      }
+    },
+    "models": {
+      "planner": "gpt-5-nano-2025-08-07",
+      "investigator": "gpt-5-nano-2025-08-07",
+      "judge": "gpt-5-nano-2025-08-07",
+      "embedding": "jinaai/jina-embeddings-v2-base-code"
+    },
+    "priority_weights": {
+      "keyword": 0.2,
+      "embedding": 0.1,
+      "graph": 0.0,
+      "llm": 0.7
+    },
+    "source_log": "detection_20251027_172039.log"
+  }
+}

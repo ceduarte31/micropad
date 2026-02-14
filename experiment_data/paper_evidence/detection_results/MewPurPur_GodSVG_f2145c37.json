@@ -1,0 +1,106 @@
+{
+  "summary": {
+    "repository_name": "MewPurPur/GodSVG",
+    "detected_patterns": [],
+    "total_patterns_scanned": 9,
+    "timestamp": "2025-10-28T13:31:07.325504",
+    "run_id": "f2145c37"
+  },
+  "patterns": {
+    "Server-side service discovery": false,
+    "Service registry": false,
+    "3rd Party Registration": false,
+    "Single Service Instance per Host": false,
+    "Service instance per container": false,
+    "Multiple service instances per host": false,
+    "Service deployment platform": false,
+    "Service instance per VM": false,
+    "Service mesh": false
+  },
+  "scanned_files_per_pattern": {
+    "Server-side service discovery": [
+      "/data/repos/GodSVG/.github/workflows/export-optimized.yml",
+      "/data/repos/GodSVG/.github/workflows/static-checks.yml"
+    ],
+    "Service registry": [
+      "/data/repos/GodSVG/.github/file_format.sh",
+      "/data/repos/GodSVG/.github/workflows/export-optimized.yml",
+      "/data/repos/GodSVG/.github/workflows/static-checks.yml",
+      "/data/repos/GodSVG/CONTRIBUTING.md",
+      "/data/repos/GodSVG/README.md",
+      "/data/repos/GodSVG/app_info.toml",
+      "/data/repos/GodSVG/assets/fonts/README.md",
+      "/data/repos/GodSVG/godot_only/README.md",
+      "/data/repos/GodSVG/translations/README.md"
+    ],
+    "3rd Party Registration": [
+      "/data/repos/GodSVG/.github/FUNDING.yml",
+      "/data/repos/GodSVG/.github/ISSUE_TEMPLATE/bug_report.yml",
+      "/data/repos/GodSVG/.github/ISSUE_TEMPLATE/config.yml",
+      "/data/repos/GodSVG/.github/ISSUE_TEMPLATE/feature_request.yml",
+      "/data/repos/GodSVG/.github/workflows/export-optimized.yml",
+      "/data/repos/GodSVG/.github/workflows/static-checks.yml"
+    ],
+    "Single Service Instance per Host": [
+      "/data/repos/GodSVG/.github/workflows/export-optimized.yml",
+      "/data/repos/GodSVG/.github/workflows/static-checks.yml"
+    ],
+    "Service instance per container": [
+      "/data/repos/GodSVG/.github/workflows/export-optimized.yml",
+      "/data/repos/GodSVG/.github/workflows/static-checks.yml",
+      "/data/repos/GodSVG/CONTRIBUTING.md",
+      "/data/repos/GodSVG/README.md",
+      "/data/repos/GodSVG/export_presets.cfg",
+      "/data/repos/GodSVG/godot_only/README.md",
+      "/data/repos/GodSVG/godot_only/scripts/Stopwatch.gd",
+      "/data/repos/GodSVG/translations/de.po",
+      "/data/repos/GodSVG/translations/en.po"
+    ],
+    "Multiple service instances per host": [
+      "/data/repos/GodSVG/.github/file_format.sh"
+    ],
+    "Service deployment platform": [
+      "/data/repos/GodSVG/.github/file_format.sh",
+      "/data/repos/GodSVG/.github/workflows/export-optimized.yml",
+      "/data/repos/GodSVG/.github/workflows/static-checks.yml"
+    ],
+    "Service instance per VM": [
+      "/data/repos/GodSVG/.github/workflows/export-optimized.yml",
+      "/data/repos/GodSVG/.github/workflows/static-checks.yml"
+    ],
+    "Service mesh": [
+      "/data/repos/GodSVG/.github/workflows/export-optimized.yml",
+      "/data/repos/GodSVG/.github/workflows/static-checks.yml"
+    ]
+  },
+  "_metadata": {
+    "experiment": {
+      "run_number": 1
+    },
+    "reproducibility": {
+      "configuration": {
+        "thresholds": {
+          "high_priority": 0.5,
+          "medium_priority": 0.3,
+          "min_priority_score": 0.1,
+          "judge_confidence": 5
+        },
+        "weight_scheme": "llm_dominant",
+        "random_seed": 1761658267
+      }
+    },
+    "models": {
+      "planner": "gpt-5-nano-2025-08-07",
+      "investigator": "gpt-5-nano-2025-08-07",
+      "judge": "gpt-5-nano-2025-08-07",
+      "embedding": "jinaai/jina-embeddings-v2-base-code"
+    },
+    "priority_weights": {
+      "keyword": 0.2,
+      "embedding": 0.1,
+      "graph": 0.0,
+      "llm": 0.7
+    },
+    "source_log": "detection_20251028_133107.log"
+  }
+}

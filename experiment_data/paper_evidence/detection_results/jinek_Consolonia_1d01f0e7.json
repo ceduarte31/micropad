@@ -1,0 +1,185 @@
+{
+  "summary": {
+    "repository_name": "jinek/Consolonia",
+    "detected_patterns": [],
+    "total_patterns_scanned": 9,
+    "timestamp": "2025-10-30T02:06:24.561442",
+    "run_id": "1d01f0e7"
+  },
+  "patterns": {
+    "Server-side service discovery": false,
+    "Service registry": false,
+    "3rd Party Registration": false,
+    "Single Service Instance per Host": false,
+    "Service instance per container": false,
+    "Multiple service instances per host": false,
+    "Service deployment platform": false,
+    "Service instance per VM": false,
+    "Service mesh": false
+  },
+  "scanned_files_per_pattern": {
+    "Server-side service discovery": [
+      "/data/repos/Consolonia/LICENSE",
+      "/data/repos/Consolonia/readme.md",
+      "/data/repos/Consolonia/src/Consolonia.Core/ApplicationStartup.cs",
+      "/data/repos/Consolonia/src/Consolonia.Gallery/Gallery/GalleryItem.cs",
+      "/data/repos/Consolonia/src/Consolonia.GuiCS/Assembly.cs",
+      "/data/repos/Consolonia/src/Consolonia.sln",
+      "/data/repos/Consolonia/src/Consolonia/readme.md",
+      "/data/repos/Consolonia/src/Example/Program.cs",
+      "/data/repos/Consolonia/src/NuGet.config",
+      "/data/repos/Consolonia/src/Tests/Consolonia.Core.Tests/ClipboardTests.cs",
+      "/data/repos/Consolonia/src/file.txt",
+      "/data/repos/Consolonia/src/readme.md"
+    ],
+    "Service registry": [
+      "/data/repos/Consolonia/.github/copilot-instructions.md",
+      "/data/repos/Consolonia/.github/workflows/PublishIncrementalNuget.yml",
+      "/data/repos/Consolonia/.github/workflows/PublishNuget.yml",
+      "/data/repos/Consolonia/.github/workflows/dismiss-approvals.yml",
+      "/data/repos/Consolonia/.github/workflows/editorconfig.yml",
+      "/data/repos/Consolonia/.github/workflows/general_build.yml",
+      "/data/repos/Consolonia/contributing.md",
+      "/data/repos/Consolonia/readme.md",
+      "/data/repos/Consolonia/src/Consolonia.AvaloniaEdit/readme.md",
+      "/data/repos/Consolonia/src/Consolonia.Blazor/readme.md",
+      "/data/repos/Consolonia/src/Consolonia.Controls/readme.md",
+      "/data/repos/Consolonia/src/Consolonia.Core/readme.md",
+      "/data/repos/Consolonia/src/Consolonia.Gallery/readme.md",
+      "/data/repos/Consolonia/src/Consolonia.NUnit/readme.md",
+      "/data/repos/Consolonia/src/Consolonia.PlatformSupport/readme.md",
+      "/data/repos/Consolonia/src/Consolonia.Themes/readme.md",
+      "/data/repos/Consolonia/src/Consolonia/readme.md",
+      "/data/repos/Consolonia/src/Experimental/Avalonia.PreviewHost/readme.md",
+      "/data/repos/Consolonia/src/Experimental/Consolonia.Designer/readme.md",
+      "/data/repos/Consolonia/src/Experimental/Consolonia.Editor/Resources/SampleFiles/source.go",
+      "/data/repos/Consolonia/src/Experimental/Consolonia.Editor/Resources/SampleFiles/source.java",
+      "/data/repos/Consolonia/src/Experimental/Consolonia.Editor/Resources/SampleFiles/source.js",
+      "/data/repos/Consolonia/src/Tools/Consolonia.PreviewHost/readme.md",
+      "/data/repos/Consolonia/src/Tools/Consolonia.Templates/readme.md",
+      "/data/repos/Consolonia/src/readme.md"
+    ],
+    "3rd Party Registration": [
+      "/data/repos/Consolonia/.github/FUNDING.yml",
+      "/data/repos/Consolonia/.github/workflows/PublishIncrementalNuget.yml",
+      "/data/repos/Consolonia/.github/workflows/PublishNuget.yml",
+      "/data/repos/Consolonia/.github/workflows/dismiss-approvals.yml",
+      "/data/repos/Consolonia/.github/workflows/editorconfig.yml",
+      "/data/repos/Consolonia/.github/workflows/general_build.yml",
+      "/data/repos/Consolonia/src/Consolonia.Core/.config/dotnet-tools.json",
+      "/data/repos/Consolonia/src/Consolonia.Gallery/Properties/launchSettings.json",
+      "/data/repos/Consolonia/src/Experimental/Consolonia.Editor/Resources/SampleFiles/source.json",
+      "/data/repos/Consolonia/src/Experimental/Consolonia.Editor/Resources/SampleFiles/source.yaml",
+      "/data/repos/Consolonia/src/Tools/Consolonia.Templates/ConsoloniaAppTemplate/.template.config/template.json"
+    ],
+    "Single Service Instance per Host": [
+      "/data/repos/Consolonia/.github/workflows/PublishIncrementalNuget.yml",
+      "/data/repos/Consolonia/.github/workflows/PublishNuget.yml",
+      "/data/repos/Consolonia/.github/workflows/dismiss-approvals.yml",
+      "/data/repos/Consolonia/.github/workflows/editorconfig.yml",
+      "/data/repos/Consolonia/.github/workflows/general_build.yml"
+    ],
+    "Service instance per container": [
+      "/data/repos/Consolonia/.github/workflows/PublishIncrementalNuget.yml",
+      "/data/repos/Consolonia/.github/workflows/PublishNuget.yml",
+      "/data/repos/Consolonia/.github/workflows/dismiss-approvals.yml",
+      "/data/repos/Consolonia/.github/workflows/editorconfig.yml",
+      "/data/repos/Consolonia/.github/workflows/general_build.yml"
+    ],
+    "Multiple service instances per host": [
+      "/data/repos/Consolonia/.github/FUNDING.yml",
+      "/data/repos/Consolonia/.github/copilot-instructions.md",
+      "/data/repos/Consolonia/.github/workflows/PublishIncrementalNuget.yml",
+      "/data/repos/Consolonia/.github/workflows/PublishNuget.yml",
+      "/data/repos/Consolonia/.github/workflows/dismiss-approvals.yml",
+      "/data/repos/Consolonia/.github/workflows/editorconfig.yml",
+      "/data/repos/Consolonia/.github/workflows/general_build.yml",
+      "/data/repos/Consolonia/src/.run/Local Nuget Build.run.xml",
+      "/data/repos/Consolonia/src/Consolonia.Core/Assembly.cs",
+      "/data/repos/Consolonia/src/Consolonia.Core/Consolonia.Core.csproj",
+      "/data/repos/Consolonia/src/Consolonia.Gallery/Consolonia.Gallery.csproj",
+      "/data/repos/Consolonia/src/Consolonia.Gallery/NLog.config",
+      "/data/repos/Consolonia/src/Consolonia.Gallery/Program.cs",
+      "/data/repos/Consolonia/src/Consolonia.Gallery/readme.md",
+      "/data/repos/Consolonia/src/Consolonia.GuiCS/WindowsDriver.cs",
+      "/data/repos/Consolonia/src/Consolonia/readme.md",
+      "/data/repos/Consolonia/src/Example/Example.csproj",
+      "/data/repos/Consolonia/src/Example/Program.cs",
+      "/data/repos/Consolonia/src/NuGet.config",
+      "/data/repos/Consolonia/src/Tools/Consolonia.PreviewHost/Consolonia.PreviewHost.csproj",
+      "/data/repos/Consolonia/src/Tools/Consolonia.PreviewHost/CustomAssemblyLoadContext.cs",
+      "/data/repos/Consolonia/src/Tools/Consolonia.PreviewHost/Program.cs",
+      "/data/repos/Consolonia/src/Tools/Consolonia.Templates/Consolonia.Templates.csproj",
+      "/data/repos/Consolonia/src/Tools/Consolonia.Templates/ConsoloniaAppTemplate/.template.config/template.json",
+      "/data/repos/Consolonia/src/Tools/Consolonia.Templates/ConsoloniaAppTemplate/App.axaml",
+      "/data/repos/Consolonia/src/file.txt",
+      "/data/repos/Consolonia/src/readme.md"
+    ],
+    "Service deployment platform": [
+      "/data/repos/Consolonia/LICENSE",
+      "/data/repos/Consolonia/readme.md",
+      "/data/repos/Consolonia/src/.run/Local Nuget Build.run.xml",
+      "/data/repos/Consolonia/src/Consolonia.AvaloniaEdit/Consolonia.AvaloniaEdit.csproj",
+      "/data/repos/Consolonia/src/Consolonia.Core/ApplicationStartup.cs",
+      "/data/repos/Consolonia/src/Consolonia.Core/Consolonia.Core.csproj",
+      "/data/repos/Consolonia/src/Consolonia.Gallery/Consolonia.Gallery.csproj",
+      "/data/repos/Consolonia/src/Consolonia.Gallery/Consolonia.Gallery.sln",
+      "/data/repos/Consolonia/src/Consolonia.GuiCS/Consolonia.GuiCS.csproj",
+      "/data/repos/Consolonia/src/Consolonia.sln",
+      "/data/repos/Consolonia/src/Experimental/Consolonia.Designer/Consolonia.Designer.csproj",
+      "/data/repos/Consolonia/src/Experimental/Consolonia.Editor/Consolonia.Editor.csproj",
+      "/data/repos/Consolonia/src/Tools/Consolonia.Templates/Consolonia.Templates.csproj",
+      "/data/repos/Consolonia/src/file.txt"
+    ],
+    "Service instance per VM": [
+      "/data/repos/Consolonia/.github/workflows/PublishIncrementalNuget.yml",
+      "/data/repos/Consolonia/.github/workflows/PublishNuget.yml",
+      "/data/repos/Consolonia/.github/workflows/dismiss-approvals.yml",
+      "/data/repos/Consolonia/.github/workflows/editorconfig.yml",
+      "/data/repos/Consolonia/.github/workflows/general_build.yml",
+      "/data/repos/Consolonia/src/.run/Local Nuget Build.run.xml",
+      "/data/repos/Consolonia/src/Experimental/Consolonia.Editor/Resources/SampleFiles/text.xml"
+    ],
+    "Service mesh": [
+      "/data/repos/Consolonia/.github/workflows/PublishIncrementalNuget.yml",
+      "/data/repos/Consolonia/.github/workflows/PublishNuget.yml",
+      "/data/repos/Consolonia/.github/workflows/dismiss-approvals.yml",
+      "/data/repos/Consolonia/.github/workflows/editorconfig.yml",
+      "/data/repos/Consolonia/.github/workflows/general_build.yml",
+      "/data/repos/Consolonia/src/Consolonia.Core/.config/dotnet-tools.json",
+      "/data/repos/Consolonia/src/Consolonia.Gallery/Properties/launchSettings.json",
+      "/data/repos/Consolonia/src/Experimental/Consolonia.Editor/Resources/SampleFiles/source.json",
+      "/data/repos/Consolonia/src/Tools/Consolonia.Templates/ConsoloniaAppTemplate/.template.config/template.json"
+    ]
+  },
+  "_metadata": {
+    "experiment": {
+      "run_number": 1
+    },
+    "reproducibility": {
+      "configuration": {
+        "thresholds": {
+          "high_priority": 0.5,
+          "medium_priority": 0.3,
+          "min_priority_score": 0.1,
+          "judge_confidence": 5
+        },
+        "weight_scheme": "llm_dominant",
+        "random_seed": 1761789984
+      }
+    },
+    "models": {
+      "planner": "gpt-5-nano-2025-08-07",
+      "investigator": "gpt-5-nano-2025-08-07",
+      "judge": "gpt-5-nano-2025-08-07",
+      "embedding": "jinaai/jina-embeddings-v2-base-code"
+    },
+    "priority_weights": {
+      "keyword": 0.2,
+      "embedding": 0.1,
+      "graph": 0.0,
+      "llm": 0.7
+    },
+    "source_log": "detection_20251030_020624.log"
+  }
+}

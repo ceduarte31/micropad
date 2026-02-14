@@ -1,0 +1,88 @@
+{
+  "summary": {
+    "repository_name": "ology/Music",
+    "detected_patterns": [],
+    "total_patterns_scanned": 9,
+    "timestamp": "2025-10-30T18:22:19.314674",
+    "run_id": "0fba0e57"
+  },
+  "patterns": {
+    "Server-side service discovery": false,
+    "Service registry": false,
+    "3rd Party Registration": false,
+    "Single Service Instance per Host": false,
+    "Service instance per container": false,
+    "Multiple service instances per host": false,
+    "Service deployment platform": false,
+    "Service instance per VM": false,
+    "Service mesh": false
+  },
+  "scanned_files_per_pattern": {
+    "Server-side service discovery": [],
+    "Service registry": [
+      "/data/repos/Music/README.md",
+      "/data/repos/Music/clock-it.py",
+      "/data/repos/Music/four-chords.py",
+      "/data/repos/Music/hours.py",
+      "/data/repos/Music/m21_config.py",
+      "/data/repos/Music/mandelbrot_music.py",
+      "/data/repos/Music/midi-thread-2.py",
+      "/data/repos/Music/midi-thread-3.py",
+      "/data/repos/Music/midi-thread-4.py",
+      "/data/repos/Music/midi-threads.py",
+      "/data/repos/Music/nx_weights.py",
+      "/data/repos/Music/parts.py",
+      "/data/repos/Music/pop-ballad.py",
+      "/data/repos/Music/transition.py"
+    ],
+    "3rd Party Registration": [
+      "/data/repos/Music/capture-midi.yaml",
+      "/data/repos/Music/receive-midi.yaml",
+      "/data/repos/Music/rhythm-chunks.yml"
+    ],
+    "Single Service Instance per Host": [],
+    "Service instance per container": [
+      "/data/repos/Music/capture-midi.yaml",
+      "/data/repos/Music/receive-midi.yaml",
+      "/data/repos/Music/rhythm-chunks.yml"
+    ],
+    "Multiple service instances per host": [],
+    "Service deployment platform": [
+      "/data/repos/Music/capture-midi.yaml",
+      "/data/repos/Music/receive-midi.yaml",
+      "/data/repos/Music/rhythm-chunks.yml"
+    ],
+    "Service instance per VM": [],
+    "Service mesh": []
+  },
+  "_metadata": {
+    "experiment": {
+      "run_number": 1
+    },
+    "reproducibility": {
+      "configuration": {
+        "thresholds": {
+          "high_priority": 0.5,
+          "medium_priority": 0.3,
+          "min_priority_score": 0.1,
+          "judge_confidence": 5
+        },
+        "weight_scheme": "llm_dominant",
+        "random_seed": 1761848539
+      }
+    },
+    "models": {
+      "planner": "gpt-5-nano-2025-08-07",
+      "investigator": "gpt-5-nano-2025-08-07",
+      "judge": "gpt-5-nano-2025-08-07",
+      "embedding": "jinaai/jina-embeddings-v2-base-code"
+    },
+    "priority_weights": {
+      "keyword": 0.2,
+      "embedding": 0.1,
+      "graph": 0.0,
+      "llm": 0.7
+    },
+    "source_log": "detection_20251030_182219.log"
+  }
+}

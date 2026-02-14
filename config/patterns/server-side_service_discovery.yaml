@@ -1,0 +1,839 @@
+pattern_name: "Server-side service discovery"
+description: |
+  How does the client of a service - the API gateway or another service - discover the location of a service instance?
+  The client makes a request via a router (a.k.a. load balancer, API gateway, or edge proxy) that runs at a well-known, stable location.
+  That router performs service discovery on the client's behalf by querying a service registry (e.g., Consul, Eureka, Kubernetes Endpoints,
+  AWS Cloud Map, etc.) and then selects and forwards the request to an appropriate service instance. This centralizes discovery logic,
+  enables dynamic backends, health-aware load balancing, blue/green and canary routing, and minimizes client complexity.
+repository_fingerprint:
+  glob_patterns:
+    # --- Tier 1: The Spear (High-Confidence & High-Diversity Keyword Search) ---
+    # Routers/gateways configured to discover upstreams via registries or dynamic DNS
+    - glob: "**/nginx*.conf"
+      search_method: "keyword"
+      keywords: ["upstream", "resolver", "service.consul", "zone", "least_conn", "hash", "health_check"]
+    - glob: "**/haproxy*.cfg"
+      search_method: "keyword"
+      keywords: ["resolvers", "server-template", "init-addr", "resolve-opts", "http-request set-dst", "srv", "dns"]
+    - glob: "**/envoy*.y*ml"
+      search_method: "keyword"
+      keywords: ["clusters:", "type: EDS", "eds_config:", "ads_config:", "strict_dns", "xds_cluster", "load_assignment"]
+    - glob: "**/traefik*.y*ml"
+      search_method: "keyword"
+      keywords: ["providers:", "kubernetesIngress:", "docker:", "consulCatalog:", "eureka:", "file:"]
+    - glob: "**/kong*.y*ml"
+      search_method: "keyword"
+      keywords: ["services:", "routes:", "upstreams:", "targets:", "healthchecks:"]
+    - glob: "**/apisix*.y*ml"
+      search_method: "keyword"
+      keywords: ["routes:", "upstreams:", "discovery:", "etcd:", "service_name:"]
+    - glob: "**/application.y*ml"
+      search_method: "keyword"
+      keywords: ["spring.cloud.gateway", "discovery.locator.enabled", "eureka.client", "spring.cloud.nacos.discovery", "cloud.map"]
+    - glob: "**/bootstrap.y*ml"
+      search_method: "keyword"
+      keywords: ["spring.cloud.gateway", "eureka.client", "spring.cloud.nacos.discovery"]
+    - glob: "**/eureka*.y*ml"
+      search_method: "keyword"
+      keywords: ["eureka.client", "eureka.server", "serviceUrl", "fetch-registry", "register-with-eureka"]
+    - glob: "**/consul*.hcl"
+      search_method: "keyword"
+      keywords: ["service {", "connect {", "retry_join", "checks", "connect.enabled"]
+    - glob: "**/consul*.json"
+      search_method: "keyword"
+      keywords: ["services", "service", "check", "connect", "acl", "retry_join"]
+    - glob: "**/confd*.toml"
+      search_method: "keyword"
+      keywords: ["backend = \"consul\"", "backend = \"etcd\"", "template", "dest", "keys", "prefix"]
+    - glob: "**/*ingress*.y*ml"
+      search_method: "keyword"
+      keywords: ["kind: Ingress", "kubernetes.io/ingress.class", "IngressRoute", "Gateway", "HTTPRoute"]
+    - glob: "**/service.y*ml"
+      search_method: "keyword"
+      keywords: ["kind: Service", "type: LoadBalancer", "externalTrafficPolicy", "sessionAffinity"]
+    - glob: "**/gateway.y*ml"
+      search_method: "keyword"
+      keywords: ["kind: Gateway", "gatewayClassName", "listeners"]
+    - glob: "**/httproute.y*ml"
+      search_method: "keyword"
+      keywords: ["kind: HTTPRoute", "parentRefs", "rules", "backendRefs"]
+    - glob: "**/cloudmap*.json"
+      search_method: "keyword"
+      keywords: ["ServiceRegistries", "AWS::ServiceDiscovery::Service", "NamespaceId", "DnsConfig"]
+    - glob: "**/appmesh*.y*ml"
+      search_method: "keyword"
+      keywords: ["VirtualRouter", "VirtualService", "VirtualNode", "serviceDiscovery:"]
+    - glob: "**/docker-compose*.y*ml"
+      search_method: "keyword"
+      keywords: ["traefik", "labels:", "depends_on:", "KONG_DATABASE=off", "APISIX"]
+    - glob: "**/helm/**/values.y*ml"
+      search_method: "keyword"
+      keywords: ["ingress:", "gateway:", "envoy", "haproxy", "kong", "traefik", "apisix", "service:", "loadBalancer:"]
+
+    # --- Tier 2: The Cast Net (Contextual & Suggestive Embedding Search) ---
+    # Service registry configs and templates that feed routers
+    - glob: "**/zookeeper*.y*ml"
+      search_method: "keyword"
+      keywords: ["server.", "tickTime", "initLimit", "syncLimit"]
+    - glob: "**/etcd*.y*ml"
+      search_method: "keyword"
+      keywords: ["listen-peer-urls", "advertise-client-urls", "initial-cluster"]
+    - glob: "**/nacos*.y*ml"
+      search_method: "keyword"
+      keywords: ["nacos:", "discovery:", "server-addr", "namespace"]
+    - glob: "**/skipper*.y*ml"
+      search_method: "keyword"
+      keywords: ["kubernetes", "routes-file", "eskip", "etcd-endpoints"]
+    - glob: "**/kong.conf*"
+      search_method: "keyword"
+      keywords: ["dns_resolver", "router_flavor", "database", "declarative_config"]
+    - glob: "**/haproxy/*.cfg"
+      search_method: "keyword"
+      keywords: ["backend", "server-template", "resolvers", "nameserver"]
+    - glob: "**/nginx/**/*.conf"
+      search_method: "keyword"
+      keywords: ["upstream", "resolver", "proxy_pass", "service.consul"]
+    - glob: "**/*.tpl"
+      search_method: "keyword"
+      keywords: ["upstream", "server-template", "{{ key", "{{ range", "confd", "consul-template"]
+    - glob: "**/*.tf"
+      search_method: "keyword"
+      keywords: ["aws_lb", "aws_lb_target_group", "aws_service_discovery_service", "aws_ecs_service", "service_registries"]
+    - glob: "**/kustomization.y*ml"
+      search_method: "keyword"
+      keywords: ["resources:", "patchesStrategicMerge:", "Ingress", "Gateway", "Service"]
+    - glob: "**/manifests/**/*.y*ml"
+    - glob: "**/config/**/*.y*ml"
+    - glob: "**/deploy/**/*.y*ml"
+
+    # --- Tier 3: The Trawler (Broad Catch-all Embedding Search) ---
+    # Broad configs where server-side discovery may be defined or referenced
+    - glob: "**/helm/**/*.y*ml"
+    - glob: "**/charts/**/*.y*ml"
+    - glob: "**/k8s/**/*.y*ml"
+    - glob: "**/kubernetes/**/*.y*ml"
+    - glob: "**/*.hcl"
+      search_method: "keyword"
+      keywords: ["service", "consul", "connect", "discover", "catalog"]
+    - glob: "**/.github/workflows/*.y*ml"
+    - glob: "**/.gitlab-ci.yml"
+    - glob: "**/azure-pipelines.yml"
+    - glob: "**/.circleci/config.yml"
+    - glob: "**/Jenkinsfile"
+
+positive_examples:
+  - |
+    # 1. NGINX reverse proxy discovering backends via Consul DNS
+    # Router (NGINX) at a stable address queries service registry DNS for instances
+    worker_processes auto;
+    events { worker_connections 1024; }
+    http {
+      resolver 127.0.0.1 valid=10s;  # consul agent dns
+      upstream orders_upstream {
+        zone orders 64k;
+        least_conn;
+        server orders.service.consul:8080 resolve;
+      }
+      server {
+        listen 80;
+        location / {
+          proxy_pass http://orders_upstream;
+          proxy_next_upstream error timeout http_502 http_503 http_504;
+        }
+      }
+    }
+  - |
+    # 2. HAProxy using DNS SRV records from Consul for dynamic servers
+    global
+      log stdout format raw daemon
+    resolvers consul
+      parse-resolv-conf
+      accepted_payload_size 8192
+    defaults
+      mode http
+      timeout connect 5s
+      timeout client  50s
+      timeout server  50s
+    frontend fe_http
+      bind *:80
+      default_backend be_orders
+    backend be_orders
+      balance leastconn
+      option httpchk GET /health
+      default-server init-addr last,libc,none inter 3s fall 2 rise 3
+      server-template srv 10 _orders._tcp.service.consul resolvers consul check
+  - |
+    # 3. Envoy with EDS (server-side discovery via management server/xDS)
+    static_resources:
+      listeners:
+      - name: listener_http
+        address:
+          socket_address: { address: 0.0.0.0, port_value: 8080 }
+        filter_chains:
+        - filters:
+          - name: envoy.filters.network.http_connection_manager
+            typed_config:
+              "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager
+              stat_prefix: ingress_http
+              route_config:
+                name: local_route
+                virtual_hosts:
+                - name: orders
+                  domains: ["*"]
+                  routes:
+                  - match: { prefix: "/" }
+                    route: { cluster: orders_cluster }
+              http_filters:
+              - name: envoy.filters.http.router
+      clusters:
+      - name: orders_cluster
+        type: EDS
+        eds_cluster_config:
+          eds_config:
+            ads: {}
+    dynamic_resources:
+      ads_config:
+        api_type: GRPC
+        grpc_services:
+        - envoy_grpc:
+            cluster_name: xds_cluster
+      lds_config: { ads: {} }
+      cds_config: { ads: {} }
+    static_resources:
+      clusters:
+      - name: xds_cluster
+        type: STATIC
+        connect_timeout: 1s
+        load_assignment:
+          cluster_name: xds_cluster
+          endpoints:
+          - lb_endpoints:
+            - endpoint:
+                address:
+                  socket_address: { address: xds.example.local, port_value: 18000 }
+  - |
+    # 4. Traefik using Consul Catalog provider (router discovers services from Consul)
+    entryPoints:
+      web:
+        address: ":80"
+    providers:
+      consulCatalog:
+        endpoint:
+          address: "127.0.0.1:8500"
+        exposedByDefault: false
+    api:
+      dashboard: true
+  - |
+    # 5. Kong declarative config routing to a DNS-discovered upstream
+    _format_version: "3.0"
+    services:
+    - name: orders
+      host: orders.service.consul
+      port: 8080
+      protocol: http
+      routes:
+      - name: orders-route
+        paths: ["/"]
+    upstreams:
+    - name: orders-upstream
+      healthchecks:
+        passive: { healthy: { http_statuses: [200, 201, 202] } }
+    targets:
+    - target: orders.service.consul:8080
+      upstream: orders-upstream
+  - |
+    # 6. Kubernetes Ingress for NGINX Ingress Controller routing to a Service
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: orders
+    spec:
+      selector:
+        app: orders
+      ports:
+      - port: 8080
+        targetPort: 8080
+    ---
+    apiVersion: networking.k8s.io/v1
+    kind: Ingress
+    metadata:
+      name: orders-ingress
+      annotations:
+        kubernetes.io/ingress.class: nginx
+    spec:
+      rules:
+      - host: orders.example.com
+        http:
+          paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: orders
+                port:
+                  number: 8080
+  - |
+    # 7. Kubernetes Gateway API: Gateway + HTTPRoute as server-side router
+    apiVersion: gateway.networking.k8s.io/v1
+    kind: Gateway
+    metadata:
+      name: web-gw
+    spec:
+      gatewayClassName: nginx
+      listeners:
+      - name: http
+        port: 80
+        protocol: HTTP
+    ---
+    apiVersion: gateway.networking.k8s.io/v1
+    kind: HTTPRoute
+    metadata:
+      name: orders-route
+    spec:
+      parentRefs:
+      - name: web-gw
+      rules:
+      - matches:
+        - path:
+            type: PathPrefix
+            value: /
+        backendRefs:
+        - name: orders
+          port: 8080
+  - |
+    # 8. ECS Service with AWS Cloud Map service registry and ALB
+    {
+      "serviceName": "orders",
+      "taskDefinition": "orders-task",
+      "loadBalancers": [
+        {
+          "targetGroupArn": "arn:aws:elasticloadbalancing:...:targetgroup/orders/abc",
+          "containerName": "orders",
+          "containerPort": 8080
+        }
+      ],
+      "serviceRegistries": [
+        {
+          "registryArn": "arn:aws:servicediscovery:...:service/srv-abc123"
+        }
+      ],
+      "desiredCount": 2,
+      "launchType": "FARGATE",
+      "networkConfiguration": { "awsvpcConfiguration": { "subnets": ["subnet-1","subnet-2"] } }
+    }
+  - |
+    # 9. Spring Cloud Gateway with Eureka Discovery Locator
+    server:
+      port: 8080
+    spring:
+      application:
+        name: edge-gateway
+      cloud:
+        gateway:
+          discovery:
+            locator:
+              enabled: true
+              lower-case-service-id: true
+        loadbalancer:
+          configurations: health-check
+      main:
+        web-application-type: reactive
+    eureka:
+      client:
+        serviceUrl:
+          defaultZone: http://eureka:8761/eureka/
+        register-with-eureka: false
+        fetch-registry: true
+  - |
+    # 10. Eureka Server configuration (service registry)
+    server:
+      port: 8761
+    eureka:
+      client:
+        register-with-eureka: false
+        fetch-registry: false
+      server:
+        enable-self-preservation: true
+  - |
+    # 11. Consul service registration and consul-template to render HAProxy backends
+    # Router reads generated config to discover current instances
+    {
+      "service": {
+        "name": "orders",
+        "port": 8080,
+        "checks": [
+          {
+            "http": "http://localhost:8080/health",
+            "interval": "10s"
+          }
+        ]
+      }
+    }
+    ---
+    # consul-template config (orders-ct.hcl)
+    template {
+      source = "/templates/haproxy-backend.ctmpl"
+      destination = "/etc/haproxy/conf.d/orders.cfg"
+      command = "systemctl reload haproxy"
+    }
+    ---
+    # /templates/haproxy-backend.ctmpl
+    backend be_orders
+      balance roundrobin
+    {{ range service "orders" }}
+      server {{ .Name }} {{ .Address }}:{{ .Port }} check
+    {{ end }}
+  - |
+    # 12. Docker Compose with Traefik (router) auto-discovering services via Docker provider
+    version: "3.9"
+    services:
+      traefik:
+        image: traefik:v3.0
+        command:
+          - "--providers.docker=true"
+          - "--entrypoints.web.address=:80"
+        ports: ["80:80"]
+        volumes:
+          - /var/run/docker.sock:/var/run/docker.sock
+      orders:
+        image: myorg/orders:latest
+        labels:
+          - "traefik.enable=true"
+          - "traefik.http.routers.orders.rule=Host(`orders.local`)"
+          - "traefik.http.services.orders.loadbalancer.server.port=8080"
+  - |
+    # 13. APISIX with etcd and route to service name resolved at runtime
+    apisix:
+      node_listen: 9080
+      enable_control: true
+    etcd:
+      host:
+        - "http://etcd:2379"
+    discovery:
+      nacos:
+        host:
+          - "http://nacos:8848"
+        prefix: "/nacos"
+    routes:
+    - uri: "/*"
+      upstream_id: 1
+    upstreams:
+    - id: 1
+      type: roundrobin
+      discovery_type: nacos
+      service_name: "orders"
+      scheme: "http"
+      timeout:
+        connect: 3
+        send: 3
+        read: 3
+  - |
+    # 14. Envoy strict_dns cluster discovering instances via Consul DNS
+    static_resources:
+      listeners:
+      - name: listener_0
+        address:
+          socket_address: { address: 0.0.0.0, port_value: 80 }
+        filter_chains:
+        - filters:
+          - name: envoy.filters.network.http_connection_manager
+            typed_config:
+              "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager
+              stat_prefix: ingress
+              route_config:
+                name: local
+                virtual_hosts:
+                - name: default
+                  domains: ["*"]
+                  routes:
+                  - match: { prefix: "/" }
+                    route: { cluster: orders }
+              http_filters:
+              - name: envoy.filters.http.router
+      clusters:
+      - name: orders
+        type: STRICT_DNS
+        connect_timeout: 1s
+        load_assignment:
+          cluster_name: orders
+          endpoints:
+          - lb_endpoints:
+            - endpoint:
+                address:
+                  socket_address:
+                    address: orders.service.consul
+                    port_value: 8080
+        dns_refresh_rate: 5s
+  - |
+    # 15. NGINX Ingress + Service of type LoadBalancer (external router)
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: ingress-nginx-controller
+      namespace: ingress-nginx
+      annotations:
+        service.beta.kubernetes.io/aws-load-balancer-type: nlb
+    spec:
+      type: LoadBalancer
+      ports:
+      - name: http
+        port: 80
+        targetPort: http
+      selector:
+        app.kubernetes.io/name: ingress-nginx
+  - |
+    # 16. HAProxy with resolvers for Kubernetes headless service (server-side discovery by router)
+    global
+      log stdout format raw daemon
+    resolvers k8s
+      nameserver dns1 10.96.0.10:53
+      hold valid 10s
+    defaults
+      mode http
+    frontend fe
+      bind *:80
+      default_backend be_orders
+    backend be_orders
+      balance roundrobin
+      server-template pod 20 orders.default.svc.cluster.local:8080 resolvers k8s resolve-opts allow-dup-ip check
+  - |
+    # 17. Kong + Service/Route using Kubernetes DNS name (gateway discovers via cluster DNS)
+    _format_version: "3.0"
+    services:
+    - name: orders
+      host: orders.default.svc.cluster.local
+      port: 8080
+      protocol: http
+      routes:
+      - name: orders
+        paths: ["/orders"]
+  - |
+    # 18. Spring Cloud Gateway with Nacos Discovery
+    server:
+      port: 8080
+    spring:
+      application:
+        name: edge
+      cloud:
+        nacos:
+          discovery:
+            server-addr: nacos:8848
+        gateway:
+          discovery:
+            locator:
+              enabled: true
+  - |
+    # 19. confd rendering NGINX upstreams from etcd (router queries etcd via confd)
+    [template]
+    src = "nginx-upstreams.tmpl"
+    dest = "/etc/nginx/conf.d/upstreams.conf"
+    keys = [
+      "/services/orders"
+    ]
+    reload_cmd = "nginx -s reload"
+    ---
+    # nginx-upstreams.tmpl
+    upstream orders {
+    {{range gets "/services/orders/*"}}
+      server {{.Value}} max_fails=3 fail_timeout=10s;
+    {{end}}
+    }
+  - |
+    # 20. Istio ingress gateway acting as server-side router to a Service
+    apiVersion: networking.istio.io/v1beta1
+    kind: Gateway
+    metadata:
+      name: orders-gw
+    spec:
+      selector:
+        istio: ingressgateway
+      servers:
+      - port:
+          number: 80
+          name: http
+          protocol: HTTP
+        hosts:
+        - "orders.example.com"
+    ---
+    apiVersion: networking.istio.io/v1beta1
+    kind: VirtualService
+    metadata:
+      name: orders
+    spec:
+      hosts:
+      - "orders.example.com"
+      gateways:
+      - orders-gw
+      http:
+      - route:
+        - destination:
+            host: orders.default.svc.cluster.local
+            port:
+              number: 8080
+  - |
+    # 21. AWS Cloud Map service and Route 53 DNS config (registry for routers)
+    {
+      "Resources": {
+        "OrdersNs": {
+          "Type": "AWS::ServiceDiscovery::PrivateDnsNamespace",
+          "Properties": {
+            "Name": "svc.local",
+            "Vpc": "vpc-abc123"
+          }
+        },
+        "OrdersService": {
+          "Type": "AWS::ServiceDiscovery::Service",
+          "Properties": {
+            "Name": "orders",
+            "NamespaceId": { "Ref": "OrdersNs" },
+            "DnsConfig": {
+              "DnsRecords": [{ "Type": "A", "TTL": 10 }]
+            },
+            "HealthCheckCustomConfig": { "FailureThreshold": 1 }
+          }
+        }
+      }
+    }
+  - |
+    # 22. Traefik static config enabling Kubernetes Ingress provider
+    entryPoints:
+      web:
+        address: ":80"
+    providers:
+      kubernetesIngress: {}
+  - |
+    # 23. HAProxy with HTTP health checks and dynamic DNS-based discovery
+    global
+      log stdout format raw daemon
+    resolvers r
+      nameserver dns 127.0.0.1:8600
+    defaults
+      mode http
+    frontend f
+      bind *:80
+      default_backend b
+    backend b
+      option httpchk GET /health
+      balance roundrobin
+      server-template srv 5 orders.service.consul:8080 resolvers r check
+  - |
+    # 24. NGINX Plus upstream with dynamic reconfiguration and health checks
+    # (NGINX Plus specific directives shown for clarity)
+    http {
+      upstream orders {
+        zone orders 64k;
+        least_time last_byte;
+        server orders.service.consul:8080 resolve;
+        health_check uri=/health interval=5s;
+      }
+      server {
+        listen 80;
+        location / {
+          proxy_pass http://orders;
+        }
+      }
+    }
+  - |
+    # 25. Gloo Edge VirtualService routing to a Consul-discovered upstream
+    apiVersion: gateway.solo.io/v1
+    kind: VirtualService
+    metadata:
+      name: orders
+      namespace: gloo-system
+    spec:
+      virtualHost:
+        domains: ["orders.example.com"]
+        routes:
+        - matchers:
+          - prefix: /
+          routeAction:
+            single:
+              upstream:
+                name: gloo-system.orders-consul
+    ---
+    apiVersion: gloo.solo.io/v1
+    kind: Upstream
+    metadata:
+      name: orders-consul
+      namespace: gloo-system
+    spec:
+      discovery:
+        consul:
+          serviceName: orders
+          serviceTags: []
+          dataCenters: ["dc1"]
+  - |
+    # 26. Ambassador Edge Stack (Emissary) mapping to Kubernetes Service (server-side router)
+    apiVersion: getambassador.io/v3alpha1
+    kind: Listener
+    metadata:
+      name: ambassador-listener-8080
+    spec:
+      port: 8080
+      protocol: HTTP
+    ---
+    apiVersion: getambassador.io/v3alpha1
+    kind: Mapping
+    metadata:
+      name: orders-mapping
+    spec:
+      hostname: orders.example.com
+      prefix: /
+      service: orders.default:8080
+  - |
+    # 27. Kong Ingress Controller: Ingress with Kong annotations (gateway handles discovery)
+    apiVersion: networking.k8s.io/v1
+    kind: Ingress
+    metadata:
+      name: orders
+      annotations:
+        konghq.com/strip-path: "true"
+        kubernetes.io/ingress.class: "kong"
+    spec:
+      rules:
+      - http:
+          paths:
+          - path: /orders
+            pathType: Prefix
+            backend:
+              service:
+                name: orders
+                port:
+                  number: 8080
+  - |
+    # 28. Envoy front proxy querying Aggregated Discovery Service (ADS) for endpoints
+    node:
+      id: edge-proxy-1
+      cluster: edge
+    dynamic_resources:
+      ads_config:
+        api_type: DELTA_GRPC
+        transport_api_version: V3
+        grpc_services:
+        - envoy_grpc:
+            cluster_name: xds_cluster
+      cds_config: { ads: {} }
+      lds_config: { ads: {} }
+    static_resources:
+      clusters:
+      - name: xds_cluster
+        type: STRICT_DNS
+        connect_timeout: 1s
+        load_assignment:
+          cluster_name: xds_cluster
+          endpoints:
+          - lb_endpoints:
+            - endpoint:
+                address:
+                  socket_address: { address: xds.svc.local, port_value: 18000 }
+  - |
+    # 29. NGINX with Lua + Consul HTTP API for service discovery at router
+    # (illustrative: router queries registry API, not the client)
+    worker_processes 1;
+    events { worker_connections 1024; }
+    http {
+      lua_shared_dict consul_cache 10m;
+      init_by_lua_block {
+        local http = require "resty.http"
+        function get_orders_upstreams()
+          local httpc = http.new()
+          local res, err = httpc:request_uri("http://127.0.0.1:8500/v1/health/service/orders?passing=true")
+          return res and res.body or "[]"
+        end
+      }
+      server {
+        listen 80;
+        location / {
+          content_by_lua_block {
+            -- parse Consul response and proxy_pass to a chosen instance
+          }
+        }
+      }
+    }
+  - |
+    # 30. AWS ALB Ingress Controller annotations (router = ALB, discovery via Kubernetes endpoints)
+    apiVersion: networking.k8s.io/v1
+    kind: Ingress
+    metadata:
+      name: orders-alb
+      annotations:
+        kubernetes.io/ingress.class: alb
+        alb.ingress.kubernetes.io/scheme: internet-facing
+        alb.ingress.kubernetes.io/target-type: ip
+    spec:
+      rules:
+      - http:
+          paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: orders
+                port:
+                  number: 8080
+
+negative_examples:
+  - |
+    # ANTI-PATTERN: Client-side service discovery in application code (bypasses router)
+    # The client queries Eureka and chooses an instance directly.
+    @Autowired
+    private DiscoveryClient discoveryClient;
+    public URI resolveAndCall() {
+      List<ServiceInstance> instances = discoveryClient.getInstances("orders");
+      URI uri = instances.get(0).getUri(); // directly pick instance
+      return restTemplate.getForEntity(uri.resolve("/api"), String.class).getHeaders().getLocation();
+    }
+  - |
+    # ANTI-PATTERN: Static upstreams in router with hard-coded IPs (no registry, no discovery)
+    http {
+      upstream orders {
+        server 10.0.1.10:8080;
+        server 10.0.1.11:8080;
+      }
+      server { listen 80; location / { proxy_pass http://orders; } }
+    }
+  - |
+    # ANTI-PATTERN: Client polling Consul and implementing its own load balancer
+    import requests, random
+    r = requests.get("http://127.0.0.1:8500/v1/health/service/orders?passing=true").json()
+    targets = [f"http://{n['Service']['Address']}:{n['Service']['Port']}" for n in r]
+    # Client picks and calls instance directly (no router)
+    resp = requests.get(random.choice(targets) + "/api")
+  - |
+    # ANTI-PATTERN: Service mesh sidecar doing client-side discovery (not server-side)
+    # Here, each client pod calls its local sidecar, which discovers instances on behalf of that single client.
+    apiVersion: v1
+    kind: Pod
+    metadata:
+      name: client-with-sidecar
+      annotations:
+        sidecar.istio.io/inject: "true"
+    spec:
+      containers:
+      - name: client
+        image: curlimages/curl
+        command: ["sleep","3600"]
+  - |
+    # ANTI-PATTERN: Client watches Kubernetes Endpoints API and implements routing logic
+    apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRole
+    metadata:
+      name: client-endpoints-reader
+    rules:
+    - apiGroups: [""]
+      resources: ["endpoints"]
+      verbs: ["get", "list", "watch"]
+    ---
+    # Client then round-robins endpoints itself instead of using a gateway/router.
+    # This pushes discovery logic into every client.
+  - |
+    # ANTI-PATTERN: DNS round-robin from client with embedded retry/backoff logic (no centralized router)
+    import socket, itertools, requests
+    addrs = socket.getaddrinfo("orders.example.com", 8080, proto=socket.IPPROTO_TCP)
+    cycle = itertools.cycle(addrs)
+    while True:
+      addr = next(cycle)[4]
+      try:
+        requests.get(f"http://{addr[0]}:{addr[1]}/api").raise_for_status()
+      except Exception:
+        continue  # client handles all balancing/retries without a server-side router

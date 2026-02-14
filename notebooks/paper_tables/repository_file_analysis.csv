@@ -1,0 +1,1711 @@
+Repository,Pattern,Files_Scored,Files_Analyzed,Evidence_Found,Detected,Top_Scored_File,Top_Score,Avg_Score
+0x2142/frigate-notify,3rd Party Registration,93,20,0,False,HEAD,0.210,0.210
+0x2142/frigate-notify,Multiple service instances per host,2,2,0,False,docker-compose.yml,0.700,0.560
+0x2142/frigate-notify,Server-side service discovery,98,20,0,False,router.go,0.420,0.214
+0x2142/frigate-notify,Service deployment platform,98,20,1,True,Dockerfile,0.497,0.216
+0x2142/frigate-notify,Service instance per VM,71,20,0,False,Dockerfile,0.210,0.210
+0x2142/frigate-notify,Service instance per container,71,20,2,True,Dockerfile,0.784,0.299
+0x2142/frigate-notify,Service mesh,97,20,0,False,HEAD,0.210,0.210
+0x2142/frigate-notify,Service registry,90,20,0,False,v1_routes.go,0.360,0.218
+0x2142/frigate-notify,Single Service Instance per Host,103,20,0,False,HEAD,0.210,0.210
+1Solon/Home-Server-Configuration,3rd Party Registration,6,6,0,False,deployment.yaml,0.700,0.700
+1Solon/Home-Server-Configuration,Multiple service instances per host,65,20,2,True,release.yaml,0.420,0.394
+1Solon/Home-Server-Configuration,Server-side service discovery,17,17,4,True,kustomization.yaml,0.770,0.700
+1Solon/Home-Server-Configuration,Service deployment platform,64,20,18,True,service.yaml,0.777,0.521
+1Solon/Home-Server-Configuration,Service instance per VM,6,6,0,False,inventory.yaml,0.490,0.432
+1Solon/Home-Server-Configuration,Service instance per container,62,20,8,True,deployment.yaml,0.773,0.343
+1Solon/Home-Server-Configuration,Service mesh,13,13,0,False,secret.yaml,0.280,0.215
+1Solon/Home-Server-Configuration,Service registry,15,15,0,False,README.md,0.420,0.420
+1Solon/Home-Server-Configuration,Single Service Instance per Host,4,4,0,False,flux.yaml,0.420,0.420
+ADOdb/ADOdb,3rd Party Registration,2,2,0,False,FUNDING.yml,0.420,0.420
+ADOdb/ADOdb,Multiple service instances per host,115,20,0,False,HEAD,0.210,0.210
+ADOdb/ADOdb,Server-side service discovery,0,0,0,False,,0.000,0.000
+ADOdb/ADOdb,Service deployment platform,1,1,0,False,composer.json,0.420,0.420
+ADOdb/ADOdb,Service instance per VM,5,5,0,False,phpdoc.dist.xml,0.420,0.420
+ADOdb/ADOdb,Service instance per container,0,0,0,False,,0.000,0.000
+ADOdb/ADOdb,Service mesh,1,1,0,False,composer.json,0.420,0.420
+ADOdb/ADOdb,Service registry,15,15,0,False,bug_report.md,0.420,0.420
+ADOdb/ADOdb,Single Service Instance per Host,0,0,0,False,,0.000,0.000
+Abhinandan-Kushwaha/react-native-gifted-charts,3rd Party Registration,7,7,0,False,bug_report.yaml,0.420,0.420
+Abhinandan-Kushwaha/react-native-gifted-charts,Multiple service instances per host,2,2,0,False,gradlew.bat,0.490,0.455
+Abhinandan-Kushwaha/react-native-gifted-charts,Server-side service discovery,0,0,0,False,,0.000,0.000
+Abhinandan-Kushwaha/react-native-gifted-charts,Service deployment platform,6,6,0,False,app.json,0.420,0.420
+Abhinandan-Kushwaha/react-native-gifted-charts,Service instance per VM,4,4,0,False,AndroidManifest.xml,0.420,0.420
+Abhinandan-Kushwaha/react-native-gifted-charts,Service instance per container,0,0,0,False,,0.000,0.000
+Abhinandan-Kushwaha/react-native-gifted-charts,Service mesh,180,20,0,False,HEAD,0.210,0.210
+Abhinandan-Kushwaha/react-native-gifted-charts,Service registry,35,20,0,False,App.js,0.420,0.420
+Abhinandan-Kushwaha/react-native-gifted-charts,Single Service Instance per Host,181,20,0,False,HEAD,0.210,0.210
+AprilRobotics/apriltag,3rd Party Registration,6,6,0,False,bloom.yml,0.420,0.420
+AprilRobotics/apriltag,Multiple service instances per host,0,0,0,False,,0.000,0.000
+AprilRobotics/apriltag,Server-side service discovery,6,6,0,False,bloom.yml,0.420,0.420
+AprilRobotics/apriltag,Service deployment platform,6,6,0,False,bloom.yml,0.210,0.210
+AprilRobotics/apriltag,Service instance per VM,7,7,0,False,bloom.yml,0.420,0.420
+AprilRobotics/apriltag,Service instance per container,66,20,0,False,HEAD,0.210,0.210
+AprilRobotics/apriltag,Service mesh,6,6,0,False,bloom.yml,0.420,0.420
+AprilRobotics/apriltag,Service registry,128,20,0,False,HEAD,0.210,0.210
+AprilRobotics/apriltag,Single Service Instance per Host,6,6,0,False,bloom.yml,0.420,0.420
+Azure/aaz,3rd Party Registration,5872,20,0,False,tree.json,0.465,0.420
+Azure/aaz,Multiple service instances per host,2,2,0,False,pre-commit.ps1,0.420,0.420
+Azure/aaz,Server-side service discovery,1,1,0,False,verify-metadata.yml,0.420,0.420
+Azure/aaz,Service deployment platform,5873,20,0,False,pre-commit.sh,0.420,0.420
+Azure/aaz,Service instance per VM,5878,20,1,True,pre-commit.ps1,0.420,0.420
+Azure/aaz,Service instance per container,1,1,0,False,verify-metadata.yml,0.420,0.420
+Azure/aaz,Service mesh,5872,20,0,False,verify-metadata.yml,0.420,0.420
+Azure/aaz,Service registry,7222,20,0,False,pre-commit.sh,0.420,0.420
+Azure/aaz,Single Service Instance per Host,1,1,0,False,verify-metadata.yml,0.420,0.420
+Cantara/xorcery,3rd Party Registration,13,13,3,True,servicediscovery.md,0.700,0.431
+Cantara/xorcery,Multiple service instances per host,7,7,2,True,docker-compose.yaml,0.700,0.520
+Cantara/xorcery,Server-side service discovery,36,20,9,True,DnsLookup.java,0.700,0.622
+Cantara/xorcery,Service deployment platform,18,18,5,False,Dockerfile,0.782,0.452
+Cantara/xorcery,Service instance per VM,113,20,0,False,pom.xml,0.420,0.420
+Cantara/xorcery,Service instance per container,9,9,8,True,Dockerfile,0.782,0.617
+Cantara/xorcery,Service mesh,47,20,0,False,servicediscovery.md,0.700,0.377
+Cantara/xorcery,Service registry,33,20,3,True,servicediscovery.md,0.757,0.449
+Cantara/xorcery,Single Service Instance per Host,15,15,0,False,xorcery.yaml,0.700,0.532
+Cleanuparr/Cleanuparr,3rd Party Registration,28,20,0,False,FUNDING.yml,0.420,0.420
+Cleanuparr/Cleanuparr,Multiple service instances per host,2,2,0,False,entrypoint.sh,0.509,0.464
+Cleanuparr/Cleanuparr,Server-side service discovery,9,9,0,False,build-docker.yml,0.420,0.420
+Cleanuparr/Cleanuparr,Service deployment platform,7,7,5,True,Dockerfile,0.506,0.432
+Cleanuparr/Cleanuparr,Service instance per VM,10,10,0,False,build-docker.yml,0.420,0.420
+Cleanuparr/Cleanuparr,Service instance per container,3,3,1,False,Dockerfile,0.790,0.543
+Cleanuparr/Cleanuparr,Service mesh,23,20,0,False,build-docker.yml,0.420,0.420
+Cleanuparr/Cleanuparr,Service registry,16,16,0,False,PULL_REQUEST_TEMPLATE.md,0.420,0.420
+Cleanuparr/Cleanuparr,Single Service Instance per Host,9,9,1,True,build-docker.yml,0.420,0.420
+CloudCannon/rosey,3rd Party Registration,9,9,0,False,dependabot.yml,0.420,0.420
+CloudCannon/rosey,Multiple service instances per host,1,1,0,False,test.sh,0.420,0.420
+CloudCannon/rosey,Server-side service discovery,3,3,0,False,dependabot.yml,0.420,0.420
+CloudCannon/rosey,Service deployment platform,7,7,1,True,dependabot.yml,0.420,0.420
+CloudCannon/rosey,Service instance per VM,4,4,0,False,dependabot.yml,0.420,0.420
+CloudCannon/rosey,Service instance per container,3,3,0,False,dependabot.yml,0.420,0.420
+CloudCannon/rosey,Service mesh,115,20,0,False,changelog.cjs,0.210,0.210
+CloudCannon/rosey,Service registry,27,20,0,False,dependabot.yml,0.420,0.420
+CloudCannon/rosey,Single Service Instance per Host,3,3,0,False,dependabot.yml,0.420,0.420
+Comfy-Org/registry-web,3rd Party Registration,24,20,0,False,api-gen.yml,0.420,0.420
+Comfy-Org/registry-web,Multiple service instances per host,0,0,0,False,,0.000,0.000
+Comfy-Org/registry-web,Server-side service discovery,1,1,0,False,api-architecture.md,0.420,0.420
+Comfy-Org/registry-web,Service deployment platform,1,1,1,False,vercel.json,0.420,0.420
+Comfy-Org/registry-web,Service instance per VM,7,7,0,False,api-gen.yml,0.420,0.420
+Comfy-Org/registry-web,Service instance per container,7,7,0,False,api-gen.yml,0.420,0.420
+Comfy-Org/registry-web,Service mesh,24,20,0,False,api-gen.yml,0.420,0.420
+Comfy-Org/registry-web,Service registry,6,6,0,False,FilterRegistry.tsx,0.420,0.420
+Comfy-Org/registry-web,Single Service Instance per Host,7,7,0,False,api-gen.yml,0.420,0.420
+DavidHDev/react-bits,3rd Party Registration,1,1,0,False,registry.json,0.700,0.700
+DavidHDev/react-bits,Multiple service instances per host,0,0,0,False,,0.000,0.000
+DavidHDev/react-bits,Server-side service discovery,1,1,0,False,registry.json,0.700,0.700
+DavidHDev/react-bits,Service deployment platform,463,20,0,False,jsrepo-build-config.json,0.420,0.420
+DavidHDev/react-bits,Service instance per VM,0,0,0,False,,0.000,0.000
+DavidHDev/react-bits,Service instance per container,0,0,0,False,,0.000,0.000
+DavidHDev/react-bits,Service mesh,463,20,0,False,jsrepo-build-config.json,0.420,0.420
+DavidHDev/react-bits,Service registry,3,3,0,False,registry.json,0.700,0.513
+DavidHDev/react-bits,Single Service Instance per Host,0,0,0,False,,0.000,0.000
+DeepMIMO/DeepMIMO,3rd Party Registration,0,0,0,False,,0.000,0.000
+DeepMIMO/DeepMIMO,Multiple service instances per host,0,0,0,False,,0.000,0.000
+DeepMIMO/DeepMIMO,Server-side service discovery,0,0,0,False,,0.000,0.000
+DeepMIMO/DeepMIMO,Service deployment platform,0,0,0,False,,0.000,0.000
+DeepMIMO/DeepMIMO,Service instance per VM,196,20,0,False,HEAD,0.210,0.210
+DeepMIMO/DeepMIMO,Service instance per container,0,0,0,False,,0.000,0.000
+DeepMIMO/DeepMIMO,Service mesh,0,0,0,False,,0.000,0.000
+DeepMIMO/DeepMIMO,Service registry,176,20,0,False,HEAD,0.210,0.210
+DeepMIMO/DeepMIMO,Single Service Instance per Host,0,0,0,False,,0.000,0.000
+Delgan/loguru,3rd Party Registration,8,8,0,False,dependabot.yml,0.420,0.420
+Delgan/loguru,Multiple service instances per host,3,3,1,True,_locks_machinery.py,0.420,0.420
+Delgan/loguru,Server-side service discovery,5,5,0,False,codeql-analysis.yml,0.420,0.420
+Delgan/loguru,Service deployment platform,7,7,1,False,codeql-analysis.yml,0.420,0.420
+Delgan/loguru,Service instance per VM,6,6,0,False,codeql-analysis.yml,0.420,0.420
+Delgan/loguru,Service instance per container,5,5,0,False,codeql-analysis.yml,0.420,0.420
+Delgan/loguru,Service mesh,6,6,0,False,codeql-analysis.yml,0.420,0.420
+Delgan/loguru,Service registry,177,20,0,False,SECURITY.md,0.420,0.420
+Delgan/loguru,Single Service Instance per Host,5,5,0,False,codeql-analysis.yml,0.420,0.420
+DrKJeff16/project.nvim,3rd Party Registration,61,20,0,False,HEAD,0.210,0.210
+DrKJeff16/project.nvim,Multiple service instances per host,1,1,0,False,Makefile,0.420,0.420
+DrKJeff16/project.nvim,Server-side service discovery,5,5,0,False,greetings.yml,0.420,0.420
+DrKJeff16/project.nvim,Service deployment platform,61,20,0,False,HEAD,0.210,0.210
+DrKJeff16/project.nvim,Service instance per VM,6,6,0,False,greetings.yml,0.420,0.420
+DrKJeff16/project.nvim,Service instance per container,5,5,0,False,greetings.yml,0.420,0.420
+DrKJeff16/project.nvim,Service mesh,58,20,0,False,HEAD,0.210,0.210
+DrKJeff16/project.nvim,Service registry,60,20,0,False,HEAD,0.210,0.210
+DrKJeff16/project.nvim,Single Service Instance per Host,5,5,0,False,greetings.yml,0.420,0.420
+EWSoftware/SHFB,3rd Party Registration,10,10,0,False,FUNDING.yml,0.420,0.420
+EWSoftware/SHFB,Multiple service instances per host,2,2,0,False,DeploymentSteps.txt,0.420,0.420
+EWSoftware/SHFB,Server-side service discovery,0,0,0,False,,0.000,0.000
+EWSoftware/SHFB,Service deployment platform,9,9,0,False,DeploymentSteps.txt,0.700,0.482
+EWSoftware/SHFB,Service instance per VM,2,2,0,False,DeploymentSteps.txt,0.700,0.560
+EWSoftware/SHFB,Service instance per container,0,0,0,False,,0.000,0.000
+EWSoftware/SHFB,Service mesh,9,9,0,False,launchSettings.json,0.420,0.420
+EWSoftware/SHFB,Service registry,13,13,0,False,ExecutionBehaviors.cs,0.210,0.210
+EWSoftware/SHFB,Single Service Instance per Host,6,6,0,False,DeploymentSteps.txt,0.420,0.385
+EarthyScience/Browzarr,3rd Party Registration,10,10,0,False,action.yml,0.420,0.420
+EarthyScience/Browzarr,Multiple service instances per host,0,0,0,False,,0.000,0.000
+EarthyScience/Browzarr,Server-side service discovery,4,4,0,False,deploy-latest.yml,0.420,0.420
+EarthyScience/Browzarr,Service deployment platform,9,9,0,False,deploy-latest.yml,0.420,0.420
+EarthyScience/Browzarr,Service instance per VM,4,4,0,False,deploy-latest.yml,0.420,0.420
+EarthyScience/Browzarr,Service instance per container,4,4,0,False,deploy-latest.yml,0.420,0.420
+EarthyScience/Browzarr,Service mesh,9,9,0,False,deploy-latest.yml,0.420,0.420
+EarthyScience/Browzarr,Service registry,5,5,0,False,deploy-latest.yml,0.420,0.420
+EarthyScience/Browzarr,Single Service Instance per Host,4,4,0,False,deploy-latest.yml,0.420,0.420
+FinalForEach/Cosmic-Reach-Localization,3rd Party Registration,211,20,0,False,game.json,0.420,0.420
+FinalForEach/Cosmic-Reach-Localization,Multiple service instances per host,11,11,0,False,gradlew.bat,0.280,0.216
+FinalForEach/Cosmic-Reach-Localization,Server-side service discovery,0,0,0,False,,0.000,0.000
+FinalForEach/Cosmic-Reach-Localization,Service deployment platform,215,20,0,False,game.json,0.420,0.420
+FinalForEach/Cosmic-Reach-Localization,Service instance per VM,0,0,0,False,,0.000,0.000
+FinalForEach/Cosmic-Reach-Localization,Service instance per container,0,0,0,False,,0.000,0.000
+FinalForEach/Cosmic-Reach-Localization,Service mesh,211,20,0,False,game.json,0.420,0.420
+FinalForEach/Cosmic-Reach-Localization,Service registry,9,9,0,False,README.md,0.420,0.420
+FinalForEach/Cosmic-Reach-Localization,Single Service Instance per Host,0,0,0,False,,0.000,0.000
+FlexMeasures/flexmeasures,3rd Party Registration,1,1,0,False,docker-compose.yml,0.700,0.700
+FlexMeasures/flexmeasures,Multiple service instances per host,15,15,1,True,run-tutorial4-in-docker.sh,0.532,0.464
+FlexMeasures/flexmeasures,Server-side service discovery,5,5,0,False,docker-compose.yml,0.497,0.435
+FlexMeasures/flexmeasures,Service deployment platform,2,2,1,True,docker-compose.yml,0.292,0.288
+FlexMeasures/flexmeasures,Service instance per VM,6,6,0,False,build.yml,0.420,0.420
+FlexMeasures/flexmeasures,Service instance per container,2,2,2,True,docker-compose.yml,0.780,0.637
+FlexMeasures/flexmeasures,Service mesh,7,7,0,False,build.yml,0.420,0.420
+FlexMeasures/flexmeasures,Service registry,397,20,0,False,PULL_REQUEST_TEMPLATE.md,0.420,0.420
+FlexMeasures/flexmeasures,Single Service Instance per Host,10,10,0,False,Dockerfile,0.210,0.210
+ForNeVeR/AvaloniaRider,3rd Party Registration,8,8,0,False,dependencies.yml,0.420,0.420
+ForNeVeR/AvaloniaRider,Multiple service instances per host,4,4,0,False,gradlew.bat,0.497,0.439
+ForNeVeR/AvaloniaRider,Server-side service discovery,5,5,0,False,dependencies.yml,0.420,0.420
+ForNeVeR/AvaloniaRider,Service deployment platform,146,20,0,False,HEAD,0.210,0.210
+ForNeVeR/AvaloniaRider,Service instance per VM,15,15,0,False,dependencies.yml,0.420,0.420
+ForNeVeR/AvaloniaRider,Service instance per container,5,5,0,False,dependencies.yml,0.420,0.420
+ForNeVeR/AvaloniaRider,Service mesh,132,20,0,False,HEAD,0.210,0.210
+ForNeVeR/AvaloniaRider,Service registry,17,17,0,False,dependencies.yml,0.420,0.420
+ForNeVeR/AvaloniaRider,Single Service Instance per Host,5,5,0,False,dependencies.yml,0.420,0.420
+Freika/dawarich,3rd Party Registration,4,4,0,False,docker-compose.production.yml,0.700,0.560
+Freika/dawarich,Multiple service instances per host,11,11,7,True,Procfile,0.770,0.593
+Freika/dawarich,Server-side service discovery,11,11,1,True,docker-compose.yml,0.497,0.327
+Freika/dawarich,Service deployment platform,14,14,6,True,Dockerfile.dev,0.508,0.421
+Freika/dawarich,Service instance per VM,2,2,0,False,build_and_push.yml,0.420,0.420
+Freika/dawarich,Service instance per container,18,18,10,True,docker-compose.production.yml,0.781,0.613
+Freika/dawarich,Service mesh,7,7,0,False,health_controller.rb,0.700,0.510
+Freika/dawarich,Service registry,16,16,0,False,config.yml,0.420,0.354
+Freika/dawarich,Single Service Instance per Host,19,19,0,False,How_to_install_Dawarich_on_Synology.md,0.700,0.464
+Frolic-chat/Frolic,3rd Party Registration,8,8,0,False,generate-docs.yml,0.420,0.420
+Frolic-chat/Frolic,Multiple service instances per host,4,4,0,False,windows-canary.sh,0.497,0.494
+Frolic-chat/Frolic,Server-side service discovery,1,1,0,False,generate-docs.yml,0.420,0.420
+Frolic-chat/Frolic,Service deployment platform,12,12,2,False,generate-docs.yml,0.420,0.420
+Frolic-chat/Frolic,Service instance per VM,2,2,0,False,generate-docs.yml,0.420,0.420
+Frolic-chat/Frolic,Service instance per container,1,1,0,False,generate-docs.yml,0.420,0.420
+Frolic-chat/Frolic,Service mesh,8,8,0,False,generate-docs.yml,0.420,0.420
+Frolic-chat/Frolic,Service registry,20,20,0,False,pull_request_template.md,0.420,0.420
+Frolic-chat/Frolic,Single Service Instance per Host,1,1,0,False,generate-docs.yml,0.420,0.420
+GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator,3rd Party Registration,5,5,0,False,linux.yaml,0.420,0.420
+GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator,Multiple service instances per host,12,12,0,False,CHANGELOG.md,0.210,0.210
+GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator,Server-side service discovery,3,3,0,False,linux.yaml,0.420,0.420
+GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator,Service deployment platform,5,5,0,False,linux.yaml,0.420,0.420
+GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator,Service instance per VM,3,3,0,False,linux.yaml,0.420,0.420
+GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator,Service instance per container,3,3,0,False,linux.yaml,0.420,0.420
+GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator,Service mesh,5,5,0,False,linux.yaml,0.420,0.420
+GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator,Service registry,87,20,0,False,linux.yaml,0.420,0.420
+GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator,Single Service Instance per Host,3,3,0,False,linux.yaml,0.420,0.420
+Giveth/impact-graph,3rd Party Registration,8,8,0,False,docker-compose-develop.yml,0.700,0.630
+Giveth/impact-graph,Multiple service instances per host,15,15,5,True,Dockerfile,0.700,0.551
+Giveth/impact-graph,Server-side service discovery,15,15,0,False,apiGivRoutes.ts,0.700,0.350
+Giveth/impact-graph,Service deployment platform,13,13,11,True,Dockerfile,0.782,0.541
+Giveth/impact-graph,Service instance per VM,3,3,0,False,develop-pipeline.yml,0.420,0.420
+Giveth/impact-graph,Service instance per container,7,7,6,True,Dockerfile,0.782,0.774
+Giveth/impact-graph,Service mesh,3,3,0,False,example.env,0.210,0.210
+Giveth/impact-graph,Service registry,12,12,0,False,config.ts,0.700,0.607
+Giveth/impact-graph,Single Service Instance per Host,11,11,0,False,Dockerfile,0.420,0.344
+GoogleCloudPlatform/accelerated-platforms,3rd Party Registration,7,7,0,False,endpoint.tftpl.yaml,0.210,0.210
+GoogleCloudPlatform/accelerated-platforms,Multiple service instances per host,52,20,1,True,main.tf,0.420,0.412
+GoogleCloudPlatform/accelerated-platforms,Server-side service discovery,34,20,2,True,ingress-gateway.yaml,0.812,0.479
+GoogleCloudPlatform/accelerated-platforms,Service deployment platform,80,20,16,True,workflow-api-deployment.tftpl.yaml,0.782,0.714
+GoogleCloudPlatform/accelerated-platforms,Service instance per VM,106,20,0,False,versions.tf,0.420,0.224
+GoogleCloudPlatform/accelerated-platforms,Service instance per container,70,20,7,True,deployment.yaml,0.783,0.567
+GoogleCloudPlatform/accelerated-platforms,Service mesh,17,17,6,True,gateway-external-https.tftpl.yaml,0.781,0.705
+GoogleCloudPlatform/accelerated-platforms,Service registry,11,11,1,False,mesh-configuration.yaml,0.700,0.375
+GoogleCloudPlatform/accelerated-platforms,Single Service Instance per Host,360,20,1,True,main.tf,0.497,0.420
+HKUDS/LightRAG,3rd Party Registration,2,2,0,False,docker-compose.yml,0.700,0.700
+HKUDS/LightRAG,Multiple service instances per host,14,14,5,True,01-prepare.sh,0.532,0.501
+HKUDS/LightRAG,Server-side service discovery,6,6,0,False,service.yaml,0.490,0.432
+HKUDS/LightRAG,Service deployment platform,12,12,11,True,pvc.yaml,0.786,0.739
+HKUDS/LightRAG,Service instance per VM,6,6,0,False,docker-build-lite.yml,0.420,0.420
+HKUDS/LightRAG,Service instance per container,5,5,4,True,deployment.yaml,0.770,0.648
+HKUDS/LightRAG,Service mesh,21,20,0,False,Dockerfile,0.210,0.210
+HKUDS/LightRAG,Service registry,147,20,0,False,01-basic.md,0.420,0.420
+HKUDS/LightRAG,Single Service Instance per Host,1,1,0,False,lightrag.service.example,0.700,0.700
+HiDiHo01/Buienalarm,3rd Party Registration,14,14,0,False,dependabot.yml,0.420,0.420
+HiDiHo01/Buienalarm,Multiple service instances per host,63,20,0,False,HEAD,0.210,0.210
+HiDiHo01/Buienalarm,Server-side service discovery,5,5,0,False,main.yml,0.420,0.420
+HiDiHo01/Buienalarm,Service deployment platform,60,20,0,False,HEAD,0.210,0.210
+HiDiHo01/Buienalarm,Service instance per VM,53,20,0,False,HEAD,0.210,0.210
+HiDiHo01/Buienalarm,Service instance per container,60,20,0,False,HEAD,0.210,0.210
+HiDiHo01/Buienalarm,Service mesh,62,20,0,False,HEAD,0.210,0.210
+HiDiHo01/Buienalarm,Service registry,63,20,0,False,HEAD,0.210,0.210
+HiDiHo01/Buienalarm,Single Service Instance per Host,5,5,0,False,main.yml,0.420,0.420
+HuLaSpark/HuLa,3rd Party Registration,1,1,0,False,docker-compose.yaml,0.700,0.700
+HuLaSpark/HuLa,Multiple service instances per host,3,3,0,False,docker-compose.yaml,0.700,0.373
+HuLaSpark/HuLa,Server-side service discovery,13,13,0,False,README.en.md,0.210,0.210
+HuLaSpark/HuLa,Service deployment platform,3,3,0,False,docker-compose.yaml,0.490,0.443
+HuLaSpark/HuLa,Service instance per VM,18,18,0,False,codeql.yml,0.420,0.420
+HuLaSpark/HuLa,Service instance per container,1,1,1,True,docker-compose.yaml,0.770,0.770
+HuLaSpark/HuLa,Service mesh,6,6,0,False,CHANGELOG.md,0.210,0.210
+HuLaSpark/HuLa,Service registry,160,20,0,False,android_startup_guide.md,0.420,0.213
+HuLaSpark/HuLa,Single Service Instance per Host,7,7,0,False,codeql.yml,0.420,0.420
+Hydepwns/raxol,3rd Party Registration,6,6,0,False,docker-compose.yml,0.700,0.362
+Hydepwns/raxol,Multiple service instances per host,49,20,13,True,base_manager.ex,0.700,0.619
+Hydepwns/raxol,Server-side service discovery,27,20,0,False,raxol.ex,0.700,0.433
+Hydepwns/raxol,Service deployment platform,28,20,5,True,docker-compose.yml,0.770,0.494
+Hydepwns/raxol,Service instance per VM,5,5,0,False,DEPLOYMENT.md,0.700,0.350
+Hydepwns/raxol,Service instance per container,8,8,4,True,docker-compose.yml,0.772,0.569
+Hydepwns/raxol,Service mesh,18,18,0,False,metrics.ex,0.700,0.498
+Hydepwns/raxol,Service registry,32,20,2,True,plugin.ex,0.700,0.488
+Hydepwns/raxol,Single Service Instance per Host,25,20,2,True,default.nix,0.700,0.344
+IAS-Astrophysics/athenak,3rd Party Registration,1,1,0,False,main.yml,0.420,0.420
+IAS-Astrophysics/athenak,Multiple service instances per host,24,20,0,False,check_athena_cpp_style.sh,0.545,0.441
+IAS-Astrophysics/athenak,Server-side service discovery,1,1,0,False,main.yml,0.420,0.420
+IAS-Astrophysics/athenak,Service deployment platform,6,6,0,False,main.yml,0.420,0.420
+IAS-Astrophysics/athenak,Service instance per VM,3,3,0,False,main.yml,0.420,0.420
+IAS-Astrophysics/athenak,Service instance per container,1,1,0,False,main.yml,0.420,0.420
+IAS-Astrophysics/athenak,Service mesh,1,1,0,False,main.yml,0.420,0.420
+IAS-Astrophysics/athenak,Service registry,88,20,0,False,main.yml,0.420,0.420
+IAS-Astrophysics/athenak,Single Service Instance per Host,22,20,0,False,main.yml,0.420,0.420
+ImranR98/Obtainium,3rd Party Registration,33,20,0,False,fastlane.yml,0.420,0.420
+ImranR98/Obtainium,Multiple service instances per host,4,4,0,False,build.sh,0.532,0.508
+ImranR98/Obtainium,Server-side service discovery,2,2,0,False,fastlane.yml,0.420,0.420
+ImranR98/Obtainium,Service deployment platform,117,20,2,False,Dockerfile,0.795,0.231
+ImranR98/Obtainium,Service instance per VM,18,18,0,False,fastlane.yml,0.420,0.420
+ImranR98/Obtainium,Service instance per container,14,14,0,False,Dockerfile,0.795,0.282
+ImranR98/Obtainium,Service mesh,31,20,0,False,fastlane.yml,0.420,0.420
+ImranR98/Obtainium,Service registry,16,16,0,False,bug_report.md,0.420,0.420
+ImranR98/Obtainium,Single Service Instance per Host,2,2,0,False,fastlane.yml,0.420,0.420
+JaKooLit/NixOS-Hyprland,3rd Party Registration,5,5,0,False,FUNDING.yml,0.420,0.420
+JaKooLit/NixOS-Hyprland,Multiple service instances per host,4,4,4,True,config.nix,0.420,0.420
+JaKooLit/NixOS-Hyprland,Server-side service discovery,66,20,0,False,HEAD,0.210,0.210
+JaKooLit/NixOS-Hyprland,Service deployment platform,74,20,0,False,HEAD,0.210,0.210
+JaKooLit/NixOS-Hyprland,Service instance per VM,74,20,0,False,config.nix,0.420,0.221
+JaKooLit/NixOS-Hyprland,Service instance per container,0,0,0,False,,0.000,0.000
+JaKooLit/NixOS-Hyprland,Service mesh,0,0,0,False,,0.000,0.000
+JaKooLit/NixOS-Hyprland,Service registry,9,9,0,False,PULL_REQUEST_TEMPLATE.md,0.420,0.420
+JaKooLit/NixOS-Hyprland,Single Service Instance per Host,68,20,1,True,auto-install.sh,0.420,0.300
+KDE/kde-linux,3rd Party Registration,2,2,0,False,daemon.json,0.420,0.420
+KDE/kde-linux,Multiple service instances per host,30,20,2,True,kde-linux-btrfs.service,0.770,0.427
+KDE/kde-linux,Server-side service discovery,0,0,0,False,,0.000,0.000
+KDE/kde-linux,Service deployment platform,21,20,0,False,bootstrap.sh,0.420,0.300
+KDE/kde-linux,Service instance per VM,18,18,0,False,kde-linux-live-setup.service,0.492,0.482
+KDE/kde-linux,Service instance per container,0,0,0,False,,0.000,0.000
+KDE/kde-linux,Service mesh,1,1,0,False,daemon.json,0.420,0.420
+KDE/kde-linux,Service registry,20,20,0,False,README.md,0.490,0.423
+KDE/kde-linux,Single Service Instance per Host,30,20,0,False,kde-linux-live-setup.service,0.772,0.294
+KevinnZou/compose-webview-multiplatform,3rd Party Registration,177,20,0,False,HEAD,0.210,0.210
+KevinnZou/compose-webview-multiplatform,Multiple service instances per host,2,2,0,False,gradlew.bat,0.490,0.455
+KevinnZou/compose-webview-multiplatform,Server-side service discovery,4,4,0,False,build.yml,0.420,0.420
+KevinnZou/compose-webview-multiplatform,Service deployment platform,180,20,0,False,HEAD,0.210,0.210
+KevinnZou/compose-webview-multiplatform,Service instance per VM,15,15,0,False,build.yml,0.420,0.420
+KevinnZou/compose-webview-multiplatform,Service instance per container,4,4,0,False,build.yml,0.420,0.420
+KevinnZou/compose-webview-multiplatform,Service mesh,8,8,0,False,build.yml,0.420,0.420
+KevinnZou/compose-webview-multiplatform,Service registry,28,20,0,False,build.yml,0.420,0.420
+KevinnZou/compose-webview-multiplatform,Single Service Instance per Host,4,4,0,False,build.yml,0.420,0.420
+Koishi-Satori/EirinFixed,3rd Party Registration,1,1,0,False,build.yml,0.420,0.420
+Koishi-Satori/EirinFixed,Multiple service instances per host,53,20,0,False,build.sh,0.280,0.211
+Koishi-Satori/EirinFixed,Server-side service discovery,1,1,0,False,build.yml,0.420,0.420
+Koishi-Satori/EirinFixed,Service deployment platform,3,3,0,False,build.yml,0.420,0.420
+Koishi-Satori/EirinFixed,Service instance per VM,64,20,0,False,HEAD,0.210,0.210
+Koishi-Satori/EirinFixed,Service instance per container,1,1,0,False,build.yml,0.420,0.420
+Koishi-Satori/EirinFixed,Service mesh,61,20,0,False,HEAD,0.210,0.210
+Koishi-Satori/EirinFixed,Service registry,5,5,0,False,build.yml,0.420,0.420
+Koishi-Satori/EirinFixed,Single Service Instance per Host,1,1,0,False,build.yml,0.420,0.420
+LukeGus/Termix,3rd Party Registration,15,15,0,False,FUNDING.yml,0.420,0.420
+LukeGus/Termix,Multiple service instances per host,15,15,4,True,entrypoint.sh,0.514,0.298
+LukeGus/Termix,Server-side service discovery,2,2,0,False,nginx-https.conf,0.490,0.490
+LukeGus/Termix,Service deployment platform,16,16,1,False,Dockerfile,0.506,0.425
+LukeGus/Termix,Service instance per VM,4,4,0,False,docker-image.yml,0.420,0.420
+LukeGus/Termix,Service instance per container,182,20,0,False,Dockerfile,0.509,0.217
+LukeGus/Termix,Service mesh,12,12,0,False,docker-image.yml,0.420,0.420
+LukeGus/Termix,Service registry,13,13,0,False,pull_request_template.md,0.420,0.420
+LukeGus/Termix,Single Service Instance per Host,147,20,2,False,components.json,0.210,0.210
+MCSManager/MCSManager,3rd Party Registration,12,12,0,False,example.docker-compose.yml,0.420,0.228
+MCSManager/MCSManager,Multiple service instances per host,20,20,10,True,app.ts,0.700,0.613
+MCSManager/MCSManager,Server-side service discovery,38,20,0,False,Instance_router.ts,0.420,0.232
+MCSManager/MCSManager,Service deployment platform,8,8,1,False,daemon.dockerfile,0.700,0.525
+MCSManager/MCSManager,Service instance per VM,4,4,0,False,codeql.yml,0.420,0.420
+MCSManager/MCSManager,Service instance per container,5,5,4,True,daemon.dockerfile,0.700,0.588
+MCSManager/MCSManager,Service mesh,32,20,0,False,fr_FR.json,0.532,0.424
+MCSManager/MCSManager,Service registry,10,10,2,True,Instance_router.ts,0.210,0.210
+MCSManager/MCSManager,Single Service Instance per Host,7,7,0,False,system_file.ts,0.420,0.420
+MIT-SPARK/config_utilities,3rd Party Registration,5,5,1,True,external_registry.h,0.420,0.420
+MIT-SPARK/config_utilities,Multiple service instances per host,0,0,0,False,,0.000,0.000
+MIT-SPARK/config_utilities,Server-side service discovery,1,1,0,False,cmake_build.yml,0.420,0.420
+MIT-SPARK/config_utilities,Service deployment platform,182,20,0,False,HEAD,0.210,0.210
+MIT-SPARK/config_utilities,Service instance per VM,181,20,0,False,HEAD,0.210,0.210
+MIT-SPARK/config_utilities,Service instance per container,1,1,0,False,cmake_build.yml,0.420,0.420
+MIT-SPARK/config_utilities,Service mesh,1,1,0,False,cmake_build.yml,0.420,0.420
+MIT-SPARK/config_utilities,Service registry,2,2,0,False,external_registry.h,0.420,0.420
+MIT-SPARK/config_utilities,Single Service Instance per Host,1,1,0,False,cmake_build.yml,0.420,0.420
+MewPurPur/GodSVG,3rd Party Registration,6,6,0,False,FUNDING.yml,0.420,0.420
+MewPurPur/GodSVG,Multiple service instances per host,1,1,0,False,file_format.sh,0.490,0.490
+MewPurPur/GodSVG,Server-side service discovery,2,2,0,False,export-optimized.yml,0.420,0.420
+MewPurPur/GodSVG,Service deployment platform,3,3,1,False,file_format.sh,0.420,0.420
+MewPurPur/GodSVG,Service instance per VM,2,2,0,False,export-optimized.yml,0.420,0.420
+MewPurPur/GodSVG,Service instance per container,9,9,0,False,export-optimized.yml,0.210,0.210
+MewPurPur/GodSVG,Service mesh,2,2,0,False,export-optimized.yml,0.420,0.420
+MewPurPur/GodSVG,Service registry,9,9,0,False,file_format.sh,0.420,0.420
+MewPurPur/GodSVG,Single Service Instance per Host,2,2,0,False,export-optimized.yml,0.420,0.420
+MindfulLearner/dima-portfolio,3rd Party Registration,93,20,0,False,HEAD,0.210,0.210
+MindfulLearner/dima-portfolio,Multiple service instances per host,96,20,0,False,HEAD,0.210,0.210
+MindfulLearner/dima-portfolio,Server-side service discovery,95,20,0,False,HEAD,0.210,0.210
+MindfulLearner/dima-portfolio,Service deployment platform,97,20,0,False,HEAD,0.210,0.210
+MindfulLearner/dima-portfolio,Service instance per VM,97,20,0,False,HEAD,0.210,0.210
+MindfulLearner/dima-portfolio,Service instance per container,2,2,0,False,_build-template.yml,0.420,0.420
+MindfulLearner/dima-portfolio,Service mesh,92,20,0,False,HEAD,0.210,0.210
+MindfulLearner/dima-portfolio,Service registry,92,20,0,False,HEAD,0.210,0.210
+MindfulLearner/dima-portfolio,Single Service Instance per Host,96,20,0,False,HEAD,0.210,0.210
+MultiMote/niimblue,3rd Party Registration,17,17,0,False,build-android-app.yml,0.420,0.420
+MultiMote/niimblue,Multiple service instances per host,1,1,0,False,gradlew.bat,0.490,0.490
+MultiMote/niimblue,Server-side service discovery,132,20,0,False,HEAD,0.210,0.210
+MultiMote/niimblue,Service deployment platform,15,15,0,False,Dockerfile,0.500,0.425
+MultiMote/niimblue,Service instance per VM,10,10,0,False,AndroidManifest.xml,0.420,0.420
+MultiMote/niimblue,Service instance per container,2,2,1,True,Dockerfile,0.784,0.602
+MultiMote/niimblue,Service mesh,131,20,0,False,HEAD,0.210,0.210
+MultiMote/niimblue,Service registry,15,15,0,False,bug-report.md,0.420,0.420
+MultiMote/niimblue,Single Service Instance per Host,130,20,0,False,HEAD,0.210,0.210
+MunGell/awesome-for-beginners,3rd Party Registration,4,4,0,False,FUNDING.yml,0.420,0.420
+MunGell/awesome-for-beginners,Multiple service instances per host,0,0,0,False,,0.000,0.000
+MunGell/awesome-for-beginners,Server-side service discovery,2,2,0,False,build.yml,0.420,0.420
+MunGell/awesome-for-beginners,Service deployment platform,32,20,0,False,build.yml,0.420,0.217
+MunGell/awesome-for-beginners,Service instance per VM,36,20,0,False,HEAD,0.210,0.210
+MunGell/awesome-for-beginners,Service instance per container,33,20,0,False,HEAD,0.210,0.210
+MunGell/awesome-for-beginners,Service mesh,11,11,0,False,HEAD,0.210,0.210
+MunGell/awesome-for-beginners,Service registry,7,7,0,False,README-template.j2,0.210,0.210
+MunGell/awesome-for-beginners,Single Service Instance per Host,2,2,0,False,build.yml,0.420,0.420
+MusculoskeletalAtlasProject/mapclient,3rd Party Registration,2,2,0,False,create-release.yaml,0.420,0.420
+MusculoskeletalAtlasProject/mapclient,Multiple service instances per host,3,3,0,False,create_installer.sh,0.512,0.451
+MusculoskeletalAtlasProject/mapclient,Server-side service discovery,2,2,0,False,create-release.yaml,0.420,0.420
+MusculoskeletalAtlasProject/mapclient,Service deployment platform,329,20,0,False,HEAD,0.210,0.210
+MusculoskeletalAtlasProject/mapclient,Service instance per VM,3,3,0,False,create-release.yaml,0.420,0.420
+MusculoskeletalAtlasProject/mapclient,Service instance per container,2,2,0,False,create-release.yaml,0.420,0.420
+MusculoskeletalAtlasProject/mapclient,Service mesh,2,2,0,False,create-release.yaml,0.420,0.420
+MusculoskeletalAtlasProject/mapclient,Service registry,213,20,0,False,create-release.yaml,0.420,0.420
+MusculoskeletalAtlasProject/mapclient,Single Service Instance per Host,2,2,0,False,create-release.yaml,0.420,0.420
+NotoChen/Jetbrains-Help,3rd Party Registration,40,20,0,False,docker-compose.yml,0.420,0.215
+NotoChen/Jetbrains-Help,Multiple service instances per host,40,20,1,True,run-with-docker-compose.sh,0.777,0.266
+NotoChen/Jetbrains-Help,Server-side service discovery,28,20,0,False,Dockerfile,0.210,0.210
+NotoChen/Jetbrains-Help,Service deployment platform,41,20,2,True,Dockerfile,0.777,0.278
+NotoChen/Jetbrains-Help,Service instance per VM,54,20,0,False,HEAD,0.210,0.210
+NotoChen/Jetbrains-Help,Service instance per container,55,20,4,True,Dockerfile,0.779,0.257
+NotoChen/Jetbrains-Help,Service mesh,2,2,0,False,plugin.json,0.420,0.420
+NotoChen/Jetbrains-Help,Service registry,49,20,0,False,application.yml,0.420,0.214
+NotoChen/Jetbrains-Help,Single Service Instance per Host,56,20,0,False,HEAD,0.210,0.210
+Oaklight/onehub_prices,3rd Party Registration,59,20,0,False,HEAD,0.210,0.210
+Oaklight/onehub_prices,Multiple service instances per host,68,20,0,False,HEAD,0.210,0.210
+Oaklight/onehub_prices,Server-side service discovery,2,2,0,False,deploy-pages.yml,0.420,0.420
+Oaklight/onehub_prices,Service deployment platform,3,3,1,False,deploy-pages.yml,0.420,0.420
+Oaklight/onehub_prices,Service instance per VM,68,20,0,False,HEAD,0.210,0.210
+Oaklight/onehub_prices,Service instance per container,69,20,0,False,HEAD,0.210,0.210
+Oaklight/onehub_prices,Service mesh,53,20,0,False,HEAD,0.210,0.210
+Oaklight/onehub_prices,Service registry,68,20,0,False,HEAD,0.210,0.210
+Oaklight/onehub_prices,Single Service Instance per Host,69,20,0,False,HEAD,0.210,0.210
+Olical/conjure,3rd Party Registration,6,6,0,False,FUNDING.yml,0.420,0.420
+Olical/conjure,Multiple service instances per host,18,18,0,False,nrepl-babashka.sh,0.420,0.420
+Olical/conjure,Server-side service discovery,3,3,0,False,benchmark.yaml,0.420,0.420
+Olical/conjure,Service deployment platform,24,20,1,False,Dockerfile,0.496,0.423
+Olical/conjure,Service instance per VM,3,3,0,False,benchmark.yaml,0.420,0.420
+Olical/conjure,Service instance per container,2,2,0,False,Dockerfile,0.286,0.248
+Olical/conjure,Service mesh,5,5,0,False,benchmark.yaml,0.420,0.420
+Olical/conjure,Service registry,32,20,0,False,CODE_OF_CONDUCT.md,0.420,0.420
+Olical/conjure,Single Service Instance per Host,3,3,0,False,benchmark.yaml,0.420,0.420
+Orinks/AccessiWeather,3rd Party Registration,15,15,0,False,dependabot.yml,0.420,0.420
+Orinks/AccessiWeather,Multiple service instances per host,1,1,0,False,run-unit-tests.sh,0.501,0.501
+Orinks/AccessiWeather,Server-side service discovery,6,6,0,False,beta-release.yml,0.420,0.420
+Orinks/AccessiWeather,Service deployment platform,15,15,3,True,beta-release.yml,0.420,0.420
+Orinks/AccessiWeather,Service instance per VM,6,6,0,False,beta-release.yml,0.420,0.420
+Orinks/AccessiWeather,Service instance per container,6,6,0,False,beta-release.yml,0.420,0.420
+Orinks/AccessiWeather,Service mesh,14,14,0,False,beta-release.yml,0.420,0.420
+Orinks/AccessiWeather,Service registry,445,20,0,False,quality_gates.md,0.490,0.420
+Orinks/AccessiWeather,Single Service Instance per Host,1,1,1,True,single_instance.py,0.700,0.700
+PHPMailer/PHPMailer,3rd Party Registration,6,6,0,False,composer.json,0.490,0.432
+PHPMailer/PHPMailer,Multiple service instances per host,4,4,0,False,entrypoint.sh,0.420,0.420
+PHPMailer/PHPMailer,Server-side service discovery,3,3,0,False,docs.yaml,0.420,0.420
+PHPMailer/PHPMailer,Service deployment platform,195,20,0,False,Dockerfile,0.297,0.210
+PHPMailer/PHPMailer,Service instance per VM,4,4,0,False,docs.yaml,0.420,0.420
+PHPMailer/PHPMailer,Service instance per container,4,4,0,False,Dockerfile,0.507,0.442
+PHPMailer/PHPMailer,Service mesh,4,4,0,False,docs.yaml,0.420,0.420
+PHPMailer/PHPMailer,Service registry,15,15,0,False,bug_report.md,0.420,0.420
+PHPMailer/PHPMailer,Single Service Instance per Host,3,3,0,False,docs.yaml,0.420,0.420
+Part-DB/Part-DB-server,3rd Party Registration,18,18,0,False,apache2-foreground,0.210,0.210
+Part-DB/Part-DB-server,Multiple service instances per host,12,12,1,True,Procfile,0.770,0.391
+Part-DB/Part-DB-server,Server-side service discovery,35,20,0,False,symfony.conf,0.700,0.250
+Part-DB/Part-DB-server,Service deployment platform,16,16,7,True,docker_build.yml,0.700,0.505
+Part-DB/Part-DB-server,Service instance per VM,8,8,0,False,assets_artifact_build.yml,0.420,0.420
+Part-DB/Part-DB-server,Service instance per container,14,14,6,True,Dockerfile,0.795,0.707
+Part-DB/Part-DB-server,Service mesh,19,19,0,False,kubernetes.md,0.420,0.343
+Part-DB/Part-DB-server,Service registry,9,9,0,False,BulkInfoProviderService.php,0.700,0.614
+Part-DB/Part-DB-server,Single Service Instance per Host,14,14,0,False,apache2-foreground,0.420,0.420
+Path-of-Terraria/PathOfTerraria,3rd Party Registration,2,2,0,False,MobRegistry.cs,0.700,0.700
+Path-of-Terraria/PathOfTerraria,Multiple service instances per host,0,0,0,False,,0.000,0.000
+Path-of-Terraria/PathOfTerraria,Server-side service discovery,1,1,0,False,ci.yml,0.420,0.420
+Path-of-Terraria/PathOfTerraria,Service deployment platform,3,3,0,False,PathOfTerraria.csproj,0.210,0.210
+Path-of-Terraria/PathOfTerraria,Service instance per VM,4,4,0,False,ci.yml,0.420,0.420
+Path-of-Terraria/PathOfTerraria,Service instance per container,1,1,0,False,ci.yml,0.420,0.420
+Path-of-Terraria/PathOfTerraria,Service mesh,11,11,0,False,Handler.cs,0.210,0.210
+Path-of-Terraria/PathOfTerraria,Service registry,9,9,0,False,AffixRegistry.cs,0.210,0.210
+Path-of-Terraria/PathOfTerraria,Single Service Instance per Host,8,8,0,False,PathOfTerraria.csproj,0.210,0.210
+Pennyw0rth/NetExec,3rd Party Registration,4,4,0,False,build-binaries.yml,0.420,0.420
+Pennyw0rth/NetExec,Multiple service instances per host,8,8,0,False,Makefile,0.420,0.420
+Pennyw0rth/NetExec,Server-side service discovery,4,4,0,False,build-binaries.yml,0.420,0.420
+Pennyw0rth/NetExec,Service deployment platform,3,3,2,False,Dockerfile,0.290,0.237
+Pennyw0rth/NetExec,Service instance per VM,12,12,0,False,build-binaries.yml,0.420,0.420
+Pennyw0rth/NetExec,Service instance per container,1,1,1,True,Dockerfile,0.787,0.787
+Pennyw0rth/NetExec,Service mesh,4,4,0,False,build-binaries.yml,0.420,0.420
+Pennyw0rth/NetExec,Service registry,244,20,0,False,bug_report.md,0.420,0.420
+Pennyw0rth/NetExec,Single Service Instance per Host,4,4,0,False,build-binaries.yml,0.420,0.420
+PerformanC/ReZygisk,3rd Party Registration,140,20,0,False,HEAD,0.210,0.210
+PerformanC/ReZygisk,Multiple service instances per host,6,6,1,True,customize.sh,0.532,0.504
+PerformanC/ReZygisk,Server-side service discovery,2,2,0,False,ci.yml,0.420,0.420
+PerformanC/ReZygisk,Service deployment platform,146,20,0,False,HEAD,0.210,0.210
+PerformanC/ReZygisk,Service instance per VM,2,2,0,False,ci.yml,0.420,0.420
+PerformanC/ReZygisk,Service instance per container,2,2,0,False,ci.yml,0.420,0.420
+PerformanC/ReZygisk,Service mesh,20,20,0,False,ci.yml,0.420,0.420
+PerformanC/ReZygisk,Service registry,143,20,0,False,HEAD,0.210,0.210
+PerformanC/ReZygisk,Single Service Instance per Host,4,4,0,False,post-fs-data.sh,0.210,0.210
+PowerShell/DSC,3rd Party Registration,1103,20,0,False,tsaoptions.json,0.420,0.420
+PowerShell/DSC,Multiple service instances per host,41,20,2,True,parallel.dsc.yaml,0.700,0.480
+PowerShell/DSC,Server-side service discovery,5,5,0,False,command_discovery.rs,0.700,0.644
+PowerShell/DSC,Service deployment platform,13,13,3,False,hello_world.dsc.bicep,0.700,0.447
+PowerShell/DSC,Service instance per VM,3,3,0,False,bicepconfig.json,0.700,0.607
+PowerShell/DSC,Service instance per container,3,3,0,False,rust.new.yml,0.420,0.420
+PowerShell/DSC,Service mesh,975,20,0,False,tsaoptions.json,0.420,0.420
+PowerShell/DSC,Service registry,37,20,1,False,args.rs,0.700,0.382
+PowerShell/DSC,Single Service Instance per Host,34,20,0,False,manage-a-windows-service.md,0.700,0.436
+PretendoNetwork/BOSS,3rd Party Registration,23,20,0,False,docker.yml,0.210,0.210
+PretendoNetwork/BOSS,Multiple service instances per host,2,2,0,False,docker.yml,0.210,0.210
+PretendoNetwork/BOSS,Server-side service discovery,2,2,0,False,docker.yml,0.420,0.420
+PretendoNetwork/BOSS,Service deployment platform,17,17,1,False,Dockerfile,0.507,0.252
+PretendoNetwork/BOSS,Service instance per VM,31,20,0,False,docker.yml,0.420,0.420
+PretendoNetwork/BOSS,Service instance per container,2,2,2,True,Dockerfile,0.305,0.258
+PretendoNetwork/BOSS,Service mesh,4,4,0,False,docker.yml,0.420,0.420
+PretendoNetwork/BOSS,Service registry,5,5,0,False,docker.yml,0.420,0.420
+PretendoNetwork/BOSS,Single Service Instance per Host,4,4,0,False,docker.yml,0.210,0.210
+QuentinFuxa/WhisperLiveKit,3rd Party Registration,2,2,0,False,manifest.json,0.420,0.420
+QuentinFuxa/WhisperLiveKit,Multiple service instances per host,98,20,0,False,HEAD,0.210,0.210
+QuentinFuxa/WhisperLiveKit,Server-side service discovery,0,0,0,False,,0.000,0.000
+QuentinFuxa/WhisperLiveKit,Service deployment platform,103,20,0,False,Dockerfile.cpu,0.291,0.212
+QuentinFuxa/WhisperLiveKit,Service instance per VM,98,20,0,False,HEAD,0.210,0.210
+QuentinFuxa/WhisperLiveKit,Service instance per container,7,7,3,True,Dockerfile,0.779,0.361
+QuentinFuxa/WhisperLiveKit,Service mesh,98,20,0,False,HEAD,0.210,0.210
+QuentinFuxa/WhisperLiveKit,Service registry,65,20,0,False,CONTRIBUTING.md,0.420,0.420
+QuentinFuxa/WhisperLiveKit,Single Service Instance per Host,97,20,0,False,HEAD,0.210,0.210
+RoboJackets/apiary,3rd Party Registration,1,1,0,False,docker-compose.yml,0.700,0.700
+RoboJackets/apiary,Multiple service instances per host,11,11,3,True,web.sh,0.800,0.724
+RoboJackets/apiary,Server-side service discovery,1,1,0,False,nginx.conf,0.700,0.700
+RoboJackets/apiary,Service deployment platform,14,14,7,True,apiary.nomad,0.778,0.678
+RoboJackets/apiary,Service instance per VM,11,11,0,False,build.yml,0.420,0.420
+RoboJackets/apiary,Service instance per container,1,1,1,True,docker-compose.yml,0.770,0.770
+RoboJackets/apiary,Service mesh,19,19,0,False,matchers.json,0.420,0.420
+RoboJackets/apiary,Service registry,37,20,0,False,build.yml,0.420,0.420
+RoboJackets/apiary,Single Service Instance per Host,6,6,0,False,build.yml,0.420,0.420
+SergioRibera/Simplemoji,3rd Party Registration,6,6,0,False,FUNDING.yml,0.420,0.420
+SergioRibera/Simplemoji,Multiple service instances per host,73,20,0,False,HEAD,0.210,0.210
+SergioRibera/Simplemoji,Server-side service discovery,69,20,0,False,HEAD,0.210,0.210
+SergioRibera/Simplemoji,Service deployment platform,4,4,2,True,aur.yml,0.420,0.420
+SergioRibera/Simplemoji,Service instance per VM,3,3,0,False,aur.yml,0.420,0.420
+SergioRibera/Simplemoji,Service instance per container,73,20,0,False,HEAD,0.210,0.210
+SergioRibera/Simplemoji,Service mesh,67,20,0,False,HEAD,0.210,0.210
+SergioRibera/Simplemoji,Service registry,75,20,0,False,HEAD,0.210,0.210
+SergioRibera/Simplemoji,Single Service Instance per Host,76,20,0,False,HEAD,0.210,0.210
+SimonScholz/qr-code-with-logo,3rd Party Registration,6,6,0,False,dependabot.yaml,0.420,0.420
+SimonScholz/qr-code-with-logo,Multiple service instances per host,3,3,0,False,gradlew.bat,0.490,0.467
+SimonScholz/qr-code-with-logo,Server-side service discovery,3,3,0,False,CI.yaml,0.420,0.420
+SimonScholz/qr-code-with-logo,Service deployment platform,135,20,0,False,HEAD,0.210,0.210
+SimonScholz/qr-code-with-logo,Service instance per VM,7,7,0,False,CI.yaml,0.420,0.420
+SimonScholz/qr-code-with-logo,Service instance per container,3,3,0,False,CI.yaml,0.420,0.420
+SimonScholz/qr-code-with-logo,Service mesh,132,20,0,False,HEAD,0.210,0.210
+SimonScholz/qr-code-with-logo,Service registry,135,20,0,False,HEAD,0.210,0.210
+SimonScholz/qr-code-with-logo,Single Service Instance per Host,3,3,0,False,CI.yaml,0.420,0.420
+SkyUOI/OurChat,3rd Party Registration,6,6,0,False,app-deployment.yaml,0.420,0.420
+SkyUOI/OurChat,Multiple service instances per host,7,7,6,True,compose.debian.yml,0.700,0.620
+SkyUOI/OurChat,Server-side service discovery,24,20,1,True,app-deployment.yaml,0.700,0.286
+SkyUOI/OurChat,Service deployment platform,14,14,9,True,app-deployment.yaml,0.420,0.359
+SkyUOI/OurChat,Service instance per VM,17,17,0,False,ci.yml,0.420,0.420
+SkyUOI/OurChat,Service instance per container,11,11,9,True,Dockerfile,0.795,0.716
+SkyUOI/OurChat,Service mesh,2,2,0,False,app-deployment.yaml,0.210,0.210
+SkyUOI/OurChat,Service registry,26,20,0,False,Cargo.toml,0.700,0.380
+SkyUOI/OurChat,Single Service Instance per Host,7,7,0,False,app-deployment.yaml,0.420,0.240
+Snawoot/opera-proxy,3rd Party Registration,26,20,0,False,csrand.go,0.420,0.258
+Snawoot/opera-proxy,Multiple service instances per host,52,20,0,False,Dockerfile,0.420,0.218
+Snawoot/opera-proxy,Server-side service discovery,25,20,4,True,resolver.go,0.700,0.381
+Snawoot/opera-proxy,Service deployment platform,57,20,0,False,Dockerfile,0.289,0.211
+Snawoot/opera-proxy,Service instance per VM,3,3,0,False,build.yml,0.420,0.420
+Snawoot/opera-proxy,Service instance per container,53,20,1,True,Dockerfile,0.787,0.221
+Snawoot/opera-proxy,Service mesh,55,20,0,False,fixed.go,0.700,0.382
+Snawoot/opera-proxy,Service registry,25,20,1,True,seclient.go,0.570,0.351
+Snawoot/opera-proxy,Single Service Instance per Host,29,20,0,False,snapcraft.yaml,0.700,0.234
+SocketSomeone/nestjs-resilience,3rd Party Registration,22,20,0,False,FUNDING.yml,0.420,0.420
+SocketSomeone/nestjs-resilience,Multiple service instances per host,0,0,0,False,,0.000,0.000
+SocketSomeone/nestjs-resilience,Server-side service discovery,10,10,0,False,auto-deprecate.yml,0.420,0.420
+SocketSomeone/nestjs-resilience,Service deployment platform,14,14,0,False,auto-deprecate.yml,0.420,0.420
+SocketSomeone/nestjs-resilience,Service instance per VM,133,20,0,False,HEAD,0.210,0.210
+SocketSomeone/nestjs-resilience,Service instance per container,10,10,0,False,auto-deprecate.yml,0.420,0.420
+SocketSomeone/nestjs-resilience,Service mesh,14,14,0,False,auto-deprecate.yml,0.420,0.420
+SocketSomeone/nestjs-resilience,Service registry,15,15,0,False,CODE_OF_CONDUCT.md,0.420,0.420
+SocketSomeone/nestjs-resilience,Single Service Instance per Host,10,10,0,False,auto-deprecate.yml,0.420,0.420
+StephanU/MyGekko,3rd Party Registration,71,20,0,False,HEAD,0.210,0.210
+StephanU/MyGekko,Multiple service instances per host,74,20,0,False,HEAD,0.210,0.210
+StephanU/MyGekko,Server-side service discovery,65,20,0,False,HEAD,0.210,0.210
+StephanU/MyGekko,Service deployment platform,11,11,1,False,lint.yml,0.420,0.420
+StephanU/MyGekko,Service instance per VM,3,3,0,False,lint.yml,0.420,0.420
+StephanU/MyGekko,Service instance per container,74,20,0,False,HEAD,0.210,0.210
+StephanU/MyGekko,Service mesh,70,20,0,False,HEAD,0.210,0.210
+StephanU/MyGekko,Service registry,28,20,0,False,lint.yml,0.420,0.420
+StephanU/MyGekko,Single Service Instance per Host,65,20,0,False,HEAD,0.210,0.210
+Strumenta/antlr-kotlin,3rd Party Registration,1,1,0,False,build.yml,0.420,0.420
+Strumenta/antlr-kotlin,Multiple service instances per host,1,1,0,False,gradlew.bat,0.490,0.490
+Strumenta/antlr-kotlin,Server-side service discovery,1,1,0,False,build.yml,0.420,0.420
+Strumenta/antlr-kotlin,Service deployment platform,1,1,0,False,build.yml,0.420,0.420
+Strumenta/antlr-kotlin,Service instance per VM,1,1,0,False,build.yml,0.420,0.420
+Strumenta/antlr-kotlin,Service instance per container,1,1,0,False,build.yml,0.420,0.420
+Strumenta/antlr-kotlin,Service mesh,1,1,0,False,build.yml,0.420,0.420
+Strumenta/antlr-kotlin,Service registry,15,15,0,False,build.yml,0.420,0.420
+Strumenta/antlr-kotlin,Single Service Instance per Host,1,1,0,False,build.yml,0.420,0.420
+TeamNewPipe/NewPipe,3rd Party Registration,21,20,0,False,questions.yml,0.420,0.420
+TeamNewPipe/NewPipe,Multiple service instances per host,12,12,2,True,AndroidManifest.xml,0.700,0.560
+TeamNewPipe/NewPipe,Server-side service discovery,1,1,0,False,ServiceHelper.java,0.420,0.420
+TeamNewPipe/NewPipe,Service deployment platform,15,15,0,False,build-release-apk.yml,0.420,0.420
+TeamNewPipe/NewPipe,Service instance per VM,453,20,0,False,build-release-apk.yml,0.420,0.420
+TeamNewPipe/NewPipe,Service instance per container,5,5,0,False,build-release-apk.yml,0.420,0.420
+TeamNewPipe/NewPipe,Service mesh,15,15,0,False,build-release-apk.yml,0.420,0.420
+TeamNewPipe/NewPipe,Service registry,23,20,0,False,SettingsResourceRegistry.java,0.420,0.228
+TeamNewPipe/NewPipe,Single Service Instance per Host,5,5,0,False,build-release-apk.yml,0.420,0.420
+TheNathannator/RB4InstrumentMapper,3rd Party Registration,0,0,0,False,,0.000,0.000
+TheNathannator/RB4InstrumentMapper,Multiple service instances per host,22,20,1,True,Bundle.wxs,0.420,0.248
+TheNathannator/RB4InstrumentMapper,Server-side service discovery,129,20,0,False,HEAD,0.210,0.210
+TheNathannator/RB4InstrumentMapper,Service deployment platform,126,20,0,False,HEAD,0.210,0.210
+TheNathannator/RB4InstrumentMapper,Service instance per VM,126,20,0,False,HEAD,0.210,0.210
+TheNathannator/RB4InstrumentMapper,Service instance per container,0,0,0,False,,0.000,0.000
+TheNathannator/RB4InstrumentMapper,Service mesh,93,20,0,False,HEAD,0.210,0.210
+TheNathannator/RB4InstrumentMapper,Service registry,126,20,0,False,README.es.md,0.262,0.210
+TheNathannator/RB4InstrumentMapper,Single Service Instance per Host,0,0,0,False,,0.000,0.000
+TheTumultuousUnicornOfDarkness/CPU-X,3rd Party Registration,5,5,0,False,appimage_continuous.yml,0.420,0.420
+TheTumultuousUnicornOfDarkness/CPU-X,Multiple service instances per host,10,10,0,False,test_regex.sh,0.532,0.464
+TheTumultuousUnicornOfDarkness/CPU-X,Server-side service discovery,5,5,0,False,appimage_continuous.yml,0.420,0.420
+TheTumultuousUnicornOfDarkness/CPU-X,Service deployment platform,15,15,2,False,appimage_continuous.yml,0.420,0.420
+TheTumultuousUnicornOfDarkness/CPU-X,Service instance per VM,2,2,1,True,Vagrantfile,0.789,0.745
+TheTumultuousUnicornOfDarkness/CPU-X,Service instance per container,5,5,0,False,appimage_continuous.yml,0.420,0.420
+TheTumultuousUnicornOfDarkness/CPU-X,Service mesh,5,5,0,False,appimage_continuous.yml,0.420,0.420
+TheTumultuousUnicornOfDarkness/CPU-X,Service registry,24,20,0,False,ISSUE_TEMPLATE.md,0.420,0.420
+TheTumultuousUnicornOfDarkness/CPU-X,Single Service Instance per Host,2,2,0,False,Vagrantfile,0.420,0.420
+VoucherDesenvSenacHub/galeria-voucher,3rd Party Registration,132,20,0,False,HEAD,0.210,0.210
+VoucherDesenvSenacHub/galeria-voucher,Multiple service instances per host,0,0,0,False,,0.000,0.000
+VoucherDesenvSenacHub/galeria-voucher,Server-side service discovery,0,0,0,False,,0.000,0.000
+VoucherDesenvSenacHub/galeria-voucher,Service deployment platform,132,20,0,False,HEAD,0.210,0.210
+VoucherDesenvSenacHub/galeria-voucher,Service instance per VM,0,0,0,False,,0.000,0.000
+VoucherDesenvSenacHub/galeria-voucher,Service instance per container,139,20,0,False,HEAD,0.210,0.210
+VoucherDesenvSenacHub/galeria-voucher,Service mesh,111,20,0,False,App.php,0.210,0.210
+VoucherDesenvSenacHub/galeria-voucher,Service registry,133,20,0,False,orientacoes-dev.md,0.287,0.211
+VoucherDesenvSenacHub/galeria-voucher,Single Service Instance per Host,0,0,0,False,,0.000,0.000
+Yubico/Yubico.NET.SDK,3rd Party Registration,1,1,0,False,docker-compose.yaml,0.700,0.700
+Yubico/Yubico.NET.SDK,Multiple service instances per host,9,9,1,True,docker-compose.yaml,0.700,0.366
+Yubico/Yubico.NET.SDK,Server-side service discovery,1,1,0,False,nginx.conf,0.420,0.420
+Yubico/Yubico.NET.SDK,Service deployment platform,14,14,3,False,Dockerfile,0.774,0.400
+Yubico/Yubico.NET.SDK,Service instance per VM,15,15,0,False,build-nativeshims.yml,0.420,0.420
+Yubico/Yubico.NET.SDK,Service instance per container,2,2,1,True,Dockerfile,0.774,0.597
+Yubico/Yubico.NET.SDK,Service mesh,4,4,0,False,docker-compose.yaml,0.420,0.315
+Yubico/Yubico.NET.SDK,Service registry,220,20,0,False,copilot-instructions.md,0.420,0.420
+Yubico/Yubico.NET.SDK,Single Service Instance per Host,4,4,0,False,devcontainer.json,0.210,0.210
+Zavy86/WikiDocs,3rd Party Registration,18,18,0,False,bug-report.yml,0.420,0.420
+Zavy86/WikiDocs,Multiple service instances per host,4,4,1,True,development.dockerfile,0.420,0.420
+Zavy86/WikiDocs,Server-side service discovery,1,1,0,False,development.nginx.conf,0.700,0.700
+Zavy86/WikiDocs,Service deployment platform,142,20,1,False,development.dockerfile,0.420,0.214
+Zavy86/WikiDocs,Service instance per VM,9,9,0,False,build.yml,0.420,0.420
+Zavy86/WikiDocs,Service instance per container,4,4,2,True,development.dockerfile,0.700,0.630
+Zavy86/WikiDocs,Service mesh,15,15,0,False,fr.json,0.520,0.427
+Zavy86/WikiDocs,Service registry,136,20,0,False,README.md,0.267,0.210
+Zavy86/WikiDocs,Single Service Instance per Host,139,20,0,False,HEAD,0.210,0.210
+academicpages/academicpages.github.io,3rd Party Registration,1,1,0,False,docker-compose.yaml,0.420,0.420
+academicpages/academicpages.github.io,Multiple service instances per host,2,2,0,False,docker-compose.yaml,0.700,0.560
+academicpages/academicpages.github.io,Server-side service discovery,2,2,0,False,scrape_talks.yml,0.420,0.420
+academicpages/academicpages.github.io,Service deployment platform,1,1,0,False,docker-compose.yaml,0.280,0.280
+academicpages/academicpages.github.io,Service instance per VM,1,1,0,False,scrape_talks.yml,0.420,0.420
+academicpages/academicpages.github.io,Service instance per container,2,2,2,True,Dockerfile,0.776,0.773
+academicpages/academicpages.github.io,Service mesh,7,7,0,False,Dockerfile,0.210,0.210
+academicpages/academicpages.github.io,Service registry,47,20,0,False,bug_report.md,0.420,0.420
+academicpages/academicpages.github.io,Single Service Instance per Host,1,1,0,False,scrape_talks.yml,0.420,0.420
+accrescent/accrescent,3rd Party Registration,7,7,0,False,build.yaml,0.420,0.420
+accrescent/accrescent,Multiple service instances per host,1,1,0,False,AndroidManifest.xml,0.420,0.420
+accrescent/accrescent,Server-side service discovery,157,20,0,False,HEAD,0.210,0.210
+accrescent/accrescent,Service deployment platform,169,20,0,False,HEAD,0.210,0.210
+accrescent/accrescent,Service instance per VM,65,20,0,False,build.yaml,0.420,0.420
+accrescent/accrescent,Service instance per container,173,20,0,False,HEAD,0.210,0.210
+accrescent/accrescent,Service mesh,7,7,0,False,build.yaml,0.420,0.420
+accrescent/accrescent,Service registry,12,12,0,False,build.yaml,0.420,0.420
+accrescent/accrescent,Single Service Instance per Host,2,2,0,False,build.yaml,0.420,0.420
+acim/go-reflex,3rd Party Registration,33,20,0,False,HEAD,0.210,0.210
+acim/go-reflex,Multiple service instances per host,1,1,0,False,build.sh,0.497,0.497
+acim/go-reflex,Server-side service discovery,31,20,0,False,HEAD,0.210,0.210
+acim/go-reflex,Service deployment platform,36,20,0,False,Dockerfile,0.286,0.212
+acim/go-reflex,Service instance per VM,36,20,0,False,HEAD,0.210,0.210
+acim/go-reflex,Service instance per container,32,20,2,True,Dockerfile,0.496,0.232
+acim/go-reflex,Service mesh,31,20,0,False,HEAD,0.210,0.210
+acim/go-reflex,Service registry,35,20,0,False,HEAD,0.210,0.210
+acim/go-reflex,Single Service Instance per Host,36,20,0,False,HEAD,0.210,0.210
+adamzammit/limesurvey-docker,3rd Party Registration,11,11,0,False,docker-compose-azure-externaldb.yml,0.420,0.305
+adamzammit/limesurvey-docker,Multiple service instances per host,9,9,4,True,docker-compose-azure-externaldb.yml,0.700,0.597
+adamzammit/limesurvey-docker,Server-side service discovery,27,20,0,False,HEAD,0.210,0.210
+adamzammit/limesurvey-docker,Service deployment platform,11,11,4,True,docker-compose-azure.yml,0.494,0.348
+adamzammit/limesurvey-docker,Service instance per VM,27,20,0,False,HEAD,0.210,0.210
+adamzammit/limesurvey-docker,Service instance per container,10,10,10,True,Dockerfile,0.792,0.613
+adamzammit/limesurvey-docker,Service mesh,11,11,0,False,Dockerfile,0.210,0.210
+adamzammit/limesurvey-docker,Service registry,39,20,0,False,docker-compose-azure-externaldb.yml,0.420,0.237
+adamzammit/limesurvey-docker,Single Service Instance per Host,35,20,0,False,Dockerfile,0.420,0.264
+aha-oida/aha-secret,3rd Party Registration,104,20,0,False,docker-compose.yml,0.700,0.215
+aha-oida/aha-secret,Multiple service instances per host,2,2,2,True,docker-compose.yml,0.700,0.700
+aha-oida/aha-secret,Server-side service discovery,103,20,0,False,docker-compose.yml,0.280,0.211
+aha-oida/aha-secret,Service deployment platform,3,3,2,True,docker-compose.yml,0.490,0.399
+aha-oida/aha-secret,Service instance per VM,93,20,0,False,HEAD,0.210,0.210
+aha-oida/aha-secret,Service instance per container,52,20,4,True,Dockerfile,0.776,0.244
+aha-oida/aha-secret,Service mesh,7,7,0,False,docker.yml,0.420,0.420
+aha-oida/aha-secret,Service registry,102,20,0,False,SECURITY.md,0.300,0.211
+aha-oida/aha-secret,Single Service Instance per Host,6,6,0,False,docker.yml,0.420,0.420
+android/nowinandroid,3rd Party Registration,25,20,0,False,google-services.json,0.527,0.424
+android/nowinandroid,Multiple service instances per host,5,5,0,False,build_android_release.sh,0.527,0.488
+android/nowinandroid,Server-side service discovery,3,3,0,False,Build.yaml,0.420,0.420
+android/nowinandroid,Service deployment platform,25,20,0,False,renovate.json,0.420,0.420
+android/nowinandroid,Service instance per VM,72,20,0,False,Build.yaml,0.420,0.420
+android/nowinandroid,Service instance per container,3,3,0,False,Build.yaml,0.420,0.420
+android/nowinandroid,Service mesh,21,20,0,False,renovate.json,0.420,0.420
+android/nowinandroid,Service registry,18,18,0,False,README.md,0.210,0.210
+android/nowinandroid,Single Service Instance per Host,3,3,0,False,Build.yaml,0.420,0.420
+aperechnev/ChessKit,3rd Party Registration,99,20,0,False,tests.yml,0.420,0.420
+aperechnev/ChessKit,Multiple service instances per host,0,0,0,False,,0.000,0.000
+aperechnev/ChessKit,Server-side service discovery,1,1,0,False,tests.yml,0.420,0.420
+aperechnev/ChessKit,Service deployment platform,99,20,0,False,tests.yml,0.420,0.420
+aperechnev/ChessKit,Service instance per VM,1,1,0,False,tests.yml,0.420,0.420
+aperechnev/ChessKit,Service instance per container,1,1,0,False,tests.yml,0.420,0.420
+aperechnev/ChessKit,Service mesh,99,20,0,False,tests.yml,0.420,0.420
+aperechnev/ChessKit,Service registry,34,20,0,False,tests.yml,0.420,0.420
+aperechnev/ChessKit,Single Service Instance per Host,1,1,0,False,tests.yml,0.420,0.420
+awslabs/cdk-eks-blueprints,3rd Party Registration,25,20,0,False,devcontainer.json,0.420,0.420
+awslabs/cdk-eks-blueprints,Multiple service instances per host,6,6,0,False,postCreateCommand.sh,0.499,0.480
+awslabs/cdk-eks-blueprints,Server-side service discovery,16,16,5,True,ingress-nginx.md,0.700,0.556
+awslabs/cdk-eks-blueprints,Service deployment platform,9,9,4,True,restrict-ingress-egress-burnham.yaml,0.700,0.443
+awslabs/cdk-eks-blueprints,Service instance per VM,5,5,0,False,ci.yaml,0.420,0.420
+awslabs/cdk-eks-blueprints,Service instance per container,6,6,1,True,restrict-ingress-egress-burnham.yaml,0.700,0.525
+awslabs/cdk-eks-blueprints,Service mesh,10,10,10,True,app-mesh.md,0.700,0.672
+awslabs/cdk-eks-blueprints,Service registry,4,4,0,False,core-concepts.md,0.420,0.420
+awslabs/cdk-eks-blueprints,Single Service Instance per Host,4,4,0,False,ci.yaml,0.420,0.420
+biblioverse/biblioteca,3rd Party Registration,4,4,0,False,docker-compose.typesense.yaml,0.420,0.420
+biblioverse/biblioteca,Multiple service instances per host,6,6,2,True,docker-compose.typesense.yaml,0.700,0.607
+biblioverse/biblioteca,Server-side service discovery,1,1,0,False,http_discovery.yaml,0.700,0.700
+biblioverse/biblioteca,Service deployment platform,6,6,4,True,1-helm.mdx,0.700,0.560
+biblioverse/biblioteca,Service instance per VM,3,3,0,False,doc.yml,0.420,0.420
+biblioverse/biblioteca,Service instance per container,7,7,4,True,Dockerfile,0.825,0.719
+biblioverse/biblioteca,Service mesh,42,20,0,False,doc.yml,0.420,0.420
+biblioverse/biblioteca,Service registry,15,15,0,False,Version20240513152414.php,0.700,0.551
+biblioverse/biblioteca,Single Service Instance per Host,32,20,0,False,doc.yml,0.420,0.420
+bnjbvr/cargo-machete,3rd Party Registration,4,4,0,False,FUNDING.yml,0.420,0.420
+bnjbvr/cargo-machete,Multiple service instances per host,93,20,0,False,entrypoint.sh,0.275,0.211
+bnjbvr/cargo-machete,Server-side service discovery,21,20,0,False,CHANGELOG.md,0.210,0.210
+bnjbvr/cargo-machete,Service deployment platform,98,20,0,False,Dockerfile,0.290,0.211
+bnjbvr/cargo-machete,Service instance per VM,97,20,0,False,HEAD,0.210,0.210
+bnjbvr/cargo-machete,Service instance per container,4,4,2,True,Dockerfile,0.507,0.442
+bnjbvr/cargo-machete,Service mesh,89,20,0,False,HEAD,0.210,0.210
+bnjbvr/cargo-machete,Service registry,99,20,0,False,HEAD,0.210,0.210
+bnjbvr/cargo-machete,Single Service Instance per Host,1,1,0,False,main.yml,0.420,0.420
+boyter/scc,3rd Party Registration,13,13,0,False,hcl.hcl,0.527,0.428
+boyter/scc,Multiple service instances per host,1,1,0,False,systemd.service,0.770,0.770
+boyter/scc,Server-side service discovery,5,5,0,False,hcl.hcl,0.477,0.432
+boyter/scc,Service deployment platform,7,7,2,True,Dockerfile,0.780,0.601
+boyter/scc,Service instance per VM,11,11,0,False,chocolateyinstall.ps1,0.502,0.434
+boyter/scc,Service instance per container,2,2,1,True,Dockerfile,0.784,0.602
+boyter/scc,Service mesh,8,8,0,False,devcontainer.json,0.420,0.420
+boyter/scc,Service registry,732,20,0,False,reflect_extension.go,0.570,0.425
+boyter/scc,Single Service Instance per Host,3,3,1,True,systemd.service,0.770,0.397
+btcpayserver/btcpayserver,3rd Party Registration,10,10,0,False,docker-entrypoint.sh,0.700,0.364
+btcpayserver/btcpayserver,Multiple service instances per host,60,20,6,True,AppInventoryUpdaterHostedService.cs,0.700,0.623
+btcpayserver/btcpayserver,Server-side service discovery,11,11,0,False,Startup.cs,0.700,0.452
+btcpayserver/btcpayserver,Service deployment platform,19,19,6,True,docker-compose.altcoins.yml,0.791,0.562
+btcpayserver/btcpayserver,Service instance per VM,8,8,0,False,BTCPayServer.PluginPacker.csproj,0.700,0.411
+btcpayserver/btcpayserver,Service instance per container,32,20,7,True,Dockerfile,0.795,0.652
+btcpayserver/btcpayserver,Service mesh,90,20,0,False,fr-FR.json,0.490,0.421
+btcpayserver/btcpayserver,Service registry,9,9,1,False,ServiceCollectionExtensions.cs,0.420,0.397
+btcpayserver/btcpayserver,Single Service Instance per Host,34,20,0,False,PushNuget.ps1,0.420,0.284
+carrot-hu23/dst-admin-go,3rd Party Registration,38,20,1,True,thirdPartyApi.go,0.420,0.232
+carrot-hu23/dst-admin-go,Multiple service instances per host,16,16,1,True,install.md,0.420,0.252
+carrot-hu23/dst-admin-go,Server-side service discovery,1,1,0,False,multiServer.md,0.420,0.420
+carrot-hu23/dst-admin-go,Service deployment platform,157,20,4,True,Dockerfile,0.792,0.257
+carrot-hu23/dst-admin-go,Service instance per VM,2,2,0,False,modules.xml,0.420,0.420
+carrot-hu23/dst-admin-go,Service instance per container,6,6,2,True,Dockerfile,0.792,0.622
+carrot-hu23/dst-admin-go,Service mesh,15,15,0,False,Dockerfile,0.210,0.210
+carrot-hu23/dst-admin-go,Service registry,7,7,0,False,multiServer.md,0.420,0.420
+carrot-hu23/dst-admin-go,Single Service Instance per Host,168,20,1,False,Dockerfile,0.210,0.210
+chigwell/telegram-mcp,3rd Party Registration,10,10,0,False,docker-compose.yml,0.420,0.231
+chigwell/telegram-mcp,Multiple service instances per host,11,11,2,True,docker-compose.yml,0.700,0.274
+chigwell/telegram-mcp,Server-side service discovery,34,20,0,False,HEAD,0.210,0.210
+chigwell/telegram-mcp,Service deployment platform,40,20,0,False,Dockerfile,0.285,0.214
+chigwell/telegram-mcp,Service instance per VM,34,20,0,False,HEAD,0.210,0.210
+chigwell/telegram-mcp,Service instance per container,35,20,2,True,Dockerfile,0.775,0.256
+chigwell/telegram-mcp,Service mesh,11,11,0,False,docker-build.yml,0.210,0.210
+chigwell/telegram-mcp,Service registry,36,20,0,False,docker-compose.yml,0.420,0.227
+chigwell/telegram-mcp,Single Service Instance per Host,2,2,0,False,docker-build.yml,0.420,0.420
+civictheme/monorepo-drupal,3rd Party Registration,10,10,0,False,docker-compose.override.default.yml,0.700,0.350
+civictheme/monorepo-drupal,Multiple service instances per host,16,16,2,True,docker-compose.override.default.yml,0.700,0.376
+civictheme/monorepo-drupal,Server-side service discovery,2,2,0,False,location_prepend_update_php.conf,0.210,0.210
+civictheme/monorepo-drupal,Service deployment platform,23,20,15,True,config.yml,0.825,0.544
+civictheme/monorepo-drupal,Service instance per VM,54,20,1,False,notify.sh,0.502,0.423
+civictheme/monorepo-drupal,Service instance per container,8,8,7,True,docker-compose.yml,0.796,0.616
+civictheme/monorepo-drupal,Service mesh,615,20,0,False,config.yml,0.420,0.420
+civictheme/monorepo-drupal,Service registry,698,20,0,False,README.md,0.420,0.420
+civictheme/monorepo-drupal,Single Service Instance per Host,8,8,0,False,civictheme_dev.services.yml,0.420,0.263
+cms-sw/cmsdist,3rd Party Registration,0,0,0,False,,0.000,0.000
+cms-sw/cmsdist,Multiple service instances per host,22,20,0,False,python_env.sh,0.497,0.440
+cms-sw/cmsdist,Server-side service discovery,0,0,0,False,,0.000,0.000
+cms-sw/cmsdist,Service deployment platform,74,20,2,False,AXOL1TL.spec,0.210,0.210
+cms-sw/cmsdist,Service instance per VM,350,20,0,False,axol1tl.xml,0.420,0.420
+cms-sw/cmsdist,Service instance per container,0,0,0,False,,0.000,0.000
+cms-sw/cmsdist,Service mesh,0,0,0,False,,0.000,0.000
+cms-sw/cmsdist,Service registry,35,20,0,False,cmsdist_packages.py,0.420,0.420
+cms-sw/cmsdist,Single Service Instance per Host,0,0,0,False,,0.000,0.000
+coinjar/react-native-wagmi-charts,3rd Party Registration,13,13,0,False,app.json,0.420,0.420
+coinjar/react-native-wagmi-charts,Multiple service instances per host,0,0,0,False,,0.000,0.000
+coinjar/react-native-wagmi-charts,Server-side service discovery,99,20,0,False,HEAD,0.210,0.210
+coinjar/react-native-wagmi-charts,Service deployment platform,11,11,0,False,app.json,0.420,0.420
+coinjar/react-native-wagmi-charts,Service instance per VM,0,0,0,False,,0.000,0.000
+coinjar/react-native-wagmi-charts,Service instance per container,112,20,0,False,HEAD,0.210,0.210
+coinjar/react-native-wagmi-charts,Service mesh,108,20,0,False,HEAD,0.210,0.210
+coinjar/react-native-wagmi-charts,Service registry,99,20,0,False,HEAD,0.210,0.210
+coinjar/react-native-wagmi-charts,Single Service Instance per Host,112,20,0,False,HEAD,0.210,0.210
+cornradio/pausemygame,3rd Party Registration,38,20,0,False,HEAD,0.210,0.210
+cornradio/pausemygame,Multiple service instances per host,35,20,0,False,HEAD,0.210,0.210
+cornradio/pausemygame,Server-side service discovery,41,20,0,False,HEAD,0.210,0.210
+cornradio/pausemygame,Service deployment platform,41,20,0,False,HEAD,0.210,0.210
+cornradio/pausemygame,Service instance per VM,37,20,0,False,HEAD,0.210,0.210
+cornradio/pausemygame,Service instance per container,38,20,0,False,HEAD,0.210,0.210
+cornradio/pausemygame,Service mesh,36,20,0,False,HEAD,0.210,0.210
+cornradio/pausemygame,Service registry,39,20,0,False,HEAD,0.210,0.210
+cornradio/pausemygame,Single Service Instance per Host,37,20,0,False,HEAD,0.210,0.210
+cshum/imagor,3rd Party Registration,152,20,0,False,HEAD,0.210,0.210
+cshum/imagor,Multiple service instances per host,7,7,2,True,Makefile,0.420,0.420
+cshum/imagor,Server-side service discovery,5,5,0,False,codeql-analysis.yml,0.420,0.420
+cshum/imagor,Service deployment platform,4,4,2,True,app.json,0.420,0.354
+cshum/imagor,Service instance per VM,6,6,0,False,codeql-analysis.yml,0.420,0.420
+cshum/imagor,Service instance per container,148,20,6,True,Dockerfile,0.782,0.232
+cshum/imagor,Service mesh,16,16,0,False,codeql-analysis.yml,0.420,0.420
+cshum/imagor,Service registry,150,20,0,False,prometheus_test.go,0.323,0.211
+cshum/imagor,Single Service Instance per Host,11,11,0,False,codeql-analysis.yml,0.420,0.420
+datastax/langflow-client-ts,3rd Party Registration,54,20,0,False,HEAD,0.210,0.210
+datastax/langflow-client-ts,Multiple service instances per host,58,20,0,False,HEAD,0.210,0.210
+datastax/langflow-client-ts,Server-side service discovery,28,20,0,False,AGENTS.md,0.210,0.210
+datastax/langflow-client-ts,Service deployment platform,58,20,0,False,HEAD,0.210,0.210
+datastax/langflow-client-ts,Service instance per VM,50,20,0,False,HEAD,0.210,0.210
+datastax/langflow-client-ts,Service instance per container,31,20,0,False,publish.yml,0.210,0.210
+datastax/langflow-client-ts,Service mesh,28,20,0,False,flow.ts,0.420,0.330
+datastax/langflow-client-ts,Service registry,6,6,0,False,publish.yml,0.420,0.420
+datastax/langflow-client-ts,Single Service Instance per Host,29,20,0,False,consts.ts,0.420,0.362
+disneystreaming/smithy4s,3rd Party Registration,43,20,0,False,dependabot.yml,0.420,0.420
+disneystreaming/smithy4s,Multiple service instances per host,27,20,1,True,Endpoint.scala,0.700,0.519
+disneystreaming/smithy4s,Server-side service discovery,23,20,0,False,HttpProtocolCompliance.scala,0.420,0.420
+disneystreaming/smithy4s,Service deployment platform,43,20,0,False,ci.yml,0.420,0.420
+disneystreaming/smithy4s,Service instance per VM,1,1,0,False,ci.yml,0.420,0.420
+disneystreaming/smithy4s,Service instance per container,1,1,0,False,ci.yml,0.420,0.420
+disneystreaming/smithy4s,Service mesh,10,10,0,False,Endpoint.scala,0.420,0.420
+disneystreaming/smithy4s,Service registry,10,10,0,False,CHANGELOG.md,0.210,0.210
+disneystreaming/smithy4s,Single Service Instance per Host,1,1,0,False,ci.yml,0.420,0.420
+distantcam/AutoCtor,3rd Party Registration,8,8,0,False,FUNDING.yml,0.420,0.420
+distantcam/AutoCtor,Multiple service instances per host,0,0,0,False,,0.000,0.000
+distantcam/AutoCtor,Server-side service discovery,2,2,0,False,build.yml,0.420,0.420
+distantcam/AutoCtor,Service deployment platform,5,5,0,False,dotnet.json,0.420,0.420
+distantcam/AutoCtor,Service instance per VM,2,2,0,False,build.yml,0.420,0.420
+distantcam/AutoCtor,Service instance per container,2,2,0,False,build.yml,0.420,0.420
+distantcam/AutoCtor,Service mesh,5,5,0,False,dotnet.json,0.420,0.420
+distantcam/AutoCtor,Service registry,21,20,0,False,readme.md,0.210,0.210
+distantcam/AutoCtor,Single Service Instance per Host,2,2,0,False,build.yml,0.420,0.420
+eeditiones/tei-publisher-components,3rd Party Registration,46,20,0,False,FUNDING.yml,0.420,0.420
+eeditiones/tei-publisher-components,Multiple service instances per host,0,0,0,False,,0.000,0.000
+eeditiones/tei-publisher-components,Server-side service discovery,3,3,0,False,main.yml,0.420,0.420
+eeditiones/tei-publisher-components,Service deployment platform,261,20,2,True,Dockerfile,0.507,0.214
+eeditiones/tei-publisher-components,Service instance per VM,42,20,0,False,main.yml,0.210,0.210
+eeditiones/tei-publisher-components,Service instance per container,1,1,1,True,Dockerfile,0.517,0.517
+eeditiones/tei-publisher-components,Service mesh,232,20,0,False,HEAD,0.210,0.210
+eeditiones/tei-publisher-components,Service registry,1,1,1,True,registry.js,0.420,0.420
+eeditiones/tei-publisher-components,Single Service Instance per Host,3,3,0,False,main.yml,0.420,0.420
+eko5624/mpv-win64,3rd Party Registration,18,18,0,False,dependabot.yml,0.420,0.420
+eko5624/mpv-win64,Multiple service instances per host,5,5,2,True,install-dev.sh,0.420,0.420
+eko5624/mpv-win64,Server-side service discovery,17,17,0,False,Executable-flag-setting.yml,0.420,0.420
+eko5624/mpv-win64,Service deployment platform,22,20,4,True,Executable-flag-setting.yml,0.420,0.420
+eko5624/mpv-win64,Service instance per VM,17,17,0,False,Executable-flag-setting.yml,0.420,0.420
+eko5624/mpv-win64,Service instance per container,17,17,0,False,Executable-flag-setting.yml,0.420,0.420
+eko5624/mpv-win64,Service mesh,72,20,0,False,dependabot.yml,0.210,0.210
+eko5624/mpv-win64,Service registry,24,20,0,False,Executable-flag-setting.yml,0.420,0.420
+eko5624/mpv-win64,Single Service Instance per Host,17,17,0,False,Executable-flag-setting.yml,0.420,0.420
+euslisp/EusLisp,3rd Party Registration,2,2,0,False,config.yml,0.420,0.420
+euslisp/EusLisp,Multiple service instances per host,76,20,0,False,manual-node30.html,0.700,0.440
+euslisp/EusLisp,Server-side service discovery,2,2,0,False,config.yml,0.420,0.420
+euslisp/EusLisp,Service deployment platform,3,3,0,False,config.yml,0.700,0.443
+euslisp/EusLisp,Service instance per VM,7,7,0,False,compile_image.l,0.700,0.460
+euslisp/EusLisp,Service instance per container,1,1,0,False,compile_image.l,0.700,0.700
+euslisp/EusLisp,Service mesh,76,20,0,False,manual-node30.html,0.700,0.686
+euslisp/EusLisp,Service registry,98,20,0,False,manual-node10.html,0.210,0.210
+euslisp/EusLisp,Single Service Instance per Host,2,2,0,False,config.yml,0.420,0.420
+felladrin/MiniSearch,3rd Party Registration,2,2,0,False,docker-compose.production.yml,0.420,0.420
+felladrin/MiniSearch,Multiple service instances per host,3,3,1,True,docker-compose.production.yml,0.700,0.607
+felladrin/MiniSearch,Server-side service discovery,8,8,0,False,ai-review.yml,0.420,0.420
+felladrin/MiniSearch,Service deployment platform,2,2,0,False,docker-compose.production.yml,0.490,0.490
+felladrin/MiniSearch,Service instance per VM,3,3,0,False,Dockerfile,0.210,0.210
+felladrin/MiniSearch,Service instance per container,3,3,1,True,docker-compose.production.yml,0.770,0.679
+felladrin/MiniSearch,Service mesh,12,12,0,False,ai-review.yml,0.420,0.420
+felladrin/MiniSearch,Service registry,137,20,0,False,HEAD,0.210,0.210
+felladrin/MiniSearch,Single Service Instance per Host,6,6,0,False,ai-review.yml,0.420,0.420
+firecrawl/firecrawl-mcp-server,3rd Party Registration,10,10,0,False,ci.yml,0.420,0.420
+firecrawl/firecrawl-mcp-server,Multiple service instances per host,6,6,1,True,entrypoint.sh,0.284,0.222
+firecrawl/firecrawl-mcp-server,Server-side service discovery,44,20,0,False,nginx.conf,0.770,0.247
+firecrawl/firecrawl-mcp-server,Service deployment platform,11,11,4,True,Dockerfile,0.504,0.435
+firecrawl/firecrawl-mcp-server,Service instance per VM,6,6,0,False,ci.yml,0.420,0.420
+firecrawl/firecrawl-mcp-server,Service instance per container,42,20,1,True,Dockerfile,0.515,0.222
+firecrawl/firecrawl-mcp-server,Service mesh,8,8,0,False,ci.yml,0.420,0.420
+firecrawl/firecrawl-mcp-server,Service registry,12,12,0,False,server.json,0.700,0.344
+firecrawl/firecrawl-mcp-server,Single Service Instance per Host,21,20,0,False,ci.yml,0.420,0.280
+fuzziqersoftware/newserv,3rd Party Registration,173,20,0,False,cmake.yml,0.420,0.420
+fuzziqersoftware/newserv,Multiple service instances per host,13,13,0,False,compression.sh,0.532,0.497
+fuzziqersoftware/newserv,Server-side service discovery,2,2,0,False,cmake.yml,0.420,0.420
+fuzziqersoftware/newserv,Service deployment platform,187,20,1,False,Dockerfile,0.511,0.420
+fuzziqersoftware/newserv,Service instance per VM,2,2,0,False,cmake.yml,0.420,0.420
+fuzziqersoftware/newserv,Service instance per container,3,3,1,True,Dockerfile,0.517,0.452
+fuzziqersoftware/newserv,Service mesh,173,20,0,False,cmake.yml,0.420,0.420
+fuzziqersoftware/newserv,Service registry,22,20,0,False,bug-report.md,0.420,0.420
+fuzziqersoftware/newserv,Single Service Instance per Host,2,2,0,False,cmake.yml,0.420,0.420
+gaureshpai/hseruag,3rd Party Registration,3,3,0,False,dependabot.yml,0.420,0.420
+gaureshpai/hseruag,Multiple service instances per host,0,0,0,False,,0.000,0.000
+gaureshpai/hseruag,Server-side service discovery,0,0,0,False,,0.000,0.000
+gaureshpai/hseruag,Service deployment platform,91,20,0,False,HEAD,0.210,0.210
+gaureshpai/hseruag,Service instance per VM,88,20,0,False,HEAD,0.210,0.210
+gaureshpai/hseruag,Service instance per container,91,20,0,False,HEAD,0.210,0.210
+gaureshpai/hseruag,Service mesh,86,20,0,False,HEAD,0.210,0.210
+gaureshpai/hseruag,Service registry,4,4,0,False,README.md,0.420,0.420
+gaureshpai/hseruag,Single Service Instance per Host,87,20,0,False,HEAD,0.210,0.210
+globus/globus-compute,3rd Party Registration,1,1,0,False,compose.yaml,0.700,0.700
+globus/globus-compute,Multiple service instances per host,1,1,0,False,compose.yaml,0.420,0.420
+globus/globus-compute,Server-side service discovery,3,3,0,False,kube.yaml,0.700,0.607
+globus/globus-compute,Service deployment platform,20,20,8,False,Dockerfile-endpoint,0.782,0.690
+globus/globus-compute,Service instance per VM,9,9,0,False,changelog.yml,0.420,0.420
+globus/globus-compute,Service instance per container,12,12,6,True,compose.yaml,0.775,0.450
+globus/globus-compute,Service mesh,7,7,0,False,changelog.yml,0.420,0.420
+globus/globus-compute,Service registry,1,1,0,False,kube.yaml,0.420,0.420
+globus/globus-compute,Single Service Instance per Host,15,15,1,True,user_config_template.yaml.j2,0.700,0.593
+google/aarch64-esr-decoder,3rd Party Registration,82,20,0,False,config.toml,0.210,0.210
+google/aarch64-esr-decoder,Multiple service instances per host,83,20,0,False,config.toml,0.210,0.210
+google/aarch64-esr-decoder,Server-side service discovery,78,20,0,False,config.toml,0.210,0.210
+google/aarch64-esr-decoder,Service deployment platform,83,20,0,False,config.toml,0.210,0.210
+google/aarch64-esr-decoder,Service instance per VM,3,3,0,False,package.yml,0.420,0.420
+google/aarch64-esr-decoder,Service instance per container,3,3,0,False,package.yml,0.420,0.420
+google/aarch64-esr-decoder,Service mesh,78,20,0,False,config.toml,0.210,0.210
+google/aarch64-esr-decoder,Service registry,81,20,0,False,CONTRIBUTING.md,0.292,0.211
+google/aarch64-esr-decoder,Single Service Instance per Host,78,20,0,False,config.toml,0.210,0.210
+gyroflow/gyroflow,3rd Party Registration,11,11,0,False,devcontainer.json,0.420,0.420
+gyroflow/gyroflow,Multiple service instances per host,5,5,0,False,compile_shaders.sh,0.497,0.435
+gyroflow/gyroflow,Server-side service discovery,1,1,0,False,release.yml,0.420,0.420
+gyroflow/gyroflow,Service deployment platform,40,20,1,False,AndroidManifest.xml,0.420,0.317
+gyroflow/gyroflow,Service instance per VM,6,6,0,False,release.yml,0.420,0.420
+gyroflow/gyroflow,Service instance per container,2,2,0,False,Dockerfile,0.292,0.251
+gyroflow/gyroflow,Service mesh,7,7,0,False,devcontainer.json,0.420,0.420
+gyroflow/gyroflow,Service registry,13,13,0,False,config.toml,0.420,0.420
+gyroflow/gyroflow,Single Service Instance per Host,1,1,0,False,release.yml,0.420,0.420
+hafaio/repub,3rd Party Registration,69,20,0,False,HEAD,0.210,0.210
+hafaio/repub,Multiple service instances per host,0,0,0,False,,0.000,0.000
+hafaio/repub,Server-side service discovery,70,20,0,False,HEAD,0.210,0.210
+hafaio/repub,Service deployment platform,5,5,0,False,build.yml,0.420,0.420
+hafaio/repub,Service instance per VM,72,20,0,False,HEAD,0.210,0.210
+hafaio/repub,Service instance per container,69,20,0,False,HEAD,0.210,0.210
+hafaio/repub,Service mesh,67,20,0,False,HEAD,0.210,0.210
+hafaio/repub,Service registry,73,20,0,False,HEAD,0.210,0.210
+hafaio/repub,Single Service Instance per Host,67,20,0,False,HEAD,0.210,0.210
+haskell/hie-bios,3rd Party Registration,56,20,0,False,dependabot.yml,0.420,0.420
+haskell/hie-bios,Multiple service instances per host,4,4,0,False,hie-bios.sh,0.420,0.420
+haskell/hie-bios,Server-side service discovery,1,1,0,False,haskell.yml,0.420,0.420
+haskell/hie-bios,Service deployment platform,5,5,0,False,haskell.yml,0.420,0.420
+haskell/hie-bios,Service instance per VM,1,1,0,False,haskell.yml,0.420,0.420
+haskell/hie-bios,Service instance per container,5,5,0,False,haskell.yml,0.420,0.420
+haskell/hie-bios,Service mesh,1,1,0,False,haskell.yml,0.420,0.420
+haskell/hie-bios,Service registry,6,6,0,False,README.md,0.262,0.226
+haskell/hie-bios,Single Service Instance per Host,1,1,0,False,haskell.yml,0.420,0.420
+hcengineering/huly-selfhost,3rd Party Registration,72,20,0,False,compose.yml,0.420,0.216
+hcengineering/huly-selfhost,Multiple service instances per host,47,20,2,True,compose.yml,0.700,0.376
+hcengineering/huly-selfhost,Server-side service discovery,48,20,10,True,account-ingress.yaml,0.490,0.337
+hcengineering/huly-selfhost,Service deployment platform,46,20,16,True,account-deployment.yaml,0.700,0.621
+hcengineering/huly-selfhost,Service instance per VM,72,20,0,False,HEAD,0.210,0.210
+hcengineering/huly-selfhost,Service instance per container,72,20,14,True,account-deployment.yaml,0.700,0.299
+hcengineering/huly-selfhost,Service mesh,73,20,0,False,compose.yml,0.420,0.223
+hcengineering/huly-selfhost,Service registry,72,20,4,False,account-deployment.yaml,0.700,0.478
+hcengineering/huly-selfhost,Single Service Instance per Host,73,20,0,False,HEAD,0.210,0.210
+http4s/http4s,3rd Party Registration,4,4,0,False,release.yml,0.420,0.420
+http4s/http4s,Multiple service instances per host,1,1,0,False,deployment.md,0.420,0.420
+http4s/http4s,Server-side service discovery,2,2,0,False,ci.yml,0.420,0.420
+http4s/http4s,Service deployment platform,3,3,0,False,ci.yml,0.420,0.420
+http4s/http4s,Service instance per VM,7,7,0,False,ci.yml,0.420,0.420
+http4s/http4s,Service instance per container,2,2,0,False,ci.yml,0.420,0.420
+http4s/http4s,Service mesh,2,2,0,False,integrations.md,0.420,0.420
+http4s/http4s,Service registry,1,1,0,False,service.md,0.700,0.700
+http4s/http4s,Single Service Instance per Host,2,2,0,False,ci.yml,0.420,0.420
+hydro-dev/Hydro,3rd Party Registration,6,6,0,False,docker-compose.yml,0.700,0.397
+hydro-dev/Hydro,Multiple service instances per host,7,7,4,True,entrypoint.sh,0.770,0.710
+hydro-dev/Hydro,Server-side service discovery,6,6,0,False,nginx.conf,0.700,0.491
+hydro-dev/Hydro,Service deployment platform,18,18,11,True,backend.deployment.yaml,0.783,0.640
+hydro-dev/Hydro,Service instance per VM,2,2,0,False,build.yml,0.420,0.420
+hydro-dev/Hydro,Service instance per container,18,18,9,True,Dockerfile,0.791,0.703
+hydro-dev/Hydro,Service mesh,12,12,0,False,backend.config.yaml,0.700,0.478
+hydro-dev/Hydro,Service registry,8,8,0,False,api.ts,0.700,0.595
+hydro-dev/Hydro,Single Service Instance per Host,29,20,0,False,Chart.yaml,0.700,0.526
+ibizaman/skarabox,3rd Party Registration,8,8,0,False,dependabot.yml,0.420,0.420
+ibizaman/skarabox,Multiple service instances per host,73,20,1,True,architecture.md,0.420,0.224
+ibizaman/skarabox,Server-side service discovery,5,5,0,False,auto-merge.yaml,0.420,0.420
+ibizaman/skarabox,Service deployment platform,74,20,0,False,HEAD,0.210,0.210
+ibizaman/skarabox,Service instance per VM,78,20,0,False,HEAD,0.210,0.210
+ibizaman/skarabox,Service instance per container,73,20,0,False,architecture.md,0.420,0.213
+ibizaman/skarabox,Service mesh,49,20,1,False,architecture.md,0.700,0.233
+ibizaman/skarabox,Service registry,66,20,0,False,architecture.md,0.700,0.224
+ibizaman/skarabox,Single Service Instance per Host,37,20,1,True,architecture.md,0.420,0.267
+iiab/iiab,3rd Party Registration,1,1,0,False,registration.j2,0.700,0.700
+iiab/iiab,Multiple service instances per host,13,13,1,True,postgresql-iiab.service,0.770,0.420
+iiab/iiab,Server-side service discovery,18,18,1,True,awstats-nginx.conf,0.420,0.385
+iiab/iiab,Service deployment platform,92,20,14,True,ansible_hosts,0.700,0.644
+iiab/iiab,Service instance per VM,19,19,1,True,schooltool.service,0.494,0.468
+iiab/iiab,Service instance per container,2,2,0,False,docker-compose.sample.yml,0.775,0.737
+iiab/iiab,Service mesh,3,3,0,False,main.yml,0.210,0.210
+iiab/iiab,Service registry,5,5,0,False,iiab-network,0.210,0.210
+iiab/iiab,Single Service Instance per Host,20,20,2,False,postgresql-iiab.service,0.772,0.616
+jellyfin/jellyfin-ffmpeg,3rd Party Registration,9,9,0,False,config.yml,0.420,0.420
+jellyfin/jellyfin-ffmpeg,Multiple service instances per host,172,20,1,True,target_dec_fate.sh,0.545,0.459
+jellyfin/jellyfin-ffmpeg,Server-side service discovery,6,6,0,False,_meta.yaml,0.420,0.420
+jellyfin/jellyfin-ffmpeg,Service deployment platform,187,20,10,True,Dockerfile,0.502,0.423
+jellyfin/jellyfin-ffmpeg,Service instance per VM,59,20,0,False,Makefile,0.512,0.428
+jellyfin/jellyfin-ffmpeg,Service instance per container,10,10,0,False,Dockerfile,0.502,0.453
+jellyfin/jellyfin-ffmpeg,Service mesh,7,7,0,False,renovate.json,0.420,0.420
+jellyfin/jellyfin-ffmpeg,Service registry,139,20,0,False,1-bug-report.md,0.420,0.420
+jellyfin/jellyfin-ffmpeg,Single Service Instance per Host,6,6,0,False,_meta.yaml,0.420,0.420
+jinek/Consolonia,3rd Party Registration,11,11,0,False,FUNDING.yml,0.420,0.420
+jinek/Consolonia,Multiple service instances per host,27,20,0,False,FUNDING.yml,0.210,0.210
+jinek/Consolonia,Server-side service discovery,12,12,0,False,LICENSE,0.210,0.210
+jinek/Consolonia,Service deployment platform,14,14,0,False,LICENSE,0.210,0.210
+jinek/Consolonia,Service instance per VM,7,7,0,False,PublishIncrementalNuget.yml,0.420,0.420
+jinek/Consolonia,Service instance per container,5,5,0,False,PublishIncrementalNuget.yml,0.420,0.420
+jinek/Consolonia,Service mesh,9,9,0,False,PublishIncrementalNuget.yml,0.420,0.420
+jinek/Consolonia,Service registry,25,20,0,False,copilot-instructions.md,0.420,0.420
+jinek/Consolonia,Single Service Instance per Host,5,5,0,False,PublishIncrementalNuget.yml,0.420,0.420
+joedwards32/CS2,3rd Party Registration,36,20,0,False,docker-compose.yml,0.420,0.216
+joedwards32/CS2,Multiple service instances per host,40,20,0,False,docker-compose.yml,0.420,0.217
+joedwards32/CS2,Server-side service discovery,37,20,0,False,HEAD,0.210,0.210
+joedwards32/CS2,Service deployment platform,41,20,0,False,docker-compose.yml,0.490,0.219
+joedwards32/CS2,Service instance per VM,41,20,0,False,HEAD,0.210,0.210
+joedwards32/CS2,Service instance per container,11,11,6,True,Dockerfile,0.797,0.537
+joedwards32/CS2,Service mesh,36,20,0,False,HEAD,0.210,0.210
+joedwards32/CS2,Service registry,37,20,0,False,HEAD,0.210,0.210
+joedwards32/CS2,Single Service Instance per Host,37,20,0,False,HEAD,0.210,0.210
+josueBarretogit/manga-tui,3rd Party Registration,3,3,0,False,dependabot.yml,0.420,0.420
+josueBarretogit/manga-tui,Multiple service instances per host,104,20,0,False,HEAD,0.210,0.210
+josueBarretogit/manga-tui,Server-side service discovery,108,20,0,False,HEAD,0.210,0.210
+josueBarretogit/manga-tui,Service deployment platform,4,4,1,False,Dockerfile,0.500,0.440
+josueBarretogit/manga-tui,Service instance per VM,106,20,0,False,HEAD,0.210,0.210
+josueBarretogit/manga-tui,Service instance per container,1,1,1,True,Dockerfile,0.294,0.294
+josueBarretogit/manga-tui,Service mesh,104,20,0,False,HEAD,0.210,0.210
+josueBarretogit/manga-tui,Service registry,12,12,0,False,release.yml,0.420,0.420
+josueBarretogit/manga-tui,Single Service Instance per Host,108,20,0,False,HEAD,0.210,0.210
+joswayski/averagedatabase,3rd Party Registration,4,4,0,False,settings.json,0.420,0.420
+joswayski/averagedatabase,Multiple service instances per host,47,20,0,False,Dockerfile,0.420,0.219
+joswayski/averagedatabase,Server-side service discovery,0,0,0,False,,0.000,0.000
+joswayski/averagedatabase,Service deployment platform,44,20,0,False,Dockerfile,0.782,0.236
+joswayski/averagedatabase,Service instance per VM,74,20,0,False,HEAD,0.210,0.210
+joswayski/averagedatabase,Service instance per container,2,2,2,True,Dockerfile,0.788,0.784
+joswayski/averagedatabase,Service mesh,70,20,0,False,HEAD,0.210,0.210
+joswayski/averagedatabase,Service registry,7,7,0,False,README.md,0.420,0.420
+joswayski/averagedatabase,Single Service Instance per Host,63,20,0,False,HEAD,0.210,0.210
+jsinger67/parol,3rd Party Registration,23,20,0,False,dependabot.yml,0.420,0.420
+jsinger67/parol,Multiple service instances per host,7,7,0,False,build_parsers.ps1,0.420,0.420
+jsinger67/parol,Server-side service discovery,1,1,0,False,rust.yml,0.420,0.420
+jsinger67/parol,Service deployment platform,22,20,0,False,rust.yml,0.420,0.420
+jsinger67/parol,Service instance per VM,8,8,0,False,rust.yml,0.420,0.420
+jsinger67/parol,Service instance per container,1,1,0,False,rust.yml,0.420,0.420
+jsinger67/parol,Service mesh,22,20,0,False,rust.yml,0.420,0.420
+jsinger67/parol,Service registry,47,20,0,False,rust.yml,0.420,0.420
+jsinger67/parol,Single Service Instance per Host,1,1,0,False,rust.yml,0.420,0.420
+karlseguin/websocket.zig,3rd Party Registration,3,3,0,False,ci.yml,0.420,0.420
+karlseguin/websocket.zig,Multiple service instances per host,3,3,1,True,run.sh,0.505,0.477
+karlseguin/websocket.zig,Server-side service discovery,50,20,0,False,HEAD,0.210,0.210
+karlseguin/websocket.zig,Service deployment platform,55,20,0,False,Dockerfile,0.286,0.211
+karlseguin/websocket.zig,Service instance per VM,50,20,0,False,HEAD,0.210,0.210
+karlseguin/websocket.zig,Service instance per container,27,20,0,False,Dockerfile,0.776,0.278
+karlseguin/websocket.zig,Service mesh,3,3,0,False,ci.yml,0.420,0.420
+karlseguin/websocket.zig,Service registry,55,20,0,False,HEAD,0.210,0.210
+karlseguin/websocket.zig,Single Service Instance per Host,50,20,0,False,run.sh,0.420,0.218
+kelseykm/vcard4,3rd Party Registration,3,3,0,False,babel.config.json,0.420,0.420
+kelseykm/vcard4,Multiple service instances per host,288,20,0,False,HEAD,0.210,0.210
+kelseykm/vcard4,Server-side service discovery,0,0,0,False,,0.000,0.000
+kelseykm/vcard4,Service deployment platform,3,3,0,False,babel.config.json,0.420,0.420
+kelseykm/vcard4,Service instance per VM,289,20,0,False,HEAD,0.210,0.210
+kelseykm/vcard4,Service instance per container,0,0,0,False,,0.000,0.000
+kelseykm/vcard4,Service mesh,3,3,0,False,babel.config.json,0.420,0.420
+kelseykm/vcard4,Service registry,286,20,0,False,HEAD,0.210,0.210
+kelseykm/vcard4,Single Service Instance per Host,207,20,0,False,HEAD,0.210,0.210
+konflux-ci/integration-service,3rd Party Registration,113,20,0,False,codecov.yml,0.420,0.420
+konflux-ci/integration-service,Multiple service instances per host,104,20,0,False,mkerrors.sh,0.532,0.427
+konflux-ci/integration-service,Server-side service discovery,62,20,0,False,kustomization.yaml,0.515,0.436
+konflux-ci/integration-service,Service deployment platform,108,20,19,True,test-chart.yml,0.526,0.433
+konflux-ci/integration-service,Service instance per VM,26,20,0,False,Makefile,0.583,0.433
+konflux-ci/integration-service,Service instance per container,64,20,3,True,Dockerfile,0.504,0.439
+konflux-ci/integration-service,Service mesh,72,20,1,False,codecov.yml,0.420,0.420
+konflux-ci/integration-service,Service registry,5638,20,0,False,claims.go,0.583,0.428
+konflux-ci/integration-service,Single Service Instance per Host,71,20,0,False,codecov.yml,0.420,0.420
+kortix-ai/suna,3rd Party Registration,15,15,0,False,docker-compose.yml,0.700,0.364
+kortix-ai/suna,Multiple service instances per host,19,19,6,True,supervisord.conf,0.807,0.488
+kortix-ai/suna,Server-side service discovery,29,20,0,False,kong.yml,0.777,0.297
+kortix-ai/suna,Service deployment platform,32,20,5,False,Dockerfile,0.784,0.482
+kortix-ai/suna,Service instance per VM,10,10,0,False,mise.toml,0.420,0.420
+kortix-ai/suna,Service instance per container,16,16,5,True,Dockerfile,0.797,0.555
+kortix-ai/suna,Service mesh,15,15,0,False,kong.yml,0.700,0.457
+kortix-ai/suna,Service registry,27,20,0,False,tool_discovery.py,0.700,0.379
+kortix-ai/suna,Single Service Instance per Host,29,20,0,False,installation_service.py,0.700,0.372
+leviarista/github-profile-header-generator,3rd Party Registration,80,20,0,False,docker-compose.yml,0.420,0.213
+leviarista/github-profile-header-generator,Multiple service instances per host,1,1,0,False,docker-compose.yml,0.700,0.700
+leviarista/github-profile-header-generator,Server-side service discovery,78,20,0,False,HEAD,0.210,0.210
+leviarista/github-profile-header-generator,Service deployment platform,83,20,0,False,Dockerfile,0.300,0.212
+leviarista/github-profile-header-generator,Service instance per VM,2,2,0,False,gh-pages.yml,0.420,0.420
+leviarista/github-profile-header-generator,Service instance per container,2,2,2,True,docker-compose.yml,0.770,0.644
+leviarista/github-profile-header-generator,Service mesh,70,20,0,False,patterns.js,0.700,0.260
+leviarista/github-profile-header-generator,Service registry,60,20,0,False,patterns.js,0.700,0.236
+leviarista/github-profile-header-generator,Single Service Instance per Host,61,20,0,False,HEAD,0.210,0.210
+lipku/LiveTalking,3rd Party Registration,10,10,0,False,vocab.json,0.489,0.433
+lipku/LiveTalking,Multiple service instances per host,1,1,0,False,Dockerfile,0.210,0.210
+lipku/LiveTalking,Server-side service discovery,0,0,0,False,,0.000,0.000
+lipku/LiveTalking,Service deployment platform,135,20,0,False,Dockerfile,0.290,0.211
+lipku/LiveTalking,Service instance per VM,0,0,0,False,,0.000,0.000
+lipku/LiveTalking,Service instance per container,143,20,1,True,Dockerfile,0.500,0.212
+lipku/LiveTalking,Service mesh,109,20,0,False,vocab.json,0.267,0.211
+lipku/LiveTalking,Service registry,87,20,0,False,README-EN.md,0.420,0.420
+lipku/LiveTalking,Single Service Instance per Host,138,20,0,False,HEAD,0.210,0.210
+lite-xl/lite-xl,3rd Party Registration,7,7,0,False,dependabot.yml,0.420,0.420
+lite-xl/lite-xl,Multiple service instances per host,186,20,0,False,build.sh,0.292,0.212
+lite-xl/lite-xl,Server-side service discovery,3,3,0,False,auto_labeler_pr.yml,0.420,0.420
+lite-xl/lite-xl,Service deployment platform,11,11,2,True,auto_labeler_pr.yml,0.420,0.420
+lite-xl/lite-xl,Service instance per VM,3,3,0,False,auto_labeler_pr.yml,0.420,0.420
+lite-xl/lite-xl,Service instance per container,3,3,0,False,auto_labeler_pr.yml,0.420,0.420
+lite-xl/lite-xl,Service mesh,164,20,0,False,HEAD,0.210,0.210
+lite-xl/lite-xl,Service registry,18,18,0,False,auto_labeler_pr.yml,0.420,0.420
+lite-xl/lite-xl,Single Service Instance per Host,16,16,0,False,auto_labeler_pr.yml,0.420,0.420
+lloydrichards/shadcn-storybook-registry,3rd Party Registration,117,20,0,False,action.yml,0.420,0.420
+lloydrichards/shadcn-storybook-registry,Multiple service instances per host,0,0,0,False,,0.000,0.000
+lloydrichards/shadcn-storybook-registry,Server-side service discovery,2,2,0,False,check.yml,0.420,0.420
+lloydrichards/shadcn-storybook-registry,Service deployment platform,116,20,0,False,check.yml,0.420,0.420
+lloydrichards/shadcn-storybook-registry,Service instance per VM,2,2,0,False,check.yml,0.420,0.420
+lloydrichards/shadcn-storybook-registry,Service instance per container,2,2,0,False,check.yml,0.420,0.420
+lloydrichards/shadcn-storybook-registry,Service mesh,116,20,0,False,check.yml,0.420,0.420
+lloydrichards/shadcn-storybook-registry,Service registry,4,4,1,False,registry.test.ts,0.700,0.560
+lloydrichards/shadcn-storybook-registry,Single Service Instance per Host,2,2,0,False,check.yml,0.420,0.420
+lpradel/steam-web-api-java,3rd Party Registration,140,20,0,False,HEAD,0.210,0.210
+lpradel/steam-web-api-java,Multiple service instances per host,144,20,0,False,HEAD,0.210,0.210
+lpradel/steam-web-api-java,Server-side service discovery,102,20,0,False,HEAD,0.210,0.210
+lpradel/steam-web-api-java,Service deployment platform,61,20,1,True,build-maven.yml,0.420,0.420
+lpradel/steam-web-api-java,Service instance per VM,3,3,0,False,build-maven.yml,0.420,0.420
+lpradel/steam-web-api-java,Service instance per container,2,2,0,False,build-maven.yml,0.420,0.420
+lpradel/steam-web-api-java,Service mesh,140,20,0,False,GetAppList.json,0.345,0.211
+lpradel/steam-web-api-java,Service registry,59,20,0,False,build-maven.yml,0.420,0.420
+lpradel/steam-web-api-java,Single Service Instance per Host,2,2,0,False,build-maven.yml,0.420,0.420
+lyfe00011/levanter,3rd Party Registration,13,13,0,False,app.json,0.420,0.420
+lyfe00011/levanter,Multiple service instances per host,2,2,1,True,pm2.js,0.420,0.420
+lyfe00011/levanter,Server-side service discovery,0,0,0,False,,0.000,0.000
+lyfe00011/levanter,Service deployment platform,8,8,3,True,Dockerfile,0.776,0.456
+lyfe00011/levanter,Service instance per VM,0,0,0,False,,0.000,0.000
+lyfe00011/levanter,Service instance per container,46,20,3,True,Dockerfile,0.776,0.227
+lyfe00011/levanter,Service mesh,183,20,0,False,fr.json,0.323,0.211
+lyfe00011/levanter,Service registry,105,20,0,False,Dockerfile,0.210,0.210
+lyfe00011/levanter,Single Service Instance per Host,6,6,0,False,Dockerfile,0.210,0.210
+m1k1o/neko,3rd Party Registration,1,1,0,False,docker-compose.yaml,0.420,0.420
+m1k1o/neko,Multiple service instances per host,23,20,18,True,supervisord.conf,0.785,0.761
+m1k1o/neko,Server-side service discovery,13,13,1,True,serve.go,0.420,0.323
+m1k1o/neko,Service deployment platform,1,1,1,True,docker-compose.yaml,0.490,0.490
+m1k1o/neko,Service instance per VM,24,20,0,False,client_build.yml,0.420,0.420
+m1k1o/neko,Service instance per container,48,20,15,True,Dockerfile,0.805,0.567
+m1k1o/neko,Service mesh,42,20,0,False,client_build.yml,0.420,0.420
+m1k1o/neko,Service registry,39,20,0,False,config.yml,0.420,0.258
+m1k1o/neko,Single Service Instance per Host,12,12,0,False,client_build.yml,0.420,0.420
+malwaredb/malwaredb-rs,3rd Party Registration,111,20,0,False,config.toml,0.210,0.210
+malwaredb/malwaredb-rs,Multiple service instances per host,5,5,0,False,launchctl.rs,0.700,0.490
+malwaredb/malwaredb-rs,Server-side service discovery,9,9,0,False,commisery.yml,0.420,0.420
+malwaredb/malwaredb-rs,Service deployment platform,11,11,1,False,commisery.yml,0.420,0.420
+malwaredb/malwaredb-rs,Service instance per VM,10,10,0,False,Makefile,0.490,0.427
+malwaredb/malwaredb-rs,Service instance per container,9,9,0,False,commisery.yml,0.420,0.420
+malwaredb/malwaredb-rs,Service mesh,9,9,0,False,commisery.yml,0.420,0.420
+malwaredb/malwaredb-rs,Service registry,16,16,2,True,Cargo.toml,0.210,0.210
+malwaredb/malwaredb-rs,Single Service Instance per Host,6,6,3,True,freebsd.rs,0.420,0.385
+mcollovati/quarkus-hilla,3rd Party Registration,36,20,0,False,action.yaml,0.420,0.420
+mcollovati/quarkus-hilla,Multiple service instances per host,1,1,0,False,pre-releases-notes-combiner.sh,0.527,0.527
+mcollovati/quarkus-hilla,Server-side service discovery,9,9,0,False,cherry-picks.yaml,0.420,0.420
+mcollovati/quarkus-hilla,Service deployment platform,30,20,0,False,cherry-picks.yaml,0.420,0.420
+mcollovati/quarkus-hilla,Service instance per VM,18,18,0,False,HEAD,0.210,0.210
+mcollovati/quarkus-hilla,Service instance per container,9,9,0,False,cherry-picks.yaml,0.420,0.420
+mcollovati/quarkus-hilla,Service mesh,29,20,0,False,cherry-picks.yaml,0.420,0.420
+mcollovati/quarkus-hilla,Service registry,347,20,0,False,README.md,0.477,0.420
+mcollovati/quarkus-hilla,Single Service Instance per Host,9,9,0,False,cherry-picks.yaml,0.420,0.420
+mhogomchungu/media-downloader,3rd Party Registration,21,20,0,False,GitBuildMac.yml,0.420,0.420
+mhogomchungu/media-downloader,Multiple service instances per host,4,4,0,False,build_arch.sh,0.420,0.420
+mhogomchungu/media-downloader,Server-side service discovery,7,7,0,False,GitBuildMac.yml,0.420,0.420
+mhogomchungu/media-downloader,Service deployment platform,4,4,0,False,HowTo.txt,0.210,0.210
+mhogomchungu/media-downloader,Service instance per VM,179,20,0,False,HEAD,0.210,0.210
+mhogomchungu/media-downloader,Service instance per container,7,7,0,False,GitBuildMac.yml,0.420,0.420
+mhogomchungu/media-downloader,Service mesh,175,20,0,False,HEAD,0.210,0.210
+mhogomchungu/media-downloader,Service registry,179,20,0,False,HEAD,0.210,0.210
+mhogomchungu/media-downloader,Single Service Instance per Host,7,7,0,False,GitBuildMac.yml,0.420,0.420
+micahkepe/radion,3rd Party Registration,2,2,0,False,typos.yml,0.420,0.420
+micahkepe/radion,Multiple service instances per host,0,0,0,False,,0.000,0.000
+micahkepe/radion,Server-side service discovery,77,20,0,False,HEAD,0.210,0.210
+micahkepe/radion,Service deployment platform,2,2,0,False,typos.yml,0.420,0.420
+micahkepe/radion,Service instance per VM,79,20,0,False,HEAD,0.210,0.210
+micahkepe/radion,Service instance per container,2,2,0,False,typos.yml,0.420,0.420
+micahkepe/radion,Service mesh,2,2,0,False,typos.yml,0.420,0.420
+micahkepe/radion,Service registry,74,20,0,False,HEAD,0.210,0.210
+micahkepe/radion,Single Service Instance per Host,75,20,0,False,HEAD,0.210,0.210
+microsoft/azure-devops-extension-tasks,3rd Party Registration,76,20,0,False,FUNDING.yml,0.420,0.420
+microsoft/azure-devops-extension-tasks,Multiple service instances per host,2,2,0,False,fix-manifest-file.ps1,0.420,0.420
+microsoft/azure-devops-extension-tasks,Server-side service discovery,126,20,0,False,HEAD,0.210,0.210
+microsoft/azure-devops-extension-tasks,Service deployment platform,138,20,0,False,HEAD,0.210,0.210
+microsoft/azure-devops-extension-tasks,Service instance per VM,6,6,0,False,codeql-analysis.yml,0.420,0.420
+microsoft/azure-devops-extension-tasks,Service instance per container,133,20,0,False,HEAD,0.210,0.210
+microsoft/azure-devops-extension-tasks,Service mesh,70,20,0,False,renovate.json,0.420,0.420
+microsoft/azure-devops-extension-tasks,Service registry,13,13,0,False,bug_report.md,0.420,0.420
+microsoft/azure-devops-extension-tasks,Single Service Instance per Host,139,20,0,False,HEAD,0.210,0.210
+misbahansori/originui-vue,3rd Party Registration,7,7,0,False,registry.json,0.700,0.540
+misbahansori/originui-vue,Multiple service instances per host,4,4,0,False,package.json,0.420,0.315
+misbahansori/originui-vue,Server-side service discovery,0,0,0,False,,0.000,0.000
+misbahansori/originui-vue,Service deployment platform,699,20,0,False,metadata.json,0.420,0.420
+misbahansori/originui-vue,Service instance per VM,0,0,0,False,,0.000,0.000
+misbahansori/originui-vue,Service instance per container,44,20,0,False,comp-205.json,0.210,0.210
+misbahansori/originui-vue,Service mesh,20,20,0,False,comp-205.json,0.700,0.700
+misbahansori/originui-vue,Service registry,170,20,0,False,comp-01.vue,0.700,0.700
+misbahansori/originui-vue,Single Service Instance per Host,0,0,0,False,,0.000,0.000
+mobilecoinfoundation/mobilecoin,3rd Party Registration,34,20,0,False,fog-ingest-service.yaml,0.420,0.278
+mobilecoinfoundation/mobilecoin,Multiple service instances per host,50,20,7,True,wrapper-consensus-service.sh,0.700,0.406
+mobilecoinfoundation/mobilecoin,Server-side service discovery,51,20,4,True,fog-ledger-service-router-grpc-ingress.yaml,0.770,0.708
+mobilecoinfoundation/mobilecoin,Service deployment platform,155,20,20,True,fog-ledger-fsg-fogshardrangegenerator.yaml,0.792,0.744
+mobilecoinfoundation/mobilecoin,Service instance per VM,17,17,0,False,android-bindings-dispatch.yml,0.420,0.420
+mobilecoinfoundation/mobilecoin,Service instance per container,70,20,2,True,client-grpc-attest-ingress.yaml,0.700,0.552
+mobilecoinfoundation/mobilecoin,Service mesh,69,20,1,False,fog-ingest-configmap.yaml,0.700,0.512
+mobilecoinfoundation/mobilecoin,Service registry,114,20,2,False,_helpers.tpl,0.210,0.210
+mobilecoinfoundation/mobilecoin,Single Service Instance per Host,42,20,6,True,wrapper-consensus-service.sh,0.700,0.433
+mostafaalagamy/Metrolist,3rd Party Registration,32,20,0,False,bug_report.yml,0.420,0.420
+mostafaalagamy/Metrolist,Multiple service instances per host,3,3,1,True,AndroidManifest.xml,0.700,0.700
+mostafaalagamy/Metrolist,Server-side service discovery,8,8,0,False,AppModule.kt,0.210,0.210
+mostafaalagamy/Metrolist,Service deployment platform,28,20,1,True,build.yml,0.420,0.420
+mostafaalagamy/Metrolist,Service instance per VM,261,20,0,False,build.yml,0.420,0.420
+mostafaalagamy/Metrolist,Service instance per container,3,3,0,False,build.yml,0.420,0.420
+mostafaalagamy/Metrolist,Service mesh,28,20,0,False,build.yml,0.420,0.420
+mostafaalagamy/Metrolist,Service registry,16,16,0,False,build.yml,0.420,0.420
+mostafaalagamy/Metrolist,Single Service Instance per Host,3,3,0,False,build.yml,0.420,0.420
+mquintus/l33tcode-testcase-generator,3rd Party Registration,318,20,0,False,Generator2762.py,0.210,0.210
+mquintus/l33tcode-testcase-generator,Multiple service instances per host,0,0,0,False,,0.000,0.000
+mquintus/l33tcode-testcase-generator,Server-side service discovery,1,1,0,False,3508_Implement_Router.txt,0.700,0.700
+mquintus/l33tcode-testcase-generator,Service deployment platform,316,20,0,False,Generator2762.py,0.420,0.420
+mquintus/l33tcode-testcase-generator,Service instance per VM,318,20,0,False,Generator2762.py,0.420,0.419
+mquintus/l33tcode-testcase-generator,Service instance per container,318,20,0,False,Generator2762.py,0.210,0.210
+mquintus/l33tcode-testcase-generator,Service mesh,318,20,0,False,Generator2762.py,0.210,0.210
+mquintus/l33tcode-testcase-generator,Service registry,320,20,0,False,3508_Implement_Router.txt,0.700,0.212
+mquintus/l33tcode-testcase-generator,Single Service Instance per Host,311,20,0,False,Generator2762.py,0.420,0.420
+nanvix/nanvix,3rd Party Registration,17,17,0,False,action.yml,0.420,0.420
+nanvix/nanvix,Multiple service instances per host,13,13,5,True,mod.rs,0.700,0.671
+nanvix/nanvix,Server-side service discovery,6,6,0,False,branch-up-to-date.yml,0.420,0.420
+nanvix/nanvix,Service deployment platform,12,12,0,False,action.yml,0.210,0.210
+nanvix/nanvix,Service instance per VM,38,20,4,True,uservm.mk,0.700,0.634
+nanvix/nanvix,Service instance per container,2,2,0,False,Dockerfile,0.782,0.741
+nanvix/nanvix,Service mesh,6,6,0,False,Cargo.toml,0.700,0.700
+nanvix/nanvix,Service registry,7,7,0,False,cache.rs,0.700,0.660
+nanvix/nanvix,Single Service Instance per Host,18,18,0,False,branch-up-to-date.yml,0.420,0.420
+netwide-assembler/nasm,3rd Party Registration,4,4,0,False,sreg.json,0.700,0.438
+netwide-assembler/nasm,Multiple service instances per host,12,12,1,True,projtest.sh,0.532,0.437
+netwide-assembler/nasm,Server-side service discovery,1,1,0,False,test.yml,0.420,0.420
+netwide-assembler/nasm,Service deployment platform,202,20,0,False,test.yml,0.420,0.420
+netwide-assembler/nasm,Service instance per VM,2,2,0,False,test.yml,0.420,0.420
+netwide-assembler/nasm,Service instance per container,1,1,0,False,test.yml,0.420,0.420
+netwide-assembler/nasm,Service mesh,1,1,0,False,test.yml,0.210,0.210
+netwide-assembler/nasm,Service registry,3,3,0,False,sreg.json,0.700,0.443
+netwide-assembler/nasm,Single Service Instance per Host,1,1,0,False,test.yml,0.420,0.420
+nextcloud/contacts,3rd Party Registration,124,20,0,False,bug_report_circles.yml,0.420,0.420
+nextcloud/contacts,Multiple service instances per host,1,1,0,False,Makefile,0.420,0.420
+nextcloud/contacts,Server-side service discovery,20,20,0,False,appstore-build-publish.yml,0.420,0.420
+nextcloud/contacts,Service deployment platform,121,20,1,False,appstore-build-publish.yml,0.420,0.420
+nextcloud/contacts,Service instance per VM,25,20,0,False,appstore-build-publish.yml,0.420,0.420
+nextcloud/contacts,Service instance per container,20,20,0,False,appstore-build-publish.yml,0.420,0.420
+nextcloud/contacts,Service mesh,120,20,0,False,fr.json,0.497,0.421
+nextcloud/contacts,Service registry,173,20,0,False,issue_template.md,0.420,0.420
+nextcloud/contacts,Single Service Instance per Host,20,20,0,False,appstore-build-publish.yml,0.420,0.420
+nhasan/FlightIntel,3rd Party Registration,1,1,0,False,FUNDING.yml,0.420,0.420
+nhasan/FlightIntel,Multiple service instances per host,12,12,1,True,AeroNavService.kt,0.420,0.420
+nhasan/FlightIntel,Server-side service discovery,0,0,0,False,,0.000,0.000
+nhasan/FlightIntel,Service deployment platform,0,0,0,False,,0.000,0.000
+nhasan/FlightIntel,Service instance per VM,272,20,0,False,network_security_config.xml,0.512,0.420
+nhasan/FlightIntel,Service instance per container,0,0,0,False,,0.000,0.000
+nhasan/FlightIntel,Service mesh,0,0,0,False,,0.000,0.000
+nhasan/FlightIntel,Service registry,18,18,0,False,build.gradle.kts,0.420,0.420
+nhasan/FlightIntel,Single Service Instance per Host,0,0,0,False,,0.000,0.000
+ology/Music,3rd Party Registration,3,3,0,False,capture-midi.yaml,0.420,0.420
+ology/Music,Multiple service instances per host,0,0,0,False,,0.000,0.000
+ology/Music,Server-side service discovery,0,0,0,False,,0.000,0.000
+ology/Music,Service deployment platform,3,3,0,False,capture-midi.yaml,0.210,0.210
+ology/Music,Service instance per VM,0,0,0,False,,0.000,0.000
+ology/Music,Service instance per container,3,3,0,False,capture-midi.yaml,0.420,0.420
+ology/Music,Service mesh,0,0,0,False,,0.000,0.000
+ology/Music,Service registry,14,14,0,False,README.md,0.420,0.420
+ology/Music,Single Service Instance per Host,0,0,0,False,,0.000,0.000
+online-go/online-go.com,3rd Party Registration,1,1,0,False,docker-compose.yml,0.420,0.420
+online-go/online-go.com,Multiple service instances per host,1,1,0,False,docker-compose.yml,0.700,0.700
+online-go/online-go.com,Server-side service discovery,5,5,0,False,rengo_balancer.ts,0.700,0.392
+online-go/online-go.com,Service deployment platform,2,2,0,False,docker-compose.yml,0.490,0.387
+online-go/online-go.com,Service instance per VM,10,10,0,False,build.yml,0.420,0.420
+online-go/online-go.com,Service instance per container,2,2,2,True,docker-compose.yml,0.770,0.632
+online-go/online-go.com,Service mesh,2,2,0,False,api_v1_doc.yaml,0.210,0.210
+online-go/online-go.com,Service registry,8,8,0,False,repo.md,0.210,0.210
+online-go/online-go.com,Single Service Instance per Host,2,2,0,False,Dockerfile,0.210,0.210
+open-webui/mcpo,3rd Party Registration,50,20,0,False,HEAD,0.210,0.210
+open-webui/mcpo,Multiple service instances per host,0,0,0,False,,0.000,0.000
+open-webui/mcpo,Server-side service discovery,49,20,0,False,HEAD,0.210,0.210
+open-webui/mcpo,Service deployment platform,49,20,3,True,Dockerfile,0.501,0.229
+open-webui/mcpo,Service instance per VM,45,20,0,False,HEAD,0.210,0.210
+open-webui/mcpo,Service instance per container,21,20,2,True,Dockerfile,0.782,0.267
+open-webui/mcpo,Service mesh,26,20,0,False,FUNDING.yml,0.210,0.210
+open-webui/mcpo,Service registry,53,20,0,False,HEAD,0.210,0.210
+open-webui/mcpo,Single Service Instance per Host,49,20,0,False,HEAD,0.210,0.210
+opencontainers/runc,3rd Party Registration,11,11,0,False,bug_report.yaml,0.420,0.420
+opencontainers/runc,Multiple service instances per host,14,14,3,True,memfd-bind@.service,0.770,0.665
+opencontainers/runc,Server-side service discovery,3,3,0,False,scheduled.yml,0.420,0.420
+opencontainers/runc,Service deployment platform,5,5,0,False,Dockerfile,0.776,0.659
+opencontainers/runc,Service instance per VM,9,9,0,False,Makefile,0.512,0.455
+opencontainers/runc,Service instance per container,23,20,6,False,Dockerfile,0.776,0.271
+opencontainers/runc,Service mesh,23,20,0,False,entry.go,0.420,0.265
+opencontainers/runc,Service registry,1167,20,0,False,alu.go,0.570,0.425
+opencontainers/runc,Single Service Instance per Host,21,20,0,False,memfd-bind@.service,0.770,0.563
+openshift/csi-operator,3rd Party Registration,472,20,0,False,dependabot.yaml,0.420,0.420
+openshift/csi-operator,Multiple service instances per host,488,20,0,False,mkerrors.sh,0.532,0.422
+openshift/csi-operator,Server-side service discovery,18,18,4,True,service.yaml,0.490,0.467
+openshift/csi-operator,Service deployment platform,103,20,9,True,Dockerfile.ocp,0.510,0.437
+openshift/csi-operator,Service instance per VM,46,20,0,False,Makefile,0.545,0.432
+openshift/csi-operator,Service instance per container,21,20,2,True,Dockerfile,0.502,0.471
+openshift/csi-operator,Service mesh,38,20,0,False,prometheus_binding.yaml,0.420,0.420
+openshift/csi-operator,Service registry,8146,20,0,False,registry.go,0.583,0.427
+openshift/csi-operator,Single Service Instance per Host,425,20,0,False,bundle.Dockerfile,0.420,0.420
+osbuild/bootc-image-builder,3rd Party Registration,27,20,0,False,dependabot.yml,0.420,0.420
+osbuild/bootc-image-builder,Multiple service instances per host,2,2,0,False,Makefile,0.420,0.420
+osbuild/bootc-image-builder,Server-side service discovery,7,7,0,False,auto-merge-dependabot.yml,0.420,0.420
+osbuild/bootc-image-builder,Service deployment platform,9,9,1,False,auto-merge-dependabot.yml,0.420,0.420
+osbuild/bootc-image-builder,Service instance per VM,26,20,0,False,bootc-image-builder-pull-request.yaml,0.420,0.412
+osbuild/bootc-image-builder,Service instance per container,56,20,2,True,Containerfile,0.700,0.235
+osbuild/bootc-image-builder,Service mesh,7,7,0,False,auto-merge-dependabot.yml,0.420,0.420
+osbuild/bootc-image-builder,Service registry,43,20,0,False,cloud.go,0.490,0.423
+osbuild/bootc-image-builder,Single Service Instance per Host,103,20,0,False,version,0.210,0.210
+pact-foundation/pact-python,3rd Party Registration,23,20,0,False,bug.yml,0.420,0.420
+pact-foundation/pact-python,Multiple service instances per host,1,1,0,False,Makefile,0.420,0.420
+pact-foundation/pact-python,Server-side service discovery,2,2,0,False,http_proxy.py,0.700,0.700
+pact-foundation/pact-python,Service deployment platform,1,1,0,False,container-compose.yml,0.420,0.420
+pact-foundation/pact-python,Service instance per VM,10,10,0,False,build-cli.yml,0.420,0.420
+pact-foundation/pact-python,Service instance per container,1,1,1,True,container-compose.yml,0.700,0.700
+pact-foundation/pact-python,Service mesh,14,14,0,False,renovate.json,0.420,0.420
+pact-foundation/pact-python,Service registry,174,20,0,False,PULL_REQUEST_TEMPLATE.md,0.420,0.420
+pact-foundation/pact-python,Single Service Instance per Host,9,9,0,False,build-cli.yml,0.420,0.420
+pandas-dev/pandas-stubs,3rd Party Registration,5,5,0,False,action.yaml,0.420,0.420
+pandas-dev/pandas-stubs,Multiple service instances per host,3,3,0,False,__init__.py,0.420,0.420
+pandas-dev/pandas-stubs,Server-side service discovery,4,4,0,False,comment_commands.yml,0.420,0.420
+pandas-dev/pandas-stubs,Service deployment platform,4,4,0,False,comment_commands.yml,0.420,0.420
+pandas-dev/pandas-stubs,Service instance per VM,3,3,0,False,comment_commands.yml,0.420,0.420
+pandas-dev/pandas-stubs,Service instance per container,3,3,0,False,comment_commands.yml,0.420,0.420
+pandas-dev/pandas-stubs,Service mesh,4,4,0,False,comment_commands.yml,0.420,0.420
+pandas-dev/pandas-stubs,Service registry,31,20,0,False,LICENSE,0.210,0.210
+pandas-dev/pandas-stubs,Single Service Instance per Host,6,6,0,False,comment_commands.yml,0.420,0.420
+pangenome/impg,3rd Party Registration,64,20,0,False,HEAD,0.210,0.210
+pangenome/impg,Multiple service instances per host,67,20,0,False,HEAD,0.210,0.210
+pangenome/impg,Server-side service discovery,1,1,0,False,rust_build_test.yml,0.420,0.420
+pangenome/impg,Service deployment platform,2,2,0,False,rust_build_test.yml,0.420,0.420
+pangenome/impg,Service instance per VM,1,1,0,False,rust_build_test.yml,0.420,0.420
+pangenome/impg,Service instance per container,1,1,0,False,rust_build_test.yml,0.420,0.420
+pangenome/impg,Service mesh,1,1,0,False,rust_build_test.yml,0.420,0.420
+pangenome/impg,Service registry,6,6,0,False,rust_build_test.yml,0.420,0.420
+pangenome/impg,Single Service Instance per Host,67,20,0,False,HEAD,0.210,0.210
+payjoin/rust-payjoin,3rd Party Registration,1,1,0,False,docker-compose.yml,0.700,0.700
+payjoin/rust-payjoin,Multiple service instances per host,3,3,1,True,docker-compose.yml,0.700,0.513
+payjoin/rust-payjoin,Server-side service discovery,5,5,0,False,docker-compose.yml,0.497,0.435
+payjoin/rust-payjoin,Service deployment platform,21,20,2,True,Dockerfile,0.504,0.431
+payjoin/rust-payjoin,Service instance per VM,4,4,0,False,cron-weekly-mutants.yml,0.420,0.420
+payjoin/rust-payjoin,Service instance per container,3,3,3,True,Dockerfile,0.787,0.784
+payjoin/rust-payjoin,Service mesh,4,4,0,False,cron-weekly-mutants.yml,0.420,0.420
+payjoin/rust-payjoin,Service registry,53,20,0,False,CONTRIBUTING.md,0.490,0.421
+payjoin/rust-payjoin,Single Service Instance per Host,4,4,0,False,cron-weekly-mutants.yml,0.420,0.420
+pgerke/homebridge-freeathome-local-api,3rd Party Registration,20,20,0,False,FUNDING.yml,0.420,0.420
+pgerke/homebridge-freeathome-local-api,Multiple service instances per host,100,20,0,False,HEAD,0.210,0.210
+pgerke/homebridge-freeathome-local-api,Server-side service discovery,52,20,0,False,brightnessSensorAccessory.ts,0.210,0.210
+pgerke/homebridge-freeathome-local-api,Service deployment platform,13,13,0,False,ci.yaml,0.420,0.420
+pgerke/homebridge-freeathome-local-api,Service instance per VM,108,20,0,False,HEAD,0.210,0.210
+pgerke/homebridge-freeathome-local-api,Service instance per container,6,6,0,False,ci.yaml,0.420,0.420
+pgerke/homebridge-freeathome-local-api,Service mesh,13,13,0,False,ci.yaml,0.420,0.420
+pgerke/homebridge-freeathome-local-api,Service registry,13,13,0,False,bug-report.md,0.420,0.420
+pgerke/homebridge-freeathome-local-api,Single Service Instance per Host,104,20,0,False,HEAD,0.210,0.210
+phcurado/daisy_ui_components,3rd Party Registration,3,3,0,False,dependabot.yml,0.420,0.420
+phcurado/daisy_ui_components,Multiple service instances per host,3,3,1,True,project.ex,0.420,0.420
+phcurado/daisy_ui_components,Server-side service discovery,1,1,0,False,ci.yml,0.420,0.420
+phcurado/daisy_ui_components,Service deployment platform,3,3,1,False,Dockerfile,0.497,0.446
+phcurado/daisy_ui_components,Service instance per VM,1,1,0,False,ci.yml,0.420,0.420
+phcurado/daisy_ui_components,Service instance per container,1,1,1,True,Dockerfile,0.500,0.500
+phcurado/daisy_ui_components,Service mesh,2,2,0,False,ci.yml,0.420,0.420
+phcurado/daisy_ui_components,Service registry,222,20,0,False,HEAD,0.210,0.210
+phcurado/daisy_ui_components,Single Service Instance per Host,1,1,0,False,ci.yml,0.420,0.420
+phi-ag/argon2,3rd Party Registration,58,20,0,False,package.json,0.280,0.211
+phi-ag/argon2,Multiple service instances per host,61,20,0,False,HEAD,0.210,0.210
+phi-ag/argon2,Server-side service discovery,33,20,0,False,action.yml,0.210,0.210
+phi-ag/argon2,Service deployment platform,10,10,0,False,bench.yml,0.420,0.420
+phi-ag/argon2,Service instance per VM,3,3,0,False,bench.yml,0.420,0.420
+phi-ag/argon2,Service instance per container,59,20,0,False,HEAD,0.210,0.210
+phi-ag/argon2,Service mesh,34,20,0,False,action.yml,0.210,0.210
+phi-ag/argon2,Service registry,32,20,0,False,fetch.ts,0.700,0.308
+phi-ag/argon2,Single Service Instance per Host,60,20,0,False,HEAD,0.210,0.210
+plbstl/first-contribution,3rd Party Registration,65,20,0,False,HEAD,0.210,0.210
+plbstl/first-contribution,Multiple service instances per host,65,20,0,False,HEAD,0.210,0.210
+plbstl/first-contribution,Server-side service discovery,68,20,0,False,HEAD,0.210,0.210
+plbstl/first-contribution,Service deployment platform,66,20,0,False,HEAD,0.210,0.210
+plbstl/first-contribution,Service instance per VM,1,1,0,False,ci.yml,0.420,0.420
+plbstl/first-contribution,Service instance per container,1,1,0,False,ci.yml,0.420,0.420
+plbstl/first-contribution,Service mesh,3,3,0,False,ci.yml,0.420,0.420
+plbstl/first-contribution,Service registry,7,7,0,False,ci.yml,0.420,0.420
+plbstl/first-contribution,Single Service Instance per Host,1,1,0,False,ci.yml,0.420,0.420
+pluja/awesome-privacy,3rd Party Registration,32,20,0,False,HEAD,0.210,0.210
+pluja/awesome-privacy,Multiple service instances per host,0,0,0,False,,0.000,0.000
+pluja/awesome-privacy,Server-side service discovery,1,1,0,False,mirror.yml,0.420,0.420
+pluja/awesome-privacy,Service deployment platform,35,20,0,False,HEAD,0.210,0.210
+pluja/awesome-privacy,Service instance per VM,36,20,0,False,HEAD,0.210,0.210
+pluja/awesome-privacy,Service instance per container,1,1,0,False,mirror.yml,0.420,0.420
+pluja/awesome-privacy,Service mesh,35,20,0,False,HEAD,0.210,0.210
+pluja/awesome-privacy,Service registry,7,7,0,False,new-service-proposal.md,0.420,0.420
+pluja/awesome-privacy,Single Service Instance per Host,32,20,0,False,HEAD,0.210,0.210
+pylint-dev/pylint,3rd Party Registration,58,20,0,False,FUNDING.yml,0.420,0.420
+pylint-dev/pylint,Multiple service instances per host,15,15,0,False,Makefile,0.420,0.420
+pylint-dev/pylint,Server-side service discovery,11,11,0,False,backport.yml,0.420,0.420
+pylint-dev/pylint,Service deployment platform,53,20,1,False,Dockerfile,0.496,0.421
+pylint-dev/pylint,Service instance per VM,12,12,0,False,backport.yml,0.420,0.420
+pylint-dev/pylint,Service instance per container,12,12,1,False,Dockerfile,0.496,0.426
+pylint-dev/pylint,Service mesh,51,20,0,False,backport.yml,0.420,0.420
+pylint-dev/pylint,Service registry,2384,20,0,False,CONTRIBUTING.md,0.420,0.420
+pylint-dev/pylint,Single Service Instance per Host,5,5,0,False,classes_no_standalone.dot,0.210,0.210
+redimp/otterwiki,3rd Party Registration,13,13,0,False,docker-compose.yml,0.700,0.312
+redimp/otterwiki,Multiple service instances per host,7,7,4,True,supervisord.conf,0.777,0.711
+redimp/otterwiki,Server-side service discovery,12,12,1,True,ingress.yaml,0.494,0.432
+redimp/otterwiki,Service deployment platform,20,20,12,True,pvc.yaml,0.793,0.533
+redimp/otterwiki,Service instance per VM,16,16,0,False,CHANGELOG.md,0.210,0.210
+redimp/otterwiki,Service instance per container,17,17,9,True,Dockerfile,0.797,0.735
+redimp/otterwiki,Service mesh,8,8,1,True,secret.yaml,0.490,0.429
+redimp/otterwiki,Service registry,158,20,0,False,CHANGELOG.md,0.420,0.420
+redimp/otterwiki,Single Service Instance per Host,0,0,0,False,,0.000,0.000
+remsky/Kokoro-FastAPI,3rd Party Registration,3,3,0,False,kokoro-tts-deployment.yaml,0.420,0.420
+remsky/Kokoro-FastAPI,Multiple service instances per host,4,4,2,True,kokoro-tts-deployment.yaml,0.420,0.420
+remsky/Kokoro-FastAPI,Server-side service discovery,265,20,1,True,ingress.yaml,0.280,0.210
+remsky/Kokoro-FastAPI,Service deployment platform,10,10,9,True,kokoro-tts-deployment.yaml,0.784,0.755
+remsky/Kokoro-FastAPI,Service instance per VM,269,20,0,False,HEAD,0.210,0.210
+remsky/Kokoro-FastAPI,Service instance per container,16,16,8,True,Dockerfile,0.779,0.605
+remsky/Kokoro-FastAPI,Service mesh,12,12,0,False,ci.yml,0.420,0.420
+remsky/Kokoro-FastAPI,Service registry,134,20,0,False,bug_report.md,0.420,0.420
+remsky/Kokoro-FastAPI,Single Service Instance per Host,2,2,0,False,ci.yml,0.420,0.420
+renode/renode,3rd Party Registration,6,6,0,False,per-core-registration-hex.repl,0.700,0.700
+renode/renode,Multiple service instances per host,8,8,7,True,rpl-udp.resc,0.210,0.210
+renode/renode,Server-side service discovery,7,7,0,False,ExternalControlServer.cs,0.210,0.210
+renode/renode,Service deployment platform,41,20,3,False,common_copy_dts2repl_version_script.sh,0.420,0.410
+renode/renode,Service instance per VM,2,2,0,False,createAssemblyInfo.ps1,0.420,0.420
+renode/renode,Service instance per container,0,0,0,False,,0.000,0.000
+renode/renode,Service mesh,5,5,0,False,launch.json,0.420,0.420
+renode/renode,Service registry,5,5,1,False,ExternalControlServer.cs,0.210,0.210
+renode/renode,Single Service Instance per Host,106,20,1,False,acrn_x86_64-zephyr.resc,0.420,0.420
+resf/distro-tools,3rd Party Registration,31,20,0,False,push_containers.yaml,0.420,0.420
+resf/distro-tools,Multiple service instances per host,9,9,1,True,Dockerfile,0.210,0.210
+resf/distro-tools,Server-side service discovery,2,2,2,True,ingress.yaml,0.494,0.457
+resf/distro-tools,Service deployment platform,27,20,19,True,cronjob.yaml,0.784,0.764
+resf/distro-tools,Service instance per VM,211,20,0,False,HEAD,0.210,0.210
+resf/distro-tools,Service instance per container,90,20,9,True,Dockerfile,0.776,0.366
+resf/distro-tools,Service mesh,17,17,2,True,virtualservice.yaml,0.700,0.243
+resf/distro-tools,Service registry,79,20,0,False,push_containers.yaml,0.420,0.420
+resf/distro-tools,Single Service Instance per Host,3,3,0,False,push_containers.yaml,0.420,0.420
+richgrov/simulo,3rd Party Registration,168,20,0,False,HEAD,0.210,0.210
+richgrov/simulo,Multiple service instances per host,0,0,0,False,,0.000,0.000
+richgrov/simulo,Server-side service discovery,2,2,0,False,build.yml,0.420,0.420
+richgrov/simulo,Service deployment platform,195,20,0,False,HEAD,0.210,0.210
+richgrov/simulo,Service instance per VM,191,20,0,False,HEAD,0.210,0.210
+richgrov/simulo,Service instance per container,2,2,0,False,build.yml,0.420,0.420
+richgrov/simulo,Service mesh,2,2,0,False,build.yml,0.210,0.210
+richgrov/simulo,Service registry,5,5,0,False,build.yml,0.420,0.420
+richgrov/simulo,Single Service Instance per Host,2,2,0,False,build.yml,0.420,0.420
+ripple/craft,3rd Party Registration,65,20,0,False,dependabot.yml,0.420,0.420
+ripple/craft,Multiple service instances per host,10,10,0,False,setup.sh,0.551,0.517
+ripple/craft,Server-side service discovery,2,2,0,False,docs.yml,0.420,0.420
+ripple/craft,Service deployment platform,74,20,0,False,docs.yml,0.420,0.420
+ripple/craft,Service instance per VM,233,20,0,False,HEAD,0.210,0.210
+ripple/craft,Service instance per container,7,7,1,True,docker.rs,0.420,0.240
+ripple/craft,Service mesh,72,20,1,True,APEX.md,0.420,0.228
+ripple/craft,Service registry,78,20,0,False,pull_request_template.md,0.420,0.420
+ripple/craft,Single Service Instance per Host,2,2,0,False,docs.yml,0.420,0.420
+romanvht/ByeByeDPI,3rd Party Registration,3,3,0,False,bug.yml,0.420,0.420
+romanvht/ByeByeDPI,Multiple service instances per host,11,11,1,True,AndroidManifest.xml,0.210,0.210
+romanvht/ByeByeDPI,Server-side service discovery,0,0,0,False,,0.000,0.000
+romanvht/ByeByeDPI,Service deployment platform,0,0,0,False,,0.000,0.000
+romanvht/ByeByeDPI,Service instance per VM,136,20,0,False,HEAD,0.210,0.210
+romanvht/ByeByeDPI,Service instance per container,0,0,0,False,,0.000,0.000
+romanvht/ByeByeDPI,Service mesh,0,0,0,False,,0.000,0.000
+romanvht/ByeByeDPI,Service registry,108,20,0,False,HEAD,0.210,0.210
+romanvht/ByeByeDPI,Single Service Instance per Host,125,20,0,False,HEAD,0.210,0.210
+sappho192/Tokenizers.DotNet,3rd Party Registration,75,20,0,False,tokenizer.json,0.341,0.212
+sappho192/Tokenizers.DotNet,Multiple service instances per host,77,20,0,False,settings.local.json,0.210,0.210
+sappho192/Tokenizers.DotNet,Server-side service discovery,53,20,0,False,settings.local.json,0.210,0.210
+sappho192/Tokenizers.DotNet,Service deployment platform,6,6,0,False,Dockerfile,0.515,0.436
+sappho192/Tokenizers.DotNet,Service instance per VM,1,1,0,False,Dockerfile,0.210,0.210
+sappho192/Tokenizers.DotNet,Service instance per container,3,3,0,False,Dockerfile,0.517,0.452
+sappho192/Tokenizers.DotNet,Service mesh,78,20,0,False,tokenizer.json,0.330,0.212
+sappho192/Tokenizers.DotNet,Service registry,9,9,0,False,copilot-instructions.md,0.420,0.420
+sappho192/Tokenizers.DotNet,Single Service Instance per Host,72,20,0,False,settings.local.json,0.210,0.210
+scalacenter/scala-debug-adapter,3rd Party Registration,5,5,0,False,dependabot.yml,0.420,0.420
+scalacenter/scala-debug-adapter,Multiple service instances per host,0,0,0,False,,0.000,0.000
+scalacenter/scala-debug-adapter,Server-side service discovery,4,4,0,False,ci.yml,0.420,0.420
+scalacenter/scala-debug-adapter,Service deployment platform,4,4,1,False,ci.yml,0.420,0.420
+scalacenter/scala-debug-adapter,Service instance per VM,4,4,0,False,ci.yml,0.420,0.420
+scalacenter/scala-debug-adapter,Service instance per container,4,4,0,False,ci.yml,0.420,0.420
+scalacenter/scala-debug-adapter,Service mesh,4,4,0,False,ci.yml,0.420,0.420
+scalacenter/scala-debug-adapter,Service registry,13,13,0,False,ci.yml,0.420,0.420
+scalacenter/scala-debug-adapter,Single Service Instance per Host,4,4,0,False,ci.yml,0.420,0.420
+sheepzh/time-tracker-4-browser,3rd Party Registration,46,20,0,False,rules.json,0.505,0.422
+sheepzh/time-tracker-4-browser,Multiple service instances per host,46,20,3,True,common.ts,0.420,0.393
+sheepzh/time-tracker-4-browser,Server-side service discovery,9,9,0,False,crowdin-export.yml,0.420,0.420
+sheepzh/time-tracker-4-browser,Service deployment platform,46,20,4,True,crowdin-export.yml,0.420,0.420
+sheepzh/time-tracker-4-browser,Service instance per VM,9,9,0,False,crowdin-export.yml,0.420,0.420
+sheepzh/time-tracker-4-browser,Service instance per container,9,9,0,False,crowdin-export.yml,0.420,0.420
+sheepzh/time-tracker-4-browser,Service mesh,45,20,0,False,crowdin-export.yml,0.420,0.420
+sheepzh/time-tracker-4-browser,Service registry,4,4,0,False,similar-comparison.md,0.700,0.490
+sheepzh/time-tracker-4-browser,Single Service Instance per Host,9,9,0,False,crowdin-export.yml,0.420,0.420
+shibatch/SSRC,3rd Party Registration,1,1,0,False,Jenkinsfile,0.420,0.420
+shibatch/SSRC,Multiple service instances per host,93,20,0,False,HEAD,0.210,0.210
+shibatch/SSRC,Server-side service discovery,88,20,0,False,HEAD,0.210,0.210
+shibatch/SSRC,Service deployment platform,92,20,0,False,Jenkinsfile,0.280,0.211
+shibatch/SSRC,Service instance per VM,91,20,0,False,HEAD,0.210,0.210
+shibatch/SSRC,Service instance per container,89,20,0,False,HEAD,0.210,0.210
+shibatch/SSRC,Service mesh,73,20,0,False,HEAD,0.210,0.210
+shibatch/SSRC,Service registry,97,20,0,False,HEAD,0.210,0.210
+shibatch/SSRC,Single Service Instance per Host,1,1,0,False,Jenkinsfile,0.420,0.420
+shshemi/tabiew,3rd Party Registration,1,1,0,False,manual_release.yml,0.420,0.420
+shshemi/tabiew,Multiple service instances per host,0,0,0,False,,0.000,0.000
+shshemi/tabiew,Server-side service discovery,1,1,0,False,manual_release.yml,0.420,0.420
+shshemi/tabiew,Service deployment platform,1,1,1,False,manual_release.yml,0.420,0.420
+shshemi/tabiew,Service instance per VM,1,1,0,False,manual_release.yml,0.420,0.420
+shshemi/tabiew,Service instance per container,1,1,0,False,manual_release.yml,0.420,0.420
+shshemi/tabiew,Service mesh,1,1,0,False,manual_release.yml,0.420,0.420
+shshemi/tabiew,Service registry,3,3,0,False,manual_release.yml,0.420,0.420
+shshemi/tabiew,Single Service Instance per Host,1,1,0,False,manual_release.yml,0.420,0.420
+spring-rs/spring-rs,3rd Party Registration,12,12,0,False,compose.yaml,0.210,0.210
+spring-rs/spring-rs,Multiple service instances per host,12,12,2,True,compose.yaml,0.420,0.420
+spring-rs/spring-rs,Server-side service discovery,3,3,0,False,clippy.yaml,0.420,0.420
+spring-rs/spring-rs,Service deployment platform,17,17,3,False,compose.yaml,0.420,0.346
+spring-rs/spring-rs,Service instance per VM,4,4,0,False,clippy.yaml,0.420,0.420
+spring-rs/spring-rs,Service instance per container,12,12,9,True,compose.yaml,0.772,0.770
+spring-rs/spring-rs,Service mesh,6,6,0,False,clippy.yaml,0.420,0.420
+spring-rs/spring-rs,Service registry,222,20,0,False,clippy.yaml,0.420,0.420
+spring-rs/spring-rs,Single Service Instance per Host,3,3,0,False,clippy.yaml,0.420,0.420
+stratis-storage/stratis-cli,3rd Party Registration,4,4,0,False,dummy.yml,0.420,0.420
+stratis-storage/stratis-cli,Multiple service instances per host,2,2,0,False,Makefile,0.512,0.466
+stratis-storage/stratis-cli,Server-side service discovery,4,4,0,False,dummy.yml,0.420,0.420
+stratis-storage/stratis-cli,Service deployment platform,6,6,0,False,dummy.yml,0.420,0.420
+stratis-storage/stratis-cli,Service instance per VM,6,6,0,False,dummy.yml,0.420,0.420
+stratis-storage/stratis-cli,Service instance per container,4,4,0,False,dummy.yml,0.420,0.420
+stratis-storage/stratis-cli,Service mesh,4,4,0,False,dummy.yml,0.420,0.420
+stratis-storage/stratis-cli,Service registry,138,20,0,False,HEAD,0.210,0.210
+stratis-storage/stratis-cli,Single Service Instance per Host,4,4,0,False,dummy.yml,0.420,0.420
+suyash-thakur/js-good-first-issues-finder,3rd Party Registration,5,5,0,False,main.yml,0.420,0.420
+suyash-thakur/js-good-first-issues-finder,Multiple service instances per host,0,0,0,False,,0.000,0.000
+suyash-thakur/js-good-first-issues-finder,Server-side service discovery,1,1,0,False,main.yml,0.420,0.420
+suyash-thakur/js-good-first-issues-finder,Service deployment platform,5,5,0,False,main.yml,0.420,0.420
+suyash-thakur/js-good-first-issues-finder,Service instance per VM,61,20,0,False,HEAD,0.210,0.210
+suyash-thakur/js-good-first-issues-finder,Service instance per container,1,1,0,False,main.yml,0.420,0.420
+suyash-thakur/js-good-first-issues-finder,Service mesh,28,20,0,False,page.tsx,0.700,0.362
+suyash-thakur/js-good-first-issues-finder,Service registry,59,20,0,False,HEAD,0.210,0.210
+suyash-thakur/js-good-first-issues-finder,Single Service Instance per Host,61,20,0,False,HEAD,0.210,0.210
+swcarpentry/shell-novice,3rd Party Registration,9,9,0,False,pr-close-signal.yaml,0.420,0.420
+swcarpentry/shell-novice,Multiple service instances per host,2,2,0,False,goodiff.sh,0.420,0.420
+swcarpentry/shell-novice,Server-side service discovery,8,8,0,False,pr-close-signal.yaml,0.420,0.420
+swcarpentry/shell-novice,Service deployment platform,55,20,0,False,HEAD,0.210,0.210
+swcarpentry/shell-novice,Service instance per VM,111,20,0,False,pr-close-signal.yaml,0.420,0.420
+swcarpentry/shell-novice,Service instance per container,8,8,0,False,pr-close-signal.yaml,0.420,0.420
+swcarpentry/shell-novice,Service mesh,8,8,0,False,pr-close-signal.yaml,0.420,0.420
+swcarpentry/shell-novice,Service registry,31,20,0,False,README.md,0.420,0.420
+swcarpentry/shell-novice,Single Service Instance per Host,8,8,0,False,pr-close-signal.yaml,0.420,0.420
+teo-tsirpanis/Farkle,3rd Party Registration,24,20,0,False,dotnet-tools.json,0.420,0.420
+teo-tsirpanis/Farkle,Multiple service instances per host,2,2,0,False,build.ps1,0.420,0.420
+teo-tsirpanis/Farkle,Server-side service discovery,6,6,0,False,benchmark.yml,0.420,0.420
+teo-tsirpanis/Farkle,Service deployment platform,19,19,0,False,dotnet-tools.json,0.420,0.420
+teo-tsirpanis/Farkle,Service instance per VM,9,9,0,False,benchmark.yml,0.420,0.420
+teo-tsirpanis/Farkle,Service instance per container,6,6,0,False,benchmark.yml,0.420,0.420
+teo-tsirpanis/Farkle,Service mesh,19,19,0,False,dotnet-tools.json,0.420,0.420
+teo-tsirpanis/Farkle,Service registry,95,20,0,False,RELEASE_NOTES.md,0.477,0.421
+teo-tsirpanis/Farkle,Single Service Instance per Host,6,6,0,False,benchmark.yml,0.420,0.420
+thephpleague/commonmark,3rd Party Registration,5,5,0,False,docker-compose.yml,0.420,0.252
+thephpleague/commonmark,Multiple service instances per host,2,2,1,True,docker-compose.yml,0.700,0.560
+thephpleague/commonmark,Server-side service discovery,4,4,0,False,backwards-compatibility.yml,0.420,0.420
+thephpleague/commonmark,Service deployment platform,1,1,0,False,docker-compose.yml,0.490,0.490
+thephpleague/commonmark,Service instance per VM,47,20,0,False,backwards-compatibility.yml,0.420,0.420
+thephpleague/commonmark,Service instance per container,2,2,2,True,docker-compose.yml,0.770,0.636
+thephpleague/commonmark,Service mesh,8,8,0,False,renovate.json,0.420,0.420
+thephpleague/commonmark,Service registry,505,20,0,False,CODE_OF_CONDUCT.md,0.420,0.420
+thephpleague/commonmark,Single Service Instance per Host,2,2,0,False,docker-compose.yml,0.420,0.420
+throneproj/Throne,3rd Party Registration,9,9,0,False,bug_report.yml,0.420,0.420
+throneproj/Throne,Multiple service instances per host,6,6,0,False,deploy_linux64.sh,0.490,0.462
+throneproj/Throne,Server-side service discovery,17,17,0,False,dns_manager_windows.go,0.420,0.420
+throneproj/Throne,Service deployment platform,23,20,2,False,Dockerfile,0.510,0.278
+throneproj/Throne,Service instance per VM,8,8,0,False,build.yml,0.420,0.420
+throneproj/Throne,Service instance per container,1,1,0,False,Dockerfile,0.805,0.805
+throneproj/Throne,Service mesh,5,5,0,False,build.yml,0.420,0.420
+throneproj/Throne,Service registry,91,20,0,False,proto3.pb.protorpc.go,0.570,0.444
+throneproj/Throne,Single Service Instance per Host,15,15,1,True,build.yml,0.210,0.210
+thrushlang/thrushc,3rd Party Registration,3,3,0,False,thrushc-x86_64-linux.yml,0.420,0.420
+thrushlang/thrushc,Multiple service instances per host,9,9,0,False,build.sh,0.532,0.451
+thrushlang/thrushc,Server-side service discovery,2,2,0,False,thrushc-x86_64-linux.yml,0.420,0.420
+thrushlang/thrushc,Service deployment platform,7,7,1,True,thrushc-x86_64-linux.yml,0.420,0.420
+thrushlang/thrushc,Service instance per VM,4,4,0,False,thrushc-x86_64-linux.yml,0.420,0.420
+thrushlang/thrushc,Service instance per container,2,2,0,False,thrushc-x86_64-linux.yml,0.420,0.420
+thrushlang/thrushc,Service mesh,2,2,0,False,thrushc-x86_64-linux.yml,0.420,0.420
+thrushlang/thrushc,Service registry,33,20,0,False,critical-issue.md,0.420,0.420
+thrushlang/thrushc,Single Service Instance per Host,2,2,0,False,thrushc-x86_64-linux.yml,0.420,0.420
+tomtomwombat/fastbloom,3rd Party Registration,38,20,0,False,HEAD,0.210,0.210
+tomtomwombat/fastbloom,Multiple service instances per host,38,20,0,False,HEAD,0.210,0.210
+tomtomwombat/fastbloom,Server-side service discovery,9,9,0,False,Cargo.toml,0.210,0.210
+tomtomwombat/fastbloom,Service deployment platform,38,20,0,False,HEAD,0.210,0.210
+tomtomwombat/fastbloom,Service instance per VM,38,20,0,False,HEAD,0.210,0.210
+tomtomwombat/fastbloom,Service instance per container,1,1,0,False,rust.yml,0.420,0.420
+tomtomwombat/fastbloom,Service mesh,34,20,0,False,HEAD,0.210,0.210
+tomtomwombat/fastbloom,Service registry,37,20,0,False,HEAD,0.210,0.210
+tomtomwombat/fastbloom,Single Service Instance per Host,1,1,0,False,rust.yml,0.420,0.420
+tramhao/termusic,3rd Party Registration,217,20,0,False,config.yml,0.420,0.420
+tramhao/termusic,Multiple service instances per host,5,5,1,True,Makefile,0.420,0.420
+tramhao/termusic,Server-side service discovery,2,2,0,False,build.yml,0.420,0.420
+tramhao/termusic,Service deployment platform,3,3,0,False,build.yml,0.420,0.420
+tramhao/termusic,Service instance per VM,3,3,0,False,build.yml,0.420,0.420
+tramhao/termusic,Service instance per container,2,2,0,False,build.yml,0.420,0.420
+tramhao/termusic,Service mesh,2,2,0,False,build.yml,0.420,0.420
+tramhao/termusic,Service registry,18,18,0,False,bug.md,0.420,0.420
+tramhao/termusic,Single Service Instance per Host,6,6,0,False,build.yml,0.420,0.420
+trpc/trpc,3rd Party Registration,2,2,0,False,docker-compose.yaml,0.700,0.700
+trpc/trpc,Multiple service instances per host,1,1,1,True,multiple-trpc-providers.test.tsx,0.210,0.210
+trpc/trpc,Server-side service discovery,33,20,0,False,subscriptions.md,0.210,0.210
+trpc/trpc,Service deployment platform,6,6,3,True,serverless.yml,0.772,0.595
+trpc/trpc,Service instance per VM,12,12,0,False,codeql-analysis.yml,0.420,0.420
+trpc/trpc,Service instance per container,7,7,2,True,docker-compose.yaml,0.770,0.450
+trpc/trpc,Service mesh,146,20,0,False,renovate.json,0.420,0.420
+trpc/trpc,Service registry,15,15,0,False,index.ts,0.700,0.476
+trpc/trpc,Single Service Instance per Host,12,12,0,False,codeql-analysis.yml,0.420,0.420
+typelevel/fs2,3rd Party Registration,3,3,0,False,ci.yml,0.420,0.420
+typelevel/fs2,Multiple service instances per host,0,0,0,False,,0.000,0.000
+typelevel/fs2,Server-side service discovery,2,2,0,False,ci.yml,0.420,0.420
+typelevel/fs2,Service deployment platform,3,3,0,False,ci.yml,0.420,0.420
+typelevel/fs2,Service instance per VM,2,2,0,False,ci.yml,0.420,0.420
+typelevel/fs2,Service instance per container,2,2,0,False,ci.yml,0.420,0.420
+typelevel/fs2,Service mesh,3,3,0,False,ci.yml,0.420,0.420
+typelevel/fs2,Service registry,18,18,0,False,migration-guide-0.10.md,0.292,0.215
+typelevel/fs2,Single Service Instance per Host,2,2,0,False,ci.yml,0.420,0.420
+utilityai/llama-cpp-rs,3rd Party Registration,5,5,0,False,dependabot.yml,0.420,0.420
+utilityai/llama-cpp-rs,Multiple service instances per host,0,0,0,False,,0.000,0.000
+utilityai/llama-cpp-rs,Server-side service discovery,80,20,0,False,HEAD,0.210,0.210
+utilityai/llama-cpp-rs,Service deployment platform,1,1,0,False,test-build.Dockerfile,0.210,0.210
+utilityai/llama-cpp-rs,Service instance per VM,75,20,0,False,HEAD,0.210,0.210
+utilityai/llama-cpp-rs,Service instance per container,76,20,0,False,HEAD,0.210,0.210
+utilityai/llama-cpp-rs,Service mesh,81,20,0,False,HEAD,0.210,0.210
+utilityai/llama-cpp-rs,Service registry,83,20,0,False,HEAD,0.210,0.210
+utilityai/llama-cpp-rs,Single Service Instance per Host,4,4,0,False,llama-cpp-rs-check.yml,0.420,0.420
+vishvananda/netlink,3rd Party Registration,1,1,0,False,main.yml,0.420,0.420
+vishvananda/netlink,Multiple service instances per host,120,20,0,False,HEAD,0.210,0.210
+vishvananda/netlink,Server-side service discovery,1,1,0,False,main.yml,0.420,0.420
+vishvananda/netlink,Service deployment platform,3,3,0,False,modprobe.sh,0.420,0.420
+vishvananda/netlink,Service instance per VM,2,2,0,False,main.yml,0.420,0.420
+vishvananda/netlink,Service instance per container,1,1,0,False,main.yml,0.420,0.420
+vishvananda/netlink,Service mesh,1,1,0,False,main.yml,0.420,0.420
+vishvananda/netlink,Service registry,133,20,0,False,modprobe.sh,0.420,0.420
+vishvananda/netlink,Single Service Instance per Host,1,1,0,False,main.yml,0.420,0.420
+vuejs/language-tools,3rd Party Registration,115,20,0,False,FUNDING.yml,0.420,0.420
+vuejs/language-tools,Multiple service instances per host,0,0,0,False,,0.000,0.000
+vuejs/language-tools,Server-side service discovery,7,7,0,False,auto-fix.yml,0.420,0.420
+vuejs/language-tools,Service deployment platform,109,20,2,True,auto-fix.yml,0.420,0.420
+vuejs/language-tools,Service instance per VM,7,7,0,False,auto-fix.yml,0.420,0.420
+vuejs/language-tools,Service instance per container,7,7,0,False,auto-fix.yml,0.420,0.420
+vuejs/language-tools,Service mesh,109,20,0,False,fr.json,0.527,0.422
+vuejs/language-tools,Service registry,24,20,0,False,auto-fix.yml,0.420,0.420
+vuejs/language-tools,Single Service Instance per Host,7,7,0,False,auto-fix.yml,0.420,0.420
+webpro-nl/knip,3rd Party Registration,962,20,0,False,package.json,0.490,0.420
+webpro-nl/knip,Multiple service instances per host,3,3,2,True,package.json,0.700,0.607
+webpro-nl/knip,Server-side service discovery,2,2,0,False,index.ts,0.700,0.560
+webpro-nl/knip,Service deployment platform,938,20,1,False,ci-bun.yml,0.420,0.420
+webpro-nl/knip,Service instance per VM,12,12,0,False,ci-bun.yml,0.420,0.420
+webpro-nl/knip,Service instance per container,4,4,0,False,ci-bun.yml,0.420,0.420
+webpro-nl/knip,Service mesh,2,2,0,False,pnpm-workspace.yaml,0.210,0.210
+webpro-nl/knip,Service registry,587,20,0,False,CODE_OF_CONDUCT.md,0.420,0.420
+webpro-nl/knip,Single Service Instance per Host,10,10,0,False,ci-bun.yml,0.420,0.420
+welovemedia/ffmate,3rd Party Registration,142,20,0,False,HEAD,0.210,0.210
+welovemedia/ffmate,Multiple service instances per host,148,20,0,False,HEAD,0.210,0.210
+welovemedia/ffmate,Server-side service discovery,7,7,0,False,server.go,0.210,0.210
+welovemedia/ffmate,Service deployment platform,2,2,0,False,Dockerfile.amd64,0.494,0.494
+welovemedia/ffmate,Service instance per VM,3,3,0,False,release.yml,0.420,0.420
+welovemedia/ffmate,Service instance per container,2,2,2,True,Dockerfile.amd64,0.700,0.700
+welovemedia/ffmate,Service mesh,19,19,2,False,prometheus.go,0.700,0.420
+welovemedia/ffmate,Service registry,114,20,0,False,client.go,0.535,0.444
+welovemedia/ffmate,Single Service Instance per Host,2,2,0,False,release.yml,0.420,0.420
+wgzhao/Addax,3rd Party Registration,253,20,0,False,NEW-ISSUE.yml,0.420,0.420
+wgzhao/Addax,Multiple service instances per host,10,10,1,False,addax.sh,0.532,0.384
+wgzhao/Addax,Server-side service discovery,8,8,0,False,README.md,0.700,0.525
+wgzhao/Addax,Service deployment platform,15,15,2,True,Dockerfile,0.790,0.575
+wgzhao/Addax,Service instance per VM,155,20,0,False,codeql-analysis.yml,0.420,0.420
+wgzhao/Addax,Service instance per container,20,20,2,True,Dockerfile,0.797,0.509
+wgzhao/Addax,Service mesh,250,20,0,False,codeql-analysis.yml,0.420,0.420
+wgzhao/Addax,Service registry,6,6,0,False,package.xml,0.210,0.210
+wgzhao/Addax,Single Service Instance per Host,7,7,1,True,addax-server.sh,0.700,0.410
+wikimedia/mediawiki-extensions-Scribunto,3rd Party Registration,363,20,0,False,extension.json,0.520,0.420
+wikimedia/mediawiki-extensions-Scribunto,Multiple service instances per host,1,1,0,False,lua_ulimit.sh,0.490,0.490
+wikimedia/mediawiki-extensions-Scribunto,Server-side service discovery,0,0,0,False,,0.000,0.000
+wikimedia/mediawiki-extensions-Scribunto,Service deployment platform,364,20,0,False,composer.json,0.420,0.420
+wikimedia/mediawiki-extensions-Scribunto,Service instance per VM,0,0,0,False,,0.000,0.000
+wikimedia/mediawiki-extensions-Scribunto,Service instance per container,0,0,0,False,,0.000,0.000
+wikimedia/mediawiki-extensions-Scribunto,Service mesh,363,20,0,False,fr.json,0.505,0.420
+wikimedia/mediawiki-extensions-Scribunto,Service registry,1,1,0,False,ServiceWiring.php,0.700,0.700
+wikimedia/mediawiki-extensions-Scribunto,Single Service Instance per Host,0,0,0,False,,0.000,0.000
+wpovernight/woocommerce-pdf-invoices-packing-slips,3rd Party Registration,18,18,0,False,depends-on.yml,0.420,0.420
+wpovernight/woocommerce-pdf-invoices-packing-slips,Multiple service instances per host,0,0,0,False,,0.000,0.000
+wpovernight/woocommerce-pdf-invoices-packing-slips,Server-side service discovery,5,5,0,False,depends-on.yml,0.420,0.420
+wpovernight/woocommerce-pdf-invoices-packing-slips,Service deployment platform,18,18,2,False,depends-on.yml,0.420,0.420
+wpovernight/woocommerce-pdf-invoices-packing-slips,Service instance per VM,6,6,0,False,depends-on.yml,0.420,0.420
+wpovernight/woocommerce-pdf-invoices-packing-slips,Service instance per container,5,5,0,False,depends-on.yml,0.420,0.420
+wpovernight/woocommerce-pdf-invoices-packing-slips,Service mesh,18,18,0,False,depends-on.yml,0.420,0.420
+wpovernight/woocommerce-pdf-invoices-packing-slips,Service registry,32,20,0,False,depends-on.yml,0.420,0.420
+wpovernight/woocommerce-pdf-invoices-packing-slips,Single Service Instance per Host,14,14,0,False,README.md,0.210,0.210
+xapi-project/xen-api,3rd Party Registration,43,20,0,False,dco.yml,0.420,0.420
+xapi-project/xen-api,Multiple service instances per host,75,20,4,True,quality-gate.sh,0.545,0.463
+xapi-project/xen-api,Server-side service discovery,11,11,0,False,1.249-lcm.yml,0.420,0.420
+xapi-project/xen-api,Service deployment platform,70,20,1,False,1.249-lcm.yml,0.420,0.420
+xapi-project/xen-api,Service instance per VM,56,20,0,False,gencert.service,0.496,0.451
+xapi-project/xen-api,Service instance per container,11,11,0,False,1.249-lcm.yml,0.420,0.420
+xapi-project/xen-api,Service mesh,38,20,0,False,1.249-lcm.yml,0.420,0.420
+xapi-project/xen-api,Service registry,465,20,0,False,index.md,0.497,0.421
+xapi-project/xen-api,Single Service Instance per Host,53,20,1,True,gencert.service,0.496,0.452
+xjh22222228/nav,3rd Party Registration,15,15,0,False,ci.yml,0.420,0.420
+xjh22222228/nav,Multiple service instances per host,0,0,0,False,,0.000,0.000
+xjh22222228/nav,Server-side service discovery,1,1,0,False,ci.yml,0.420,0.420
+xjh22222228/nav,Service deployment platform,13,13,0,False,ci.yml,0.420,0.420
+xjh22222228/nav,Service instance per VM,1,1,0,False,ci.yml,0.420,0.420
+xjh22222228/nav,Service instance per container,1,1,0,False,ci.yml,0.420,0.420
+xjh22222228/nav,Service mesh,32,20,0,False,ci.yml,0.210,0.210
+xjh22222228/nav,Service registry,40,20,0,False,README.md,0.420,0.252
+xjh22222228/nav,Single Service Instance per Host,275,20,0,False,HEAD,0.210,0.210
+xuxueli/xxl-job,3rd Party Registration,2,2,0,False,FUNDING.yml,0.420,0.420
+xuxueli/xxl-job,Multiple service instances per host,0,0,0,False,,0.000,0.000
+xuxueli/xxl-job,Server-side service discovery,1,1,0,False,maven.yml,0.420,0.420
+xuxueli/xxl-job,Service deployment platform,2,2,0,False,Dockerfile,0.290,0.288
+xuxueli/xxl-job,Service instance per VM,20,20,0,False,maven.yml,0.420,0.420
+xuxueli/xxl-job,Service instance per container,23,20,1,True,Dockerfile,0.500,0.223
+xuxueli/xxl-job,Service mesh,1,1,0,False,maven.yml,0.420,0.420
+xuxueli/xxl-job,Service registry,5,5,2,True,XxlJobRegistryMapper.java,0.420,0.420
+xuxueli/xxl-job,Single Service Instance per Host,11,11,1,False,README.md,0.210,0.210
+yuin/goldmark,3rd Party Registration,6,6,0,False,FUNDING.yml,0.420,0.420
+yuin/goldmark,Multiple service instances per host,2,2,0,False,Makefile,0.420,0.420
+yuin/goldmark,Server-side service discovery,2,2,0,False,stale.yaml,0.420,0.420
+yuin/goldmark,Service deployment platform,7,7,0,False,stale.yaml,0.420,0.420
+yuin/goldmark,Service instance per VM,4,4,0,False,stale.yaml,0.420,0.420
+yuin/goldmark,Service instance per container,2,2,0,False,stale.yaml,0.420,0.420
+yuin/goldmark,Service mesh,5,5,0,False,stale.yaml,0.420,0.420
+yuin/goldmark,Service registry,85,20,0,False,renderer.go,0.583,0.431
+yuin/goldmark,Single Service Instance per Host,2,2,0,False,stale.yaml,0.420,0.420
+zwldarren/akshare-one,3rd Party Registration,5,5,0,False,dependabot.yml,0.420,0.420
+zwldarren/akshare-one,Multiple service instances per host,90,20,0,False,HEAD,0.210,0.210
+zwldarren/akshare-one,Server-side service discovery,86,20,0,False,HEAD,0.210,0.210
+zwldarren/akshare-one,Service deployment platform,3,3,0,False,auto-merge-dependabot.yml,0.420,0.420
+zwldarren/akshare-one,Service instance per VM,89,20,0,False,HEAD,0.210,0.210
+zwldarren/akshare-one,Service instance per container,3,3,0,False,auto-merge-dependabot.yml,0.420,0.420
+zwldarren/akshare-one,Service mesh,3,3,0,False,auto-merge-dependabot.yml,0.420,0.420
+zwldarren/akshare-one,Service registry,58,20,0,False,auto-merge-dependabot.yml,0.420,0.420
+zwldarren/akshare-one,Single Service Instance per Host,3,3,0,False,auto-merge-dependabot.yml,0.420,0.420

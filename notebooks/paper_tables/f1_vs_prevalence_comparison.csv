@@ -1,0 +1,10 @@
+Pattern,F1_Score,Count,Prevalence
+Service instance per container,0.7,66,0.3474
+Single Service Instance per Host,0.19,61,0.3211
+Multiple service instances per host,0.47,56,0.2947
+Service deployment platform,0.42,46,0.2421
+Service instance per VM,0.16,33,0.1737
+Service registry,0.12,27,0.1421
+Service mesh,0.15,21,0.1105
+3rd Party Registration,0.09,20,0.1053
+Server-side service discovery,0.24,18,0.0947

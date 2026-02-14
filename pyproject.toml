@@ -1,0 +1,154 @@
+[build-system]
+requires = ["setuptools>=65.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "micropad"
+version = "2.0.0"
+description = "AI-powered microservices architecture pattern detection"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [
+    {name = "MicroPAD Team", email = "ceduarte at fe dot up dot pt"}
+]
+keywords = ["microservices", "architecture", "patterns", "ai", "llm", "detection"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "chromadb>=0.4.0",
+    "sentence-transformers>=2.2.0",
+    "torch>=2.0.0",
+    "networkx>=3.0",
+    "numpy>=1.24.0",
+    "pyyaml>=6.0",
+    "python-dotenv>=1.0.0",
+    "tqdm>=4.65.0",
+    "tree-sitter>=0.20.0",
+    "tree-sitter-languages>=1.8.0",
+    "openai>=1.0.0",
+    "ollama>=0.1.0",
+    # MicroREF dependencies
+    "orjson>=3.9.0",
+    "email-validator>=2.0.0",
+    "requests>=2.31.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=23.0.0",
+    "pylint>=2.17.0",
+    "mypy>=1.0.0",
+    "isort>=5.12.0",
+]
+docs = [
+    "sphinx>=6.0.0",
+    "sphinx-rtd-theme>=1.2.0",
+    "myst-parser>=1.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/ceduarte31/micropad"
+Documentation = "https://github.com/ceduarte31/micropad/docs"
+Repository = "https://github.com/ceduarte31/micropad"
+"Bug Tracker" = "https://github.com/ceduarte31/micropad/issues"
+
+[project.scripts]
+micropad = "micropad.core.scanner:main"
+micropad-seed = "micropad.scripts.seed_database:main"
+# MicroREF pipeline commands
+microref-collector = "microref.scripts.collector_cmd:main"
+microref-filter = "microref.scripts.filter_cmd:main"
+microref-generate-csv = "microref.scripts.generate_csv_cmd:main"
+microref-downloader = "microref.scripts.downloader_cmd:main"
+microref-pattern-gen = "microref.scripts.pattern_gen_cmd:main"
+
+[tool.black]
+line-length = 100
+target-version = ['py39', 'py310', 'py311']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+  | vectordb
+  | model_cache
+  | detection_results
+)/
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 100
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+ensure_newline_before_comments = true
+
+[tool.pylint.messages_control]
+disable = [
+    "C0103",  # Invalid name (too restrictive for scientific code)
+    "R0913",  # Too many arguments (common in config-heavy code)
+    "R0914",  # Too many local variables
+    "W0511",  # TODOs (we use them for development)
+]
+
+[tool.pylint.format]
+max-line-length = 100
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false  # Gradual typing adoption
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q --strict-markers --cov=src --cov-report=html --cov-report=term"
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
+
+[tool.coverage.run]
+source = ["src"]
+omit = [
+    "*/tests/*",
+    "*/test_*.py",
+    "*/__pycache__/*",
+    "*/site-packages/*",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if __name__ == .__main__.:",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if TYPE_CHECKING:",
+    "@abstractmethod",
+]

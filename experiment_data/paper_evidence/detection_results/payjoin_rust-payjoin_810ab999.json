@@ -1,0 +1,172 @@
+{
+  "summary": {
+    "repository_name": "payjoin/rust-payjoin",
+    "detected_patterns": [
+      "Service instance per container",
+      "Multiple service instances per host",
+      "Service deployment platform"
+    ],
+    "total_patterns_scanned": 9,
+    "timestamp": "2025-10-30T22:23:05.183639",
+    "run_id": "810ab999"
+  },
+  "patterns": {
+    "Server-side service discovery": false,
+    "Service registry": false,
+    "3rd Party Registration": false,
+    "Single Service Instance per Host": false,
+    "Service instance per container": true,
+    "Multiple service instances per host": true,
+    "Service deployment platform": true,
+    "Service instance per VM": false,
+    "Service mesh": false
+  },
+  "scanned_files_per_pattern": {
+    "Server-side service discovery": [
+      "/data/repos/rust-payjoin/.github/workflows/cron-weekly-mutants.yml",
+      "/data/repos/rust-payjoin/.github/workflows/dart.yml",
+      "/data/repos/rust-payjoin/.github/workflows/python.yml",
+      "/data/repos/rust-payjoin/.github/workflows/rust.yml",
+      "/data/repos/rust-payjoin/payjoin-directory/docker-compose.yml"
+    ],
+    "Service registry": [
+      "/data/repos/rust-payjoin/.cargo/mutants.toml",
+      "/data/repos/rust-payjoin/.github/CONTRIBUTING.md",
+      "/data/repos/rust-payjoin/.github/ISSUE_TEMPLATE/minor-release.md",
+      "/data/repos/rust-payjoin/.github/pull_request_template.md",
+      "/data/repos/rust-payjoin/.github/workflows/cron-weekly-mutants.yml",
+      "/data/repos/rust-payjoin/.github/workflows/dart.yml",
+      "/data/repos/rust-payjoin/.github/workflows/python.yml",
+      "/data/repos/rust-payjoin/.github/workflows/rust.yml",
+      "/data/repos/rust-payjoin/Cargo.toml",
+      "/data/repos/rust-payjoin/README.md",
+      "/data/repos/rust-payjoin/contrib/coverage.sh",
+      "/data/repos/rust-payjoin/contrib/lint.sh",
+      "/data/repos/rust-payjoin/contrib/test.sh",
+      "/data/repos/rust-payjoin/contrib/test_local.sh",
+      "/data/repos/rust-payjoin/contrib/update-lock-files.sh",
+      "/data/repos/rust-payjoin/payjoin-cli/CHANGELOG.md",
+      "/data/repos/rust-payjoin/payjoin-cli/Cargo.toml",
+      "/data/repos/rust-payjoin/payjoin-cli/README.md",
+      "/data/repos/rust-payjoin/payjoin-cli/contrib/lint.sh",
+      "/data/repos/rust-payjoin/payjoin-cli/contrib/test.sh",
+      "/data/repos/rust-payjoin/payjoin-cli/example.config.toml",
+      "/data/repos/rust-payjoin/payjoin-directory/CHANGELOG.md",
+      "/data/repos/rust-payjoin/payjoin-directory/Cargo.toml",
+      "/data/repos/rust-payjoin/payjoin-directory/README.md",
+      "/data/repos/rust-payjoin/payjoin-directory/contrib/test.sh",
+      "/data/repos/rust-payjoin/payjoin-directory/docker-compose.yml",
+      "/data/repos/rust-payjoin/payjoin-ffi/CHANGELOG.md",
+      "/data/repos/rust-payjoin/payjoin-ffi/Cargo.toml",
+      "/data/repos/rust-payjoin/payjoin-ffi/LICENSE.md",
+      "/data/repos/rust-payjoin/payjoin-ffi/README.md",
+      "/data/repos/rust-payjoin/payjoin-ffi/contrib/lint.sh",
+      "/data/repos/rust-payjoin/payjoin-ffi/contrib/test.sh",
+      "/data/repos/rust-payjoin/payjoin-ffi/dart/README.md",
+      "/data/repos/rust-payjoin/payjoin-ffi/dart/scripts/generate_bindings.sh",
+      "/data/repos/rust-payjoin/payjoin-ffi/python/CHANGELOG.md",
+      "/data/repos/rust-payjoin/payjoin-ffi/python/README.md",
+      "/data/repos/rust-payjoin/payjoin-ffi/python/pyproject.toml",
+      "/data/repos/rust-payjoin/payjoin-ffi/python/scripts/generate_bindings.sh",
+      "/data/repos/rust-payjoin/payjoin-ffi/python/setup.py",
+      "/data/repos/rust-payjoin/payjoin-ffi/python/src/payjoin/__init__.py",
+      "/data/repos/rust-payjoin/payjoin-ffi/python/test/__init__.py",
+      "/data/repos/rust-payjoin/payjoin-ffi/python/test/test_payjoin_integration_test.py",
+      "/data/repos/rust-payjoin/payjoin-ffi/python/test/test_payjoin_unit_test.py",
+      "/data/repos/rust-payjoin/payjoin-ffi/uniffi.toml",
+      "/data/repos/rust-payjoin/payjoin-test-utils/CHANGELOG.md",
+      "/data/repos/rust-payjoin/payjoin-test-utils/Cargo.toml",
+      "/data/repos/rust-payjoin/payjoin-test-utils/README.md",
+      "/data/repos/rust-payjoin/payjoin/CHANGELOG.md",
+      "/data/repos/rust-payjoin/payjoin/Cargo.toml",
+      "/data/repos/rust-payjoin/payjoin/contrib/lint.sh",
+      "/data/repos/rust-payjoin/payjoin/contrib/test.sh",
+      "/data/repos/rust-payjoin/rust-toolchain.toml",
+      "/data/repos/rust-payjoin/rustfmt.toml"
+    ],
+    "3rd Party Registration": [
+      "/data/repos/rust-payjoin/payjoin-directory/docker-compose.yml"
+    ],
+    "Single Service Instance per Host": [
+      "/data/repos/rust-payjoin/.github/workflows/cron-weekly-mutants.yml",
+      "/data/repos/rust-payjoin/.github/workflows/dart.yml",
+      "/data/repos/rust-payjoin/.github/workflows/python.yml",
+      "/data/repos/rust-payjoin/.github/workflows/rust.yml"
+    ],
+    "Service instance per container": [
+      "/data/repos/rust-payjoin/payjoin-cli/Dockerfile",
+      "/data/repos/rust-payjoin/payjoin-directory/Dockerfile",
+      "/data/repos/rust-payjoin/payjoin-directory/docker-compose.yml"
+    ],
+    "Multiple service instances per host": [
+      "/data/repos/rust-payjoin/payjoin-cli/Dockerfile",
+      "/data/repos/rust-payjoin/payjoin-directory/Dockerfile",
+      "/data/repos/rust-payjoin/payjoin-directory/docker-compose.yml"
+    ],
+    "Service deployment platform": [
+      "/data/repos/rust-payjoin/.github/workflows/cron-weekly-mutants.yml",
+      "/data/repos/rust-payjoin/.github/workflows/dart.yml",
+      "/data/repos/rust-payjoin/.github/workflows/python.yml",
+      "/data/repos/rust-payjoin/.github/workflows/rust.yml",
+      "/data/repos/rust-payjoin/contrib/coverage.sh",
+      "/data/repos/rust-payjoin/contrib/lint.sh",
+      "/data/repos/rust-payjoin/contrib/test.sh",
+      "/data/repos/rust-payjoin/contrib/test_local.sh",
+      "/data/repos/rust-payjoin/contrib/update-lock-files.sh",
+      "/data/repos/rust-payjoin/payjoin-cli/Dockerfile",
+      "/data/repos/rust-payjoin/payjoin-cli/contrib/lint.sh",
+      "/data/repos/rust-payjoin/payjoin-cli/contrib/test.sh",
+      "/data/repos/rust-payjoin/payjoin-directory/Dockerfile",
+      "/data/repos/rust-payjoin/payjoin-directory/contrib/test.sh",
+      "/data/repos/rust-payjoin/payjoin-directory/docker-compose.yml",
+      "/data/repos/rust-payjoin/payjoin-ffi/contrib/lint.sh",
+      "/data/repos/rust-payjoin/payjoin-ffi/contrib/test.sh",
+      "/data/repos/rust-payjoin/payjoin-ffi/dart/scripts/generate_bindings.sh",
+      "/data/repos/rust-payjoin/payjoin-ffi/python/scripts/generate_bindings.sh",
+      "/data/repos/rust-payjoin/payjoin/contrib/lint.sh",
+      "/data/repos/rust-payjoin/payjoin/contrib/test.sh"
+    ],
+    "Service instance per VM": [
+      "/data/repos/rust-payjoin/.github/workflows/cron-weekly-mutants.yml",
+      "/data/repos/rust-payjoin/.github/workflows/dart.yml",
+      "/data/repos/rust-payjoin/.github/workflows/python.yml",
+      "/data/repos/rust-payjoin/.github/workflows/rust.yml"
+    ],
+    "Service mesh": [
+      "/data/repos/rust-payjoin/.github/workflows/cron-weekly-mutants.yml",
+      "/data/repos/rust-payjoin/.github/workflows/dart.yml",
+      "/data/repos/rust-payjoin/.github/workflows/python.yml",
+      "/data/repos/rust-payjoin/.github/workflows/rust.yml"
+    ]
+  },
+  "_metadata": {
+    "experiment": {
+      "run_number": 1
+    },
+    "reproducibility": {
+      "configuration": {
+        "thresholds": {
+          "high_priority": 0.5,
+          "medium_priority": 0.3,
+          "min_priority_score": 0.1,
+          "judge_confidence": 5
+        },
+        "weight_scheme": "llm_dominant",
+        "random_seed": 1761862985
+      }
+    },
+    "models": {
+      "planner": "gpt-5-nano-2025-08-07",
+      "investigator": "gpt-5-nano-2025-08-07",
+      "judge": "gpt-5-nano-2025-08-07",
+      "embedding": "jinaai/jina-embeddings-v2-base-code"
+    },
+    "priority_weights": {
+      "keyword": 0.2,
+      "embedding": 0.1,
+      "graph": 0.0,
+      "llm": 0.7
+    },
+    "source_log": "detection_20251030_222305.log"
+  }
+}

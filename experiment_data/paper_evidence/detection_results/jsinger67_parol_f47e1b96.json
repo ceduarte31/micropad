@@ -1,0 +1,202 @@
+{
+  "summary": {
+    "repository_name": "jsinger67/parol",
+    "detected_patterns": [],
+    "total_patterns_scanned": 9,
+    "timestamp": "2025-10-30T03:58:47.806780",
+    "run_id": "f47e1b96"
+  },
+  "patterns": {
+    "Server-side service discovery": false,
+    "Service registry": false,
+    "3rd Party Registration": false,
+    "Single Service Instance per Host": false,
+    "Service instance per container": false,
+    "Multiple service instances per host": false,
+    "Service deployment platform": false,
+    "Service instance per VM": false,
+    "Service mesh": false
+  },
+  "scanned_files_per_pattern": {
+    "Server-side service discovery": [
+      "/data/repos/parol/.github/workflows/rust.yml"
+    ],
+    "Service registry": [
+      "/data/repos/parol/.github/workflows/rust.yml",
+      "/data/repos/parol/CONTRIBUTING.md",
+      "/data/repos/parol/Cargo.toml",
+      "/data/repos/parol/Makefile.toml",
+      "/data/repos/parol/README.md",
+      "/data/repos/parol/book/README.md",
+      "/data/repos/parol/book/book.toml",
+      "/data/repos/parol/book/src/AstGeneration.md",
+      "/data/repos/parol/book/src/GettingStarted.md",
+      "/data/repos/parol/book/src/History.md",
+      "/data/repos/parol/book/src/Introduction.md",
+      "/data/repos/parol/book/src/OperatorAssociativity.md",
+      "/data/repos/parol/book/src/OperatorPrecedence.md",
+      "/data/repos/parol/book/src/ParGrammar.md",
+      "/data/repos/parol/book/src/QnA.md",
+      "/data/repos/parol/book/src/SUMMARY.md",
+      "/data/repos/parol/book/src/SemanticActions.md",
+      "/data/repos/parol/book/src/UsefulTips.md",
+      "/data/repos/parol/book/src/highlight.js",
+      "/data/repos/parol/crates/parol-ls/CHANGELOG.md",
+      "/data/repos/parol/crates/parol-ls/Cargo.toml",
+      "/data/repos/parol/crates/parol-ls/README.md",
+      "/data/repos/parol/crates/parol-macros/CHANGELOG.md",
+      "/data/repos/parol/crates/parol-macros/Cargo.toml",
+      "/data/repos/parol/crates/parol-macros/README.md",
+      "/data/repos/parol/crates/parol/CHANGELOG.md",
+      "/data/repos/parol/crates/parol/Cargo.toml",
+      "/data/repos/parol/crates/parol/CommonReadMe.md",
+      "/data/repos/parol/crates/parol/README.md",
+      "/data/repos/parol/crates/parol/bindings/README.md",
+      "/data/repos/parol/crates/parol/tests/snapshots/bin/Cargo.toml",
+      "/data/repos/parol/crates/parol/tests/snapshots/lib/Cargo.toml",
+      "/data/repos/parol/crates/parol_runtime/CHANGELOG.md",
+      "/data/repos/parol/crates/parol_runtime/Cargo.toml",
+      "/data/repos/parol/crates/parol_runtime/Makefile.toml",
+      "/data/repos/parol/crates/parol_runtime/README.md",
+      "/data/repos/parol/examples/allow_unmatched/README.md",
+      "/data/repos/parol/examples/basic_interpreter/README.md",
+      "/data/repos/parol/examples/boolean_parser/README.md",
+      "/data/repos/parol/examples/calc/README.md",
+      "/data/repos/parol/examples/calc_lr/README.md",
+      "/data/repos/parol/examples/json_parser/README.md",
+      "/data/repos/parol/examples/oberon2/CHANGELOG.md",
+      "/data/repos/parol/examples/oberon2/README.md",
+      "/data/repos/parol/tools/parol-vscode/CHANGELOG.md",
+      "/data/repos/parol/tools/parol-vscode/README.md",
+      "/data/repos/parol/tools/parol-vscode/vsc-extension-quickstart.md"
+    ],
+    "3rd Party Registration": [
+      "/data/repos/parol/.github/dependabot.yml",
+      "/data/repos/parol/.github/workflows/rust.yml",
+      "/data/repos/parol/crates/parol-ls/.vscode/launch.json",
+      "/data/repos/parol/crates/parol-ls/.vscode/settings.json",
+      "/data/repos/parol/examples/basic_interpreter/.vscode/launch.json",
+      "/data/repos/parol/examples/basic_interpreter/.vscode/settings.json",
+      "/data/repos/parol/examples/json/JsonParserTest.json",
+      "/data/repos/parol/examples/json/array.json",
+      "/data/repos/parol/examples/json/false.json",
+      "/data/repos/parol/examples/json/null.json",
+      "/data/repos/parol/examples/json/number.json",
+      "/data/repos/parol/examples/json/object.json",
+      "/data/repos/parol/examples/json/string.json",
+      "/data/repos/parol/examples/json/true.json",
+      "/data/repos/parol/examples/oberon2/.vscode/settings.json",
+      "/data/repos/parol/tools/parol-vscode/.vscode/launch.json",
+      "/data/repos/parol/tools/parol-vscode/.vscode/settings.json",
+      "/data/repos/parol/tools/parol-vscode/.vscode/tasks.json",
+      "/data/repos/parol/tools/parol-vscode/language-configuration.json",
+      "/data/repos/parol/tools/parol-vscode/package.json",
+      "/data/repos/parol/tools/parol-vscode/syntaxes/parol.tmLanguage.json",
+      "/data/repos/parol/tools/parol-vscode/tsconfig.eslint.json",
+      "/data/repos/parol/tools/parol-vscode/tsconfig.json"
+    ],
+    "Single Service Instance per Host": [
+      "/data/repos/parol/.github/workflows/rust.yml"
+    ],
+    "Service instance per container": [
+      "/data/repos/parol/.github/workflows/rust.yml"
+    ],
+    "Multiple service instances per host": [
+      "/data/repos/parol/crates/parol/build_parsers.ps1",
+      "/data/repos/parol/crates/parol/run_parsers.ps1",
+      "/data/repos/parol/crates/parol/sync_readmes.ps1",
+      "/data/repos/parol/crates/parol/tests/data/valid/update_expected_files.ps1",
+      "/data/repos/parol/examples/basic_interpreter/parse_tests.ps1",
+      "/data/repos/parol/examples/json_parser/parse_examples.ps1",
+      "/data/repos/parol/examples/oberon2/parse_tests.ps1"
+    ],
+    "Service deployment platform": [
+      "/data/repos/parol/.github/workflows/rust.yml",
+      "/data/repos/parol/crates/parol-ls/.vscode/launch.json",
+      "/data/repos/parol/crates/parol-ls/.vscode/settings.json",
+      "/data/repos/parol/examples/basic_interpreter/.vscode/launch.json",
+      "/data/repos/parol/examples/basic_interpreter/.vscode/settings.json",
+      "/data/repos/parol/examples/json/JsonParserTest.json",
+      "/data/repos/parol/examples/json/array.json",
+      "/data/repos/parol/examples/json/false.json",
+      "/data/repos/parol/examples/json/null.json",
+      "/data/repos/parol/examples/json/number.json",
+      "/data/repos/parol/examples/json/object.json",
+      "/data/repos/parol/examples/json/string.json",
+      "/data/repos/parol/examples/json/true.json",
+      "/data/repos/parol/examples/oberon2/.vscode/settings.json",
+      "/data/repos/parol/tools/parol-vscode/.vscode/launch.json",
+      "/data/repos/parol/tools/parol-vscode/.vscode/settings.json",
+      "/data/repos/parol/tools/parol-vscode/.vscode/tasks.json",
+      "/data/repos/parol/tools/parol-vscode/language-configuration.json",
+      "/data/repos/parol/tools/parol-vscode/package.json",
+      "/data/repos/parol/tools/parol-vscode/syntaxes/parol.tmLanguage.json",
+      "/data/repos/parol/tools/parol-vscode/tsconfig.eslint.json",
+      "/data/repos/parol/tools/parol-vscode/tsconfig.json"
+    ],
+    "Service instance per VM": [
+      "/data/repos/parol/.github/workflows/rust.yml",
+      "/data/repos/parol/crates/parol/build_parsers.ps1",
+      "/data/repos/parol/crates/parol/run_parsers.ps1",
+      "/data/repos/parol/crates/parol/sync_readmes.ps1",
+      "/data/repos/parol/crates/parol/tests/data/valid/update_expected_files.ps1",
+      "/data/repos/parol/examples/basic_interpreter/parse_tests.ps1",
+      "/data/repos/parol/examples/json_parser/parse_examples.ps1",
+      "/data/repos/parol/examples/oberon2/parse_tests.ps1"
+    ],
+    "Service mesh": [
+      "/data/repos/parol/.github/workflows/rust.yml",
+      "/data/repos/parol/crates/parol-ls/.vscode/launch.json",
+      "/data/repos/parol/crates/parol-ls/.vscode/settings.json",
+      "/data/repos/parol/examples/basic_interpreter/.vscode/launch.json",
+      "/data/repos/parol/examples/basic_interpreter/.vscode/settings.json",
+      "/data/repos/parol/examples/json/JsonParserTest.json",
+      "/data/repos/parol/examples/json/array.json",
+      "/data/repos/parol/examples/json/false.json",
+      "/data/repos/parol/examples/json/null.json",
+      "/data/repos/parol/examples/json/number.json",
+      "/data/repos/parol/examples/json/object.json",
+      "/data/repos/parol/examples/json/string.json",
+      "/data/repos/parol/examples/json/true.json",
+      "/data/repos/parol/examples/oberon2/.vscode/settings.json",
+      "/data/repos/parol/tools/parol-vscode/.vscode/launch.json",
+      "/data/repos/parol/tools/parol-vscode/.vscode/settings.json",
+      "/data/repos/parol/tools/parol-vscode/.vscode/tasks.json",
+      "/data/repos/parol/tools/parol-vscode/language-configuration.json",
+      "/data/repos/parol/tools/parol-vscode/package.json",
+      "/data/repos/parol/tools/parol-vscode/syntaxes/parol.tmLanguage.json",
+      "/data/repos/parol/tools/parol-vscode/tsconfig.eslint.json",
+      "/data/repos/parol/tools/parol-vscode/tsconfig.json"
+    ]
+  },
+  "_metadata": {
+    "experiment": {
+      "run_number": 1
+    },
+    "reproducibility": {
+      "configuration": {
+        "thresholds": {
+          "high_priority": 0.5,
+          "medium_priority": 0.3,
+          "min_priority_score": 0.1,
+          "judge_confidence": 5
+        },
+        "weight_scheme": "llm_dominant",
+        "random_seed": 1761796727
+      }
+    },
+    "models": {
+      "planner": "gpt-5-nano-2025-08-07",
+      "investigator": "gpt-5-nano-2025-08-07",
+      "judge": "gpt-5-nano-2025-08-07",
+      "embedding": "jinaai/jina-embeddings-v2-base-code"
+    },
+    "priority_weights": {
+      "keyword": 0.2,
+      "embedding": 0.1,
+      "graph": 0.0,
+      "llm": 0.7
+    },
+    "source_log": "detection_20251030_035847.log"
+  }
+}

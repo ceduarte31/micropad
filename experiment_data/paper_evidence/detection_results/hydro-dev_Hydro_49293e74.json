@@ -1,0 +1,180 @@
+{
+  "summary": {
+    "repository_name": "hydro-dev/Hydro",
+    "detected_patterns": [
+      "Service instance per container",
+      "Multiple service instances per host",
+      "Service deployment platform"
+    ],
+    "total_patterns_scanned": 9,
+    "timestamp": "2025-10-29T23:48:59.466513",
+    "run_id": "49293e74"
+  },
+  "patterns": {
+    "Server-side service discovery": false,
+    "Service registry": false,
+    "3rd Party Registration": false,
+    "Single Service Instance per Host": false,
+    "Service instance per container": true,
+    "Multiple service instances per host": true,
+    "Service deployment platform": true,
+    "Service instance per VM": false,
+    "Service mesh": false
+  },
+  "scanned_files_per_pattern": {
+    "Server-side service discovery": [
+      "/data/repos/Hydro/examples/reverse_proxy/Caddyfile",
+      "/data/repos/Hydro/examples/reverse_proxy/h2o.conf",
+      "/data/repos/Hydro/examples/reverse_proxy/nginx.conf",
+      "/data/repos/Hydro/framework/framework/router.ts",
+      "/data/repos/Hydro/install/docker/docker-compose.yml",
+      "/data/repos/Hydro/install/helm-single/templates/backend.config.yaml"
+    ],
+    "Service registry": [
+      "/data/repos/Hydro/framework/framework/api.ts",
+      "/data/repos/Hydro/framework/framework/decorators.ts",
+      "/data/repos/Hydro/framework/framework/index.ts",
+      "/data/repos/Hydro/framework/framework/router.ts",
+      "/data/repos/Hydro/framework/framework/server.ts",
+      "/data/repos/Hydro/framework/register/index.js",
+      "/data/repos/Hydro/framework/register/package.json",
+      "/data/repos/Hydro/packages/hydrooj/src/service/server.ts"
+    ],
+    "3rd Party Registration": [
+      "/data/repos/Hydro/.devcontainer/docker-compose.yml",
+      "/data/repos/Hydro/install/docker/docker-compose.yml",
+      "/data/repos/Hydro/install/docker/judge/judge.yaml",
+      "/data/repos/Hydro/install/docker/judge/mount.yaml",
+      "/data/repos/Hydro/install/helm-single/templates/backend.deployment.yaml",
+      "/data/repos/Hydro/install/helm-single/templates/judge.deployment.yaml"
+    ],
+    "Single Service Instance per Host": [
+      "/data/repos/Hydro/.devcontainer/Dockerfile",
+      "/data/repos/Hydro/.devcontainer/devcontainer.json",
+      "/data/repos/Hydro/.devcontainer/docker-compose.yml",
+      "/data/repos/Hydro/install/docker/README.md",
+      "/data/repos/Hydro/install/docker/backend/Dockerfile",
+      "/data/repos/Hydro/install/docker/backend/entrypoint.sh",
+      "/data/repos/Hydro/install/docker/docker-compose.yml",
+      "/data/repos/Hydro/install/docker/judge/Dockerfile",
+      "/data/repos/Hydro/install/docker/judge/entrypoint.sh",
+      "/data/repos/Hydro/install/docker/judge/judge.yaml",
+      "/data/repos/Hydro/install/docker/judge/mount.yaml",
+      "/data/repos/Hydro/install/helm-single/Chart.yaml",
+      "/data/repos/Hydro/install/helm-single/templates/backend.config.yaml",
+      "/data/repos/Hydro/install/helm-single/templates/backend.deployment.yaml",
+      "/data/repos/Hydro/install/helm-single/templates/backend.service.yaml",
+      "/data/repos/Hydro/install/helm-single/templates/ingress.yaml",
+      "/data/repos/Hydro/install/helm-single/templates/judge.config.yaml",
+      "/data/repos/Hydro/install/helm-single/templates/judge.deployment.yaml",
+      "/data/repos/Hydro/install/helm-single/templates/mongo.deployment.yaml",
+      "/data/repos/Hydro/install/helm-single/templates/mongo.service.yaml",
+      "/data/repos/Hydro/install/helm-single/templates/namespace.yaml",
+      "/data/repos/Hydro/install/helm-single/values.yaml",
+      "/data/repos/Hydro/install/install.sh",
+      "/data/repos/Hydro/install/install.ts",
+      "/data/repos/Hydro/install/nix/default.nix",
+      "/data/repos/Hydro/install/nix/env.nix",
+      "/data/repos/Hydro/install/nix/hydro.nix",
+      "/data/repos/Hydro/install/reset.sh",
+      "/data/repos/Hydro/install/uninstall.sh"
+    ],
+    "Service instance per container": [
+      "/data/repos/Hydro/install/docker/backend/Dockerfile",
+      "/data/repos/Hydro/install/docker/backend/entrypoint.sh",
+      "/data/repos/Hydro/install/docker/docker-compose.yml",
+      "/data/repos/Hydro/install/docker/judge/Dockerfile",
+      "/data/repos/Hydro/install/docker/judge/entrypoint.sh",
+      "/data/repos/Hydro/install/docker/judge/judge.yaml",
+      "/data/repos/Hydro/install/helm-single/Chart.yaml",
+      "/data/repos/Hydro/install/helm-single/readme.md",
+      "/data/repos/Hydro/install/helm-single/templates/backend.config.yaml",
+      "/data/repos/Hydro/install/helm-single/templates/backend.deployment.yaml",
+      "/data/repos/Hydro/install/helm-single/templates/backend.service.yaml",
+      "/data/repos/Hydro/install/helm-single/templates/ingress.yaml",
+      "/data/repos/Hydro/install/helm-single/templates/judge.config.yaml",
+      "/data/repos/Hydro/install/helm-single/templates/judge.deployment.yaml",
+      "/data/repos/Hydro/install/helm-single/templates/mongo.deployment.yaml",
+      "/data/repos/Hydro/install/helm-single/templates/mongo.service.yaml",
+      "/data/repos/Hydro/install/helm-single/templates/namespace.yaml",
+      "/data/repos/Hydro/install/helm-single/values.yaml"
+    ],
+    "Multiple service instances per host": [
+      "/data/repos/Hydro/.devcontainer/docker-compose.yml",
+      "/data/repos/Hydro/install/docker/backend/Dockerfile",
+      "/data/repos/Hydro/install/docker/docker-compose.yml",
+      "/data/repos/Hydro/install/docker/judge/Dockerfile",
+      "/data/repos/Hydro/install/docker/judge/entrypoint.sh",
+      "/data/repos/Hydro/install/docker/judge/judge.yaml",
+      "/data/repos/Hydro/install/docker/judge/mount.yaml"
+    ],
+    "Service deployment platform": [
+      "/data/repos/Hydro/install/docker/backend/Dockerfile",
+      "/data/repos/Hydro/install/docker/docker-compose.yml",
+      "/data/repos/Hydro/install/docker/judge/Dockerfile",
+      "/data/repos/Hydro/install/docker/judge/entrypoint.sh",
+      "/data/repos/Hydro/install/docker/judge/judge.yaml",
+      "/data/repos/Hydro/install/docker/judge/mount.yaml",
+      "/data/repos/Hydro/install/helm-single/Chart.yaml",
+      "/data/repos/Hydro/install/helm-single/templates/backend.config.yaml",
+      "/data/repos/Hydro/install/helm-single/templates/backend.deployment.yaml",
+      "/data/repos/Hydro/install/helm-single/templates/backend.service.yaml",
+      "/data/repos/Hydro/install/helm-single/templates/ingress.yaml",
+      "/data/repos/Hydro/install/helm-single/templates/judge.config.yaml",
+      "/data/repos/Hydro/install/helm-single/templates/judge.deployment.yaml",
+      "/data/repos/Hydro/install/helm-single/templates/mongo.deployment.yaml",
+      "/data/repos/Hydro/install/helm-single/templates/mongo.service.yaml",
+      "/data/repos/Hydro/install/helm-single/templates/namespace.yaml",
+      "/data/repos/Hydro/install/helm-single/values.yaml",
+      "/data/repos/Hydro/packages/ui-default/setting.yaml"
+    ],
+    "Service instance per VM": [
+      "/data/repos/Hydro/.github/workflows/build.yml",
+      "/data/repos/Hydro/.github/workflows/codeql.yml"
+    ],
+    "Service mesh": [
+      "/data/repos/Hydro/install/docker/docker-compose.yml",
+      "/data/repos/Hydro/install/docker/judge/judge.yaml",
+      "/data/repos/Hydro/install/docker/judge/mount.yaml",
+      "/data/repos/Hydro/install/helm-single/templates/backend.config.yaml",
+      "/data/repos/Hydro/install/helm-single/templates/backend.deployment.yaml",
+      "/data/repos/Hydro/install/helm-single/templates/backend.service.yaml",
+      "/data/repos/Hydro/install/helm-single/templates/ingress.yaml",
+      "/data/repos/Hydro/install/helm-single/templates/judge.config.yaml",
+      "/data/repos/Hydro/install/helm-single/templates/judge.deployment.yaml",
+      "/data/repos/Hydro/install/helm-single/templates/mongo.deployment.yaml",
+      "/data/repos/Hydro/install/helm-single/templates/mongo.service.yaml",
+      "/data/repos/Hydro/install/helm-single/templates/namespace.yaml"
+    ]
+  },
+  "_metadata": {
+    "experiment": {
+      "run_number": 1
+    },
+    "reproducibility": {
+      "configuration": {
+        "thresholds": {
+          "high_priority": 0.5,
+          "medium_priority": 0.3,
+          "min_priority_score": 0.1,
+          "judge_confidence": 5
+        },
+        "weight_scheme": "llm_dominant",
+        "random_seed": 1761781739
+      }
+    },
+    "models": {
+      "planner": "gpt-5-nano-2025-08-07",
+      "investigator": "gpt-5-nano-2025-08-07",
+      "judge": "gpt-5-nano-2025-08-07",
+      "embedding": "jinaai/jina-embeddings-v2-base-code"
+    },
+    "priority_weights": {
+      "keyword": 0.2,
+      "embedding": 0.1,
+      "graph": 0.0,
+      "llm": 0.7
+    },
+    "source_log": "detection_20251029_234859.log"
+  }
+}

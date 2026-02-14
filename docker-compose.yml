@@ -1,0 +1,88 @@
+services:
+  # ============================================================================
+  # MicroPAD Application
+  # ============================================================================
+  micropad:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        TORCH_PLATFORM: cpu  # CPU-only build (no GPU required)
+    image: micropad:2.0.0
+    container_name: micropad-scanner
+
+    # Load environment variables from .env file
+    env_file:
+      - .env
+
+    # Environment variables
+    environment:
+      # AI Provider
+      - AI_PROVIDER=openai
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+
+      # Paths (using defaults from Dockerfile)
+      - TARGET_REPO=/app/target_repo
+      - PATTERNS_DIR=/app/generated_patterns
+      - VECTOR_DB_PATH=./.generated/micropad/vectordb
+
+      # Analysis configuration
+      - JUDGE_CONFIDENCE_THRESHOLD=8
+      - MAX_FILES_PER_PATTERN=15
+      - GRAPH_ENABLED=true
+
+      # Performance
+      - FILE_CACHE_ENABLED=true
+      - EMBEDDING_BATCH_SIZE=6
+
+      # Output
+      - RESULTS_BASE_DIR=./.generated/micropad/detection_results
+      - VERBOSE_MODE=true
+
+    # Volumes for data persistence
+    volumes:
+      # Configuration: .env file for tokens and settings
+      - ./.env:/app/.env:ro
+
+      # Input: Repository to analyze
+      - ./target_repo:/app/target_repo:ro
+
+      # Input: Pattern definitions
+      - ./config/patterns:/app/generated_patterns:ro
+
+      # Input: Examples for reference
+      - ./examples:/app/examples:ro
+
+      # Input/Output: Experiment data
+      - ./experiment_data:/app/experiment_data
+
+      # Input: Notebooks for analysis and validation
+      - ./notebooks:/app/notebooks
+
+      # Output and cache: keep all MicroPAD generated data under one mount
+      - ./.generated/micropad:/app/.generated/micropad
+      - ./.generated/microref:/app/.generated/microref
+
+    # Resource hints (no hard limits - uses available system resources)
+    deploy:
+      resources:
+        reservations:
+          cpus: '2.0'
+          memory: 4G  # Minimum recommended; actual usage depends on repo size
+
+    # Network
+    networks:
+      - micropad-network
+
+    # Restart policy (disabled - scanner runs once and exits)
+    # restart: unless-stopped
+
+    # Command (override default if needed)
+    command: python -m micropad.core.scanner
+
+# ============================================================================
+# Networks
+# ============================================================================
+networks:
+  micropad-network:
+    driver: bridge

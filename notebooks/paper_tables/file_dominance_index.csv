@@ -1,0 +1,91 @@
+Pattern,Rank,Filename,Count,FDI
+3rd Party Registration,1,docker-compose.yaml,2,1.93
+3rd Party Registration,2,external_registry.cpp,2,1.93
+3rd Party Registration,3,servicediscovery.md,1,0.96
+3rd Party Registration,4,DnsRegistrationService.java,1,0.96
+3rd Party Registration,5,xorcery.yaml,1,0.96
+3rd Party Registration,6,ServerResourceDocument.java,1,0.96
+3rd Party Registration,7,ServiceAttributes.java,1,0.96
+3rd Party Registration,8,ServiceIdentifier.java,1,0.96
+3rd Party Registration,9,ServiceLinkReference.java,1,0.96
+3rd Party Registration,10,ServiceResourceObject.java,1,0.96
+Multiple service instances per host,1,Makefile,66,48.32
+Multiple service instances per host,2,release.yaml,27,19.77
+Multiple service instances per host,3,Dockerfile,24,17.57
+Multiple service instances per host,4,docker-compose.yml,21,15.37
+Multiple service instances per host,5,kustomization.yaml,19,13.91
+Multiple service instances per host,6,supervisord.conf,18,13.18
+Multiple service instances per host,7,main.rs,16,11.71
+Multiple service instances per host,8,README.md,14,10.25
+Multiple service instances per host,9,compose.yaml,12,8.79
+Multiple service instances per host,10,docker-compose.yaml,11,8.05
+Server-side service discovery,1,__init__.py,14,11.56
+Server-side service discovery,2,service.yaml,13,10.73
+Server-side service discovery,3,README.md,11,9.08
+Server-side service discovery,4,kustomization.yaml,7,5.78
+Server-side service discovery,5,lib.rs,7,5.78
+Server-side service discovery,6,docker-compose.yaml,6,4.95
+Server-side service discovery,7,docker-compose.yml,6,4.95
+Server-side service discovery,8,ingress.yaml,5,4.13
+Server-side service discovery,9,main.rs,4,3.3
+Server-side service discovery,10,Dockerfile,4,3.3
+Service deployment platform,1,Makefile,120,79.12
+Service deployment platform,2,main.yml,44,29.01
+Service deployment platform,3,tsconfig.json,40,26.37
+Service deployment platform,4,Dockerfile,33,21.76
+Service deployment platform,5,kustomization.yaml,31,20.44
+Service deployment platform,6,service.yaml,26,17.14
+Service deployment platform,7,values.yaml,25,16.48
+Service deployment platform,8,README.md,22,14.51
+Service deployment platform,9,Chart.yaml,18,11.87
+Service deployment platform,10,package.json,17,11.21
+Service instance per VM,1,2024-07-01.xml,205,9.15
+Service instance per VM,2,2023-09-01.xml,196,8.75
+Service instance per VM,3,2024-10-01-preview.xml,193,8.61
+Service instance per VM,4,2022-01-01.xml,155,6.92
+Service instance per VM,5,2025-06-01.xml,152,6.78
+Service instance per VM,6,2024-05-01-preview.xml,148,6.61
+Service instance per VM,7,2023-11-01.xml,141,6.29
+Service instance per VM,8,2023-10-01-preview.xml,139,6.2
+Service instance per VM,9,2025-04-01-preview.xml,137,6.12
+Service instance per VM,10,2023-05-01.xml,136,6.07
+Service instance per container,1,Dockerfile,89,54.59
+Service instance per container,2,HEAD,32,19.63
+Service instance per container,3,README.md,29,17.79
+Service instance per container,4,kustomization.yaml,29,17.79
+Service instance per container,5,docker-compose.yml,28,17.18
+Service instance per container,6,service.yaml,25,15.34
+Service instance per container,7,deployment.yaml,18,11.04
+Service instance per container,8,docker-compose.yaml,18,11.04
+Service instance per container,9,__init__.py,16,9.81
+Service instance per container,10,main,13,7.97
+Service mesh,1,mod.rs,7,5.42
+Service mesh,2,deployment.yaml,4,3.1
+Service mesh,3,ingress.yaml,4,3.1
+Service mesh,4,Cargo.toml,4,3.1
+Service mesh,5,README.md,4,3.1
+Service mesh,6,NOTES.txt,3,2.32
+Service mesh,7,hpa.yaml,3,2.32
+Service mesh,8,service.yaml,2,1.55
+Service mesh,9,values.yaml,2,1.55
+Service mesh,10,lib.rs,2,1.55
+Service registry,1,mod.rs,4,3.67
+Service registry,2,plugin.ex,3,2.75
+Service registry,3,Cargo.toml,3,2.75
+Service registry,4,lib.rs,3,2.75
+Service registry,5,main.rs,2,1.84
+Service registry,6,servicediscovery.md,1,0.92
+Service registry,7,Main.java,1,0.92
+Service registry,8,DnsLookup.java,1,0.92
+Service registry,9,ALookup.java,1,0.92
+Service registry,10,ALookupHK2.java,1,0.92
+Single Service Instance per Host,1,versions.tf,33,19.61
+Single Service Instance per Host,2,_platform_variables.tf,32,19.02
+Single Service Instance per Host,3,project.tf,32,19.02
+Single Service Instance per Host,4,_cluster_variables.tf,23,13.67
+Single Service Instance per Host,5,main.tf,16,9.51
+Single Service Instance per Host,6,_uc_federated_learning_variables.tf,12,7.13
+Single Service Instance per Host,7,_networking_variables.tf,10,5.94
+Single Service Instance per Host,8,_build_variables.tf,8,4.76
+Single Service Instance per Host,9,main.rs,8,4.76
+Single Service Instance per Host,10,iam.tf,7,4.16

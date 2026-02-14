@@ -1,0 +1,189 @@
+{
+  "summary": {
+    "repository_name": "SkyUOI/OurChat",
+    "detected_patterns": [
+      "Server-side service discovery",
+      "Service instance per container",
+      "Multiple service instances per host",
+      "Service deployment platform"
+    ],
+    "total_patterns_scanned": 9,
+    "timestamp": "2025-10-28T23:56:38.603487",
+    "run_id": "81035dff"
+  },
+  "patterns": {
+    "Server-side service discovery": true,
+    "Service registry": false,
+    "3rd Party Registration": false,
+    "Single Service Instance per Host": false,
+    "Service instance per container": true,
+    "Multiple service instances per host": true,
+    "Service deployment platform": true,
+    "Service instance per VM": false,
+    "Service mesh": false
+  },
+  "scanned_files_per_pattern": {
+    "Server-side service discovery": [
+      "/data/repos/OurChat/config/http.toml",
+      "/data/repos/OurChat/config/k8s/app-deployment.yaml",
+      "/data/repos/OurChat/config/k8s/load-balancer.yaml",
+      "/data/repos/OurChat/config/load_balancer/conf.toml",
+      "/data/repos/OurChat/config/load_balancer/pingora.yaml",
+      "/data/repos/OurChat/config/ourchat.toml",
+      "/data/repos/OurChat/docker/config/http.toml",
+      "/data/repos/OurChat/docker/config/ourchat.toml",
+      "/data/repos/OurChat/server/base/src/consts.rs",
+      "/data/repos/OurChat/server/base/src/database.rs",
+      "/data/repos/OurChat/server/base/src/database/postgres.rs",
+      "/data/repos/OurChat/server/base/src/lib.rs",
+      "/data/repos/OurChat/server/base/src/log.rs",
+      "/data/repos/OurChat/server/base/src/wrapper.rs",
+      "/data/repos/OurChat/server/load_balancer/Cargo.toml",
+      "/data/repos/OurChat/server/load_balancer/src/main.rs",
+      "/data/repos/OurChat/server/migration/src/main.rs",
+      "/data/repos/OurChat/server/pb/src/service/auth.rs",
+      "/data/repos/OurChat/server/pb/src/service/basic.rs",
+      "/data/repos/OurChat/server/pb/src/service/basic/server.rs",
+      "/data/repos/OurChat/server/pb/src/time.rs",
+      "/data/repos/OurChat/server/src/httpserver.rs",
+      "/data/repos/OurChat/server/src/lib.rs",
+      "/data/repos/OurChat/server/src/main.rs"
+    ],
+    "Service registry": [
+      "/data/repos/OurChat/README-zh.md",
+      "/data/repos/OurChat/README.md",
+      "/data/repos/OurChat/client/README.md",
+      "/data/repos/OurChat/config/database.toml",
+      "/data/repos/OurChat/config/email.toml",
+      "/data/repos/OurChat/config/http.toml",
+      "/data/repos/OurChat/config/load_balancer/conf.toml",
+      "/data/repos/OurChat/config/load_balancer/pingora.yaml",
+      "/data/repos/OurChat/config/ourchat.toml",
+      "/data/repos/OurChat/docker/compose.yml",
+      "/data/repos/OurChat/script/README.md",
+      "/data/repos/OurChat/server/load_balancer/Cargo.toml",
+      "/data/repos/OurChat/server/load_balancer/Dockerfile",
+      "/data/repos/OurChat/server/load_balancer/src/main.rs",
+      "/data/repos/OurChat/server/migration/src/m20240812_083747_server_manager.rs",
+      "/data/repos/OurChat/server/migration/src/main.rs",
+      "/data/repos/OurChat/server/pb/src/service/basic/server.rs",
+      "/data/repos/OurChat/server/pb/src/service/ourchat.rs",
+      "/data/repos/OurChat/server/pb/src/service/ourchat/get_account_info.rs",
+      "/data/repos/OurChat/server/pb/src/service/ourchat/upload.rs",
+      "/data/repos/OurChat/server/pb/src/service/server_manage.rs",
+      "/data/repos/OurChat/server/src/db/redis.rs",
+      "/data/repos/OurChat/server/src/httpserver.rs",
+      "/data/repos/OurChat/server/src/httpserver/status.rs",
+      "/data/repos/OurChat/server/src/process/server_manage/set_server_status.rs",
+      "/data/repos/OurChat/server/src/shared_state.rs"
+    ],
+    "3rd Party Registration": [
+      "/data/repos/OurChat/config/k8s/app-deployment.yaml",
+      "/data/repos/OurChat/docker/compose.debian.yml",
+      "/data/repos/OurChat/docker/compose.devenv.yml",
+      "/data/repos/OurChat/docker/compose.test-alpine.yml",
+      "/data/repos/OurChat/docker/compose.test-debian.yml",
+      "/data/repos/OurChat/docker/compose.yml"
+    ],
+    "Single Service Instance per Host": [
+      "/data/repos/OurChat/config/k8s/app-deployment.yaml",
+      "/data/repos/OurChat/docker/Dockerfile",
+      "/data/repos/OurChat/docker/compose.devenv.yml",
+      "/data/repos/OurChat/docker/compose.test-alpine.yml",
+      "/data/repos/OurChat/docker/compose.test-debian.yml",
+      "/data/repos/OurChat/docker/compose.yml",
+      "/data/repos/OurChat/server/load_balancer/Dockerfile"
+    ],
+    "Service instance per container": [
+      "/data/repos/OurChat/config/k8s/app-deployment.yaml",
+      "/data/repos/OurChat/config/k8s/load-balancer.yaml",
+      "/data/repos/OurChat/docker/Dockerfile",
+      "/data/repos/OurChat/docker/Dockerfile.alpine-base",
+      "/data/repos/OurChat/docker/Dockerfile.debian",
+      "/data/repos/OurChat/docker/Dockerfile.debian-base",
+      "/data/repos/OurChat/docker/compose.debian.yml",
+      "/data/repos/OurChat/docker/compose.devenv.yml",
+      "/data/repos/OurChat/docker/compose.test-alpine.yml",
+      "/data/repos/OurChat/docker/compose.test-debian.yml",
+      "/data/repos/OurChat/docker/compose.yml"
+    ],
+    "Multiple service instances per host": [
+      "/data/repos/OurChat/config/k8s/app-deployment.yaml",
+      "/data/repos/OurChat/config/k8s/load-balancer.yaml",
+      "/data/repos/OurChat/docker/compose.debian.yml",
+      "/data/repos/OurChat/docker/compose.devenv.yml",
+      "/data/repos/OurChat/docker/compose.test-alpine.yml",
+      "/data/repos/OurChat/docker/compose.test-debian.yml",
+      "/data/repos/OurChat/docker/compose.yml"
+    ],
+    "Service deployment platform": [
+      "/data/repos/OurChat/config/k8s/app-deployment.yaml",
+      "/data/repos/OurChat/config/k8s/load-balancer.yaml",
+      "/data/repos/OurChat/docker/Dockerfile",
+      "/data/repos/OurChat/docker/Dockerfile.alpine-base",
+      "/data/repos/OurChat/docker/Dockerfile.debian",
+      "/data/repos/OurChat/docker/Dockerfile.debian-base",
+      "/data/repos/OurChat/docker/Dockerfile.test-alpine",
+      "/data/repos/OurChat/docker/Dockerfile.test-debian",
+      "/data/repos/OurChat/docker/compose.debian.yml",
+      "/data/repos/OurChat/docker/compose.devenv.yml",
+      "/data/repos/OurChat/docker/compose.test-alpine.yml",
+      "/data/repos/OurChat/docker/compose.test-debian.yml",
+      "/data/repos/OurChat/docker/compose.yml",
+      "/data/repos/OurChat/server/load_balancer/Dockerfile"
+    ],
+    "Service instance per VM": [
+      "/data/repos/OurChat/.github/workflows/ci.yml",
+      "/data/repos/OurChat/.github/workflows/client_ci.yml",
+      "/data/repos/OurChat/.github/workflows/main_ci.yml",
+      "/data/repos/OurChat/.github/workflows/nightly.yml",
+      "/data/repos/OurChat/.github/workflows/release.yml",
+      "/data/repos/OurChat/.github/workflows/server_ci.yml",
+      "/data/repos/OurChat/.github/workflows/server_cov.yml",
+      "/data/repos/OurChat/.github/workflows/server_linux.yml",
+      "/data/repos/OurChat/.github/workflows/server_macos.yml",
+      "/data/repos/OurChat/.github/workflows/server_windows.yml",
+      "/data/repos/OurChat/client/android/app/src/debug/AndroidManifest.xml",
+      "/data/repos/OurChat/client/android/app/src/main/AndroidManifest.xml",
+      "/data/repos/OurChat/client/android/app/src/main/res/drawable-v21/launch_background.xml",
+      "/data/repos/OurChat/client/android/app/src/main/res/drawable/launch_background.xml",
+      "/data/repos/OurChat/client/android/app/src/main/res/values-night/styles.xml",
+      "/data/repos/OurChat/client/android/app/src/main/res/values/styles.xml",
+      "/data/repos/OurChat/client/android/app/src/profile/AndroidManifest.xml"
+    ],
+    "Service mesh": [
+      "/data/repos/OurChat/config/k8s/app-deployment.yaml",
+      "/data/repos/OurChat/config/k8s/load-balancer.yaml"
+    ]
+  },
+  "_metadata": {
+    "experiment": {
+      "run_number": 1
+    },
+    "reproducibility": {
+      "configuration": {
+        "thresholds": {
+          "high_priority": 0.5,
+          "medium_priority": 0.3,
+          "min_priority_score": 0.1,
+          "judge_confidence": 5
+        },
+        "weight_scheme": "llm_dominant",
+        "random_seed": 1761695798
+      }
+    },
+    "models": {
+      "planner": "gpt-5-nano-2025-08-07",
+      "investigator": "gpt-5-nano-2025-08-07",
+      "judge": "gpt-5-nano-2025-08-07",
+      "embedding": "jinaai/jina-embeddings-v2-base-code"
+    },
+    "priority_weights": {
+      "keyword": 0.2,
+      "embedding": 0.1,
+      "graph": 0.0,
+      "llm": 0.7
+    },
+    "source_log": "detection_20251028_235638.log"
+  }
+}

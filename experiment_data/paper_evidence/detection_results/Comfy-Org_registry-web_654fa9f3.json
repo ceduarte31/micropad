@@ -1,0 +1,146 @@
+{
+  "summary": {
+    "repository_name": "Comfy-Org/registry-web",
+    "detected_patterns": [],
+    "total_patterns_scanned": 9,
+    "timestamp": "2025-10-27T19:28:55.026097",
+    "run_id": "654fa9f3"
+  },
+  "patterns": {
+    "Server-side service discovery": false,
+    "Service registry": false,
+    "3rd Party Registration": false,
+    "Single Service Instance per Host": false,
+    "Service instance per container": false,
+    "Multiple service instances per host": false,
+    "Service deployment platform": false,
+    "Service instance per VM": false,
+    "Service mesh": false
+  },
+  "scanned_files_per_pattern": {
+    "Server-side service discovery": [
+      "/data/repos/registry-web/docs/api-architecture.md"
+    ],
+    "Service registry": [
+      "/data/repos/registry-web/components/registry/FilterRegistry.tsx",
+      "/data/repos/registry-web/components/registry/Registry.tsx",
+      "/data/repos/registry-web/components/registry/RegistryCard.tsx",
+      "/data/repos/registry-web/docs/api-architecture.md",
+      "/data/repos/registry-web/src/stories/Registry.stories.tsx",
+      "/data/repos/registry-web/src/stories/RegistryStory.tsx"
+    ],
+    "3rd Party Registration": [
+      "/data/repos/registry-web/.github/workflows/api-gen.yml",
+      "/data/repos/registry-web/.github/workflows/chromatic.yml",
+      "/data/repos/registry-web/.github/workflows/eas-update.yml",
+      "/data/repos/registry-web/.github/workflows/prettier-native-app.yml",
+      "/data/repos/registry-web/.github/workflows/react-ci.yml",
+      "/data/repos/registry-web/.github/workflows/secret-scanning.yml",
+      "/data/repos/registry-web/.github/workflows/unit-test.yml",
+      "/data/repos/registry-web/.vscode/extensions.json",
+      "/data/repos/registry-web/.vscode/launch.json",
+      "/data/repos/registry-web/.vscode/tasks.json",
+      "/data/repos/registry-web/biome.json",
+      "/data/repos/registry-web/cors.json",
+      "/data/repos/registry-web/locales/ar/common.json",
+      "/data/repos/registry-web/locales/en/common.json",
+      "/data/repos/registry-web/locales/es/common.json",
+      "/data/repos/registry-web/locales/fr/common.json",
+      "/data/repos/registry-web/locales/ja/common.json",
+      "/data/repos/registry-web/locales/ko/common.json",
+      "/data/repos/registry-web/locales/ru/common.json",
+      "/data/repos/registry-web/locales/tr/common.json",
+      "/data/repos/registry-web/locales/zh/common.json",
+      "/data/repos/registry-web/package.json",
+      "/data/repos/registry-web/tsconfig.json",
+      "/data/repos/registry-web/vercel.json"
+    ],
+    "Single Service Instance per Host": [
+      "/data/repos/registry-web/.github/workflows/api-gen.yml",
+      "/data/repos/registry-web/.github/workflows/chromatic.yml",
+      "/data/repos/registry-web/.github/workflows/eas-update.yml",
+      "/data/repos/registry-web/.github/workflows/prettier-native-app.yml",
+      "/data/repos/registry-web/.github/workflows/react-ci.yml",
+      "/data/repos/registry-web/.github/workflows/secret-scanning.yml",
+      "/data/repos/registry-web/.github/workflows/unit-test.yml"
+    ],
+    "Service instance per container": [
+      "/data/repos/registry-web/.github/workflows/api-gen.yml",
+      "/data/repos/registry-web/.github/workflows/chromatic.yml",
+      "/data/repos/registry-web/.github/workflows/eas-update.yml",
+      "/data/repos/registry-web/.github/workflows/prettier-native-app.yml",
+      "/data/repos/registry-web/.github/workflows/react-ci.yml",
+      "/data/repos/registry-web/.github/workflows/secret-scanning.yml",
+      "/data/repos/registry-web/.github/workflows/unit-test.yml"
+    ],
+    "Multiple service instances per host": [],
+    "Service deployment platform": [
+      "/data/repos/registry-web/vercel.json"
+    ],
+    "Service instance per VM": [
+      "/data/repos/registry-web/.github/workflows/api-gen.yml",
+      "/data/repos/registry-web/.github/workflows/chromatic.yml",
+      "/data/repos/registry-web/.github/workflows/eas-update.yml",
+      "/data/repos/registry-web/.github/workflows/prettier-native-app.yml",
+      "/data/repos/registry-web/.github/workflows/react-ci.yml",
+      "/data/repos/registry-web/.github/workflows/secret-scanning.yml",
+      "/data/repos/registry-web/.github/workflows/unit-test.yml"
+    ],
+    "Service mesh": [
+      "/data/repos/registry-web/.github/workflows/api-gen.yml",
+      "/data/repos/registry-web/.github/workflows/chromatic.yml",
+      "/data/repos/registry-web/.github/workflows/eas-update.yml",
+      "/data/repos/registry-web/.github/workflows/prettier-native-app.yml",
+      "/data/repos/registry-web/.github/workflows/react-ci.yml",
+      "/data/repos/registry-web/.github/workflows/secret-scanning.yml",
+      "/data/repos/registry-web/.github/workflows/unit-test.yml",
+      "/data/repos/registry-web/.vscode/extensions.json",
+      "/data/repos/registry-web/.vscode/launch.json",
+      "/data/repos/registry-web/.vscode/tasks.json",
+      "/data/repos/registry-web/biome.json",
+      "/data/repos/registry-web/cors.json",
+      "/data/repos/registry-web/locales/ar/common.json",
+      "/data/repos/registry-web/locales/en/common.json",
+      "/data/repos/registry-web/locales/es/common.json",
+      "/data/repos/registry-web/locales/fr/common.json",
+      "/data/repos/registry-web/locales/ja/common.json",
+      "/data/repos/registry-web/locales/ko/common.json",
+      "/data/repos/registry-web/locales/ru/common.json",
+      "/data/repos/registry-web/locales/tr/common.json",
+      "/data/repos/registry-web/locales/zh/common.json",
+      "/data/repos/registry-web/package.json",
+      "/data/repos/registry-web/tsconfig.json",
+      "/data/repos/registry-web/vercel.json"
+    ]
+  },
+  "_metadata": {
+    "experiment": {
+      "run_number": 1
+    },
+    "reproducibility": {
+      "configuration": {
+        "thresholds": {
+          "high_priority": 0.5,
+          "medium_priority": 0.3,
+          "min_priority_score": 0.1,
+          "judge_confidence": 5
+        },
+        "weight_scheme": "llm_dominant",
+        "random_seed": 1761593334
+      }
+    },
+    "models": {
+      "planner": "gpt-5-nano-2025-08-07",
+      "investigator": "gpt-5-nano-2025-08-07",
+      "judge": "gpt-5-nano-2025-08-07",
+      "embedding": "jinaai/jina-embeddings-v2-base-code"
+    },
+    "priority_weights": {
+      "keyword": 0.2,
+      "embedding": 0.1,
+      "graph": 0.0,
+      "llm": 0.7
+    },
+    "source_log": "detection_20251027_192854.log"
+  }
+}

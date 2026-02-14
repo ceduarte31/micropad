@@ -1,0 +1,137 @@
+{
+  "summary": {
+    "repository_name": "xuxueli/xxl-job",
+    "detected_patterns": [
+      "Service registry",
+      "Service instance per container"
+    ],
+    "total_patterns_scanned": 9,
+    "timestamp": "2025-10-31T14:46:57.249774",
+    "run_id": "edf4514e"
+  },
+  "patterns": {
+    "Server-side service discovery": false,
+    "Service registry": true,
+    "3rd Party Registration": false,
+    "Single Service Instance per Host": false,
+    "Service instance per container": true,
+    "Multiple service instances per host": false,
+    "Service deployment platform": false,
+    "Service instance per VM": false,
+    "Service mesh": false
+  },
+  "scanned_files_per_pattern": {
+    "Server-side service discovery": [
+      "/data/repos/xxl-job/.github/workflows/maven.yml"
+    ],
+    "Service registry": [
+      "/data/repos/xxl-job/xxl-job-admin/src/main/java/com/xxl/job/admin/mapper/XxlJobRegistryMapper.java",
+      "/data/repos/xxl-job/xxl-job-admin/src/main/java/com/xxl/job/admin/model/XxlJobRegistry.java",
+      "/data/repos/xxl-job/xxl-job-admin/src/main/resources/mapper/XxlJobRegistryMapper.xml",
+      "/data/repos/xxl-job/xxl-job-core/src/main/java/com/xxl/job/core/biz/model/RegistryParam.java",
+      "/data/repos/xxl-job/xxl-job-core/src/main/java/com/xxl/job/core/enums/RegistryConfig.java"
+    ],
+    "3rd Party Registration": [
+      "/data/repos/xxl-job/.github/FUNDING.yml",
+      "/data/repos/xxl-job/.github/workflows/maven.yml"
+    ],
+    "Single Service Instance per Host": [
+      "/data/repos/xxl-job/README.md",
+      "/data/repos/xxl-job/doc/XXL-JOB-English-Documentation.md",
+      "/data/repos/xxl-job/doc/XXL-JOB\u5b98\u65b9\u6587\u6863.md",
+      "/data/repos/xxl-job/xxl-job-admin/Dockerfile",
+      "/data/repos/xxl-job/xxl-job-admin/pom.xml",
+      "/data/repos/xxl-job/xxl-job-executor-samples/pom.xml",
+      "/data/repos/xxl-job/xxl-job-executor-samples/xxl-job-executor-sample-frameless/pom.xml",
+      "/data/repos/xxl-job/xxl-job-executor-samples/xxl-job-executor-sample-frameless/src/main/java/com/xxl/job/executor/sample/frameless/config/FrameLessXxlJobConfig.java",
+      "/data/repos/xxl-job/xxl-job-executor-samples/xxl-job-executor-sample-springboot-ai/pom.xml",
+      "/data/repos/xxl-job/xxl-job-executor-samples/xxl-job-executor-sample-springboot/Dockerfile",
+      "/data/repos/xxl-job/xxl-job-executor-samples/xxl-job-executor-sample-springboot/pom.xml"
+    ],
+    "Service instance per container": [
+      "/data/repos/xxl-job/.github/workflows/maven.yml",
+      "/data/repos/xxl-job/LICENSE",
+      "/data/repos/xxl-job/README.md",
+      "/data/repos/xxl-job/xxl-job-admin/Dockerfile",
+      "/data/repos/xxl-job/xxl-job-admin/pom.xml",
+      "/data/repos/xxl-job/xxl-job-admin/src/main/java/com/xxl/job/admin/XxlJobAdminApplication.java",
+      "/data/repos/xxl-job/xxl-job-admin/src/main/java/com/xxl/job/admin/constant/Consts.java",
+      "/data/repos/xxl-job/xxl-job-admin/src/main/resources/application.properties",
+      "/data/repos/xxl-job/xxl-job-admin/src/main/resources/i18n/message_en.properties",
+      "/data/repos/xxl-job/xxl-job-admin/src/main/resources/logback.xml",
+      "/data/repos/xxl-job/xxl-job-admin/src/test/java/com/xxl/job/admin/controller/JobInfoControllerTest.java",
+      "/data/repos/xxl-job/xxl-job-admin/src/test/java/com/xxl/job/admin/schedule/JobScheduleTest.java",
+      "/data/repos/xxl-job/xxl-job-core/pom.xml",
+      "/data/repos/xxl-job/xxl-job-core/src/main/java/com/xxl/job/core/biz/AdminBiz.java",
+      "/data/repos/xxl-job/xxl-job-core/src/main/java/com/xxl/job/core/biz/ExecutorBiz.java",
+      "/data/repos/xxl-job/xxl-job-core/src/main/java/com/xxl/job/core/executor/XxlJobExecutor.java",
+      "/data/repos/xxl-job/xxl-job-core/src/main/java/com/xxl/job/core/util/GsonTool.java",
+      "/data/repos/xxl-job/xxl-job-executor-samples/pom.xml",
+      "/data/repos/xxl-job/xxl-job-executor-samples/xxl-job-executor-sample-springboot/pom.xml",
+      "/data/repos/xxl-job/xxl-job-executor-samples/xxl-job-executor-sample-springboot/src/main/java/com/xxl/job/executor/XxlJobExecutorApplication.java",
+      "/data/repos/xxl-job/xxl-job-executor-samples/xxl-job-executor-sample-springboot/src/main/java/com/xxl/job/executor/config/XxlJobConfig.java",
+      "/data/repos/xxl-job/xxl-job-executor-samples/xxl-job-executor-sample-springboot/src/main/resources/application.properties",
+      "/data/repos/xxl-job/xxl-job-executor-samples/xxl-job-executor-sample-springboot/src/main/resources/logback.xml"
+    ],
+    "Multiple service instances per host": [],
+    "Service deployment platform": [
+      "/data/repos/xxl-job/xxl-job-admin/Dockerfile",
+      "/data/repos/xxl-job/xxl-job-executor-samples/xxl-job-executor-sample-springboot/Dockerfile"
+    ],
+    "Service instance per VM": [
+      "/data/repos/xxl-job/.github/workflows/maven.yml",
+      "/data/repos/xxl-job/pom.xml",
+      "/data/repos/xxl-job/xxl-job-admin/pom.xml",
+      "/data/repos/xxl-job/xxl-job-admin/src/main/resources/logback.xml",
+      "/data/repos/xxl-job/xxl-job-admin/src/main/resources/mapper/XxlJobGroupMapper.xml",
+      "/data/repos/xxl-job/xxl-job-admin/src/main/resources/mapper/XxlJobInfoMapper.xml",
+      "/data/repos/xxl-job/xxl-job-admin/src/main/resources/mapper/XxlJobLockMapper.xml",
+      "/data/repos/xxl-job/xxl-job-admin/src/main/resources/mapper/XxlJobLogGlueMapper.xml",
+      "/data/repos/xxl-job/xxl-job-admin/src/main/resources/mapper/XxlJobLogMapper.xml",
+      "/data/repos/xxl-job/xxl-job-admin/src/main/resources/mapper/XxlJobLogReportMapper.xml",
+      "/data/repos/xxl-job/xxl-job-admin/src/main/resources/mapper/XxlJobRegistryMapper.xml",
+      "/data/repos/xxl-job/xxl-job-admin/src/main/resources/mapper/XxlJobUserMapper.xml",
+      "/data/repos/xxl-job/xxl-job-core/pom.xml",
+      "/data/repos/xxl-job/xxl-job-executor-samples/pom.xml",
+      "/data/repos/xxl-job/xxl-job-executor-samples/xxl-job-executor-sample-frameless/pom.xml",
+      "/data/repos/xxl-job/xxl-job-executor-samples/xxl-job-executor-sample-frameless/src/main/resources/log4j.xml",
+      "/data/repos/xxl-job/xxl-job-executor-samples/xxl-job-executor-sample-springboot-ai/pom.xml",
+      "/data/repos/xxl-job/xxl-job-executor-samples/xxl-job-executor-sample-springboot-ai/src/main/resources/logback.xml",
+      "/data/repos/xxl-job/xxl-job-executor-samples/xxl-job-executor-sample-springboot/pom.xml",
+      "/data/repos/xxl-job/xxl-job-executor-samples/xxl-job-executor-sample-springboot/src/main/resources/logback.xml"
+    ],
+    "Service mesh": [
+      "/data/repos/xxl-job/.github/workflows/maven.yml"
+    ]
+  },
+  "_metadata": {
+    "experiment": {
+      "run_number": 1
+    },
+    "reproducibility": {
+      "configuration": {
+        "thresholds": {
+          "high_priority": 0.5,
+          "medium_priority": 0.3,
+          "min_priority_score": 0.1,
+          "judge_confidence": 5
+        },
+        "weight_scheme": "llm_dominant",
+        "random_seed": 1761922017
+      }
+    },
+    "models": {
+      "planner": "gpt-5-nano-2025-08-07",
+      "investigator": "gpt-5-nano-2025-08-07",
+      "judge": "gpt-5-nano-2025-08-07",
+      "embedding": "jinaai/jina-embeddings-v2-base-code"
+    },
+    "priority_weights": {
+      "keyword": 0.2,
+      "embedding": 0.1,
+      "graph": 0.0,
+      "llm": 0.7
+    },
+    "source_log": "detection_20251031_144657.log"
+  }
+}

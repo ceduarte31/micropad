@@ -1,0 +1,185 @@
+{
+  "summary": {
+    "repository_name": "wpovernight/woocommerce-pdf-invoices-packing-slips",
+    "detected_patterns": [],
+    "total_patterns_scanned": 9,
+    "timestamp": "2025-10-31T13:06:45.062418",
+    "run_id": "b394d5c9"
+  },
+  "patterns": {
+    "Server-side service discovery": false,
+    "Service registry": false,
+    "3rd Party Registration": false,
+    "Single Service Instance per Host": false,
+    "Service instance per container": false,
+    "Multiple service instances per host": false,
+    "Service deployment platform": false,
+    "Service instance per VM": false,
+    "Service mesh": false
+  },
+  "scanned_files_per_pattern": {
+    "Server-side service discovery": [
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/.github/workflows/depends-on.yml",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/.github/workflows/lint.yml",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/.github/workflows/minify.yml",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/.github/workflows/project.yml",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/.github/workflows/release-assets.yml"
+    ],
+    "Service registry": [
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/.github/workflows/depends-on.yml",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/.github/workflows/lint.yml",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/.github/workflows/minify.yml",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/.github/workflows/project.yml",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/.github/workflows/release-assets.yml",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/README.md",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/assets/js/admin-script.js",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/assets/js/analytics-order.js",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/assets/js/confetti.js",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/assets/js/debug-script.js",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/assets/js/media-upload.js",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/assets/js/my-account-link.js",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/assets/js/order-script.js",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/assets/js/setup-wizard.js",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/assets/js/ubl-script.js",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/strauss.md",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/strauss/dompdf/dompdf/AUTHORS.md",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/strauss/dompdf/dompdf/README.md",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/strauss/dompdf/php-font-lib/AUTHORS.md",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/strauss/dompdf/php-font-lib/README.md",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/strauss/dompdf/php-svg-lib/AUTHORS.md",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/strauss/dompdf/php-svg-lib/README.md",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/strauss/masterminds/html5/README.md",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/strauss/masterminds/html5/RELEASE.md",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/strauss/masterminds/html5/UPGRADING.md",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/strauss/masterminds/html5/src/HTML5/Parser/README.md",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/strauss/masterminds/html5/src/HTML5/Serializer/README.md",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/strauss/sabberworm/php-css-parser/CHANGELOG.md",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/strauss/sabberworm/php-css-parser/README.md",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/strauss/sabre/xml/README.md",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/symfony/polyfill-iconv/README.md",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/symfony/polyfill-mbstring/README.md"
+    ],
+    "3rd Party Registration": [
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/.github/workflows/depends-on.yml",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/.github/workflows/lint.yml",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/.github/workflows/minify.yml",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/.github/workflows/project.yml",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/.github/workflows/release-assets.yml",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/assets/blueprints/blueprint.json",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/composer.json",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/composer/installed.json",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/strauss/dompdf/dompdf/composer.json",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/strauss/dompdf/dompdf/lib/fonts/installed-fonts.dist.json",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/strauss/dompdf/php-font-lib/composer.json",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/strauss/dompdf/php-svg-lib/composer.json",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/strauss/masterminds/html5/composer.json",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/strauss/sabberworm/php-css-parser/composer.json",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/strauss/sabre/uri/composer.json",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/strauss/sabre/xml/composer.json",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/symfony/polyfill-iconv/composer.json",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/symfony/polyfill-mbstring/composer.json"
+    ],
+    "Single Service Instance per Host": [
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/README.md",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/includes/Admin.php",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/includes/Install.php",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/includes/Main.php",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/readme.txt",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/strauss.md",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/templates/Simple/invoice.php",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/templates/Simple/packing-slip.php",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/templates/Simple/template-functions.php",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/autoload.php",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/views/advanced-numbers.php",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/views/advanced-status.php",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/views/settings-page.php",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/woocommerce-pdf-invoices-packingslips.php"
+    ],
+    "Service instance per container": [
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/.github/workflows/depends-on.yml",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/.github/workflows/lint.yml",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/.github/workflows/minify.yml",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/.github/workflows/project.yml",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/.github/workflows/release-assets.yml"
+    ],
+    "Multiple service instances per host": [],
+    "Service deployment platform": [
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/.github/workflows/depends-on.yml",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/.github/workflows/lint.yml",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/.github/workflows/minify.yml",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/.github/workflows/project.yml",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/.github/workflows/release-assets.yml",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/assets/blueprints/blueprint.json",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/composer.json",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/composer/installed.json",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/strauss/dompdf/dompdf/composer.json",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/strauss/dompdf/dompdf/lib/fonts/installed-fonts.dist.json",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/strauss/dompdf/php-font-lib/composer.json",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/strauss/dompdf/php-svg-lib/composer.json",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/strauss/masterminds/html5/composer.json",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/strauss/sabberworm/php-css-parser/composer.json",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/strauss/sabre/uri/composer.json",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/strauss/sabre/xml/composer.json",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/symfony/polyfill-iconv/composer.json",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/symfony/polyfill-mbstring/composer.json"
+    ],
+    "Service instance per VM": [
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/.github/workflows/depends-on.yml",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/.github/workflows/lint.yml",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/.github/workflows/minify.yml",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/.github/workflows/project.yml",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/.github/workflows/release-assets.yml",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/strauss/dompdf/dompdf/phpunit.xml"
+    ],
+    "Service mesh": [
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/.github/workflows/depends-on.yml",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/.github/workflows/lint.yml",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/.github/workflows/minify.yml",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/.github/workflows/project.yml",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/.github/workflows/release-assets.yml",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/assets/blueprints/blueprint.json",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/composer.json",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/composer/installed.json",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/strauss/dompdf/dompdf/composer.json",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/strauss/dompdf/dompdf/lib/fonts/installed-fonts.dist.json",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/strauss/dompdf/php-font-lib/composer.json",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/strauss/dompdf/php-svg-lib/composer.json",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/strauss/masterminds/html5/composer.json",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/strauss/sabberworm/php-css-parser/composer.json",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/strauss/sabre/uri/composer.json",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/strauss/sabre/xml/composer.json",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/symfony/polyfill-iconv/composer.json",
+      "/data/repos/woocommerce-pdf-invoices-packing-slips/vendor/symfony/polyfill-mbstring/composer.json"
+    ]
+  },
+  "_metadata": {
+    "experiment": {
+      "run_number": 1
+    },
+    "reproducibility": {
+      "configuration": {
+        "thresholds": {
+          "high_priority": 0.5,
+          "medium_priority": 0.3,
+          "min_priority_score": 0.1,
+          "judge_confidence": 5
+        },
+        "weight_scheme": "llm_dominant",
+        "random_seed": 1761916005
+      }
+    },
+    "models": {
+      "planner": "gpt-5-nano-2025-08-07",
+      "investigator": "gpt-5-nano-2025-08-07",
+      "judge": "gpt-5-nano-2025-08-07",
+      "embedding": "jinaai/jina-embeddings-v2-base-code"
+    },
+    "priority_weights": {
+      "keyword": 0.2,
+      "embedding": 0.1,
+      "graph": 0.0,
+      "llm": 0.7
+    },
+    "source_log": "detection_20251031_130645.log"
+  }
+}

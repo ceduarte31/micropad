@@ -1,0 +1,805 @@
+pattern_name: "Single Service Instance per Host"
+description: |
+  How are services packaged and deployed? Deploy each single service instance on its own host.
+  Provision dedicated virtual machines or bare-metal hosts where each machine runs exactly one
+  service instance (and its direct runtime dependencies). Package the service as a VM image or
+  installable unit, bootstrap via cloud-init or configuration management, and manage it with
+  a process supervisor like systemd. Scale by increasing or decreasing the number of hosts in
+  an Auto Scaling Group or equivalent, and route traffic through load balancers to the fleet.
+  
+  Benefits:
+  - Strong isolation and predictable performance per service
+  - Simplified debugging, rollback, and blast-radius containment
+  - Clear resource ownership and security boundaries
+  
+  Trade-offs:
+  - Lower resource utilization and higher infrastructure cost
+  - Slower scaling compared to container schedulers
+  - More operational overhead per service (images, hosts, patching)
+repository_fingerprint:
+  glob_patterns:
+    # --- Tier 1: The Spear (High-Confidence & High-Diversity Keyword Search) ---
+    # Files that explicitly configure one service per host with systemd, cloud-init, and IaC
+    - glob: "**/*.service" # systemd unit files
+      search_method: "keyword"
+      keywords: ["[Unit]", "[Service]", "ExecStart", "WantedBy=multi-user.target", "Restart="]
+    - glob: "**/systemd/*.service"
+      search_method: "keyword"
+      keywords: ["[Unit]", "[Service]", "ExecStart", "Restart=", "User="]
+    - glob: "**/cloud-init*.y*ml" # cloud-init user-data
+      search_method: "keyword"
+      keywords: ["#cloud-config", "packages:", "runcmd:", "write_files:"]
+    - glob: "**/*user-data*.sh" # EC2/GCE/Azure customData shell bootstrap
+      search_method: "keyword"
+      keywords: ["#!/bin/bash", "systemctl", "enable", "start", "nohup"]
+    - glob: "**/*launch-template*.json" # AWS Launch Template JSON
+      search_method: "keyword"
+      keywords: ["LaunchTemplateData", "UserData", "ImageId", "InstanceType"]
+    - glob: "**/*launch-template*.y*ml" # AWS Launch Template via CloudFormation
+      search_method: "keyword"
+      keywords: ["AWS::EC2::LaunchTemplate", "LaunchTemplateData", "UserData"]
+    - glob: "**/*autoscaling-group*.tf" # Terraform ASG for service fleet
+      search_method: "keyword"
+      keywords: ["aws_autoscaling_group", "launch_template", "desired_capacity", "tag"]
+    - glob: "**/terraform/**/*.tf" # IaC per-cloud VMs
+      search_method: "keyword"
+      keywords: ["aws_instance", "aws_launch_template", "aws_autoscaling_group", "google_compute_instance", "google_compute_instance_template", "azurerm_linux_virtual_machine", "metadata_startup_script", "user_data"]
+    - glob: "**/*packer*.json" # Packer VM image builds
+      search_method: "keyword"
+      keywords: ["builders", "provisioners", "ami_name", "source_ami", "image_name"]
+    - glob: "**/*.pkr.hcl" # Packer HCL templates
+      search_method: "keyword"
+      keywords: ["source", "build", "provisioner", "amazon-ebs", "googlecompute", "azure-arm"]
+    - glob: "**/ansible/**/*playbook*.y*ml" # Ansible deployment per host
+      search_method: "keyword"
+      keywords: ["hosts:", "become:", "tasks:", "systemd:", "service:"]
+    - glob: "**/ansible/**/roles/**/tasks/*.y*ml"
+      search_method: "keyword"
+      keywords: ["systemd:", "service:", "copy:", "template:", "file:"]
+    - glob: "**/puppet/**/*.pp" # Puppet manifests per host
+      search_method: "keyword"
+      keywords: ["package {", "service {", "file {", "ensure =>"]
+    - glob: "**/salt/**/*.sls" # Salt states per host
+      search_method: "keyword"
+      keywords: ["service.running", "pkg.installed", "file.managed", "cmd.run"]
+    - glob: "**/chef/**/recipes/*.rb" # Chef recipes per host
+      search_method: "keyword"
+      keywords: ["package", "service", "template", "systemd_unit", "execute"]
+    - glob: "**/gcp/**/*instance-template*.y*ml" # GCP instance templates
+      search_method: "keyword"
+      keywords: ["properties:", "machineType", "metadata:", "startup-script"]
+    - glob: "**/azure/**/*.bicep" # Azure VM/VMSS with customData
+      search_method: "keyword"
+      keywords: ["Microsoft.Compute/virtualMachines", "virtualMachineScaleSets", "osProfile", "customData"]
+    - glob: "**/*cloudformation*.y*ml" # CloudFormation EC2/ASG stacks
+      search_method: "keyword"
+      keywords: ["AWS::EC2::Instance", "AWS::AutoScaling::AutoScalingGroup", "UserData", "LaunchTemplate"]
+    - glob: "**/*firewall*.y*ml" # Host-level firewall for single-service exposure
+      search_method: "keyword"
+      keywords: ["ufw", "iptables", "nftables", "securityGroup", "rules:"]
+
+    # --- Tier 2: The Cast Net (Contextual & Suggestive Embedding Search) ---
+    # Per-service fleets, load balancers, and routing to dedicated service hosts
+    - glob: "**/*alb*.tf"
+      search_method: "keyword"
+      keywords: ["aws_lb", "aws_lb_target_group", "aws_lb_listener", "target_group"]
+    - glob: "**/*nlb*.tf"
+      search_method: "keyword"
+      keywords: ["aws_lb", "load_balancer_type = \"network\"", "target_group"]
+    - glob: "**/*mig*.y*ml"
+      search_method: "keyword"
+      keywords: ["compute.v1.instanceTemplate", "compute.v1.instanceGroupManager", "targetSize"]
+    - glob: "**/*vmss*.bicep"
+      search_method: "keyword"
+      keywords: ["Microsoft.Compute/virtualMachineScaleSets", "upgradePolicy", "customData"]
+    - glob: "**/ansible/**/inventory*"
+      search_method: "keyword"
+      keywords: ["[", "]", "ansible_host", "hosts", "children"]
+    - glob: "**/scripts/**/bootstrap*.sh"
+      search_method: "keyword"
+      keywords: ["systemctl", "enable", "start", "curl", "wget", "apt", "yum"]
+
+    # --- Tier 3: The Trawler (Broad Catch-all Embedding Search) ---
+    # General infrastructure and deployment repos that likely implement one-service-per-host
+    - glob: "**/infrastructure/**/*"
+    - glob: "**/ops/**/*"
+    - glob: "**/deploy/**/*"
+    - glob: "**/manifests/**/*"
+    - glob: "**/config/**/*"
+    - glob: "**/scripts/**/*"
+    - glob: "**/.github/workflows/*.y*ml"
+    - glob: "**/.gitlab-ci.yml"
+    - glob: "**/azure-pipelines.yml"
+    - glob: "**/.circleci/config.yml"
+    - glob: "**/Jenkinsfile"
+
+positive_examples:
+  - |
+    # 1. systemd Unit for a Dedicated Host (orders.service)
+    [Unit]
+    Description=Orders Service
+    After=network-online.target
+    Wants=network-online.target
+
+    [Service]
+    Type=simple
+    User=orders
+    Group=orders
+    EnvironmentFile=/etc/orders/env
+    ExecStart=/usr/local/bin/orders-server --port=8080 --db-url=${DB_URL}
+    Restart=on-failure
+    RestartSec=5s
+    LimitNOFILE=65536
+
+    [Install]
+    WantedBy=multi-user.target
+  - |
+    # 2. cloud-init Bootstrap Installing and Enabling a Single Service
+    #cloud-config
+    packages:
+      - nginx
+    write_files:
+      - path: /etc/systemd/system/catalog.service
+        permissions: "0644"
+        content: |
+          [Unit]
+          Description=Catalog Service
+          After=network-online.target
+          Wants=network-online.target
+          [Service]
+          ExecStart=/usr/local/bin/catalog --http :8081
+          Restart=on-failure
+          [Install]
+          WantedBy=multi-user.target
+    runcmd:
+      - [ sh, -c, "useradd -r -s /sbin/nologin catalog || true" ]
+      - [ sh, -c, "chmod +x /usr/local/bin/catalog" ]
+      - [ systemctl, daemon-reload ]
+      - [ systemctl, enable, --now, catalog.service ]
+      - [ ufw, allow, "8081/tcp" ]
+  - |
+    # 3. Terraform: AWS Launch Template + Auto Scaling Group for a Single Service per Host
+    resource "aws_launch_template" "payments_lt" {
+      name_prefix   = "payments-"
+      image_id      = var.ami_id
+      instance_type = "t3.medium"
+      user_data     = base64encode(<<-EOF
+        #!/bin/bash
+        set -euo pipefail
+        apt-get update && apt-get install -y jq
+        cat >/etc/systemd/system/payments.service <<'UNIT'
+        [Unit]
+        Description=Payments Service
+        After=network-online.target
+        Wants=network-online.target
+        [Service]
+        ExecStart=/usr/local/bin/payments --port 8080
+        Restart=always
+        [Install]
+        WantedBy=multi-user.target
+        UNIT
+        systemctl daemon-reload
+        systemctl enable --now payments
+      EOF)
+      tag_specifications {
+        resource_type = "instance"
+        tags = {
+          Service = "payments"
+          Role    = "app"
+        }
+      }
+      vpc_security_group_ids = [aws_security_group.payments_sg.id]
+    }
+
+    resource "aws_autoscaling_group" "payments_asg" {
+      name                      = "payments-asg"
+      desired_capacity          = 3
+      min_size                  = 3
+      max_size                  = 6
+      vpc_zone_identifier       = var.subnet_ids
+      launch_template {
+        id      = aws_launch_template.payments_lt.id
+        version = "$Latest"
+      }
+      tag {
+        key                 = "Service"
+        value               = "payments"
+        propagate_at_launch = true
+      }
+      lifecycle {
+        create_before_destroy = true
+      }
+    }
+
+    resource "aws_security_group" "payments_sg" {
+      name        = "payments-sg"
+      description = "Allow 8080 to payments hosts"
+      vpc_id      = var.vpc_id
+      ingress {
+        from_port   = 8080
+        to_port     = 8080
+        protocol    = "tcp"
+        cidr_blocks = ["0.0.0.0/0"]
+      }
+      egress {
+        from_port   = 0
+        to_port     = 0
+        protocol    = "-1"
+        cidr_blocks = ["0.0.0.0/0"]
+      }
+      tags = { Service = "payments" }
+    }
+  - |
+    # 4. Packer Template: Bake a VM Image with a Single Service Preinstalled
+    {
+      "builders": [
+        {
+          "type": "amazon-ebs",
+          "region": "us-east-1",
+          "source_ami": "ami-0c55b159cbfafe1f0",
+          "instance_type": "t3.small",
+          "ssh_username": "ubuntu",
+          "ami_name": "inventory-service-{{timestamp}}"
+        }
+      ],
+      "provisioners": [
+        {
+          "type": "shell",
+          "inline": [
+            "useradd -r -s /sbin/nologin inventory || true",
+            "install -m 0755 /tmp/inventory /usr/local/bin/inventory",
+            "cat >/etc/systemd/system/inventory.service <<'UNIT'\n[Unit]\nDescription=Inventory Service\nAfter=network-online.target\nWants=network-online.target\n[Service]\nExecStart=/usr/local/bin/inventory --port 9090\nRestart=always\n[Install]\nWantedBy=multi-user.target\nUNIT",
+            "systemctl enable inventory.service"
+          ]
+        }
+      ]
+    }
+  - |
+    # 5. Ansible Playbook: Deploy a Single Service to Dedicated Hosts
+    - name: Deploy catalog service to catalog_hosts
+      hosts: catalog_hosts
+      become: yes
+      tasks:
+        - name: Create service user
+          user:
+            name: catalog
+            system: yes
+            shell: /usr/sbin/nologin
+
+        - name: Copy binary
+          copy:
+            src: ./bin/catalog
+            dest: /usr/local/bin/catalog
+            mode: "0755"
+
+        - name: Install systemd unit
+          copy:
+            dest: /etc/systemd/system/catalog.service
+            mode: "0644"
+            content: |
+              [Unit]
+              Description=Catalog Service
+              After=network-online.target
+              Wants=network-online.target
+              [Service]
+              User=catalog
+              ExecStart=/usr/local/bin/catalog --port 8081
+              Restart=on-failure
+              [Install]
+              WantedBy=multi-user.target
+
+        - name: Enable and start
+          systemd:
+            name: catalog
+            state: started
+            enabled: yes
+
+        - name: Open firewall
+          ufw:
+            rule: allow
+            port: "8081"
+            proto: tcp
+  - |
+    # 6. Puppet Manifest: Single Service Unit
+    package { 'orders':
+      ensure => 'installed',
+    }
+
+    file { '/etc/systemd/system/orders.service':
+      ensure  => file,
+      mode    => '0644',
+      content => @(END)
+        [Unit]
+        Description=Orders Service
+        After=network-online.target
+        Wants=network-online.target
+        [Service]
+        ExecStart=/usr/local/bin/orders --port 8080
+        Restart=always
+        [Install]
+        WantedBy=multi-user.target
+        | END,
+      notify  => Exec['systemd-daemon-reload'],
+    }
+
+    exec { 'systemd-daemon-reload':
+      command     => '/bin/systemctl daemon-reload',
+      refreshonly => true,
+    }
+
+    service { 'orders':
+      ensure => 'running',
+      enable => true,
+      require => File['/etc/systemd/system/orders.service'],
+    }
+  - |
+    # 7. SaltStack SLS: Dedicated Host Running Shipping Service
+    shipping-pkg:
+      pkg.installed:
+        - names:
+          - shipping
+
+    /etc/systemd/system/shipping.service:
+      file.managed:
+        - mode: 0644
+        - contents: |
+            [Unit]
+            Description=Shipping Service
+            After=network-online.target
+            Wants=network-online.target
+            [Service]
+            ExecStart=/usr/local/bin/shipping --port 8082
+            Restart=always
+            [Install]
+            WantedBy=multi-user.target
+
+    systemd-reload:
+      cmd.run:
+        - name: systemctl daemon-reload
+        - onchanges:
+          - file: /etc/systemd/system/shipping.service
+
+    shipping-service:
+      service.running:
+        - enable: True
+        - require:
+          - pkg: shipping-pkg
+          - cmd: systemd-reload
+  - |
+    # 8. CloudFormation: Launch Template + AutoScalingGroup for Auth Service
+    AWSTemplateFormatVersion: '2010-09-09'
+    Resources:
+      AuthLaunchTemplate:
+        Type: AWS::EC2::LaunchTemplate
+        Properties:
+          LaunchTemplateData:
+            ImageId: ami-0123456789abcdef0
+            InstanceType: t3.small
+            UserData:
+              Fn::Base64: |
+                #cloud-config
+                write_files:
+                  - path: /etc/systemd/system/auth.service
+                    permissions: "0644"
+                    content: |
+                      [Unit]
+                      Description=Auth Service
+                      After=network-online.target
+                      Wants=network-online.target
+                      [Service]
+                      ExecStart=/usr/local/bin/auth --port 8083
+                      Restart=always
+                      [Install]
+                      WantedBy=multi-user.target
+                runcmd:
+                  - systemctl daemon-reload
+                  - systemctl enable --now auth.service
+      AuthASG:
+        Type: AWS::AutoScaling::AutoScalingGroup
+        Properties:
+          MinSize: "2"
+          MaxSize: "4"
+          DesiredCapacity: "2"
+          VPCZoneIdentifier: ["subnet-aaaa", "subnet-bbbb"]
+          LaunchTemplate:
+            LaunchTemplateId: !Ref AuthLaunchTemplate
+            Version: !GetAtt AuthLaunchTemplate.LatestVersionNumber
+  - |
+    # 9. GCP Instance Template + MIG for Pricing Service (one service per VM)
+    resources:
+    - name: pricing-template
+      type: compute.v1.instanceTemplate
+      properties:
+        properties:
+          machineType: e2-medium
+          disks:
+            - boot: true
+              initializeParams:
+                sourceImage: projects/ubuntu-os-cloud/global/images/family/ubuntu-2204-lts
+          networkInterfaces:
+            - network: global/networks/default
+          metadata:
+            items:
+              - key: startup-script
+                value: |
+                  #!/bin/bash
+                  set -e
+                  cat >/etc/systemd/system/pricing.service <<'UNIT'
+                  [Unit]
+                  Description=Pricing Service
+                  After=network-online.target
+                  [Service]
+                  ExecStart=/usr/local/bin/pricing --http :8084
+                  Restart=always
+                  [Install]
+                  WantedBy=multi-user.target
+                  UNIT
+                  systemctl daemon-reload
+                  systemctl enable --now pricing
+    - name: pricing-mig
+      type: compute.v1.instanceGroupManager
+      properties:
+        baseInstanceName: pricing
+        targetSize: 3
+        instanceTemplate: $(ref.pricing-template.selfLink)
+  - |
+    # 10. Azure Bicep: VM Scale Set with customData to run a single service
+    param location string = resourceGroup().location
+    param adminUser string = 'azureuser'
+    param skuName string = 'Standard_B2s'
+    param imagePublisher string = 'Canonical'
+    param imageOffer string = '0001-com-ubuntu-server-jammy'
+    param imageSku string = '22_04-lts'
+    param imageVersion string = 'latest'
+
+    resource appVmss 'Microsoft.Compute/virtualMachineScaleSets@2022-08-01' = {
+      name: 'search-vmss'
+      location: location
+      sku: {
+        name: skuName
+        tier: 'Standard'
+        capacity: 3
+      }
+      properties: {
+        upgradePolicy: {
+          mode: 'Rolling'
+        }
+        virtualMachineProfile: {
+          osProfile: {
+            computerNamePrefix: 'search'
+            adminUsername: adminUser
+            customData: base64('#cloud-config\nruncmd:\n  - [ sh, -c, "echo \\"[Unit]\\nDescription=Search Service\\n[Service]\\nExecStart=/usr/local/bin/search --port 8085\\nRestart=always\\n[Install]\\nWantedBy=multi-user.target\\" > /etc/systemd/system/search.service" ]\n  - [ systemctl, daemon-reload ]\n  - [ systemctl, enable, --now, search.service ]\n')
+          }
+          storageProfile: {
+            imageReference: {
+              publisher: imagePublisher
+              offer: imageOffer
+              sku: imageSku
+              version: imageVersion
+            }
+          }
+          networkProfile: {
+            networkInterfaceConfigurations: [
+              {
+                name: 'searchNic'
+                properties: {
+                  primary: true
+                  ipConfigurations: [
+                    { name: 'ipconfig1', properties: { subnet: { id: '/subscriptions/xxxx/resourceGroups/rg/providers/Microsoft.Network/virtualNetworks/vnet/subnets/default' } } }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  - |
+    # 11. AWS Launch Template JSON (dedicated hosts for email service)
+    {
+      "LaunchTemplateData": {
+        "ImageId": "ami-0abcdef1234567890",
+        "InstanceType": "t3.small",
+        "UserData": "IyEvYmluL2Jhc2gKc2V0IC1ldW8gcGlwZWZhaWwKY2F0ID4vZXRjL3N5c3RlbWQvc3lzdGVtZC9lbWFpbC5zZXJ2aWNlIDwnVU5JVF0KRGVzY3JpcHRpb249RW1haWwgU2VydmljZQpBbHRlclN5c3RlbT1uZXR3b3JrLW9ubGluZS50YXJnZXQKV2FudHM9bmV0d29yay1vbmxpbmUudGFyZ2V0CltTZXJ2aWNlXQpFeGVjU3RhcnQ9L3Vzci9sb2NhbC9iaW4vZW1haWwgLS1wb3J0IDgwODYKUmVzdGFydD1hbHdheXMKW0luc3RhbGxdCldhbnRlZEJ5PW11bHRpLXVzZXIudGFyZ2V0CicKc3lzdGVtb3RsIGRhZW1vbi1yZWxvYWQKc3lzdGVtb3RsIGVuYWJsZSAtLW5vdyBlbWFpbA=="
+      }
+    }
+  - |
+    # 12. systemd Unit Running a Single Docker Container with Host Networking
+    [Unit]
+    Description=Recommendations Service (Docker)
+    After=docker.service network-online.target
+    Requires=docker.service
+
+    [Service]
+    ExecStart=/usr/bin/docker run --rm --name recommendations --network host \
+      -e PORT=8087 myorg/recommendations:1.2.3
+    ExecStop=/usr/bin/docker stop recommendations
+    Restart=always
+    RestartSec=3
+
+    [Install]
+    WantedBy=multi-user.target
+  - |
+    # 13. Cloud-Init User-Data Shell Script for Dedicated Host
+    #!/bin/bash
+    set -eux
+    adduser --system --shell /usr/sbin/nologin analytics || true
+    install -m 0755 /tmp/analytics /usr/local/bin/analytics
+    cat >/etc/systemd/system/analytics.service <<'UNIT'
+    [Unit]
+    Description=Analytics Service
+    After=network-online.target
+    [Service]
+    User=analytics
+    ExecStart=/usr/local/bin/analytics --port 8090
+    Restart=always
+    [Install]
+    WantedBy=multi-user.target
+    UNIT
+    systemctl daemon-reload
+    systemctl enable --now analytics
+    ufw allow 8090/tcp
+  - |
+    # 14. Terraform: GCP Instance Template and MIG (email service)
+    resource "google_compute_instance_template" "email_tpl" {
+      name_prefix = "email-"
+      machine_type = "e2-small"
+      disk {
+        source_image = "projects/ubuntu-os-cloud/global/images/family/ubuntu-2204-lts"
+        auto_delete  = true
+        boot         = true
+      }
+      network_interface {
+        network = "default"
+      }
+      metadata = {
+        startup-script = <<-SCRIPT
+          #!/bin/bash
+          cat >/etc/systemd/system/email.service <<'UNIT'
+          [Unit]
+          Description=Email Service
+          After=network-online.target
+          [Service]
+          ExecStart=/usr/local/bin/email --port 8086
+          Restart=always
+          [Install]
+          WantedBy=multi-user.target
+          UNIT
+          systemctl daemon-reload
+          systemctl enable --now email
+        SCRIPT
+      }
+      tags = ["service-email"]
+    }
+
+    resource "google_compute_region_instance_group_manager" "email_mig" {
+      name               = "email-mig"
+      base_instance_name = "email"
+      version {
+        instance_template = google_compute_instance_template.email_tpl.self_link
+      }
+      target_size = 2
+      region      = var.region
+    }
+  - |
+    # 15. Packer HCL: Azure image with pre-enabled service
+    source "azure-arm" "svc" {
+      subscription_id                  = var.subscription_id
+      client_id                        = var.client_id
+      client_secret                    = var.client_secret
+      tenant_id                        = var.tenant_id
+      build_resource_group_name        = var.rg
+      managed_image_resource_group_name= var.rg
+      managed_image_name               = "svc-image"
+      os_type                          = "Linux"
+      image_publisher                  = "Canonical"
+      image_offer                      = "0001-com-ubuntu-server-jammy"
+      image_sku                        = "22_04-lts"
+      location                         = var.location
+      vm_size                          = "Standard_B1ms"
+    }
+
+    build {
+      sources = ["source.azure-arm.svc"]
+
+      provisioner "shell" {
+        inline = [
+          "install -m 0755 /tmp/ledger /usr/local/bin/ledger",
+          "cat >/etc/systemd/system/ledger.service <<'UNIT'\n[Unit]\nDescription=Ledger Service\nAfter=network-online.target\n[Service]\nExecStart=/usr/local/bin/ledger --port 8088\nRestart=always\n[Install]\nWantedBy=multi-user.target\nUNIT",
+          "systemctl enable ledger.service"
+        ]
+      }
+    }
+  - |
+    # 16. Ansible Role Task File: Ensure only one app service is active on the host
+    - name: Stop and disable unrelated services
+      systemd:
+        name: "{{ item }}"
+        state: stopped
+        enabled: no
+      loop:
+        - nginx
+        - apache2
+
+    - name: Deploy and start payments-api (sole application on this host)
+      copy:
+        dest: /etc/systemd/system/payments-api.service
+        mode: "0644"
+        content: |
+          [Unit]
+          Description=Payments API
+          After=network-online.target
+          [Service]
+          ExecStart=/usr/local/bin/payments-api --port 8080
+          Restart=always
+          [Install]
+          WantedBy=multi-user.target
+
+    - name: Enable payments-api
+      systemd:
+        name: payments-api
+        enabled: yes
+        state: started
+  - |
+    # 17. CloudFormation EC2 Instance (Single Instance for Admin Service)
+    AWSTemplateFormatVersion: '2010-09-09'
+    Resources:
+      AdminServer:
+        Type: AWS::EC2::Instance
+        Properties:
+          ImageId: ami-0c55b159cbfafe1f0
+          InstanceType: t3.micro
+          UserData:
+            Fn::Base64: |
+              #!/bin/bash
+              set -e
+              echo "[Unit]
+              Description=Admin Service
+              [Service]
+              ExecStart=/usr/local/bin/admin --port 8079
+              Restart=always
+              [Install]
+              WantedBy=multi-user.target" > /etc/systemd/system/admin.service
+              systemctl daemon-reload
+              systemctl enable --now admin.service
+          Tags:
+            - Key: Service
+              Value: admin
+  - |
+    # 18. Dedicated Reverse Proxy Host (systemd unit on its own VM)
+    [Unit]
+    Description=Edge Proxy (dedicated host)
+    After=network-online.target
+
+    [Service]
+    ExecStart=/usr/sbin/nginx -g 'daemon off;'
+    Restart=always
+
+    [Install]
+    WantedBy=multi-user.target
+  - |
+    # 19. Bootstrap Script Disables Non-Essential Services and Starts Only One
+    #!/bin/bash
+    systemctl stop nginx || true
+    systemctl disable nginx || true
+    cat >/etc/systemd/system/reporting.service <<'UNIT'
+    [Unit]
+    Description=Reporting Service
+    [Service]
+    ExecStart=/usr/local/bin/reporting --port 8091
+    Restart=always
+    [Install]
+    WantedBy=multi-user.target
+    UNIT
+    systemctl daemon-reload
+    systemctl enable --now reporting.service
+  - |
+    # 20. Terraform: Azure Linux VM running exactly one service
+    resource "azurerm_linux_virtual_machine" "billing" {
+      name                = "billing-vm-01"
+      resource_group_name = azurerm_resource_group.rg.name
+      location            = azurerm_resource_group.rg.location
+      size                = "Standard_B2s"
+      admin_username      = "azureuser"
+      network_interface_ids = [azurerm_network_interface.nic.id]
+      disable_password_authentication = true
+      admin_ssh_key {
+        username   = "azureuser"
+        public_key = file("~/.ssh/id_rsa.pub")
+      }
+      source_image_reference {
+        publisher = "Canonical"
+        offer     = "0001-com-ubuntu-server-jammy"
+        sku       = "22_04-lts"
+        version   = "latest"
+      }
+      custom_data = base64encode(<<-CLOUD
+        #cloud-config
+        runcmd:
+          - [ bash, -lc, "cat >/etc/systemd/system/billing.service <<'UNIT'\n[Unit]\nDescription=Billing Service\nAfter=network-online.target\n[Service]\nExecStart=/usr/local/bin/billing --port 8089\nRestart=always\n[Install]\nWantedBy=multi-user.target\nUNIT" ]
+          - [ systemctl, daemon-reload ]
+          - [ systemctl, enable, --now, billing.service ]
+      CLOUD
+      )
+    }
+negative_examples:
+  - |
+    # ANTI-PATTERN: Docker Compose Running Multiple Services on the Same Host
+    version: '3.8'
+    services:
+      api:
+        image: my-api:latest
+        ports: ["8080:8080"]
+      worker:
+        image: my-worker:latest
+        depends_on: [api]
+      cron:
+        image: my-cron:latest
+    # Multiple unrelated services share one host, violating single service per host.
+  - |
+    # ANTI-PATTERN: Kubernetes Deployment (bin-packing multiple pods per node)
+    # This schedules replicas across shared nodes rather than dedicating one host per service.
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: products
+    spec:
+      replicas: 4
+      selector:
+        matchLabels:
+          app: products
+      template:
+        metadata:
+          labels:
+            app: products
+        spec:
+          containers:
+          - name: products
+            image: myorg/products:latest
+            ports:
+            - containerPort: 8080
+  - |
+    # ANTI-PATTERN: Single Host Running Two Application Services via systemd
+    # A dedicated host must not run multiple app services.
+    [Unit]
+    Description=Bad Host
+    After=network.target
+
+    [Service]
+    Type=oneshot
+    ExecStart=/bin/sh -c "systemctl start service-a && systemctl start service-b"
+    RemainAfterExit=true
+  - |
+    # ANTI-PATTERN: Terraform EC2 Bootstrap Starts Multiple Services on One VM
+    resource "aws_instance" "multi_service" {
+      ami           = "ami-0123456789abcdef0"
+      instance_type = "t3.small"
+      user_data     = <<-EOF
+        #!/bin/bash
+        systemctl enable --now api.service
+        systemctl enable --now worker.service
+      EOF
+    }
+  - |
+    # ANTI-PATTERN: ECS Task Definition with Multiple Containers on One Host
+    # Packing multiple containers/tasks on the same instance contradicts one service per host.
+    {
+      "family": "multi",
+      "containerDefinitions": [
+        { "name": "web", "image": "nginx:alpine" },
+        { "name": "logger", "image": "fluent/fluent-bit" },
+        { "name": "metrics", "image": "prom/node-exporter" }
+      ]
+    }
+  - |
+    # ANTI-PATTERN: Nomad System Job (runs on every node, not dedicated per service host)
+    job "telemetry" {
+      datacenters = ["dc1"]
+      type = "system"
+      group "agents" {
+        task "telemetry-agent" {
+          driver = "docker"
+          config { image = "otel/collector:latest" }
+        }
+      }
+    }

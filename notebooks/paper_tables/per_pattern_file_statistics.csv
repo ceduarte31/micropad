@@ -1,0 +1,10 @@
+Pattern,Files_Scored,Files_Analyzed,Evidence_Files,Repos_Detected,Analysis_Rate_%,Evidence_Rate_%
+3rd Party Registration,14740,2190,5,3,14.9,0.2
+Multiple service instances per host,4890,1668,187,64,34.1,11.2
+Server-side service discovery,3831,1579,50,15,41.2,3.2
+Service deployment platform,16744,2532,388,50,15.1,15.3
+Service instance per VM,13675,2071,8,4,15.1,0.4
+Service instance per container,3996,1538,276,69,38.5,17.9
+Service mesh,15614,2430,25,5,15.6,1.0
+Service registry,38572,3055,24,7,7.9,0.8
+Single Service Instance per Host,6115,1829,28,13,29.9,1.5

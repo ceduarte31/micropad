@@ -1,0 +1,108 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.whl
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+.project
+.pydevproject
+.settings/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.mypy_cache/
+.dmypy.json
+
+# Documentation
+docs/_build/
+
+# Data directories (exclude from Docker image)
+vectordb/
+model_cache/
+detection_results/
+experiment_data/
+experiment_data_old/
+analysis_output/
+paper_figures/
+paper_tables/
+.generated/
+notebooks/
+target_repo/
+replication-package/
+
+# Logs
+logs/
+*.log
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+
+# Sample repos (too large for Docker image)
+sample-repositories/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Large data files
+*.json.gz
+*.tar.gz
+*.zip
+*.csv
+
+# Docker files (don't need in image)
+Dockerfile.backup
+docker-compose.backup.yml
+requirements.backup.txt
+DOCKER_OPTIMIZATION.md
+build_optimized.sh
+
+# Build artifacts
+*.pyc
+*.pyo
+*.pyd
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Other
+embedding_cache.json
+*.frigate*

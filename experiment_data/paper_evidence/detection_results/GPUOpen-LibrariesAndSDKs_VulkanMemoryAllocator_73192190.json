@@ -1,0 +1,196 @@
+{
+  "summary": {
+    "repository_name": "GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator",
+    "detected_patterns": [],
+    "total_patterns_scanned": 9,
+    "timestamp": "2025-10-27T23:51:36.367712",
+    "run_id": "73192190"
+  },
+  "patterns": {
+    "Server-side service discovery": false,
+    "Service registry": false,
+    "3rd Party Registration": false,
+    "Single Service Instance per Host": false,
+    "Service instance per container": false,
+    "Multiple service instances per host": false,
+    "Service deployment platform": false,
+    "Service instance per VM": false,
+    "Service mesh": false
+  },
+  "scanned_files_per_pattern": {
+    "Server-side service discovery": [
+      "/data/repos/VulkanMemoryAllocator/.github/workflows/linux.yaml",
+      "/data/repos/VulkanMemoryAllocator/.github/workflows/static_code_analysis.yaml",
+      "/data/repos/VulkanMemoryAllocator/.github/workflows/windows.yaml"
+    ],
+    "Service registry": [
+      "/data/repos/VulkanMemoryAllocator/.github/workflows/linux.yaml",
+      "/data/repos/VulkanMemoryAllocator/.github/workflows/static_code_analysis.yaml",
+      "/data/repos/VulkanMemoryAllocator/.github/workflows/windows.yaml",
+      "/data/repos/VulkanMemoryAllocator/CHANGELOG.md",
+      "/data/repos/VulkanMemoryAllocator/README.md",
+      "/data/repos/VulkanMemoryAllocator/docs/html/clipboard.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/cookie.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/dynsections.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/jquery.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/menu.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/menudata.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/resize.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/all_0.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/all_1.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/all_10.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/all_11.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/all_12.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/all_13.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/all_14.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/all_15.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/all_2.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/all_3.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/all_4.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/all_5.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/all_6.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/all_7.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/all_8.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/all_9.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/all_a.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/all_b.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/all_c.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/all_d.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/all_e.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/all_f.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/classes_0.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/defines_0.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/enums_0.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/enumvalues_0.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/files_0.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/functions_0.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/groups_0.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/groups_1.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/groups_2.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/groups_3.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/groups_4.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/groups_5.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/pages_0.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/pages_1.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/pages_10.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/pages_11.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/pages_12.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/pages_13.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/pages_14.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/pages_15.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/pages_2.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/pages_3.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/pages_4.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/pages_5.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/pages_6.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/pages_7.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/pages_8.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/pages_9.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/pages_a.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/pages_b.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/pages_c.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/pages_d.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/pages_e.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/pages_f.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/search.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/searchdata.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/typedefs_0.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/typedefs_1.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/variables_0.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/variables_1.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/variables_2.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/variables_3.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/variables_4.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/variables_5.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/variables_6.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/variables_7.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/variables_8.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/variables_9.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/variables_a.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/variables_b.js",
+      "/data/repos/VulkanMemoryAllocator/docs/html/search/variables_c.js",
+      "/data/repos/VulkanMemoryAllocator/tools/GpuMemDumpVis/GpuMemDumpVis.py",
+      "/data/repos/VulkanMemoryAllocator/tools/GpuMemDumpVis/README.md"
+    ],
+    "3rd Party Registration": [
+      "/data/repos/VulkanMemoryAllocator/.github/workflows/linux.yaml",
+      "/data/repos/VulkanMemoryAllocator/.github/workflows/static_code_analysis.yaml",
+      "/data/repos/VulkanMemoryAllocator/.github/workflows/windows.yaml",
+      "/data/repos/VulkanMemoryAllocator/tools/GpuMemDumpVis/GpuMemDump.schema.json",
+      "/data/repos/VulkanMemoryAllocator/tools/GpuMemDumpVis/Sample.json"
+    ],
+    "Single Service Instance per Host": [
+      "/data/repos/VulkanMemoryAllocator/.github/workflows/linux.yaml",
+      "/data/repos/VulkanMemoryAllocator/.github/workflows/static_code_analysis.yaml",
+      "/data/repos/VulkanMemoryAllocator/.github/workflows/windows.yaml"
+    ],
+    "Service instance per container": [
+      "/data/repos/VulkanMemoryAllocator/.github/workflows/linux.yaml",
+      "/data/repos/VulkanMemoryAllocator/.github/workflows/static_code_analysis.yaml",
+      "/data/repos/VulkanMemoryAllocator/.github/workflows/windows.yaml"
+    ],
+    "Multiple service instances per host": [
+      "/data/repos/VulkanMemoryAllocator/CHANGELOG.md",
+      "/data/repos/VulkanMemoryAllocator/CMakeLists.txt",
+      "/data/repos/VulkanMemoryAllocator/Doxyfile",
+      "/data/repos/VulkanMemoryAllocator/LICENSE.txt",
+      "/data/repos/VulkanMemoryAllocator/README.md",
+      "/data/repos/VulkanMemoryAllocator/docs/html/index.html",
+      "/data/repos/VulkanMemoryAllocator/include/vk_mem_alloc.h",
+      "/data/repos/VulkanMemoryAllocator/src/Common.cpp",
+      "/data/repos/VulkanMemoryAllocator/src/SparseBindingTest.cpp",
+      "/data/repos/VulkanMemoryAllocator/src/VmaUsage.cpp",
+      "/data/repos/VulkanMemoryAllocator/src/VulkanSample.cpp",
+      "/data/repos/VulkanMemoryAllocator/tools/GpuMemDumpVis/GpuMemDumpVis.py"
+    ],
+    "Service deployment platform": [
+      "/data/repos/VulkanMemoryAllocator/.github/workflows/linux.yaml",
+      "/data/repos/VulkanMemoryAllocator/.github/workflows/static_code_analysis.yaml",
+      "/data/repos/VulkanMemoryAllocator/.github/workflows/windows.yaml",
+      "/data/repos/VulkanMemoryAllocator/tools/GpuMemDumpVis/GpuMemDump.schema.json",
+      "/data/repos/VulkanMemoryAllocator/tools/GpuMemDumpVis/Sample.json"
+    ],
+    "Service instance per VM": [
+      "/data/repos/VulkanMemoryAllocator/.github/workflows/linux.yaml",
+      "/data/repos/VulkanMemoryAllocator/.github/workflows/static_code_analysis.yaml",
+      "/data/repos/VulkanMemoryAllocator/.github/workflows/windows.yaml"
+    ],
+    "Service mesh": [
+      "/data/repos/VulkanMemoryAllocator/.github/workflows/linux.yaml",
+      "/data/repos/VulkanMemoryAllocator/.github/workflows/static_code_analysis.yaml",
+      "/data/repos/VulkanMemoryAllocator/.github/workflows/windows.yaml",
+      "/data/repos/VulkanMemoryAllocator/tools/GpuMemDumpVis/GpuMemDump.schema.json",
+      "/data/repos/VulkanMemoryAllocator/tools/GpuMemDumpVis/Sample.json"
+    ]
+  },
+  "_metadata": {
+    "experiment": {
+      "run_number": 1
+    },
+    "reproducibility": {
+      "configuration": {
+        "thresholds": {
+          "high_priority": 0.5,
+          "medium_priority": 0.3,
+          "min_priority_score": 0.1,
+          "judge_confidence": 5
+        },
+        "weight_scheme": "llm_dominant",
+        "random_seed": 1761609096
+      }
+    },
+    "models": {
+      "planner": "gpt-5-nano-2025-08-07",
+      "investigator": "gpt-5-nano-2025-08-07",
+      "judge": "gpt-5-nano-2025-08-07",
+      "embedding": "jinaai/jina-embeddings-v2-base-code"
+    },
+    "priority_weights": {
+      "keyword": 0.2,
+      "embedding": 0.1,
+      "graph": 0.0,
+      "llm": 0.7
+    },
+    "source_log": "detection_20251027_235136.log"
+  }
+}

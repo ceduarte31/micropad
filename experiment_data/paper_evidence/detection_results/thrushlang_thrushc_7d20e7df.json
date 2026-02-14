@@ -1,0 +1,136 @@
+{
+  "summary": {
+    "repository_name": "thrushlang/thrushc",
+    "detected_patterns": [
+      "Service deployment platform"
+    ],
+    "total_patterns_scanned": 9,
+    "timestamp": "2025-10-31T08:25:52.677697",
+    "run_id": "7d20e7df"
+  },
+  "patterns": {
+    "Server-side service discovery": false,
+    "Service registry": false,
+    "3rd Party Registration": false,
+    "Single Service Instance per Host": false,
+    "Service instance per container": false,
+    "Multiple service instances per host": false,
+    "Service deployment platform": true,
+    "Service instance per VM": false,
+    "Service mesh": false
+  },
+  "scanned_files_per_pattern": {
+    "Server-side service discovery": [
+      "/data/repos/thrushc/.github/workflows/thrushc-x86_64-linux.yml",
+      "/data/repos/thrushc/.github/workflows/thrushc-x86_64-windows.yml"
+    ],
+    "Service registry": [
+      "/data/repos/thrushc/.github/ISSUE_TEMPLATE/critical-issue.md",
+      "/data/repos/thrushc/.github/ISSUE_TEMPLATE/possible-issue.md",
+      "/data/repos/thrushc/.github/ISSUE_TEMPLATE/proposal.md",
+      "/data/repos/thrushc/.github/ISSUE_TEMPLATE/suggestion.md",
+      "/data/repos/thrushc/.github/workflows/thrushc-x86_64-linux.yml",
+      "/data/repos/thrushc/.github/workflows/thrushc-x86_64-windows.yml",
+      "/data/repos/thrushc/CODE_OF_CONDUCT.md",
+      "/data/repos/thrushc/COMMANDS.md",
+      "/data/repos/thrushc/Cargo.toml",
+      "/data/repos/thrushc/README.md",
+      "/data/repos/thrushc/builder/Cargo.toml",
+      "/data/repos/thrushc/builder/README.md",
+      "/data/repos/thrushc/changelogs/linux/v0.1.0.md",
+      "/data/repos/thrushc/examples/README.md",
+      "/data/repos/thrushc/managers/tag_manager.sh",
+      "/data/repos/thrushc/scripts/build.sh",
+      "/data/repos/thrushc/src/README.md",
+      "/data/repos/thrushc/wrappers/gcc/gccjit/Cargo.toml",
+      "/data/repos/thrushc/wrappers/gcc/gccjit/README.md",
+      "/data/repos/thrushc/wrappers/gcc/gccjit/gccjit_sys/Cargo.toml",
+      "/data/repos/thrushc/wrappers/llvm/17/llvm-sys/.gitlab/issue_templates/default.md",
+      "/data/repos/thrushc/wrappers/llvm/17/llvm-sys/Cargo.toml",
+      "/data/repos/thrushc/wrappers/llvm/17/llvm-sys/README.md",
+      "/data/repos/thrushc/wrappers/llvm/17/llvm-sys/scripts/RELEASE_CHECKLIST.md",
+      "/data/repos/thrushc/wrappers/llvm/17/llvm-sys/scripts/backport-commits.sh",
+      "/data/repos/thrushc/wrappers/llvm/17/llvm-sys/scripts/build-binaries.sh",
+      "/data/repos/thrushc/wrappers/llvm/17/llvm-sys/scripts/release-branches.sh",
+      "/data/repos/thrushc/wrappers/llvm/inkwell/Cargo.toml",
+      "/data/repos/thrushc/wrappers/llvm/inkwell/README.md",
+      "/data/repos/thrushc/wrappers/llvm/inkwell/_typos.toml",
+      "/data/repos/thrushc/wrappers/llvm/inkwell/examples/kaleidoscope/README.md",
+      "/data/repos/thrushc/wrappers/llvm/inkwell/internal_macros/Cargo.toml",
+      "/data/repos/thrushc/wrappers/llvm/inkwell/internal_macros/README.md"
+    ],
+    "3rd Party Registration": [
+      "/data/repos/thrushc/.github/workflows/thrushc-x86_64-linux.yml",
+      "/data/repos/thrushc/.github/workflows/thrushc-x86_64-windows.yml",
+      "/data/repos/thrushc/wrappers/llvm/17/llvm-sys/appveyor.yml"
+    ],
+    "Single Service Instance per Host": [
+      "/data/repos/thrushc/.github/workflows/thrushc-x86_64-linux.yml",
+      "/data/repos/thrushc/.github/workflows/thrushc-x86_64-windows.yml"
+    ],
+    "Service instance per container": [
+      "/data/repos/thrushc/.github/workflows/thrushc-x86_64-linux.yml",
+      "/data/repos/thrushc/.github/workflows/thrushc-x86_64-windows.yml"
+    ],
+    "Multiple service instances per host": [
+      "/data/repos/thrushc/managers/tag_manager.bat",
+      "/data/repos/thrushc/managers/tag_manager.ps1",
+      "/data/repos/thrushc/managers/tag_manager.sh",
+      "/data/repos/thrushc/scripts/build.bat",
+      "/data/repos/thrushc/scripts/build.ps1",
+      "/data/repos/thrushc/scripts/build.sh",
+      "/data/repos/thrushc/wrappers/llvm/17/llvm-sys/scripts/backport-commits.sh",
+      "/data/repos/thrushc/wrappers/llvm/17/llvm-sys/scripts/build-binaries.sh",
+      "/data/repos/thrushc/wrappers/llvm/17/llvm-sys/scripts/release-branches.sh"
+    ],
+    "Service deployment platform": [
+      "/data/repos/thrushc/.github/workflows/thrushc-x86_64-linux.yml",
+      "/data/repos/thrushc/.github/workflows/thrushc-x86_64-windows.yml",
+      "/data/repos/thrushc/managers/tag_manager.sh",
+      "/data/repos/thrushc/scripts/build.sh",
+      "/data/repos/thrushc/wrappers/llvm/17/llvm-sys/scripts/backport-commits.sh",
+      "/data/repos/thrushc/wrappers/llvm/17/llvm-sys/scripts/build-binaries.sh",
+      "/data/repos/thrushc/wrappers/llvm/17/llvm-sys/scripts/release-branches.sh"
+    ],
+    "Service instance per VM": [
+      "/data/repos/thrushc/.github/workflows/thrushc-x86_64-linux.yml",
+      "/data/repos/thrushc/.github/workflows/thrushc-x86_64-windows.yml",
+      "/data/repos/thrushc/managers/tag_manager.ps1",
+      "/data/repos/thrushc/scripts/build.ps1"
+    ],
+    "Service mesh": [
+      "/data/repos/thrushc/.github/workflows/thrushc-x86_64-linux.yml",
+      "/data/repos/thrushc/.github/workflows/thrushc-x86_64-windows.yml"
+    ]
+  },
+  "_metadata": {
+    "experiment": {
+      "run_number": 1
+    },
+    "reproducibility": {
+      "configuration": {
+        "thresholds": {
+          "high_priority": 0.5,
+          "medium_priority": 0.3,
+          "min_priority_score": 0.1,
+          "judge_confidence": 5
+        },
+        "weight_scheme": "llm_dominant",
+        "random_seed": 1761899152
+      }
+    },
+    "models": {
+      "planner": "gpt-5-nano-2025-08-07",
+      "investigator": "gpt-5-nano-2025-08-07",
+      "judge": "gpt-5-nano-2025-08-07",
+      "embedding": "jinaai/jina-embeddings-v2-base-code"
+    },
+    "priority_weights": {
+      "keyword": 0.2,
+      "embedding": 0.1,
+      "graph": 0.0,
+      "llm": 0.7
+    },
+    "source_log": "detection_20251031_082552.log"
+  }
+}
