@@ -1,0 +1,196 @@
+{
+  "summary": {
+    "repository_name": "MunGell/awesome-for-beginners",
+    "detected_patterns": [],
+    "total_patterns_scanned": 9,
+    "timestamp": "2025-10-28T15:21:14.122536",
+    "run_id": "fc037e74"
+  },
+  "patterns": {
+    "Server-side service discovery": false,
+    "Service registry": false,
+    "3rd Party Registration": false,
+    "Single Service Instance per Host": false,
+    "Service instance per container": false,
+    "Multiple service instances per host": false,
+    "Service deployment platform": false,
+    "Service instance per VM": false,
+    "Service mesh": false
+  },
+  "scanned_files_per_pattern": {
+    "Server-side service discovery": [
+      "/data/repos/awesome-for-beginners/.github/workflows/build.yml",
+      "/data/repos/awesome-for-beginners/.github/workflows/invalid.yml"
+    ],
+    "Service registry": [
+      "/data/repos/awesome-for-beginners/.github/README-template.j2",
+      "/data/repos/awesome-for-beginners/.github/scripts/render-readme.py",
+      "/data/repos/awesome-for-beginners/.github/workflows/build.yml",
+      "/data/repos/awesome-for-beginners/.github/workflows/invalid.yml",
+      "/data/repos/awesome-for-beginners/CONTRIBUTING.md",
+      "/data/repos/awesome-for-beginners/README.md",
+      "/data/repos/awesome-for-beginners/data.json"
+    ],
+    "3rd Party Registration": [
+      "/data/repos/awesome-for-beginners/.github/FUNDING.yml",
+      "/data/repos/awesome-for-beginners/.github/workflows/build.yml",
+      "/data/repos/awesome-for-beginners/.github/workflows/invalid.yml",
+      "/data/repos/awesome-for-beginners/data.json"
+    ],
+    "Single Service Instance per Host": [
+      "/data/repos/awesome-for-beginners/.github/workflows/build.yml",
+      "/data/repos/awesome-for-beginners/.github/workflows/invalid.yml"
+    ],
+    "Service instance per container": [
+      "/data/repos/awesome-for-beginners/.git/HEAD",
+      "/data/repos/awesome-for-beginners/.git/config",
+      "/data/repos/awesome-for-beginners/.git/description",
+      "/data/repos/awesome-for-beginners/.git/hooks/applypatch-msg.sample",
+      "/data/repos/awesome-for-beginners/.git/hooks/commit-msg.sample",
+      "/data/repos/awesome-for-beginners/.git/hooks/fsmonitor-watchman.sample",
+      "/data/repos/awesome-for-beginners/.git/hooks/post-update.sample",
+      "/data/repos/awesome-for-beginners/.git/hooks/pre-applypatch.sample",
+      "/data/repos/awesome-for-beginners/.git/hooks/pre-commit.sample",
+      "/data/repos/awesome-for-beginners/.git/hooks/pre-merge-commit.sample",
+      "/data/repos/awesome-for-beginners/.git/hooks/pre-push.sample",
+      "/data/repos/awesome-for-beginners/.git/hooks/pre-receive.sample",
+      "/data/repos/awesome-for-beginners/.git/hooks/update.sample",
+      "/data/repos/awesome-for-beginners/.git/index",
+      "/data/repos/awesome-for-beginners/.git/info/exclude",
+      "/data/repos/awesome-for-beginners/.git/logs/HEAD",
+      "/data/repos/awesome-for-beginners/.git/logs/refs/heads/main",
+      "/data/repos/awesome-for-beginners/.git/logs/refs/remotes/origin/HEAD",
+      "/data/repos/awesome-for-beginners/.git/objects/pack/pack-823a898706d3f1afc9f0db4c8bf2b48d2185e846.idx",
+      "/data/repos/awesome-for-beginners/.git/objects/pack/pack-823a898706d3f1afc9f0db4c8bf2b48d2185e846.pack",
+      "/data/repos/awesome-for-beginners/.git/objects/pack/pack-823a898706d3f1afc9f0db4c8bf2b48d2185e846.rev",
+      "/data/repos/awesome-for-beginners/.git/packed-refs",
+      "/data/repos/awesome-for-beginners/.git/refs/heads/main",
+      "/data/repos/awesome-for-beginners/.git/refs/remotes/origin/HEAD",
+      "/data/repos/awesome-for-beginners/.github/FUNDING.yml",
+      "/data/repos/awesome-for-beginners/.github/README-template.j2",
+      "/data/repos/awesome-for-beginners/.github/scripts/cghi.py",
+      "/data/repos/awesome-for-beginners/.github/scripts/render-readme.py",
+      "/data/repos/awesome-for-beginners/.github/workflows/build.yml",
+      "/data/repos/awesome-for-beginners/.github/workflows/invalid.yml",
+      "/data/repos/awesome-for-beginners/CONTRIBUTING.md",
+      "/data/repos/awesome-for-beginners/README.md",
+      "/data/repos/awesome-for-beginners/data.json"
+    ],
+    "Multiple service instances per host": [],
+    "Service deployment platform": [
+      "/data/repos/awesome-for-beginners/.git/HEAD",
+      "/data/repos/awesome-for-beginners/.git/config",
+      "/data/repos/awesome-for-beginners/.git/description",
+      "/data/repos/awesome-for-beginners/.git/hooks/applypatch-msg.sample",
+      "/data/repos/awesome-for-beginners/.git/hooks/commit-msg.sample",
+      "/data/repos/awesome-for-beginners/.git/hooks/fsmonitor-watchman.sample",
+      "/data/repos/awesome-for-beginners/.git/hooks/post-update.sample",
+      "/data/repos/awesome-for-beginners/.git/hooks/pre-applypatch.sample",
+      "/data/repos/awesome-for-beginners/.git/hooks/pre-commit.sample",
+      "/data/repos/awesome-for-beginners/.git/hooks/pre-merge-commit.sample",
+      "/data/repos/awesome-for-beginners/.git/hooks/pre-push.sample",
+      "/data/repos/awesome-for-beginners/.git/hooks/pre-rebase.sample",
+      "/data/repos/awesome-for-beginners/.git/index",
+      "/data/repos/awesome-for-beginners/.git/info/exclude",
+      "/data/repos/awesome-for-beginners/.git/logs/HEAD",
+      "/data/repos/awesome-for-beginners/.git/logs/refs/heads/main",
+      "/data/repos/awesome-for-beginners/.git/logs/refs/remotes/origin/HEAD",
+      "/data/repos/awesome-for-beginners/.git/objects/pack/pack-823a898706d3f1afc9f0db4c8bf2b48d2185e846.idx",
+      "/data/repos/awesome-for-beginners/.git/objects/pack/pack-823a898706d3f1afc9f0db4c8bf2b48d2185e846.pack",
+      "/data/repos/awesome-for-beginners/.git/objects/pack/pack-823a898706d3f1afc9f0db4c8bf2b48d2185e846.rev",
+      "/data/repos/awesome-for-beginners/.git/packed-refs",
+      "/data/repos/awesome-for-beginners/.git/refs/heads/main",
+      "/data/repos/awesome-for-beginners/.git/refs/remotes/origin/HEAD",
+      "/data/repos/awesome-for-beginners/.github/FUNDING.yml",
+      "/data/repos/awesome-for-beginners/.github/README-template.j2",
+      "/data/repos/awesome-for-beginners/.github/scripts/cghi.py",
+      "/data/repos/awesome-for-beginners/.github/scripts/render-readme.py",
+      "/data/repos/awesome-for-beginners/.github/workflows/build.yml",
+      "/data/repos/awesome-for-beginners/.github/workflows/invalid.yml",
+      "/data/repos/awesome-for-beginners/CONTRIBUTING.md",
+      "/data/repos/awesome-for-beginners/README.md",
+      "/data/repos/awesome-for-beginners/data.json"
+    ],
+    "Service instance per VM": [
+      "/data/repos/awesome-for-beginners/.git/HEAD",
+      "/data/repos/awesome-for-beginners/.git/config",
+      "/data/repos/awesome-for-beginners/.git/description",
+      "/data/repos/awesome-for-beginners/.git/hooks/applypatch-msg.sample",
+      "/data/repos/awesome-for-beginners/.git/hooks/commit-msg.sample",
+      "/data/repos/awesome-for-beginners/.git/hooks/fsmonitor-watchman.sample",
+      "/data/repos/awesome-for-beginners/.git/hooks/post-update.sample",
+      "/data/repos/awesome-for-beginners/.git/hooks/pre-applypatch.sample",
+      "/data/repos/awesome-for-beginners/.git/hooks/pre-commit.sample",
+      "/data/repos/awesome-for-beginners/.git/hooks/pre-merge-commit.sample",
+      "/data/repos/awesome-for-beginners/.git/hooks/pre-push.sample",
+      "/data/repos/awesome-for-beginners/.git/hooks/pre-rebase.sample",
+      "/data/repos/awesome-for-beginners/.git/hooks/prepare-commit-msg.sample",
+      "/data/repos/awesome-for-beginners/.git/hooks/push-to-checkout.sample",
+      "/data/repos/awesome-for-beginners/.git/hooks/sendemail-validate.sample",
+      "/data/repos/awesome-for-beginners/.git/hooks/update.sample",
+      "/data/repos/awesome-for-beginners/.git/index",
+      "/data/repos/awesome-for-beginners/.git/info/exclude",
+      "/data/repos/awesome-for-beginners/.git/logs/HEAD",
+      "/data/repos/awesome-for-beginners/.git/logs/refs/heads/main",
+      "/data/repos/awesome-for-beginners/.git/logs/refs/remotes/origin/HEAD",
+      "/data/repos/awesome-for-beginners/.git/objects/pack/pack-823a898706d3f1afc9f0db4c8bf2b48d2185e846.idx",
+      "/data/repos/awesome-for-beginners/.git/objects/pack/pack-823a898706d3f1afc9f0db4c8bf2b48d2185e846.pack",
+      "/data/repos/awesome-for-beginners/.git/objects/pack/pack-823a898706d3f1afc9f0db4c8bf2b48d2185e846.rev",
+      "/data/repos/awesome-for-beginners/.git/packed-refs",
+      "/data/repos/awesome-for-beginners/.git/refs/heads/main",
+      "/data/repos/awesome-for-beginners/.git/refs/remotes/origin/HEAD",
+      "/data/repos/awesome-for-beginners/.github/FUNDING.yml",
+      "/data/repos/awesome-for-beginners/.github/README-template.j2",
+      "/data/repos/awesome-for-beginners/.github/scripts/cghi.py",
+      "/data/repos/awesome-for-beginners/.github/scripts/render-readme.py",
+      "/data/repos/awesome-for-beginners/.github/workflows/build.yml",
+      "/data/repos/awesome-for-beginners/.github/workflows/invalid.yml",
+      "/data/repos/awesome-for-beginners/CONTRIBUTING.md",
+      "/data/repos/awesome-for-beginners/README.md",
+      "/data/repos/awesome-for-beginners/data.json"
+    ],
+    "Service mesh": [
+      "/data/repos/awesome-for-beginners/.git/HEAD",
+      "/data/repos/awesome-for-beginners/.git/config",
+      "/data/repos/awesome-for-beginners/.git/logs/HEAD",
+      "/data/repos/awesome-for-beginners/.git/refs/heads/main",
+      "/data/repos/awesome-for-beginners/.github/README-template.j2",
+      "/data/repos/awesome-for-beginners/.github/scripts/render-readme.py",
+      "/data/repos/awesome-for-beginners/.github/workflows/build.yml",
+      "/data/repos/awesome-for-beginners/.github/workflows/invalid.yml",
+      "/data/repos/awesome-for-beginners/CONTRIBUTING.md",
+      "/data/repos/awesome-for-beginners/README.md",
+      "/data/repos/awesome-for-beginners/data.json"
+    ]
+  },
+  "_metadata": {
+    "experiment": {
+      "run_number": 1
+    },
+    "reproducibility": {
+      "configuration": {
+        "thresholds": {
+          "high_priority": 0.5,
+          "medium_priority": 0.3,
+          "min_priority_score": 0.1,
+          "judge_confidence": 5
+        },
+        "weight_scheme": "llm_dominant",
+        "random_seed": 1761664874
+      }
+    },
+    "models": {
+      "planner": "gpt-5-nano-2025-08-07",
+      "investigator": "gpt-5-nano-2025-08-07",
+      "judge": "gpt-5-nano-2025-08-07",
+      "embedding": "jinaai/jina-embeddings-v2-base-code"
+    },
+    "priority_weights": {
+      "keyword": 0.2,
+      "embedding": 0.1,
+      "graph": 0.0,
+      "llm": 0.7
+    },
+    "source_log": "detection_20251028_152114.log"
+  }
+}

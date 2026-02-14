@@ -1,0 +1,21 @@
+================================================================================
+DATASET STATISTICS
+================================================================================
+
+Generated: 2025-10-20 02:46:50
+
+Dataset Summary:
+  Total repositories: 190
+
+Pattern Distribution:
+  Pattern                                               Count        %
+  ----------------------------------------------------------------------
+  3rd Party Registration                                   20    10.5%
+  Multiple service instances per host                      56    29.5%
+  Server-side service discovery                            18     9.5%
+  Service deployment platform                              46    24.2%
+  Service instance per container                           66    34.7%
+  Service instance per VM                                  33    17.4%
+  Service mesh                                             21    11.1%
+  Service registry                                         27    14.2%
+  Single Service Instance per Host                         61    32.1%

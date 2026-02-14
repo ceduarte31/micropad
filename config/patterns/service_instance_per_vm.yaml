@@ -1,0 +1,948 @@
+pattern_name: "Service instance per VM"
+description: |
+  How are services packaged and deployed?
+  Package the service as a virtual machine image and deploy each service instance as a separate VM.
+  Each VM encapsulates exactly one service instance, providing strong isolation boundaries, predictable resource allocation,
+  and simplified operational characteristics at the cost of heavier provisioning compared to containers.
+repository_fingerprint:
+  glob_patterns:
+    # --- Tier 1: The Spear (High-Confidence & High-Diversity Keyword Search) ---
+    # VM image baking and provisioning
+    - glob: "**/*.pkr.hcl" # Packer HCL templates
+      search_method: "keyword"
+      keywords: ["source", "build", "amazon-ebs", "azure-arm", "googlecompute", "vsphere-iso", "provisioner", "ansible", "shell"]
+    - glob: "**/packer*.json" # Packer JSON templates
+      search_method: "keyword"
+      keywords: ["builders", "amazon-ebs", "azure-arm", "googlecompute", "provisioners", "post-processors"]
+    - glob: "**/Vagrantfile" # Developer VM definitions
+      search_method: "keyword"
+      keywords: ["config.vm.box", "config.vm.define", "config.vm.provision", "virtualbox", "vmware", "libvirt"]
+    # IaaS provisioning (AWS/Azure/GCP/OpenStack/VMware) - one VM per service instance
+    - glob: "**/*.tf" # Terraform
+      search_method: "keyword"
+      keywords: ["aws_instance", "aws_launch_template", "aws_autoscaling_group", "azurerm_linux_virtual_machine", "google_compute_instance", "google_compute_instance_template", "google_compute_instance_group_manager", "vsphere_virtual_machine", "openstack_compute_instance_v2", "user_data", "ami", "image_id"]
+    - glob: "**/cloudformation*.y*ml" # AWS CloudFormation
+      search_method: "keyword"
+      keywords: ["AWS::EC2::Instance", "AWS::AutoScaling::AutoScalingGroup", "AWS::EC2::LaunchTemplate", "ImageId", "UserData", "Metadata", "AutoScalingGroupName"]
+    - glob: "**/*.template.y*ml" # Generic CFN templates
+      search_method: "keyword"
+      keywords: ["AWS::EC2::Instance", "AWS::AutoScaling::AutoScalingGroup", "LaunchConfiguration", "LaunchTemplate"]
+    - glob: "**/*.bicep" # Azure Bicep
+      search_method: "keyword"
+      keywords: ["Microsoft.Compute/virtualMachines", "Microsoft.Compute/virtualMachineScaleSets", "imageReference", "osProfile", "customData"]
+    - glob: "**/deploymentmanager/**/*.y*ml" # GCP Deployment Manager
+      search_method: "keyword"
+      keywords: ["compute.v1.instance", "compute.v1.instanceTemplate", "metadata", "startup-script", "instanceGroupManager"]
+    - glob: "**/*.heat.yml" # OpenStack Heat
+      search_method: "keyword"
+      keywords: ["OS::Nova::Server", "OS::Heat::AutoScalingGroup", "image", "user_data"]
+    - glob: "**/*.xml" # Libvirt/VM definitions
+      search_method: "keyword"
+      keywords: ["<domain", "type='kvm'", "<memory", "<vcpu", "<devices>"]
+    - glob: "**/*.service" # systemd service units baked into images
+      search_method: "keyword"
+      keywords: ["[Unit]", "[Service]", "ExecStart", "WantedBy=multi-user.target"]
+    - glob: "**/cloud-init*.y*ml" # cloud-init configs
+      search_method: "keyword"
+      keywords: ["#cloud-config", "packages:", "runcmd:", "write_files:", "users:"]
+    - glob: "**/user-data*" # cloud-init/user data scripts
+      search_method: "keyword"
+      keywords: ["#cloud-config", "#!/bin/bash", "runcmd", "systemctl", "apt-get", "yum install"]
+    - glob: "**/ansible/*.y*ml" # Ansible provisioning used by Packer/VMs
+      search_method: "keyword"
+      keywords: ["hosts:", "become:", "tasks:", "package:", "service:", "systemd:", "copy:"]
+    - glob: "**/*.ps1" # Windows VM bootstrap
+      search_method: "keyword"
+      keywords: ["New-Service", "Start-Service", "sc.exe", "choco install", "Install-WindowsFeature"]
+
+    # --- Tier 2: The Cast Net (Contextual & Suggestive Embedding Search) ---
+    # Image pipelines, CI/CD invoking Packer/Terraform, and bootstrap scripts
+    - glob: "**/.github/workflows/*.y*ml"
+      search_method: "keyword"
+      keywords: ["packer build", "hashicorp/setup-packer", "terraform init", "terraform apply", "aws ec2", "azure vm", "gcloud compute"]
+    - glob: "**/.gitlab-ci.yml"
+      search_method: "keyword"
+      keywords: ["packer", "terraform", "aws", "azure", "gcloud", "image build", "ami"]
+    - glob: "**/Jenkinsfile"
+      search_method: "keyword"
+      keywords: ["packer.build", "sh 'packer build'", "terraform", "withAWS", "withCredentials"]
+    - glob: "**/Makefile"
+      search_method: "keyword"
+      keywords: ["packer build", "ami", "image", "terraform apply", "cloud-init"]
+    - glob: "**/scripts/**/*.sh"
+      search_method: "keyword"
+      keywords: ["systemctl enable", "systemctl start", "cloud-init", "packer", "ami", "waagent", "startup-script", "rc.local"]
+    - glob: "**/ops/**/*.y*ml"
+    - glob: "**/infra/**/*.y*ml"
+    - glob: "**/infrastructure/**/*.y*ml"
+    - glob: "**/ops/**/*.tf"
+    - glob: "**/infra/**/*.tf"
+    - glob: "**/infrastructure/**/*.tf"
+
+    # --- Tier 3: The Trawler (Broad Catch-all Embedding Search) ---
+    # General infra code and configuration that might indicate VM-per-service deployments
+    - glob: "**/terraform/**/*.tf"
+    - glob: "**/cloudformation/**/*.y*ml"
+    - glob: "**/azure/**/*.bicep"
+    - glob: "**/gcp/**/*.y*ml"
+    - glob: "**/openstack/**/*.y*ml"
+    - glob: "**/vmware/**/*.tf"
+    - glob: "**/packer/**/*"
+    - glob: "**/cloud-init/**/*"
+    - glob: "**/ansible/**/*"
+    - glob: "**/salt/**/*.sls"
+    - glob: "**/puppet/**/*.pp"
+    - glob: "**/chef/**/*.rb"
+    - glob: "**/Vagrantfile"
+    
+positive_examples:
+  - |
+    # 1. Packer HCL for AWS AMI baking a single service into the image
+    source "amazon-ebs" "orders-service" {
+      region                  = "us-east-1"
+      instance_type           = "t3.micro"
+      ssh_username            = "ec2-user"
+      ami_name                = "orders-service-{{timestamp}}"
+      source_ami_filter {
+        filters = {
+          name                = "amzn2-ami-hvm-*-x86_64-gp2"
+          root-device-type    = "ebs"
+          virtualization-type = "hvm"
+        }
+        owners      = ["137112412989"]
+        most_recent = true
+      }
+    }
+    build {
+      name    = "orders-service-ami"
+      sources = ["source.amazon-ebs.orders-service"]
+      provisioner "shell" {
+        inline = [
+          "sudo yum update -y",
+          "sudo yum install -y amazon-cloudwatch-agent",
+          "sudo useradd -r -s /sbin/nologin orders",
+          "sudo mkdir -p /opt/orders && sudo chown -R orders:orders /opt/orders",
+          "sudo curl -fsSL https://example.com/orders-service.tar.gz | sudo tar -xz -C /opt/orders",
+          "sudo cp /tmp/orders.service /etc/systemd/system/orders.service",
+          "sudo systemctl enable orders.service"
+        ]
+      }
+      provisioner "file" {
+        source      = "systemd/orders.service"
+        destination = "/tmp/orders.service"
+      }
+    }
+  
+  - |
+    # 2. systemd unit to run exactly one service per VM
+    [Unit]
+    Description=Orders Service
+    After=network.target
+
+    [Service]
+    User=orders
+    Group=orders
+    ExecStart=/opt/orders/bin/orders-service --port 8080
+    Restart=on-failure
+    RestartSec=5s
+    Environment=JAVA_OPTS=-Xms256m -Xmx512m
+
+    [Install]
+    WantedBy=multi-user.target
+  
+  - |
+    # 3. Terraform AWS: Launch Template + Auto Scaling Group (each instance = one service instance)
+    provider "aws" {
+      region = "us-east-1"
+    }
+
+    resource "aws_launch_template" "orders" {
+      name_prefix   = "orders-lt-"
+      image_id      = var.ami_id
+      instance_type = "t3.micro"
+      user_data     = base64encode(file("${path.module}/cloud-init.yml"))
+      tags = {
+        Service = "orders"
+      }
+    }
+
+    resource "aws_autoscaling_group" "orders" {
+      name                      = "orders-asg"
+      desired_capacity          = 3
+      max_size                  = 5
+      min_size                  = 3
+      vpc_zone_identifier       = var.subnet_ids
+      health_check_type         = "EC2"
+      health_check_grace_period = 120
+
+      launch_template {
+        id      = aws_launch_template.orders.id
+        version = "$Latest"
+      }
+
+      tag {
+        key                 = "Service"
+        value               = "orders"
+        propagate_at_launch = true
+      }
+    }
+  
+  - |
+    # 4. cloud-init for Linux VM to configure and start the service on boot
+    #cloud-config
+    package_update: true
+    package_upgrade: true
+    packages:
+      - jq
+    users:
+      - name: orders
+        system: true
+        shell: /usr/sbin/nologin
+    write_files:
+      - path: /etc/systemd/system/orders.service
+        permissions: "0644"
+        content: |
+          [Unit]
+          Description=Orders Service
+          After=network-online.target
+          Wants=network-online.target
+          [Service]
+          User=orders
+          ExecStart=/opt/orders/bin/orders-service --config /etc/orders/config.yml
+          Restart=on-failure
+          [Install]
+          WantedBy=multi-user.target
+      - path: /etc/orders/config.yml
+        permissions: "0644"
+        content: |
+          server:
+            port: 8080
+          db:
+            url: postgresql://db.internal:5432/orders
+    runcmd:
+      - mkdir -p /opt/orders
+      - curl -fsSL https://artifacts.example.com/orders/latest/orders-linux-amd64 -o /opt/orders/bin/orders-service
+      - chmod +x /opt/orders/bin/orders-service
+      - systemctl daemon-reload
+      - systemctl enable orders.service
+      - systemctl start orders.service
+  
+  - |
+    # 5. Azure Bicep: VM Scale Set deploying one service instance per VM
+    @description('Admin username')
+    param adminUsername string = 'azureuser'
+
+    @description('SSH public key')
+    param sshPublicKey string
+
+    @description('Instance count')
+    param instanceCount int = 3
+
+    var vmssName = 'catalog-vmss'
+
+    resource vmss 'Microsoft.Compute/virtualMachineScaleSets@2023-09-01' = {
+      name: vmssName
+      location: resourceGroup().location
+      sku: {
+        name: 'Standard_B1ms'
+        capacity: instanceCount
+        tier: 'Standard'
+      }
+      properties: {
+        upgradePolicy: {
+          mode: 'Rolling'
+        }
+        virtualMachineProfile: {
+          storageProfile: {
+            imageReference: {
+              publisher: 'Canonical'
+              offer: '0001-com-ubuntu-server-focal'
+              sku: '20_04-lts'
+              version: 'latest'
+            }
+          }
+          osProfile: {
+            computerNamePrefix: 'catalog'
+            adminUsername: adminUsername
+            linuxConfiguration: {
+              ssh: {
+                publicKeys: [{
+                  path: '/home/${adminUsername}/.ssh/authorized_keys'
+                  keyData: sshPublicKey
+                }]
+              }
+            }
+            customData: base64('''#cloud-config
+            runcmd:
+              - curl -fsSL https://artifacts.example.com/catalog/latest/catalog > /usr/local/bin/catalog
+              - chmod +x /usr/local/bin/catalog
+              - |
+                cat >/etc/systemd/system/catalog.service <<EOF
+                [Unit]
+                Description=Catalog Service
+                After=network.target
+                [Service]
+                ExecStart=/usr/local/bin/catalog --port 8080
+                Restart=always
+                [Install]
+                WantedBy=multi-user.target
+                EOF
+              - systemctl daemon-reload
+              - systemctl enable catalog
+              - systemctl start catalog
+            ''')
+          }
+          networkProfile: {
+            networkInterfaceConfigurations: [{
+              name: 'nic'
+              properties: {
+                primary: true
+                ipConfigurations: [{
+                  name: 'ipconfig'
+                  properties: {
+                    subnet: {
+                      id: resourceId('Microsoft.Network/virtualNetworks/subnets', 'vnet', 'subnet')
+                    }
+                  }
+                }]
+              }
+            }]
+          }
+        }
+      }
+    }
+  
+  - |
+    # 6. GCP: Instance Template + Managed Instance Group (MIG), one VM per service instance
+    resources:
+    - name: payments-template
+      type: compute.v1.instanceTemplate
+      properties:
+        properties:
+          machineType: e2-small
+          disks:
+            - boot: true
+              autoDelete: true
+              initializeParams:
+                sourceImage: projects/ubuntu-os-cloud/global/images/family/ubuntu-2004-lts
+          networkInterfaces:
+            - network: global/networks/default
+          metadata:
+            items:
+              - key: startup-script
+                value: |
+                  #!/bin/bash
+                  set -e
+                  useradd -r payments || true
+                  mkdir -p /opt/payments
+                  curl -fsSL https://artifacts.example.com/payments/latest/payments -o /opt/payments/payments
+                  chmod +x /opt/payments/payments
+                  cat >/etc/systemd/system/payments.service <<EOF
+                  [Unit]
+                  Description=Payments Service
+                  After=network-online.target
+                  [Service]
+                  User=payments
+                  ExecStart=/opt/payments/payments --port=8080
+                  Restart=on-failure
+                  [Install]
+                  WantedBy=multi-user.target
+                  EOF
+                  systemctl daemon-reload
+                  systemctl enable payments
+                  systemctl start payments
+    - name: payments-group
+      type: compute.v1.instanceGroupManager
+      properties:
+        baseInstanceName: payments
+        instanceTemplate: $(ref.payments-template.selfLink)
+        targetSize: 4
+        zone: us-central1-a
+  
+  - |
+    # 7. CloudFormation: EC2 LaunchTemplate and AutoScalingGroup for a service
+    AWSTemplateFormatVersion: '2010-09-09'
+    Description: Orders service per-VM deployment
+    Parameters:
+      ImageId:
+        Type: AWS::EC2::Image::Id
+      Subnets:
+        Type: List<AWS::EC2::Subnet::Id>
+    Resources:
+      OrdersLaunchTemplate:
+        Type: AWS::EC2::LaunchTemplate
+        Properties:
+          LaunchTemplateData:
+            ImageId: !Ref ImageId
+            InstanceType: t3.micro
+            UserData:
+              Fn::Base64: |
+                #cloud-config
+                runcmd:
+                  - systemctl enable orders
+                  - systemctl start orders
+      OrdersASG:
+        Type: AWS::AutoScaling::AutoScalingGroup
+        Properties:
+          VPCZoneIdentifier: !Ref Subnets
+          DesiredCapacity: 3
+          MinSize: 3
+          MaxSize: 6
+          LaunchTemplate:
+            LaunchTemplateId: !Ref OrdersLaunchTemplate
+            Version: !GetAtt OrdersLaunchTemplate.LatestVersionNumber
+  
+  - |
+    # 8. Vagrantfile: Each defined VM runs an instance of the same service
+    Vagrant.configure("2") do |config|
+      config.vm.box = "bento/ubuntu-20.04"
+
+      ["svc-1", "svc-2", "svc-3"].each_with_index do |name, idx|
+        config.vm.define name do |node|
+          node.vm.hostname = name
+          node.vm.network "private_network", ip: "192.168.56.#{10 + idx}"
+          node.vm.provision "shell", inline: <<-SHELL
+            set -e
+            sudo apt-get update
+            sudo useradd -r -s /usr/sbin/nologin inventory || true
+            curl -fsSL https://artifacts.example.com/inventory/latest/inventory -o /usr/local/bin/inventory
+            chmod +x /usr/local/bin/inventory
+            cat >/etc/systemd/system/inventory.service <<EOF
+            [Unit]
+            Description=Inventory Service
+            After=network.target
+            [Service]
+            ExecStart=/usr/local/bin/inventory --port 8080
+            Restart=on-failure
+            [Install]
+            WantedBy=multi-user.target
+            EOF
+            systemctl daemon-reload
+            systemctl enable inventory
+            systemctl start inventory
+          SHELL
+        end
+      end
+    end
+  
+  - |
+    # 9. Terraform vSphere: Clone per-VM service instance from a template
+    provider "vsphere" {
+      user           = var.vsphere_user
+      password       = var.vsphere_password
+      vsphere_server = var.vsphere_server
+      allow_unverified_ssl = true
+    }
+
+    data "vsphere_datacenter" "dc" { name = var.datacenter }
+    data "vsphere_datastore" "ds" { name = var.datastore datacenter_id = data.vsphere_datacenter.dc.id }
+    data "vsphere_resource_pool" "pool" { name = var.resource_pool datacenter_id = data.vsphere_datacenter.dc.id }
+    data "vsphere_network" "net" { name = var.network datacenter_id = data.vsphere_datacenter.dc.id }
+    data "vsphere_virtual_machine" "template" { name = var.template_name datacenter_id = data.vsphere_datacenter.dc.id }
+
+    resource "vsphere_virtual_machine" "shipping" {
+      count            = 3
+      name             = "shipping-${count.index}"
+      resource_pool_id = data.vsphere_resource_pool.pool.id
+      datastore_id     = data.vsphere_datastore.ds.id
+
+      num_cpus = 2
+      memory   = 2048
+      guest_id = data.vsphere_virtual_machine.template.guest_id
+      scsi_type = data.vsphere_virtual_machine.template.scsi_type
+
+      network_interface {
+        network_id = data.vsphere_network.net.id
+      }
+
+      disk {
+        label            = "disk0"
+        size             = data.vsphere_virtual_machine.template.disks.0.size
+        eagerly_scrub    = false
+        thin_provisioned = true
+      }
+
+      clone {
+        template_uuid = data.vsphere_virtual_machine.template.id
+        customize {
+          linux_options {
+            host_name = "shipping-${count.index}"
+            domain    = "corp.local"
+          }
+          network_interface {
+            ipv4_address = "10.0.0.${20 + count.index}"
+            ipv4_netmask = 24
+          }
+          ipv4_gateway = "10.0.0.1"
+        }
+      }
+
+      provisioner "remote-exec" {
+        inline = [
+          "sudo systemctl enable shipping",
+          "sudo systemctl start shipping"
+        ]
+      }
+    }
+  
+  - |
+    # 10. OpenStack Heat: One server per service instance
+    heat_template_version: 2018-08-31
+    description: "Notifications service per VM"
+    parameters:
+      image:
+        type: string
+        default: "ubuntu-20.04"
+      flavor:
+        type: string
+        default: "m1.small"
+      count:
+        type: number
+        default: 3
+    resources:
+      notifications_group:
+        type: OS::Heat::ResourceGroup
+        properties:
+          count: { get_param: count }
+          resource_def:
+            type: OS::Nova::Server
+            properties:
+              name: { list_join: ['-', ['notifications', '%index%']] }
+              image: { get_param: image }
+              flavor: { get_param: flavor }
+              networks:
+                - network: private
+              user_data_format: RAW
+              user_data: |
+                #cloud-config
+                runcmd:
+                  - curl -fsSL https://artifacts.example.com/notifications/latest/notifications -o /usr/local/bin/notifications
+                  - chmod +x /usr/local/bin/notifications
+                  - systemctl enable notifications
+                  - systemctl start notifications
+  
+  - |
+    # 11. Ansible playbook used by Packer to bake the VM image with a single service
+    - hosts: all
+      become: true
+      tasks:
+        - name: Create service user
+          user:
+            name: payments
+            system: yes
+            shell: /usr/sbin/nologin
+        - name: Install service binary
+          get_url:
+            url: https://artifacts.example.com/payments/latest/payments
+            dest: /usr/local/bin/payments
+            mode: '0755'
+        - name: Install systemd unit
+          copy:
+            dest: /etc/systemd/system/payments.service
+            mode: '0644'
+            content: |
+              [Unit]
+              Description=Payments Service
+              After=network-online.target
+              [Service]
+              ExecStart=/usr/local/bin/payments --port 8080
+              Restart=on-failure
+              [Install]
+              WantedBy=multi-user.target
+        - name: Enable service
+          systemd:
+            name: payments
+            enabled: yes
+  
+  - |
+    # 12. DigitalOcean Terraform: Droplet per service instance
+    provider "digitalocean" {
+      token = var.do_token
+    }
+
+    resource "digitalocean_droplet" "reviews" {
+      count  = 3
+      name   = "reviews-${count.index}"
+      region = "nyc3"
+      size   = "s-1vcpu-1gb"
+      image  = "ubuntu-22-04-x64"
+      user_data = <<-EOF
+      #cloud-config
+      runcmd:
+        - curl -fsSL https://artifacts.example.com/reviews/latest/reviews -o /usr/local/bin/reviews
+        - chmod +x /usr/local/bin/reviews
+        - systemctl enable reviews
+        - systemctl start reviews
+      EOF
+      tags = ["service:reviews"]
+    }
+  
+  - |
+    # 13. AWS Launch Template with inline cloud-init for a single service process
+    resource "aws_launch_template" "inventory" {
+      name_prefix   = "inventory-"
+      image_id      = var.ami_id
+      instance_type = "t3.small"
+      user_data = base64encode(<<-EOT
+      #cloud-config
+      write_files:
+        - path: /etc/inventory/config.yaml
+          content: |
+            db_url: postgresql://db.internal:5432/inventory
+      runcmd:
+        - systemctl enable inventory
+        - systemctl restart inventory
+      EOT
+      )
+      tag_specifications {
+        resource_type = "instance"
+        tags = {
+          Service = "inventory"
+        }
+      }
+    }
+  
+  - |
+    # 14. GHA workflow building AMI with Packer and deploying N VMs with Terraform
+    name: build-and-deploy-service-per-vm
+    on:
+      push:
+        branches: ["main"]
+    jobs:
+      build-ami:
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v4
+          - uses: hashicorp/setup-packer@v2
+          - run: packer init packer/orders.pkr.hcl
+          - run: packer build -only=amazon-ebs.orders-service -var "version=${{ github.sha }}" packer/orders.pkr.hcl
+      deploy:
+        needs: build-ami
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v4
+          - uses: hashicorp/setup-terraform@v3
+          - run: terraform -chdir=infra/aws init
+          - run: terraform -chdir=infra/aws apply -auto-approve -var "desired_capacity=5"
+  
+  - |
+    # 15. Windows VM user data (powershell) to install and start a single Windows service
+    <powershell>
+    New-Item -ItemType Directory -Force -Path "C:\Services\search"
+    Invoke-WebRequest -Uri "https://artifacts.example.com/search/latest/search.exe" -OutFile "C:\Services\search\search.exe"
+    New-Service -Name "SearchService" -BinaryPathName "C:\Services\search\search.exe --port 9090" -StartupType Automatic
+    Start-Service -Name "SearchService"
+    </powershell>
+  
+  - |
+    # 16. SaltStack state for ensuring the service runs on each VM instance
+    search-service:
+      user.present:
+        - name: search
+        - system: True
+      file.managed:
+        - name: /etc/systemd/system/search.service
+        - contents: |
+            [Unit]
+            Description=Search Service
+            After=network.target
+            [Service]
+            ExecStart=/usr/local/bin/search --port 9090
+            Restart=always
+            [Install]
+            WantedBy=multi-user.target
+      service.enabled:
+        - name: search
+      service.running:
+        - name: search
+        - enable: True
+  
+  - |
+    # 17. Puppet manifest to manage one service per VM
+    user { 'billing':
+      ensure => present,
+      system => true,
+      shell  => '/usr/sbin/nologin',
+    }
+
+    file { '/etc/systemd/system/billing.service':
+      ensure  => file,
+      mode    => '0644',
+      content => "[Unit]\nDescription=Billing Service\nAfter=network.target\n[Service]\nExecStart=/usr/local/bin/billing --port 8081\nRestart=on-failure\n[Install]\nWantedBy=multi-user.target\n",
+      notify  => Exec['daemon-reload'],
+    }
+
+    exec { 'daemon-reload':
+      command     => '/bin/systemctl daemon-reload',
+      refreshonly => true,
+    }
+
+    service { 'billing':
+      ensure => running,
+      enable => true,
+      require => File['/etc/systemd/system/billing.service'],
+    }
+  
+  - |
+    # 18. Chef recipe to install and enable a per-VM service
+    user 'catalog' do
+      system true
+      shell '/usr/sbin/nologin'
+    end
+
+    remote_file '/usr/local/bin/catalog' do
+      source 'https://artifacts.example.com/catalog/latest/catalog'
+      mode '0755'
+    end
+
+    file '/etc/systemd/system/catalog.service' do
+      mode '0644'
+      content <<~UNIT
+        [Unit]
+        Description=Catalog Service
+        After=network.target
+        [Service]
+        ExecStart=/usr/local/bin/catalog --port 8080
+        Restart=on-failure
+        [Install]
+        WantedBy=multi-user.target
+      UNIT
+      notifies :run, 'execute[systemd-daemon-reload]', :immediately
+    end
+
+    execute 'systemd-daemon-reload' do
+      command 'systemctl daemon-reload'
+      action :nothing
+    end
+
+    service 'catalog' do
+      action [:enable, :start]
+    end
+  
+  - |
+    # 19. Alibaba Cloud Terraform: ECS instance per service instance
+    provider "alicloud" {
+      region = "cn-hangzhou"
+    }
+
+    resource "alicloud_instance" "auth" {
+      count                = 3
+      instance_name        = "auth-${count.index}"
+      instance_type        = "ecs.t5-lc1m1.small"
+      image_id             = "ubuntu_20_04_x64_20G_alibase_20230628.vhd"
+      security_groups      = [var.sg_id]
+      vswitch_id           = var.vswitch_id
+      internet_max_bandwidth_out = 10
+      user_data = base64encode(<<EOF
+      #cloud-config
+      runcmd:
+        - curl -fsSL https://artifacts.example.com/auth/latest/auth -o /usr/local/bin/auth
+        - chmod +x /usr/local/bin/auth
+        - systemctl enable auth
+        - systemctl start auth
+      EOF
+      )
+      tags = {
+        Service = "auth"
+      }
+    }
+  
+  - |
+    # 20. Bare-metal provisioning with cloud-init via iPXE for per-VM like behavior
+    #!ipxe
+    dhcp
+    kernel http://boot/casper/vmlinuz ip=dhcp url=http://boot/images/ubuntu-20.04.iso autoinstall ds=nocloud-net;s=http://metadata/seed/
+    initrd http://boot/casper/initrd
+    boot
+    # seed/user-data at http://metadata/seed/user-data contains:
+    #cloud-config
+    runcmd:
+      - wget -O /usr/local/bin/profile http://artifacts.example.com/profile/latest/profile
+      - chmod +x /usr/local/bin/profile
+      - systemctl enable profile
+      - systemctl start profile
+  
+  - |
+    # 21. AWS ASG with MixedInstancesPolicy still mapping 1 service per instance
+    resource "aws_autoscaling_group" "recommendations" {
+      name               = "recommendations-asg"
+      vpc_zone_identifier = var.subnets
+      desired_capacity   = 4
+      min_size           = 4
+      max_size           = 8
+
+      mixed_instances_policy {
+        launch_template {
+          launch_template_specification {
+            launch_template_id = aws_launch_template.recommendations.id
+            version            = "$Latest"
+          }
+          overrides = [
+            { instance_type = "t3.micro" },
+            { instance_type = "t3a.micro" }
+          ]
+        }
+      }
+      tag {
+        key                 = "Service"
+        value               = "recommendations"
+        propagate_at_launch = true
+      }
+    }
+  
+  - |
+    # 22. GCP Instance per service defined via gcloud command (documentation snippet)
+    # Illustrative startup script showing one service per VM instance
+    #!/bin/bash
+    gcloud compute instances create "email-${RANDOM}" \
+      --zone=us-central1-a \
+      --machine-type=e2-micro \
+      --image-family=debian-11 \
+      --image-project=debian-cloud \
+      --metadata=startup-script='#! /bin/bash
+      curl -fsSL https://artifacts.example.com/email/latest/email -o /usr/local/bin/email
+      chmod +x /usr/local/bin/email
+      cat >/etc/systemd/system/email.service <<EOF
+      [Unit]
+      Description=Email Service
+      After=network.target
+      [Service]
+      ExecStart=/usr/local/bin/email --port 8080
+      Restart=always
+      [Install]
+      WantedBy=multi-user.target
+      EOF
+      systemctl daemon-reload
+      systemctl enable email
+      systemctl start email'
+  
+  - |
+    # 23. AWS SSM State Manager to enforce service running on each VM instance
+    {
+      "schemaVersion": "2.2",
+      "description": "Ensure cart service is installed and running",
+      "parameters": {},
+      "mainSteps": [
+        {
+          "action": "aws:runShellScript",
+          "name": "installCart",
+          "inputs": {
+            "runCommand": [
+              "curl -fsSL https://artifacts.example.com/cart/latest/cart -o /usr/local/bin/cart",
+              "chmod +x /usr/local/bin/cart",
+              "cat >/etc/systemd/system/cart.service <<'EOF'\n[Unit]\nDescription=Cart Service\nAfter=network.target\n[Service]\nExecStart=/usr/local/bin/cart --port 8080\nRestart=on-failure\n[Install]\nWantedBy=multi-user.target\nEOF",
+              "systemctl daemon-reload",
+              "systemctl enable cart",
+              "systemctl restart cart"
+            ]
+          }
+        }
+      ]
+    }
+  
+  - |
+    # 24. IBM Cloud VPC Terraform: Instance group creating N VMs, each with the service
+    provider "ibm" {}
+
+    resource "ibm_is_instance" "metrics" {
+      count          = 3
+      name           = "metrics-${count.index}"
+      image          = var.image_id
+      profile        = "bx2-2x8"
+      vpc            = var.vpc_id
+      zone           = var.zone
+      primary_network_interface {
+        subnet = var.subnet_id
+      }
+      user_data = <<EOF
+      #cloud-config
+      runcmd:
+        - curl -fsSL https://artifacts.example.com/metrics/latest/metrics -o /usr/local/bin/metrics
+        - chmod +x /usr/local/bin/metrics
+        - systemctl enable metrics
+        - systemctl start metrics
+      EOF
+      tags = ["service:metrics"]
+    }
+  
+  - |
+    # 25. AWS Image Builder pipeline to produce a golden image for a single service
+    {
+      "version": "1.0",
+      "phases": {
+        "build": [
+          "yum update -y",
+          "useradd search || true",
+          "curl -fsSL https://artifacts.example.com/search/latest/search -o /usr/local/bin/search",
+          "chmod +x /usr/local/bin/search",
+          "cat >/etc/systemd/system/search.service <<'EOF'\n[Unit]\nDescription=Search Service\nAfter=network.target\n[Service]\nExecStart=/usr/local/bin/search --port 8080\nRestart=always\n[Install]\nWantedBy=multi-user.target\nEOF",
+          "systemctl enable search"
+        ]
+      }
+    }
+  
+negative_examples:
+  - |
+    # ANTI-PATTERN: Multiple microservices on a single VM
+    # This defeats the isolation and resource accounting benefits of service-per-VM
+    [Unit]
+    Description=All Services on One Host
+    After=network.target
+
+    [Service]
+    Type=oneshot
+    RemainAfterExit=yes
+    ExecStart=/usr/local/bin/start-orders.sh
+    ExecStart=/usr/local/bin/start-payments.sh
+    ExecStart=/usr/local/bin/start-inventory.sh
+    ExecStop=/usr/local/bin/stop-all.sh
+
+    [Install]
+    WantedBy=multi-user.target
+  - |
+    # ANTI-PATTERN: Docker Compose running many services on one VM
+    version: '3.8'
+    services:
+      orders:
+        image: example/orders:latest
+      payments:
+        image: example/payments:latest
+      inventory:
+        image: example/inventory:latest
+    # Service-per-VM seeks one service instance per VM rather than multiplexing many services per host
+  - |
+    # ANTI-PATTERN: Kubernetes Deployment used instead of VM-per-instance
+    # This is a different deployment pattern (service instance per container/pod), not per VM
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: catalog
+    spec:
+      replicas: 5
+      selector:
+        matchLabels:
+          app: catalog
+      template:
+        metadata:
+          labels:
+            app: catalog
+        spec:
+          containers:
+          - name: catalog
+            image: example/catalog:latest
+            ports:
+            - containerPort: 8080
+  - |
+    # ANTI-PATTERN: Single VM hosting a process manager that supervises many services
+    # Using supervisord/PM2 to run multiple microservices on one VM violates the pattern
+    [program:orders]
+    command=/usr/local/bin/orders --port 8080
+    [program:payments]
+    command=/usr/local/bin/payments --port 8081
+    [program:inventory]
+    command=/usr/local/bin/inventory --port 8082
+  - |
+    # ANTI-PATTERN: Monolithic application server bundling multiple bounded contexts on one VM
+    FROM openjdk:17-jre
+    COPY mega-app.jar /opt/mega-app.jar
+    CMD ["java", "-jar", "/opt/mega-app.jar"]

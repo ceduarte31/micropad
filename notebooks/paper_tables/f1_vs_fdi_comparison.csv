@@ -1,0 +1,10 @@
+Pattern,F1_Score,Max_FDI,Top_File
+Service deployment platform,0.42,79.12,Makefile
+Service instance per container,0.7,54.59,Dockerfile
+Multiple service instances per host,0.47,48.32,Makefile
+Single Service Instance per Host,0.19,19.61,versions.tf
+Server-side service discovery,0.24,11.56,__init__.py
+Service instance per VM,0.16,9.15,2024-07-01.xml
+Service mesh,0.15,5.42,mod.rs
+Service registry,0.12,3.67,mod.rs
+3rd Party Registration,0.09,1.93,docker-compose.yaml

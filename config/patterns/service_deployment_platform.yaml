@@ -1,0 +1,553 @@
+pattern_name: "Service deployment platform"
+description: |
+  How are services packaged and deployed? Use a deployment platform which is automated infrastructure
+  for application deployment. It provides a service abstraction that standardizes packaging, rollout,
+  scaling, health management, configuration/secrets, and routing so teams can ship services consistently
+  across environments.
+repository_fingerprint:
+  glob_patterns:
+    # --- Tier 1: The Spear (High-Confidence & High-Diversity Keyword Search) ---
+    # Kubernetes core workload and service resources
+    - glob: "**/deployment.y*ml"
+      search_method: "keyword"
+      keywords: ["apiVersion:", "kind: Deployment", "spec:", "selector:", "template:"]
+    - glob: "**/statefulset.y*ml"
+      search_method: "keyword"
+      keywords: ["apiVersion:", "kind: StatefulSet", "serviceName:", "volumeClaimTemplates:"]
+    - glob: "**/daemonset.y*ml"
+      search_method: "keyword"
+      keywords: ["apiVersion:", "kind: DaemonSet", "updateStrategy:"]
+    - glob: "**/service.y*ml"
+      search_method: "keyword"
+      keywords: ["apiVersion:", "kind: Service", "spec:", "ports:"]
+    - glob: "**/ingress.y*ml"
+      search_method: "keyword"
+      keywords: ["apiVersion:", "kind: Ingress", "rules:", "backend:"]
+    - glob: "**/k8s/**/*.y*ml"
+      search_method: "keyword"
+      keywords: ["kind: Deployment", "kind: Service", "kind: Ingress"]
+    - glob: "**/kubernetes/**/*.y*ml"
+      search_method: "keyword"
+      keywords: ["kind: Deployment", "kind: Service", "kind: Ingress"]
+
+    # Helm charts (packaging + templated deployment)
+    - glob: "**/Chart.yaml"
+      search_method: "keyword"
+      keywords: ["apiVersion:", "name:", "version:"]
+    - glob: "**/values*.y*ml"
+      search_method: "keyword"
+      keywords: ["image:", "replicaCount:", "service:"]
+    - glob: "**/templates/*.y*ml"
+      search_method: "keyword"
+      keywords: ["{{", "kind:", "metadata:", "spec:"]
+
+    # Kustomize (patch and assemble deployments)
+    - glob: "**/kustomization.y*ml"
+      search_method: "keyword"
+      keywords: ["resources:", "patchesStrategicMerge:", "images:", "configMapGenerator:"]
+
+    # Docker and Compose (packaging, local and prod orchestrations)
+    - glob: "**/[dD]ockerfile*"
+      search_method: "keyword"
+      keywords: ["FROM ", "ENTRYPOINT", "CMD", "EXPOSE", "HEALTHCHECK"]
+    - glob: "**/docker-compose*.y*ml"
+      search_method: "keyword"
+      keywords: ["services:", "deploy:", "replicas:", "restart:", "healthcheck:"]
+
+    # HashiCorp Nomad
+    - glob: "**/*.nomad"
+      search_method: "keyword"
+      keywords: ["job ", "group ", "task ", "service {", "driver ="]
+
+    # AWS ECS (task + service)
+    - glob: "**/task-definition.json"
+      search_method: "keyword"
+      keywords: ["family", "containerDefinitions", "taskRoleArn", "executionRoleArn"]
+    - glob: "**/ecs-service*.y*ml"
+      search_method: "keyword"
+      keywords: ["AWS::ECS::Service", "serviceName", "taskDefinition"]
+    - glob: "**/ecs-params.y*ml"
+      search_method: "keyword"
+      keywords: ["task_definition:", "run_params:", "network_configuration:"]
+
+    # Serverless/Functions platforms
+    - glob: "**/serverless.y*ml"
+      search_method: "keyword"
+      keywords: ["service:", "provider:", "functions:", "events:"]
+    - glob: "**/template.y*ml"
+      search_method: "keyword"
+      keywords: ["Transform: AWS::Serverless-2016-10-31", "AWS::Serverless::Function"]
+    - glob: "**/cloudrun*.y*ml"
+      search_method: "keyword"
+      keywords: ["apiVersion: serving.knative.dev", "kind: Service", "containers:"]
+    - glob: "**/knative*.y*ml"
+      search_method: "keyword"
+      keywords: ["apiVersion: serving.knative.dev", "kind: Service", "traffic:"]
+
+    # GitOps Controllers
+    - glob: "**/argocd*.y*ml"
+      search_method: "keyword"
+      keywords: ["kind: Application", "apiVersion: argoproj.io/", "spec:"]
+    - glob: "**/*HelmRelease*.y*ml"
+      search_method: "keyword"
+      keywords: ["kind: HelmRelease", "apiVersion: helm.toolkit.fluxcd.io/", "chart:"]
+
+    # CI/CD deployment orchestrations
+    - glob: "**/.github/workflows/*.y*ml"
+      search_method: "keyword"
+      keywords: ["kubectl", "helm", "aws ecs", "gcloud run deploy", "az webapp"]
+    - glob: "**/.gitlab-ci.yml"
+      search_method: "keyword"
+      keywords: ["deploy", "environment:", "kubectl", "helm", "ecs", "cloud run"]
+    - glob: "**/azure-pipelines.yml"
+      search_method: "keyword"
+      keywords: ["kubectl", "helm", "AzureWebApp", "AzureCLI", "containerRegistry"]
+    - glob: "**/.circleci/config.yml"
+      search_method: "keyword"
+      keywords: ["kubectl", "helm", "gcloud", "aws", "orbs:", "deploy"]
+    - glob: "**/Jenkinsfile"
+      search_method: "keyword"
+      keywords: ["kubectl", "helm", "ecs", "withCredentials", "pipeline", "deploy"]
+
+    # Terraform and IaC targets for platforms
+    - glob: "**/*.tf"
+      search_method: "keyword"
+      keywords: ["aws_ecs_service", "kubernetes_deployment", "google_cloud_run_service", "helm_release", "azurerm_kubernetes_cluster", "kubernetes_service"]
+    - glob: "**/*.hcl"
+      search_method: "keyword"
+      keywords: ["waypoint", "project", "app", "deploy"]
+
+    # PaaS indicators
+    - glob: "**/Procfile"
+      search_method: "keyword"
+      keywords: ["web:", "worker:", "release:"]
+    - glob: "**/project.toml"
+      search_method: "keyword"
+      keywords: ["[project]", "io.buildpacks", "buildpacks ="]
+
+    # Dev deployment helpers
+    - glob: "**/skaffold.y*ml"
+      search_method: "keyword"
+      keywords: ["apiVersion: skaffold", "deploy:", "manifests:", "helm:"]
+    - glob: "**/Tiltfile"
+
+    # --- Tier 2: The Cast Net (Contextual & Suggestive Embedding Search) ---
+    - glob: "**/charts/**/*.y*ml"
+    - glob: "**/manifests/**/*.y*ml"
+    - glob: "**/deploy/**/*.y*ml"
+    - glob: "**/ops/**/*.y*ml"
+    - glob: "**/config/**/*.y*ml"
+    - glob: "**/releases/**/*.y*ml"
+    - glob: "**/environments/**/*.y*ml"
+    - glob: "**/k8s/**/kustomization.y*ml"
+    - glob: "**/pulumi.*.y*ml"
+
+    # --- Tier 3: The Trawler (Broad Catch-all Embedding Search) ---
+    - glob: "**/Makefile"
+    - glob: "**/*.bicep"
+    - glob: "**/*.json"
+    - glob: "**/*.sh"
+positive_examples:
+  - |
+    # 1. Kubernetes Deployment and Service (core platform abstraction)
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: payments
+    spec:
+      replicas: 3
+      selector:
+        matchLabels:
+          app: payments
+      template:
+        metadata:
+          labels:
+            app: payments
+        spec:
+          containers:
+          - name: payments
+            image: ghcr.io/acme/payments:1.2.3
+            ports:
+            - containerPort: 8080
+            readinessProbe:
+              httpGet:
+                path: /health/ready
+                port: 8080
+            livenessProbe:
+              httpGet:
+                path: /health/live
+                port: 8080
+    ---
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: payments
+    spec:
+      selector:
+        app: payments
+      ports:
+      - name: http
+        port: 80
+        targetPort: 8080
+  - |
+    # 2. Helm Chart definition
+    apiVersion: v2
+    name: orders
+    description: Orders service chart
+    type: application
+    version: 0.1.0
+    appVersion: "1.0.0"
+  - |
+    # 3. Helm values with service abstraction
+    replicaCount: 2
+    image:
+      repository: ghcr.io/acme/orders
+      tag: "1.0.0"
+    service:
+      type: ClusterIP
+      port: 80
+    ingress:
+      enabled: true
+      className: nginx
+      hosts:
+      - host: orders.example.com
+        paths:
+        - path: /
+          pathType: Prefix
+  - |
+    # 4. Kustomize overlay composing multiple bases
+    apiVersion: kustomize.config.k8s.io/v1beta1
+    kind: Kustomization
+    resources:
+    - ../../base/deployment.yaml
+    - ../../base/service.yaml
+    images:
+    - name: ghcr.io/acme/catalog
+      newTag: "2.4.1"
+    patchesStrategicMerge:
+    - patch-env.yaml
+  - |
+    # 5. Dockerfile packaging the service for platform deployment
+    FROM gcr.io/distroless/base-debian11
+    COPY app /usr/local/bin/app
+    EXPOSE 8080
+    USER 65532:65532
+    ENTRYPOINT ["/usr/local/bin/app"]
+  - |
+    # 6. Docker Compose with deploy stanza (Swarm-style)
+    version: "3.8"
+    services:
+      api:
+        image: ghcr.io/acme/api:latest
+        ports:
+          - "80:8080"
+        deploy:
+          replicas: 3
+          update_config:
+            order: start-first
+            parallelism: 1
+          restart_policy:
+            condition: on-failure
+  - |
+    # 7. Nomad job for service deployment
+    job "search" {
+      datacenters = ["dc1"]
+      group "search" {
+        count = 3
+        network { mode = "bridge" port "http" { to = 8080 } }
+        task "search" {
+          driver = "docker"
+          config { image = "ghcr.io/acme/search:1.0.0" ports = ["http"] }
+          service {
+            name = "search"
+            port = "http"
+            check { type = "http" path = "/health" interval = "10s" timeout = "2s" }
+          }
+        }
+      }
+    }
+  - |
+    # 8. AWS ECS Task Definition and Service
+    {
+      "family": "users",
+      "networkMode": "awsvpc",
+      "requiresCompatibilities": ["FARGATE"],
+      "cpu": "256",
+      "memory": "512",
+      "containerDefinitions": [
+        { "name": "users", "image": "ghcr.io/acme/users:2.1.0", "portMappings": [{ "containerPort": 8080 }] }
+      ]
+    }
+  - |
+    # 9. Serverless Framework configuration
+    service: image-resize
+    provider:
+      name: aws
+      runtime: nodejs18.x
+      region: us-east-1
+    functions:
+      resize:
+        handler: handler.resize
+        events:
+          - s3:
+              bucket: uploads
+              event: s3:ObjectCreated:*
+  - |
+    # 10. AWS SAM template with Serverless transform
+    Transform: AWS::Serverless-2016-10-31
+    Resources:
+      ApiFn:
+        Type: AWS::Serverless::Function
+        Properties:
+          CodeUri: src/
+          Handler: app.handler
+          Runtime: python3.11
+          Events:
+            Api:
+              Type: Api
+              Properties:
+                Path: /hello
+                Method: get
+  - |
+    # 11. Cloud Run (Knative) Service
+    apiVersion: serving.knative.dev/v1
+    kind: Service
+    metadata:
+      name: checkout
+    spec:
+      template:
+        spec:
+          containers:
+          - image: gcr.io/acme/checkout:latest
+            ports:
+            - containerPort: 8080
+  - |
+    # 12. Knative Service with traffic splitting
+    apiVersion: serving.knative.dev/v1
+    kind: Service
+    metadata:
+      name: recommender
+    spec:
+      template:
+        metadata:
+          annotations:
+            autoscaling.knative.dev/minScale: "1"
+        spec:
+          containers:
+          - image: gcr.io/acme/recommender:v2
+      traffic:
+      - latestRevision: true
+        percent: 10
+      - revisionName: recommender-v1
+        percent: 90
+  - |
+    # 13. Argo CD Application (GitOps-managed deployment)
+    apiVersion: argoproj.io/v1alpha1
+    kind: Application
+    metadata:
+      name: inventory
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/acme/infra.git
+        path: charts/inventory
+        targetRevision: main
+        helm:
+          values: |
+            replicaCount: 2
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: prod
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+  - |
+    # 14. FluxCD HelmRelease
+    apiVersion: helm.toolkit.fluxcd.io/v2
+    kind: HelmRelease
+    metadata:
+      name: billing
+      namespace: apps
+    spec:
+      chart:
+        spec:
+          chart: ./charts/billing
+          sourceRef:
+            kind: GitRepository
+            name: app-charts
+      interval: 5m
+      values:
+        replicaCount: 3
+  - |
+    # 15. GitHub Actions workflow deploying to Kubernetes
+    name: deploy
+    on: { push: { branches: ["main"] } }
+    jobs:
+      k8s-deploy:
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v4
+        - uses: azure/setup-kubectl@v3
+        - name: Set image
+          run: kubectl set image deployment/web web=ghcr.io/acme/web:${{ github.sha }}
+        - name: Rollout status
+          run: kubectl rollout status deployment/web
+  - |
+    # 16. Terraform creating a Kubernetes Deployment
+    resource "kubernetes_deployment" "catalog" {
+      metadata { name = "catalog" labels = { app = "catalog" } }
+      spec {
+        replicas = 2
+        selector { match_labels = { app = "catalog" } }
+        template {
+          metadata { labels = { app = "catalog" } }
+          spec {
+            container {
+              image = "ghcr.io/acme/catalog:1.3.0"
+              name  = "catalog"
+              port { container_port = 8080 }
+            }
+          }
+        }
+      }
+    }
+  - |
+    # 17. Terraform creating a Cloud Run service
+    resource "google_cloud_run_v2_service" "notify" {
+      name     = "notify"
+      location = "us-central1"
+      template {
+        containers {
+          image = "us-docker.pkg.dev/acme/notify:latest"
+          ports { container_port = 8080 }
+        }
+      }
+    }
+  - |
+    # 18. Azure Container Apps YAML
+    type: Microsoft.App/containerApps@2022-10-01
+    name: "profile"
+    location: "eastus"
+    properties:
+      environmentId: "/subscriptions/.../managedEnvironments/aca-env"
+      configuration:
+        ingress:
+          external: true
+          targetPort: 8080
+      template:
+        containers:
+        - image: "ghcr.io/acme/profile:1.0.0"
+          name: "profile"
+  - |
+    # 19. OpenShift DeploymentConfig
+    apiVersion: apps.openshift.io/v1
+    kind: DeploymentConfig
+    metadata:
+      name: reporting
+    spec:
+      replicas: 2
+      selector:
+        app: reporting
+      template:
+        metadata:
+          labels:
+            app: reporting
+        spec:
+          containers:
+          - name: reporting
+            image: quay.io/acme/reporting:2.0.0
+            ports:
+            - containerPort: 8080
+      triggers:
+      - type: ConfigChange
+  - |
+    # 20. Waypoint application deployment (HCL)
+    project = "acme"
+    app "web" {
+      build {
+        use "docker" {}
+      }
+      deploy {
+        use "kubernetes" {
+          probe_path = "/health"
+        }
+      }
+    }
+  - |
+    # 21. Skaffold deployment config for iterative dev
+    apiVersion: skaffold/v4beta6
+    kind: Config
+    metadata:
+      name: cart
+    deploy:
+      kubectl:
+        manifests:
+        - k8s/cart-deployment.yaml
+        - k8s/cart-service.yaml
+    build:
+      artifacts:
+      - image: ghcr.io/acme/cart
+        docker: {}
+  - |
+    # 22. Tiltfile for local platform orchestration
+    k8s_yaml(['k8s/deployment.yaml', 'k8s/service.yaml'])
+    docker_build('ghcr.io/acme/checkout', '.')
+  - |
+    # 23. Buildpacks project.toml
+    [project]
+    id = "com.acme.notifications"
+    name = "notifications"
+    version = "1.0.0"
+    [[build.buildpacks]]
+    id = "paketo-buildpacks/java"
+  - |
+    # 24. Heroku-style Procfile (PaaS service abstraction)
+    web: bin/web -http :8080
+    worker: bin/worker -concurrency 5
+  - |
+    # 25. GitLab CI deploy to ECS
+    deploy:
+      stage: deploy
+      image: amazon/aws-cli:2.15.0
+      script:
+        - aws ecs update-service --cluster acme --service users --force-new-deployment
+
+negative_examples:
+  - |
+    # ANTI-PATTERN: Manual SSH deploy script without platform abstraction
+    # Copies binaries directly to servers and restarts via systemd ad-hoc
+    # This bypasses orchestrators and service abstractions
+    # deploy.sh
+    #!/usr/bin/env bash
+    set -e
+    for host in app01 app02 app03; do
+      scp build/app $host:/opt/app/app
+      ssh $host "sudo systemctl stop app && sudo mv /opt/app/app /usr/local/bin/app && sudo systemctl start app"
+    done
+  - |
+    # ANTI-PATTERN: FTP upload of WAR to snowflake Tomcat servers
+    # Lacks repeatable, automated deployment platform
+    put target/app.war /var/lib/tomcat/webapps/app.war
+    chmod 644 /var/lib/tomcat/webapps/app.war
+  - |
+    # ANTI-PATTERN: Ad-hoc Python deploy orchestration on developer laptop
+    # No desired-state controller, no health checks, no rollbacks
+    import os, subprocess
+    hosts = ["10.0.0.10", "10.0.0.11"]
+    for h in hosts:
+        subprocess.check_call(["ssh", h, "pkill -f app || true"])
+        subprocess.check_call(["scp", "app", f"{h}:/tmp/app"])
+        subprocess.check_call(["ssh", h, "nohup /tmp/app > /var/log/app.log 2>&1 &"])
+  - |
+    # ANTI-PATTERN: Config baked into code with environment-specific branches
+    # Deployment varies per environment and is not governed by a platform
+    if (process.env.ENV === 'prod') {
+      db = '10.1.1.5'
+    } else {
+      db = 'localhost'
+    }
+  - |
+    # ANTI-PATTERN: Cron-driven releases on VMs
+    # Relies on scheduled pulls and restarts instead of platform rollouts
+    */5 * * * * curl -sS https://artifacts/acme/app > /usr/local/bin/app && systemctl restart app

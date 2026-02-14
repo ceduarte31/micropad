@@ -1,0 +1,192 @@
+{
+  "summary": {
+    "repository_name": "nanvix/nanvix",
+    "detected_patterns": [
+      "Multiple service instances per host",
+      "Service instance per VM"
+    ],
+    "total_patterns_scanned": 9,
+    "timestamp": "2025-10-30T16:54:13.809449",
+    "run_id": "1174f868"
+  },
+  "patterns": {
+    "Server-side service discovery": false,
+    "Service registry": false,
+    "3rd Party Registration": false,
+    "Single Service Instance per Host": false,
+    "Service instance per container": false,
+    "Multiple service instances per host": true,
+    "Service deployment platform": false,
+    "Service instance per VM": true,
+    "Service mesh": false
+  },
+  "scanned_files_per_pattern": {
+    "Server-side service discovery": [
+      "/data/repos/nanvix/.github/workflows/branch-up-to-date.yml",
+      "/data/repos/nanvix/.github/workflows/copilot-setup-steps.yml",
+      "/data/repos/nanvix/.github/workflows/github-hosted-ci.yml",
+      "/data/repos/nanvix/.github/workflows/release-minor.yml",
+      "/data/repos/nanvix/.github/workflows/self-hosted-benchmark.yml",
+      "/data/repos/nanvix/.github/workflows/self-hosted-ci.yml"
+    ],
+    "Service registry": [
+      "/data/repos/nanvix/src/uservm/src/orchestrator.rs",
+      "/data/repos/nanvix/src/utils/nanvixd/src/cache.rs",
+      "/data/repos/nanvix/src/utils/nanvixd/src/config.rs",
+      "/data/repos/nanvix/src/utils/nanvixd/src/http.rs",
+      "/data/repos/nanvix/src/utils/nanvixd/src/lib.rs",
+      "/data/repos/nanvix/src/utils/nanvixd/src/main.rs",
+      "/data/repos/nanvix/src/utils/nanvixd/src/message.rs"
+    ],
+    "3rd Party Registration": [
+      "/data/repos/nanvix/.github/actions/benchmark/action.yml",
+      "/data/repos/nanvix/.github/actions/build/action.yml",
+      "/data/repos/nanvix/.github/actions/deployment-features/action.yml",
+      "/data/repos/nanvix/.github/actions/format/action.yml",
+      "/data/repos/nanvix/.github/actions/lint/action.yml",
+      "/data/repos/nanvix/.github/actions/spellcheck/action.yml",
+      "/data/repos/nanvix/.github/actions/test/action.yml",
+      "/data/repos/nanvix/.github/dependabot.yml",
+      "/data/repos/nanvix/.github/workflows/branch-up-to-date.yml",
+      "/data/repos/nanvix/.github/workflows/copilot-setup-steps.yml",
+      "/data/repos/nanvix/.github/workflows/github-hosted-ci.yml",
+      "/data/repos/nanvix/.github/workflows/release-minor.yml",
+      "/data/repos/nanvix/.github/workflows/self-hosted-benchmark.yml",
+      "/data/repos/nanvix/.github/workflows/self-hosted-ci.yml",
+      "/data/repos/nanvix/build/targets/x86-kernel.json",
+      "/data/repos/nanvix/build/targets/x86-user.json",
+      "/data/repos/nanvix/scripts/setup/vscode/settings.json"
+    ],
+    "Single Service Instance per Host": [
+      "/data/repos/nanvix/.github/workflows/branch-up-to-date.yml",
+      "/data/repos/nanvix/.github/workflows/copilot-setup-steps.yml",
+      "/data/repos/nanvix/.github/workflows/github-hosted-ci.yml",
+      "/data/repos/nanvix/.github/workflows/release-minor.yml",
+      "/data/repos/nanvix/.github/workflows/self-hosted-benchmark.yml",
+      "/data/repos/nanvix/.github/workflows/self-hosted-ci.yml",
+      "/data/repos/nanvix/scripts/common/logging.sh",
+      "/data/repos/nanvix/scripts/common/utils.sh",
+      "/data/repos/nanvix/scripts/setup/Dockerfile",
+      "/data/repos/nanvix/scripts/setup/cloud-hypervisor.sh",
+      "/data/repos/nanvix/scripts/setup/docker.sh",
+      "/data/repos/nanvix/scripts/setup/python.sh",
+      "/data/repos/nanvix/scripts/setup/qemu.sh",
+      "/data/repos/nanvix/scripts/setup/rust.sh",
+      "/data/repos/nanvix/scripts/setup/toolchain.sh",
+      "/data/repos/nanvix/scripts/setup/ubuntu.sh",
+      "/data/repos/nanvix/src/libs/config/src/constants.rs",
+      "/data/repos/nanvix/src/libs/config/src/lib.rs"
+    ],
+    "Service instance per container": [
+      "/data/repos/nanvix/scripts/setup/Dockerfile",
+      "/data/repos/nanvix/scripts/setup/docker.sh"
+    ],
+    "Multiple service instances per host": [
+      "/data/repos/nanvix/scripts/run-nanvixd.sh",
+      "/data/repos/nanvix/scripts/run-qemu.sh",
+      "/data/repos/nanvix/src/daemons/linuxd/src/linuxd/mod.rs",
+      "/data/repos/nanvix/src/daemons/linuxd/src/main.rs",
+      "/data/repos/nanvix/src/daemons/linuxd/src/worker_thread.rs",
+      "/data/repos/nanvix/src/daemons/memd/src/main.rs",
+      "/data/repos/nanvix/src/daemons/procd/src/main.rs",
+      "/data/repos/nanvix/src/daemons/wasmd/src/engine/mod.rs",
+      "/data/repos/nanvix/src/daemons/wasmd/src/engine/proc.rs",
+      "/data/repos/nanvix/src/daemons/wasmd/src/main.rs",
+      "/data/repos/nanvix/src/utils/nanvixd/src/sandbox/multi_process/linuxd.rs",
+      "/data/repos/nanvix/src/utils/nanvixd/src/sandbox/multi_process/mod.rs",
+      "/data/repos/nanvix/src/utils/nanvixd/src/sandbox/multi_process/uservm.rs"
+    ],
+    "Service deployment platform": [
+      "/data/repos/nanvix/.github/actions/benchmark/action.yml",
+      "/data/repos/nanvix/.github/actions/build/action.yml",
+      "/data/repos/nanvix/.github/actions/deployment-features/action.yml",
+      "/data/repos/nanvix/.github/actions/format/action.yml",
+      "/data/repos/nanvix/.github/actions/lint/action.yml",
+      "/data/repos/nanvix/.github/actions/test/action.yml",
+      "/data/repos/nanvix/.github/workflows/branch-up-to-date.yml",
+      "/data/repos/nanvix/.github/workflows/copilot-setup-steps.yml",
+      "/data/repos/nanvix/.github/workflows/github-hosted-ci.yml",
+      "/data/repos/nanvix/.github/workflows/release-minor.yml",
+      "/data/repos/nanvix/.github/workflows/self-hosted-benchmark.yml",
+      "/data/repos/nanvix/.github/workflows/self-hosted-ci.yml"
+    ],
+    "Service instance per VM": [
+      "/data/repos/nanvix/build/make/uservm.mk",
+      "/data/repos/nanvix/build/targets/x86-kernel.json",
+      "/data/repos/nanvix/build/targets/x86-user.json",
+      "/data/repos/nanvix/src/uservm/Cargo.toml",
+      "/data/repos/nanvix/src/uservm/src/args.rs",
+      "/data/repos/nanvix/src/uservm/src/io_thread.rs",
+      "/data/repos/nanvix/src/uservm/src/lib.rs",
+      "/data/repos/nanvix/src/uservm/src/main.rs",
+      "/data/repos/nanvix/src/uservm/src/memory_thread.rs",
+      "/data/repos/nanvix/src/uservm/src/orchestrator.rs",
+      "/data/repos/nanvix/src/uservm/src/pal/linux.rs",
+      "/data/repos/nanvix/src/uservm/src/pal/mod.rs",
+      "/data/repos/nanvix/src/uservm/src/vmm/hyperlight/guest.rs",
+      "/data/repos/nanvix/src/uservm/src/vmm/hyperlight/mod.rs",
+      "/data/repos/nanvix/src/uservm/src/vmm/microvm/emulator.rs",
+      "/data/repos/nanvix/src/uservm/src/vmm/microvm/guest.rs",
+      "/data/repos/nanvix/src/uservm/src/vmm/microvm/kvm/irqchip.rs",
+      "/data/repos/nanvix/src/uservm/src/vmm/microvm/kvm/mod.rs",
+      "/data/repos/nanvix/src/uservm/src/vmm/microvm/kvm/pmio/mod.rs",
+      "/data/repos/nanvix/src/uservm/src/vmm/microvm/kvm/pmio/pmio_access.rs",
+      "/data/repos/nanvix/src/uservm/src/vmm/microvm/kvm/pmio/pmio_width.rs",
+      "/data/repos/nanvix/src/uservm/src/vmm/microvm/kvm/timer.rs",
+      "/data/repos/nanvix/src/uservm/src/vmm/microvm/kvm/vcpu/exit.rs",
+      "/data/repos/nanvix/src/uservm/src/vmm/microvm/kvm/vcpu/fpu.rs",
+      "/data/repos/nanvix/src/uservm/src/vmm/microvm/kvm/vcpu/mod.rs",
+      "/data/repos/nanvix/src/uservm/src/vmm/microvm/kvm/vcpu/msr.rs",
+      "/data/repos/nanvix/src/uservm/src/vmm/microvm/kvm/vmem.rs",
+      "/data/repos/nanvix/src/uservm/src/vmm/microvm/mod.rs",
+      "/data/repos/nanvix/src/uservm/src/vmm/mod.rs",
+      "/data/repos/nanvix/src/utils/nanvixd/src/sandbox/config.rs",
+      "/data/repos/nanvix/src/utils/nanvixd/src/sandbox/mod.rs",
+      "/data/repos/nanvix/src/utils/nanvixd/src/sandbox/multi_process/linuxd.rs",
+      "/data/repos/nanvix/src/utils/nanvixd/src/sandbox/multi_process/mod.rs",
+      "/data/repos/nanvix/src/utils/nanvixd/src/sandbox/multi_process/uservm.rs",
+      "/data/repos/nanvix/src/utils/nanvixd/src/sandbox/single_process/linuxd.rs",
+      "/data/repos/nanvix/src/utils/nanvixd/src/sandbox/single_process/mod.rs",
+      "/data/repos/nanvix/src/utils/nanvixd/src/sandbox/tag.rs",
+      "/data/repos/nanvix/src/utils/nanvixd/src/sandbox/tcp_port.rs"
+    ],
+    "Service mesh": [
+      "/data/repos/nanvix/src/libs/config/Cargo.toml",
+      "/data/repos/nanvix/src/libs/config/build.rs",
+      "/data/repos/nanvix/src/libs/config/src/constants.rs",
+      "/data/repos/nanvix/src/libs/config/src/lib.rs",
+      "/data/repos/nanvix/src/libs/control-plane-api/Cargo.toml",
+      "/data/repos/nanvix/src/libs/control-plane-api/src/lib.rs"
+    ]
+  },
+  "_metadata": {
+    "experiment": {
+      "run_number": 1
+    },
+    "reproducibility": {
+      "configuration": {
+        "thresholds": {
+          "high_priority": 0.5,
+          "medium_priority": 0.3,
+          "min_priority_score": 0.1,
+          "judge_confidence": 5
+        },
+        "weight_scheme": "llm_dominant",
+        "random_seed": 1761843253
+      }
+    },
+    "models": {
+      "planner": "gpt-5-nano-2025-08-07",
+      "investigator": "gpt-5-nano-2025-08-07",
+      "judge": "gpt-5-nano-2025-08-07",
+      "embedding": "jinaai/jina-embeddings-v2-base-code"
+    },
+    "priority_weights": {
+      "keyword": 0.2,
+      "embedding": 0.1,
+      "graph": 0.0,
+      "llm": 0.7
+    },
+    "source_log": "detection_20251030_165413.log"
+  }
+}

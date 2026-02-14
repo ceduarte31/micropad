@@ -1,0 +1,181 @@
+Pattern,Filename,Count,Percentage,Total_Files
+3rd Party Registration,docker-compose.yaml,2,3.6%,56
+3rd Party Registration,external_registry.cpp,2,3.6%,56
+3rd Party Registration,servicediscovery.md,1,1.8%,56
+3rd Party Registration,DnsRegistrationService.java,1,1.8%,56
+3rd Party Registration,xorcery.yaml,1,1.8%,56
+3rd Party Registration,ServerResourceDocument.java,1,1.8%,56
+3rd Party Registration,ServiceAttributes.java,1,1.8%,56
+3rd Party Registration,ServiceIdentifier.java,1,1.8%,56
+3rd Party Registration,ServiceLinkReference.java,1,1.8%,56
+3rd Party Registration,ServiceResourceObject.java,1,1.8%,56
+3rd Party Registration,ServiceResourceObjects.java,1,1.8%,56
+3rd Party Registration,DnsRegistrationTest.java,1,1.8%,56
+3rd Party Registration,SRVConnectorTest.java,1,1.8%,56
+3rd Party Registration,external_registry.h,1,1.8%,56
+3rd Party Registration,external_types.h,1,1.8%,56
+3rd Party Registration,External.md,1,1.8%,56
+3rd Party Registration,Dockerfile,1,1.8%,56
+3rd Party Registration,kvApi.go,1,1.8%,56
+3rd Party Registration,loginApi.go,1,1.8%,56
+3rd Party Registration,shareApi.go,1,1.8%,56
+Multiple service instances per host,Makefile,66,5.1%,1284
+Multiple service instances per host,release.yaml,27,2.1%,1284
+Multiple service instances per host,Dockerfile,24,1.9%,1284
+Multiple service instances per host,docker-compose.yml,21,1.6%,1284
+Multiple service instances per host,kustomization.yaml,19,1.5%,1284
+Multiple service instances per host,supervisord.conf,18,1.4%,1284
+Multiple service instances per host,main.rs,16,1.2%,1284
+Multiple service instances per host,README.md,14,1.1%,1284
+Multiple service instances per host,compose.yaml,12,0.9%,1284
+Multiple service instances per host,docker-compose.yaml,11,0.9%,1284
+Multiple service instances per host,install.yaml,10,0.8%,1284
+Multiple service instances per host,main.tf,8,0.6%,1284
+Multiple service instances per host,namespace.yaml,6,0.5%,1284
+Multiple service instances per host,deployment.yaml,6,0.5%,1284
+Multiple service instances per host,package.json,6,0.5%,1284
+Multiple service instances per host,instanceName.json,6,0.5%,1284
+Multiple service instances per host,index.ts,6,0.5%,1284
+Multiple service instances per host,HEAD,5,0.4%,1284
+Multiple service instances per host,docker-entrypoint.sh,5,0.4%,1284
+Multiple service instances per host,supervisord.nvidia.conf,5,0.4%,1284
+Server-side service discovery,__init__.py,14,2.4%,590
+Server-side service discovery,service.yaml,13,2.2%,590
+Server-side service discovery,README.md,11,1.9%,590
+Server-side service discovery,kustomization.yaml,7,1.2%,590
+Server-side service discovery,lib.rs,7,1.2%,590
+Server-side service discovery,docker-compose.yaml,6,1.0%,590
+Server-side service discovery,docker-compose.yml,6,1.0%,590
+Server-side service discovery,ingress.yaml,5,0.8%,590
+Server-side service discovery,main.rs,4,0.7%,590
+Server-side service discovery,Dockerfile,4,0.7%,590
+Server-side service discovery,zz_generated.featuregated-crd-manifests.yaml,4,0.7%,590
+Server-side service discovery,HEAD,4,0.7%,590
+Server-side service discovery,namespace.yaml,3,0.5%,590
+Server-side service discovery,release.yaml,3,0.5%,590
+Server-side service discovery,install.yaml,3,0.5%,590
+Server-side service discovery,module-info.java,3,0.5%,590
+Server-side service discovery,xorcery.yaml,3,0.5%,590
+Server-side service discovery,router.go,3,0.5%,590
+Server-side service discovery,xorcery-test-override-schema.json,2,0.3%,590
+Server-side service discovery,endpoint.tftpl.yaml,2,0.3%,590
+Service deployment platform,Makefile,120,5.7%,2090
+Service deployment platform,main.yml,44,2.1%,2090
+Service deployment platform,tsconfig.json,40,1.9%,2090
+Service deployment platform,Dockerfile,33,1.6%,2090
+Service deployment platform,kustomization.yaml,31,1.5%,2090
+Service deployment platform,service.yaml,26,1.2%,2090
+Service deployment platform,values.yaml,25,1.2%,2090
+Service deployment platform,README.md,22,1.1%,2090
+Service deployment platform,Chart.yaml,18,0.9%,2090
+Service deployment platform,package.json,17,0.8%,2090
+Service deployment platform,docker-compose.yml,16,0.8%,2090
+Service deployment platform,deployment.yaml,16,0.8%,2090
+Service deployment platform,install.yml,14,0.7%,2090
+Service deployment platform,ingress.yaml,13,0.6%,2090
+Service deployment platform,test.sh,10,0.5%,2090
+Service deployment platform,HEAD,9,0.4%,2090
+Service deployment platform,lib.rs,9,0.4%,2090
+Service deployment platform,install.yaml,8,0.4%,2090
+Service deployment platform,NOTES.txt,8,0.4%,2090
+Service deployment platform,build.sh,7,0.3%,2090
+Service instance per VM,2024-07-01.xml,205,3.5%,5937
+Service instance per VM,2023-09-01.xml,196,3.3%,5937
+Service instance per VM,2024-10-01-preview.xml,193,3.3%,5937
+Service instance per VM,2022-01-01.xml,155,2.6%,5937
+Service instance per VM,2025-06-01.xml,152,2.6%,5937
+Service instance per VM,2024-05-01-preview.xml,148,2.5%,5937
+Service instance per VM,2023-11-01.xml,141,2.4%,5937
+Service instance per VM,2023-10-01-preview.xml,139,2.3%,5937
+Service instance per VM,2025-04-01-preview.xml,137,2.3%,5937
+Service instance per VM,2023-05-01.xml,136,2.3%,5937
+Service instance per VM,2024-06-15-preview.xml,124,2.1%,5937
+Service instance per VM,2023-07-01.xml,115,1.9%,5937
+Service instance per VM,2025-07-15.xml,114,1.9%,5937
+Service instance per VM,2024-03-01-preview.xml,113,1.9%,5937
+Service instance per VM,2023-04-01.xml,113,1.9%,5937
+Service instance per VM,2024-03-01.xml,108,1.8%,5937
+Service instance per VM,2022-11-01.xml,105,1.8%,5937
+Service instance per VM,2023-03-01.xml,104,1.8%,5937
+Service instance per VM,2022-05-01.xml,91,1.5%,5937
+Service instance per VM,2023-12-01-preview.xml,89,1.5%,5937
+Service instance per container,Dockerfile,89,5.5%,1609
+Service instance per container,HEAD,32,2.0%,1609
+Service instance per container,README.md,29,1.8%,1609
+Service instance per container,kustomization.yaml,29,1.8%,1609
+Service instance per container,docker-compose.yml,28,1.7%,1609
+Service instance per container,service.yaml,25,1.6%,1609
+Service instance per container,deployment.yaml,18,1.1%,1609
+Service instance per container,docker-compose.yaml,18,1.1%,1609
+Service instance per container,__init__.py,16,1.0%,1609
+Service instance per container,main,13,0.8%,1609
+Service instance per container,compose.yaml,13,0.8%,1609
+Service instance per container,LICENSE,12,0.7%,1609
+Service instance per container,main.go,9,0.6%,1609
+Service instance per container,config,9,0.6%,1609
+Service instance per container,pom.xml,9,0.6%,1609
+Service instance per container,option.go,9,0.6%,1609
+Service instance per container,description,8,0.5%,1609
+Service instance per container,applypatch-msg.sample,8,0.5%,1609
+Service instance per container,commit-msg.sample,8,0.5%,1609
+Service instance per container,fsmonitor-watchman.sample,8,0.5%,1609
+Service mesh,mod.rs,7,5.6%,124
+Service mesh,deployment.yaml,4,3.2%,124
+Service mesh,ingress.yaml,4,3.2%,124
+Service mesh,Cargo.toml,4,3.2%,124
+Service mesh,README.md,4,3.2%,124
+Service mesh,NOTES.txt,3,2.4%,124
+Service mesh,hpa.yaml,3,2.4%,124
+Service mesh,service.yaml,2,1.6%,124
+Service mesh,values.yaml,2,1.6%,124
+Service mesh,lib.rs,2,1.6%,124
+Service mesh,main.rs,2,1.6%,124
+Service mesh,package.json,2,1.6%,124
+Service mesh,traits.rs,2,1.6%,124
+Service mesh,_cluster.auto.tfvars,1,0.8%,124
+Service mesh,_cluster_variables.tf,1,0.8%,124
+Service mesh,_platform.auto.tfvars,1,0.8%,124
+Service mesh,_platform_variables.tf,1,0.8%,124
+Service mesh,container_cluster.tf,1,0.8%,124
+Service mesh,feature.tf,1,0.8%,124
+Service mesh,project.tf,1,0.8%,124
+Service registry,mod.rs,4,3.3%,122
+Service registry,plugin.ex,3,2.5%,122
+Service registry,Cargo.toml,3,2.5%,122
+Service registry,lib.rs,3,2.5%,122
+Service registry,main.rs,2,1.6%,122
+Service registry,servicediscovery.md,1,0.8%,122
+Service registry,Main.java,1,0.8%,122
+Service registry,DnsLookup.java,1,0.8%,122
+Service registry,ALookup.java,1,0.8%,122
+Service registry,ALookupHK2.java,1,0.8%,122
+Service registry,DnsLookupService.java,1,0.8%,122
+Service registry,DnsLookupSessionFactory.java,1,0.8%,122
+Service registry,DnsLookupSessionFactoryHK2.java,1,0.8%,122
+Service registry,HostsConfigurationLookup.java,1,0.8%,122
+Service registry,JavaLookup.java,1,0.8%,122
+Service registry,SRVLookup.java,1,0.8%,122
+Service registry,SRVLookupHK2.java,1,0.8%,122
+Service registry,module-info.java,1,0.8%,122
+Service registry,DnsRecords.java,1,0.8%,122
+Service registry,DnsRegistrationService.java,1,0.8%,122
+Single Service Instance per Host,versions.tf,33,5.1%,641
+Single Service Instance per Host,_platform_variables.tf,32,5.0%,641
+Single Service Instance per Host,project.tf,32,5.0%,641
+Single Service Instance per Host,_cluster_variables.tf,23,3.6%,641
+Single Service Instance per Host,main.tf,16,2.5%,641
+Single Service Instance per Host,_uc_federated_learning_variables.tf,12,1.9%,641
+Single Service Instance per Host,_networking_variables.tf,10,1.6%,641
+Single Service Instance per Host,_build_variables.tf,8,1.2%,641
+Single Service Instance per Host,main.rs,8,1.2%,641
+Single Service Instance per Host,iam.tf,7,1.1%,641
+Single Service Instance per Host,service_account.tf,6,0.9%,641
+Single Service Instance per Host,artifact_registry.tf,6,0.9%,641
+Single Service Instance per Host,_uc_federated_learning_example_cross_device_variables.tf,6,0.9%,641
+Single Service Instance per Host,_workstation_cluster_variables.tf,5,0.8%,641
+Single Service Instance per Host,_cloudbuild_variables.tf,5,0.8%,641
+Single Service Instance per Host,README.md,5,0.8%,641
+Single Service Instance per Host,_inference-ref-arch_variables.tf,4,0.6%,641
+Single Service Instance per Host,local_file.tf,3,0.5%,641
+Single Service Instance per Host,secret_manager.tf,3,0.5%,641
+Single Service Instance per Host,_terraform_variables.tf,3,0.5%,641

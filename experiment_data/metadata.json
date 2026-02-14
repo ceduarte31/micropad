@@ -1,0 +1,15 @@
+{
+  "created_at": "2025-10-20T02:46:50.830728",
+  "total_repositories": 190,
+  "validation_stats": {
+    "total_responses": 407,
+    "valid_responses": 206,
+    "invalid_responses": 201,
+    "validation_rate": 0.5061425061425061,
+    "github_validation": {
+      "total_checked": 190,
+      "accessible": 190,
+      "inaccessible": 0
+    }
+  }
+}

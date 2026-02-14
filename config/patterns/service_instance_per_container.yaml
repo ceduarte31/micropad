@@ -1,0 +1,575 @@
+pattern_name: "Service instance per container"
+description: |
+  How are services packaged and deployed?
+  Package each microservice as a container image (e.g., Docker) and deploy every service instance as an isolated container.
+  This ensures consistent, immutable deployments, independent scaling, fault isolation, and clear operational boundaries
+  between services. Each pod/task/container runs a single service process, and scaling out means running more containers.
+repository_fingerprint:
+  glob_patterns:
+    # --- Tier 1: The Spear (High-Confidence & High-Diversity Keyword Search) ---
+    # These files explicitly define single-container workloads or container packaging per service
+    - glob: "**/deployment.yaml"
+      search_method: "keyword"
+      keywords: ["apiVersion:", "kind: Deployment", "replicas:", "containers:", "image:"]
+    - glob: "**/deployment.yml"
+      search_method: "keyword"
+      keywords: ["apiVersion:", "kind: Deployment", "replicas:", "containers:", "image:"]
+    - glob: "**/pod.yaml"
+      search_method: "keyword"
+      keywords: ["apiVersion:", "kind: Pod", "containers:", "image:"]
+    - glob: "**/pod.yml"
+      search_method: "keyword"
+      keywords: ["apiVersion:", "kind: Pod", "containers:", "image:"]
+    - glob: "**/statefulset.y*ml"
+      search_method: "keyword"
+      keywords: ["kind: StatefulSet", "serviceName:", "containers:", "image:"]
+    - glob: "**/job.y*ml"
+      search_method: "keyword"
+      keywords: ["kind: Job", "template:", "containers:", "image:"]
+    - glob: "**/cronjob.y*ml"
+      search_method: "keyword"
+      keywords: ["kind: CronJob", "jobTemplate:", "containers:", "image:"]
+    - glob: "**/service.y*ml"
+      search_method: "keyword"
+      keywords: ["kind: Service", "selector:", "ports:"]
+    - glob: "**/docker-compose*.y*ml"
+      search_method: "keyword"
+      keywords: ["version:", "services:", "image:", "build:"]
+    - glob: "**/compose.y*ml"
+      search_method: "keyword"
+      keywords: ["version:", "services:", "image:", "build:"]
+    - glob: "**/Dockerfile"
+      search_method: "keyword"
+      keywords: ["FROM", "EXPOSE", "CMD", "ENTRYPOINT", "HEALTHCHECK"]
+    - glob: "**/task-definition.json"
+      search_method: "keyword"
+      keywords: ["family", "containerDefinitions", "image", "memory"]
+    - glob: "**/service-definition.json"
+      search_method: "keyword"
+      keywords: ["desiredCount", "taskDefinition", "launchType", "serviceName"]
+
+    # --- Tier 2: The Cast Net (Contextual & Suggestive Embedding Search) ---
+    # Orchestration, templating, and scaling configs that imply one service per container
+    - glob: "**/values.y*ml"
+      search_method: "keyword"
+      keywords: ["replicaCount", "image:", "resources:"]
+    - glob: "**/helm/**/*.y*ml"
+      search_method: "keyword"
+      keywords: ["replicaCount", "kind: Deployment", "image:", "containers:"]
+    - glob: "**/kustomization.y*ml"
+      search_method: "keyword"
+      keywords: ["images:", "patchesStrategicMerge:", "resources:"]
+    - glob: "**/hpa.y*ml"
+      search_method: "keyword"
+      keywords: ["HorizontalPodAutoscaler", "scaleTargetRef", "minReplicas", "maxReplicas"]
+    - glob: "**/skaffold.y*ml"
+      search_method: "keyword"
+      keywords: ["build:", "artifacts:", "deploy:", "kubectl:", "manifests:"]
+    - glob: "**/Tiltfile"
+      search_method: "keyword"
+      keywords: ["docker_build(", "k8s_yaml(", "k8s_resource("]
+    - glob: "**/cloudrun*.y*ml"
+      search_method: "keyword"
+      keywords: ["apiVersion: serving.knative.dev", "kind: Service", "image:"]
+    - glob: "**/openshift*.y*ml"
+      search_method: "keyword"
+      keywords: ["DeploymentConfig", "imageChangeTriggers", "containers:"]
+    - glob: "**/*.hcl"
+      search_method: "keyword"
+      keywords: ["job", "group", "task", "driver", "docker", "image"]
+    - glob: "**/stack*.y*ml"
+      search_method: "keyword"
+      keywords: ["services:", "deploy:", "replicas:", "image:"]
+
+    # --- Tier 3: The Trawler (Broad Catch-all Embedding Search) ---
+    # General infra, CI/CD, and deployment files that often accompany containerized microservices
+    - glob: "**/k8s/**/*.y*ml"
+    - glob: "**/kubernetes/**/*.y*ml"
+    - glob: "**/manifests/**/*.y*ml"
+    - glob: "**/charts/**/*.y*ml"
+    - glob: "**/deploy/**/*.y*ml"
+    - glob: "**/config/**/*.y*ml"
+    - glob: "**/.github/workflows/*.y*ml"
+    - glob: "**/.gitlab-ci.yml"
+    - glob: "**/azure-pipelines.yml"
+    - glob: "**/.circleci/config.yml"
+    - glob: "**/Jenkinsfile"
+    
+positive_examples:
+  - |
+    # 1. Kubernetes Deployment: single container, multiple replicas (scale = more containers)
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: users-service
+    spec:
+      replicas: 3
+      selector:
+        matchLabels:
+          app: users
+      template:
+        metadata:
+          labels:
+            app: users
+        spec:
+          containers:
+          - name: users
+            image: ghcr.io/example/users:1.2.3
+            ports:
+            - containerPort: 8080
+            readinessProbe:
+              httpGet:
+                path: /ready
+                port: 8080
+            livenessProbe:
+              httpGet:
+                path: /health
+                port: 8080
+  - |
+    # 2. Kubernetes Pod: one service per pod/container
+    apiVersion: v1
+    kind: Pod
+    metadata:
+      name: ad-hoc-worker
+      labels:
+        app: worker
+    spec:
+      containers:
+      - name: worker
+        image: registry.example.com/worker:latest
+        command: ["./worker"]
+  - |
+    # 3. Kubernetes StatefulSet: single container per pod for a stateful microservice
+    apiVersion: apps/v1
+    kind: StatefulSet
+    metadata:
+      name: orders-db
+    spec:
+      serviceName: "orders-db"
+      replicas: 2
+      selector:
+        matchLabels:
+          app: orders-db
+      template:
+        metadata:
+          labels:
+            app: orders-db
+        spec:
+          containers:
+          - name: postgres
+            image: postgres:15
+            env:
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: orders-db-secret
+                  key: password
+            volumeMounts:
+            - name: data
+              mountPath: /var/lib/postgresql/data
+      volumeClaimTemplates:
+      - metadata:
+          name: data
+        spec:
+          accessModes: ["ReadWriteOnce"]
+          resources:
+            requests:
+              storage: 20Gi
+  - |
+    # 4. Kubernetes Service to expose a single-container Deployment
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: users-service
+    spec:
+      selector:
+        app: users
+      ports:
+      - name: http
+        port: 80
+        targetPort: 8080
+  - |
+    # 5. Kubernetes HPA: scales number of container instances
+    apiVersion: autoscaling/v2
+    kind: HorizontalPodAutoscaler
+    metadata:
+      name: users-hpa
+    spec:
+      scaleTargetRef:
+        apiVersion: apps/v1
+        kind: Deployment
+        name: users-service
+      minReplicas: 2
+      maxReplicas: 10
+      metrics:
+      - type: Resource
+        resource:
+          name: cpu
+          target:
+            type: Utilization
+            averageUtilization: 70
+  - |
+    # 6. Dockerfile: package one service per container image
+    FROM node:20-alpine
+    WORKDIR /app
+    COPY package*.json ./
+    RUN npm ci --only=production
+    COPY . .
+    EXPOSE 8080
+    HEALTHCHECK --interval=30s --timeout=3s CMD node healthcheck.js || exit 1
+    CMD ["node", "server.js"]
+  - |
+    # 7. Docker Compose: separate services, each one container, can scale independently
+    version: '3.8'
+    services:
+      users:
+        build: ./services/users
+        image: example/users:latest
+        ports:
+          - "8081:8080"
+      orders:
+        build: ./services/orders
+        image: example/orders:latest
+        ports:
+          - "8082:8080"
+      payments:
+        build: ./services/payments
+        image: example/payments:latest
+        ports:
+          - "8083:8080"
+  - |
+    # 8. Docker Swarm Stack: scale by increasing replicas (more containers)
+    version: '3.8'
+    services:
+      catalog:
+        image: example/catalog:1.0.0
+        deploy:
+          replicas: 4
+          resources:
+            limits:
+              cpus: "0.50"
+              memory: 256M
+        ports:
+          - "8080:8080"
+  - |
+    # 9. ECS Task Definition: single container per task
+    {
+      "family": "users-service",
+      "networkMode": "awsvpc",
+      "requiresCompatibilities": ["FARGATE"],
+      "cpu": "256",
+      "memory": "512",
+      "containerDefinitions": [
+        {
+          "name": "users",
+          "image": "public.ecr.aws/example/users:1.2.3",
+          "portMappings": [{ "containerPort": 8080, "protocol": "tcp" }],
+          "essential": true
+        }
+      ]
+    }
+  - |
+    # 10. ECS Service: desiredCount maps to number of container instances
+    {
+      "serviceName": "users",
+      "cluster": "prod",
+      "taskDefinition": "users-service",
+      "desiredCount": 6,
+      "launchType": "FARGATE",
+      "networkConfiguration": {
+        "awsvpcConfiguration": {
+          "assignPublicIp": "DISABLED",
+          "subnets": ["subnet-abc", "subnet-def"],
+          "securityGroups": ["sg-123"]
+        }
+      }
+    }
+  - |
+    # 11. Helm values: image + replicaCount for single-container deployment template
+    replicaCount: 3
+    image:
+      repository: ghcr.io/example/inventory
+      tag: "2.1.0"
+      pullPolicy: IfNotPresent
+    resources:
+      limits:
+        cpu: "500m"
+        memory: "256Mi"
+  - |
+    # 12. Kustomize: patch image for a single-container Deployment
+    apiVersion: kustomize.config.k8s.io/v1beta1
+    kind: Kustomization
+    resources:
+      - deployment.yaml
+      - service.yaml
+    images:
+      - name: ghcr.io/example/users
+        newTag: "1.2.4"
+  - |
+    # 13. Knative/Cloud Run style Service: one container per revision
+    apiVersion: serving.knative.dev/v1
+    kind: Service
+    metadata:
+      name: report-api
+    spec:
+      template:
+        spec:
+          containers:
+          - image: gcr.io/my-proj/report-api:latest
+            ports:
+            - containerPort: 8080
+  - |
+    # 14. OpenShift DeploymentConfig: single container service instance
+    apiVersion: apps.openshift.io/v1
+    kind: DeploymentConfig
+    metadata:
+      name: billing
+    spec:
+      replicas: 2
+      selector:
+        app: billing
+      template:
+        metadata:
+          labels:
+            app: billing
+        spec:
+          containers:
+          - name: billing
+            image: quay.io/example/billing:1.0
+            ports:
+            - containerPort: 8080
+      triggers:
+      - type: ConfigChange
+  - |
+    # 15. Nomad Job (HCL): one task = one containerized service
+    job "search" {
+      datacenters = ["dc1"]
+      group "search" {
+        count = 3
+        task "api" {
+          driver = "docker"
+          config {
+            image = "example/search:1.0.0"
+            ports = ["http"]
+          }
+          resources {
+            cpu    = 500
+            memory = 256
+          }
+          service {
+            name = "search"
+            port = "http"
+          }
+        }
+        network {
+          port "http" { to = 8080 }
+        }
+      }
+    }
+  - |
+    # 16. Kubernetes Job: ephemeral single-container worker instance
+    apiVersion: batch/v1
+    kind: Job
+    metadata:
+      name: migrate-db
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+          - name: migrator
+            image: ghcr.io/example/migrator:3.4.1
+            args: ["up"]
+  - |
+    # 17. Kubernetes CronJob: runs one container per scheduled job
+    apiVersion: batch/v1
+    kind: CronJob
+    metadata:
+      name: nightly-reports
+    spec:
+      schedule: "0 2 * * *"
+      jobTemplate:
+        spec:
+          template:
+            spec:
+              restartPolicy: OnFailure
+              containers:
+              - name: reports
+                image: ghcr.io/example/reports:latest
+                args: ["--generate"]
+  - |
+    # 18. Docker Compose: scale a single service (N containers) at runtime
+    version: '3.8'
+    services:
+      api:
+        image: example/api:stable
+        ports:
+          - "8080:8080"
+        deploy:
+          replicas: 5
+  - |
+    # 19. Minimal Go service Dockerfile (single process)
+    FROM golang:1.22-alpine AS build
+    WORKDIR /src
+    COPY go.mod go.sum ./
+    RUN go mod download
+    COPY . .
+    RUN CGO_ENABLED=0 go build -o /out/app ./cmd/app
+    FROM alpine:3.20
+    RUN adduser -D app
+    USER app
+    COPY --from=build /out/app /app
+    EXPOSE 8080
+    ENTRYPOINT ["/app"]
+  - |
+    # 20. Kubernetes Deployment with Resources and Probes (single container)
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: pricing
+    spec:
+      replicas: 2
+      selector:
+        matchLabels:
+          app: pricing
+      template:
+        metadata:
+          labels:
+            app: pricing
+        spec:
+          containers:
+          - name: pricing
+            image: ghcr.io/example/pricing:2.0.0
+            resources:
+              requests: { cpu: "200m", memory: "128Mi" }
+              limits: { cpu: "500m", memory: "256Mi" }
+            ports:
+            - containerPort: 8080
+            readinessProbe:
+              httpGet: { path: /ready, port: 8080 }
+            livenessProbe:
+              httpGet: { path: /health, port: 8080 }
+  - |
+    # 21. Terraform ECS (snippet as JSON): count controls number of tasks/containers
+    {
+      "resource": {
+        "aws_ecs_service": {
+          "catalog": {
+            "name": "catalog",
+            "cluster": "prod",
+            "taskDefinition": "catalog-task",
+            "desiredCount": 3,
+            "launchType": "FARGATE"
+          }
+        }
+      }
+    }
+  - |
+    # 22. Tiltfile: one docker_build per microservice (one service per container)
+    docker_build('example/users', 'services/users')
+    docker_build('example/orders', 'services/orders')
+    k8s_yaml(['k8s/users-deployment.yaml', 'k8s/orders-deployment.yaml'])
+  - |
+    # 23. Skaffold: multiple artifacts, each builds one containerized service
+    apiVersion: skaffold/v4beta6
+    kind: Config
+    build:
+      artifacts:
+      - image: example/users
+        context: services/users
+      - image: example/orders
+        context: services/orders
+    deploy:
+      kubectl:
+        manifests:
+        - k8s/**/*.yaml
+  - |
+    # 24. Kubernetes Deployment: gRPC service packaged per container
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: recommender
+    spec:
+      replicas: 4
+      selector:
+        matchLabels:
+          app: recommender
+      template:
+        metadata:
+          labels:
+            app: recommender
+        spec:
+          containers:
+          - name: recommender
+            image: ghcr.io/example/recommender:0.9.0
+            ports:
+            - containerPort: 50051
+  - |
+    # 25. OpenFaaS function (per function containerized service)
+    apiVersion: openfaas.com/v1
+    kind: Function
+    metadata:
+      name: image-resize
+    spec:
+      image: ghcr.io/example/image-resize:latest
+      annotations:
+        com.openfaas.scale.min: "2"
+        com.openfaas.scale.max: "10"
+  
+negative_examples:
+  - |
+    # ANTI-PATTERN: Multi-container Pod (sidecar) for a single service instance
+    apiVersion: v1
+    kind: Pod
+    metadata:
+      name: users-with-logger
+    spec:
+      containers:
+      - name: users
+        image: example/users:latest
+      - name: logger
+        image: fluent/fluent-bit:latest
+  - |
+    # ANTI-PATTERN: One container runs multiple services via a process supervisor
+    FROM ubuntu:22.04
+    RUN apt-get update && apt-get install -y nginx redis supervisor
+    COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+    CMD ["/usr/bin/supervisord", "-n"]
+  - |
+    # ANTI-PATTERN: Monolithic container starting multiple microservices
+    FROM openjdk:21-jdk
+    COPY services/ /opt/services/
+    CMD ["bash", "-lc", "java -jar /opt/services/users.jar & java -jar /opt/services/orders.jar & wait"]
+  - |
+    # ANTI-PATTERN: ECS Task with multiple containers for one logical service instance
+    {
+      "family": "orders-task",
+      "containerDefinitions": [
+        { "name": "orders", "image": "example/orders:1.0.0" },
+        { "name": "aux-proxy", "image": "envoyproxy/envoy:latest" }
+      ]
+    }
+  - |
+    # ANTI-PATTERN: Docker Compose service that runs multiple daemons in the same container
+    version: '3.8'
+    services:
+      app:
+        image: ubuntu:22.04
+        command: bash -lc "service nginx start && redis-server --daemonize yes && tail -f /dev/null"
+  - |
+    # ANTI-PATTERN: Kubernetes Deployment with initContainers trying to host multiple long-running roles
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: mixed-roles
+    spec:
+      replicas: 1
+      template:
+        spec:
+          initContainers:
+          - name: prestart-consumer
+            image: busybox
+            command: ['sh', '-c', 'start-consumer-in-background']
+          containers:
+          - name: app
+            image: example/app:latest

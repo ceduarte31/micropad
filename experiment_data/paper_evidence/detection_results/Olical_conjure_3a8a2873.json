@@ -1,0 +1,166 @@
+{
+  "summary": {
+    "repository_name": "Olical/conjure",
+    "detected_patterns": [],
+    "total_patterns_scanned": 9,
+    "timestamp": "2025-10-28T18:32:51.476849",
+    "run_id": "3a8a2873"
+  },
+  "patterns": {
+    "Server-side service discovery": false,
+    "Service registry": false,
+    "3rd Party Registration": false,
+    "Single Service Instance per Host": false,
+    "Service instance per container": false,
+    "Multiple service instances per host": false,
+    "Service deployment platform": false,
+    "Service instance per VM": false,
+    "Service mesh": false
+  },
+  "scanned_files_per_pattern": {
+    "Server-side service discovery": [
+      "/data/repos/conjure/.github/workflows/benchmark.yaml",
+      "/data/repos/conjure/.github/workflows/luarocks.yml",
+      "/data/repos/conjure/.github/workflows/test.yaml"
+    ],
+    "Service registry": [
+      "/data/repos/conjure/.github/CODE_OF_CONDUCT.md",
+      "/data/repos/conjure/.github/workflows/benchmark.yaml",
+      "/data/repos/conjure/.github/workflows/luarocks.yml",
+      "/data/repos/conjure/.github/workflows/test.yaml",
+      "/data/repos/conjure/CONTRIBUTING.md",
+      "/data/repos/conjure/dev/clojure/nrepl-babashka.sh",
+      "/data/repos/conjure/dev/clojure/nrepl-base.sh",
+      "/data/repos/conjure/dev/clojure/nrepl-cider.sh",
+      "/data/repos/conjure/dev/clojure/nrepl-piggieback-cider.sh",
+      "/data/repos/conjure/dev/clojure/nrepl-shadow.sh",
+      "/data/repos/conjure/dev/common-lisp/install-quicklisp.sh",
+      "/data/repos/conjure/dev/common-lisp/ros-swank-server.sh",
+      "/data/repos/conjure/dev/common-lisp/swank-server.sh",
+      "/data/repos/conjure/dev/fennel/deps.sh",
+      "/data/repos/conjure/dev/fennel/nrepl-jeejah.sh",
+      "/data/repos/conjure/dev/guile/nrepl.sh",
+      "/data/repos/conjure/dev/guile/repl.sh",
+      "/data/repos/conjure/dev/janet/netrepl.sh",
+      "/data/repos/conjure/dev/javascript/math.js",
+      "/data/repos/conjure/dev/javascript/sandbox.js",
+      "/data/repos/conjure/dev/php/README.md",
+      "/data/repos/conjure/dev/python/sandbox.py",
+      "/data/repos/conjure/dev/racket/deps.sh",
+      "/data/repos/conjure/dev/racket/nrepl-ogion.sh",
+      "/data/repos/conjure/dev/rust/readme.md",
+      "/data/repos/conjure/dev/sql/pg-docker.sh",
+      "/data/repos/conjure/mise.toml",
+      "/data/repos/conjure/notes/clojurists-together-update-1-may-2022.md",
+      "/data/repos/conjure/notes/clojurists-together-update-30-june-2022.md",
+      "/data/repos/conjure/rplugin/python3/deoplete/sources/conjure.py",
+      "/data/repos/conjure/scripts/docker.sh",
+      "/data/repos/conjure/scripts/sponsors.sh"
+    ],
+    "3rd Party Registration": [
+      "/data/repos/conjure/.github/FUNDING.yml",
+      "/data/repos/conjure/.github/workflows/benchmark.yaml",
+      "/data/repos/conjure/.github/workflows/luarocks.yml",
+      "/data/repos/conjure/.github/workflows/test.yaml",
+      "/data/repos/conjure/dev/typescript/tsconfig.json",
+      "/data/repos/conjure/package.json"
+    ],
+    "Single Service Instance per Host": [
+      "/data/repos/conjure/.github/workflows/benchmark.yaml",
+      "/data/repos/conjure/.github/workflows/luarocks.yml",
+      "/data/repos/conjure/.github/workflows/test.yaml"
+    ],
+    "Service instance per container": [
+      "/data/repos/conjure/Dockerfile",
+      "/data/repos/conjure/scripts/docker.sh"
+    ],
+    "Multiple service instances per host": [
+      "/data/repos/conjure/dev/clojure/nrepl-babashka.sh",
+      "/data/repos/conjure/dev/clojure/nrepl-base.sh",
+      "/data/repos/conjure/dev/clojure/nrepl-cider.sh",
+      "/data/repos/conjure/dev/clojure/nrepl-piggieback-cider.sh",
+      "/data/repos/conjure/dev/clojure/nrepl-shadow.sh",
+      "/data/repos/conjure/dev/common-lisp/install-quicklisp.sh",
+      "/data/repos/conjure/dev/common-lisp/ros-swank-server.sh",
+      "/data/repos/conjure/dev/common-lisp/swank-server.sh",
+      "/data/repos/conjure/dev/fennel/deps.sh",
+      "/data/repos/conjure/dev/fennel/nrepl-jeejah.sh",
+      "/data/repos/conjure/dev/guile/nrepl.sh",
+      "/data/repos/conjure/dev/guile/repl.sh",
+      "/data/repos/conjure/dev/janet/netrepl.sh",
+      "/data/repos/conjure/dev/racket/deps.sh",
+      "/data/repos/conjure/dev/racket/nrepl-ogion.sh",
+      "/data/repos/conjure/dev/sql/pg-docker.sh",
+      "/data/repos/conjure/scripts/docker.sh",
+      "/data/repos/conjure/scripts/sponsors.sh"
+    ],
+    "Service deployment platform": [
+      "/data/repos/conjure/.github/workflows/benchmark.yaml",
+      "/data/repos/conjure/.github/workflows/luarocks.yml",
+      "/data/repos/conjure/.github/workflows/test.yaml",
+      "/data/repos/conjure/Dockerfile",
+      "/data/repos/conjure/dev/clojure/nrepl-babashka.sh",
+      "/data/repos/conjure/dev/clojure/nrepl-base.sh",
+      "/data/repos/conjure/dev/clojure/nrepl-cider.sh",
+      "/data/repos/conjure/dev/clojure/nrepl-piggieback-cider.sh",
+      "/data/repos/conjure/dev/clojure/nrepl-shadow.sh",
+      "/data/repos/conjure/dev/common-lisp/install-quicklisp.sh",
+      "/data/repos/conjure/dev/common-lisp/ros-swank-server.sh",
+      "/data/repos/conjure/dev/common-lisp/swank-server.sh",
+      "/data/repos/conjure/dev/fennel/deps.sh",
+      "/data/repos/conjure/dev/fennel/nrepl-jeejah.sh",
+      "/data/repos/conjure/dev/guile/nrepl.sh",
+      "/data/repos/conjure/dev/guile/repl.sh",
+      "/data/repos/conjure/dev/janet/netrepl.sh",
+      "/data/repos/conjure/dev/racket/deps.sh",
+      "/data/repos/conjure/dev/racket/nrepl-ogion.sh",
+      "/data/repos/conjure/dev/sql/pg-docker.sh",
+      "/data/repos/conjure/dev/typescript/tsconfig.json",
+      "/data/repos/conjure/package.json",
+      "/data/repos/conjure/scripts/docker.sh",
+      "/data/repos/conjure/scripts/sponsors.sh"
+    ],
+    "Service instance per VM": [
+      "/data/repos/conjure/.github/workflows/benchmark.yaml",
+      "/data/repos/conjure/.github/workflows/luarocks.yml",
+      "/data/repos/conjure/.github/workflows/test.yaml"
+    ],
+    "Service mesh": [
+      "/data/repos/conjure/.github/workflows/benchmark.yaml",
+      "/data/repos/conjure/.github/workflows/luarocks.yml",
+      "/data/repos/conjure/.github/workflows/test.yaml",
+      "/data/repos/conjure/dev/typescript/tsconfig.json",
+      "/data/repos/conjure/package.json"
+    ]
+  },
+  "_metadata": {
+    "experiment": {
+      "run_number": 1
+    },
+    "reproducibility": {
+      "configuration": {
+        "thresholds": {
+          "high_priority": 0.5,
+          "medium_priority": 0.3,
+          "min_priority_score": 0.1,
+          "judge_confidence": 5
+        },
+        "weight_scheme": "llm_dominant",
+        "random_seed": 1761676371
+      }
+    },
+    "models": {
+      "planner": "gpt-5-nano-2025-08-07",
+      "investigator": "gpt-5-nano-2025-08-07",
+      "judge": "gpt-5-nano-2025-08-07",
+      "embedding": "jinaai/jina-embeddings-v2-base-code"
+    },
+    "priority_weights": {
+      "keyword": 0.2,
+      "embedding": 0.1,
+      "graph": 0.0,
+      "llm": 0.7
+    },
+    "source_log": "detection_20251028_183251.log"
+  }
+}

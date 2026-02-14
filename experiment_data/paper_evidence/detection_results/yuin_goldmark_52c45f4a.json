@@ -1,0 +1,185 @@
+{
+  "summary": {
+    "repository_name": "yuin/goldmark",
+    "detected_patterns": [],
+    "total_patterns_scanned": 9,
+    "timestamp": "2025-10-31T15:07:46.944450",
+    "run_id": "52c45f4a"
+  },
+  "patterns": {
+    "Server-side service discovery": false,
+    "Service registry": false,
+    "3rd Party Registration": false,
+    "Single Service Instance per Host": false,
+    "Service instance per container": false,
+    "Multiple service instances per host": false,
+    "Service deployment platform": false,
+    "Service instance per VM": false,
+    "Service mesh": false
+  },
+  "scanned_files_per_pattern": {
+    "Server-side service discovery": [
+      "/data/repos/goldmark/.github/workflows/stale.yaml",
+      "/data/repos/goldmark/.github/workflows/test.yaml"
+    ],
+    "Service registry": [
+      "/data/repos/goldmark/.github/ISSUE_TEMPLATE.md",
+      "/data/repos/goldmark/.github/ISSUE_TEMPLATE/general-issue-template.md",
+      "/data/repos/goldmark/.github/PULL_REQUEST_TEMPLATE/pull_request_template.md",
+      "/data/repos/goldmark/.github/workflows/stale.yaml",
+      "/data/repos/goldmark/.github/workflows/test.yaml",
+      "/data/repos/goldmark/README.md",
+      "/data/repos/goldmark/_benchmark/cmark/_data.md",
+      "/data/repos/goldmark/_benchmark/cmark/goldmark_benchmark.go",
+      "/data/repos/goldmark/_benchmark/go/_data.md",
+      "/data/repos/goldmark/_benchmark/go/benchmark_test.go",
+      "/data/repos/goldmark/_tools/gen-emb-structs.go",
+      "/data/repos/goldmark/_tools/gen-oss-fuzz-corpus.go",
+      "/data/repos/goldmark/_tools/gen-unicode-case-folding-map.go",
+      "/data/repos/goldmark/_tools/main.go",
+      "/data/repos/goldmark/ast/ast.go",
+      "/data/repos/goldmark/ast/ast_test.go",
+      "/data/repos/goldmark/ast/block.go",
+      "/data/repos/goldmark/ast/inline.go",
+      "/data/repos/goldmark/ast_test.go",
+      "/data/repos/goldmark/commonmark_test.go",
+      "/data/repos/goldmark/extension/ast/definition_list.go",
+      "/data/repos/goldmark/extension/ast/footnote.go",
+      "/data/repos/goldmark/extension/ast/strikethrough.go",
+      "/data/repos/goldmark/extension/ast/table.go",
+      "/data/repos/goldmark/extension/ast/tasklist.go",
+      "/data/repos/goldmark/extension/ast_test.go",
+      "/data/repos/goldmark/extension/cjk.go",
+      "/data/repos/goldmark/extension/cjk_test.go",
+      "/data/repos/goldmark/extension/definition_list.go",
+      "/data/repos/goldmark/extension/definition_list_test.go",
+      "/data/repos/goldmark/extension/footnote.go",
+      "/data/repos/goldmark/extension/footnote_test.go",
+      "/data/repos/goldmark/extension/gfm.go",
+      "/data/repos/goldmark/extension/linkify.go",
+      "/data/repos/goldmark/extension/linkify_test.go",
+      "/data/repos/goldmark/extension/package.go",
+      "/data/repos/goldmark/extension/strikethrough.go",
+      "/data/repos/goldmark/extension/strikethrough_test.go",
+      "/data/repos/goldmark/extension/table.go",
+      "/data/repos/goldmark/extension/table_test.go",
+      "/data/repos/goldmark/extension/tasklist.go",
+      "/data/repos/goldmark/extension/tasklist_test.go",
+      "/data/repos/goldmark/extension/typographer.go",
+      "/data/repos/goldmark/extension/typographer_test.go",
+      "/data/repos/goldmark/extra_test.go",
+      "/data/repos/goldmark/fuzz/fuzz_test.go",
+      "/data/repos/goldmark/fuzz/oss_fuzz_test.go",
+      "/data/repos/goldmark/markdown.go",
+      "/data/repos/goldmark/options_test.go",
+      "/data/repos/goldmark/parser/attribute.go",
+      "/data/repos/goldmark/parser/atx_heading.go",
+      "/data/repos/goldmark/parser/auto_link.go",
+      "/data/repos/goldmark/parser/blockquote.go",
+      "/data/repos/goldmark/parser/code_block.go",
+      "/data/repos/goldmark/parser/code_span.go",
+      "/data/repos/goldmark/parser/delimiter.go",
+      "/data/repos/goldmark/parser/emphasis.go",
+      "/data/repos/goldmark/parser/fcode_block.go",
+      "/data/repos/goldmark/parser/html_block.go",
+      "/data/repos/goldmark/parser/link.go",
+      "/data/repos/goldmark/parser/link_ref.go",
+      "/data/repos/goldmark/parser/list.go",
+      "/data/repos/goldmark/parser/list_item.go",
+      "/data/repos/goldmark/parser/paragraph.go",
+      "/data/repos/goldmark/parser/parser.go",
+      "/data/repos/goldmark/parser/raw_html.go",
+      "/data/repos/goldmark/parser/setext_headings.go",
+      "/data/repos/goldmark/parser/thematic_break.go",
+      "/data/repos/goldmark/renderer/html/html.go",
+      "/data/repos/goldmark/renderer/renderer.go",
+      "/data/repos/goldmark/testutil/testutil.go",
+      "/data/repos/goldmark/testutil/testutil_test.go",
+      "/data/repos/goldmark/text/package.go",
+      "/data/repos/goldmark/text/reader.go",
+      "/data/repos/goldmark/text/reader_test.go",
+      "/data/repos/goldmark/text/segment.go",
+      "/data/repos/goldmark/util/html5entities.gen.go",
+      "/data/repos/goldmark/util/html5entities.go",
+      "/data/repos/goldmark/util/unicode_case_folding.gen.go",
+      "/data/repos/goldmark/util/unicode_case_folding.go",
+      "/data/repos/goldmark/util/util.go",
+      "/data/repos/goldmark/util/util_cjk.go",
+      "/data/repos/goldmark/util/util_safe.go",
+      "/data/repos/goldmark/util/util_unsafe_go120.go",
+      "/data/repos/goldmark/util/util_unsafe_go121.go"
+    ],
+    "3rd Party Registration": [
+      "/data/repos/goldmark/.github/FUNDING.yml",
+      "/data/repos/goldmark/.github/workflows/stale.yaml",
+      "/data/repos/goldmark/.github/workflows/test.yaml",
+      "/data/repos/goldmark/_test/spec.json",
+      "/data/repos/goldmark/_tools/html5entities.json",
+      "/data/repos/goldmark/_tools/unicode-case-folding-map.json"
+    ],
+    "Single Service Instance per Host": [
+      "/data/repos/goldmark/.github/workflows/stale.yaml",
+      "/data/repos/goldmark/.github/workflows/test.yaml"
+    ],
+    "Service instance per container": [
+      "/data/repos/goldmark/.github/workflows/stale.yaml",
+      "/data/repos/goldmark/.github/workflows/test.yaml"
+    ],
+    "Multiple service instances per host": [
+      "/data/repos/goldmark/Makefile",
+      "/data/repos/goldmark/_benchmark/cmark/Makefile"
+    ],
+    "Service deployment platform": [
+      "/data/repos/goldmark/.github/workflows/stale.yaml",
+      "/data/repos/goldmark/.github/workflows/test.yaml",
+      "/data/repos/goldmark/Makefile",
+      "/data/repos/goldmark/_benchmark/cmark/Makefile",
+      "/data/repos/goldmark/_test/spec.json",
+      "/data/repos/goldmark/_tools/html5entities.json",
+      "/data/repos/goldmark/_tools/unicode-case-folding-map.json"
+    ],
+    "Service instance per VM": [
+      "/data/repos/goldmark/.github/workflows/stale.yaml",
+      "/data/repos/goldmark/.github/workflows/test.yaml",
+      "/data/repos/goldmark/Makefile",
+      "/data/repos/goldmark/_benchmark/cmark/Makefile"
+    ],
+    "Service mesh": [
+      "/data/repos/goldmark/.github/workflows/stale.yaml",
+      "/data/repos/goldmark/.github/workflows/test.yaml",
+      "/data/repos/goldmark/_test/spec.json",
+      "/data/repos/goldmark/_tools/html5entities.json",
+      "/data/repos/goldmark/_tools/unicode-case-folding-map.json"
+    ]
+  },
+  "_metadata": {
+    "experiment": {
+      "run_number": 1
+    },
+    "reproducibility": {
+      "configuration": {
+        "thresholds": {
+          "high_priority": 0.5,
+          "medium_priority": 0.3,
+          "min_priority_score": 0.1,
+          "judge_confidence": 5
+        },
+        "weight_scheme": "llm_dominant",
+        "random_seed": 1761923266
+      }
+    },
+    "models": {
+      "planner": "gpt-5-nano-2025-08-07",
+      "investigator": "gpt-5-nano-2025-08-07",
+      "judge": "gpt-5-nano-2025-08-07",
+      "embedding": "jinaai/jina-embeddings-v2-base-code"
+    },
+    "priority_weights": {
+      "keyword": 0.2,
+      "embedding": 0.1,
+      "graph": 0.0,
+      "llm": 0.7
+    },
+    "source_log": "detection_20251031_150746.log"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "summary": {
+    "repository_name": "target_repo",
+    "detected_patterns": [],
+    "total_patterns_scanned": 0,
+    "timestamp": "2026-02-09T15:09:35.753022",
+    "run_id": "d45ac082"
+  },
+  "patterns": {},
+  "scanned_files_per_pattern": {},
+  "_metadata": {
+    "experiment": {
+      "run_number": 1
+    },
+    "reproducibility": {
+      "configuration": {
+        "thresholds": {
+          "high_priority": 0.5,
+          "medium_priority": 0.3,
+          "min_priority_score": 0.1,
+          "judge_confidence": 8
+        },
+        "weight_scheme": "llm_dominant",
+        "random_seed": 1770649775
+      }
+    },
+    "models": {
+      "planner": "gpt-5-nano-2025-08-07",
+      "investigator": "gpt-5-nano-2025-08-07",
+      "judge": "gpt-5-nano-2025-08-07",
+      "embedding": "jinaai/jina-embeddings-v2-base-code"
+    },
+    "priority_weights": {
+      "keyword": 0.2,
+      "embedding": 0.1,
+      "graph": 0.0,
+      "llm": 0.7
+    },
+    "source_log": "detection_20260209_150935.log"
+  }
+}

@@ -1,0 +1,10 @@
+Pattern,F1_Score,Max_FDI,FDI_Std_Residual,Prevalence,Prev_Std_Residual,FDI_Outlier,Prev_Outlier
+3rd Party Registration,0.09,1.93,-0.4237,0.1053,-0.3255,False,False
+Multiple service instances per host,0.47,48.32,0.4736,0.2947,0.3743,False,False
+Server-side service discovery,0.24,11.56,0.422,0.0947,0.9643,False,False
+Service deployment platform,0.42,79.12,-1.7336,0.2421,0.6109,True,False
+Service instance per VM,0.16,9.15,-0.1833,0.1737,-0.5944,False,False
+Service instance per container,0.7,54.59,2.2512,0.3474,1.5333,True,True
+Service mesh,0.15,5.42,-0.0649,0.1105,0.0784,False,False
+Service registry,0.12,3.67,-0.244,0.1421,-0.5296,False,False
+Single Service Instance per Host,0.19,19.61,-0.4973,0.3211,-2.1118,False,True

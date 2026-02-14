@@ -1,0 +1,127 @@
+{
+  "summary": {
+    "repository_name": "Frolic-chat/Frolic",
+    "detected_patterns": [],
+    "total_patterns_scanned": 9,
+    "timestamp": "2025-10-27T23:35:50.777550",
+    "run_id": "fe2692d3"
+  },
+  "patterns": {
+    "Server-side service discovery": false,
+    "Service registry": false,
+    "3rd Party Registration": false,
+    "Single Service Instance per Host": false,
+    "Service instance per container": false,
+    "Multiple service instances per host": false,
+    "Service deployment platform": false,
+    "Service instance per VM": false,
+    "Service mesh": false
+  },
+  "scanned_files_per_pattern": {
+    "Server-side service discovery": [
+      "/data/repos/Frolic/.github/workflows/generate-docs.yml"
+    ],
+    "Service registry": [
+      "/data/repos/Frolic/.github/pull_request_template.md",
+      "/data/repos/Frolic/.github/workflows/generate-docs.yml",
+      "/data/repos/Frolic/COPYING.md",
+      "/data/repos/Frolic/PRIVACY.md",
+      "/data/repos/Frolic/README.md",
+      "/data/repos/Frolic/chat/preview/assets/browser.pre.js",
+      "/data/repos/Frolic/chat/preview/assets/browser.processor.raw.js",
+      "/data/repos/Frolic/devtools/README.md",
+      "/data/repos/Frolic/electron/pack.js",
+      "/data/repos/Frolic/electron/release-scripts/linux.sh",
+      "/data/repos/Frolic/electron/release-scripts/macos.sh",
+      "/data/repos/Frolic/electron/release-scripts/windows-canary.sh",
+      "/data/repos/Frolic/electron/release-scripts/windows.sh",
+      "/data/repos/Frolic/electron/webpack.config.js",
+      "/data/repos/Frolic/learn/dictionary/assets/mutator.raw.js",
+      "/data/repos/Frolic/learn/store/queries/download.js",
+      "/data/repos/Frolic/learn/store/queries/unknown-species.js",
+      "/data/repos/Frolic/scss/importer.js",
+      "/data/repos/Frolic/tslint/vuePropsRule.js",
+      "/data/repos/Frolic/webpack.js"
+    ],
+    "3rd Party Registration": [
+      "/data/repos/Frolic/.github/workflows/generate-docs.yml",
+      "/data/repos/Frolic/electron/package.json",
+      "/data/repos/Frolic/electron/tsconfig-main.json",
+      "/data/repos/Frolic/electron/tsconfig-renderer.json",
+      "/data/repos/Frolic/package.json",
+      "/data/repos/Frolic/scss/package.json",
+      "/data/repos/Frolic/tsconfig.json",
+      "/data/repos/Frolic/tslint.json"
+    ],
+    "Single Service Instance per Host": [
+      "/data/repos/Frolic/.github/workflows/generate-docs.yml"
+    ],
+    "Service instance per container": [
+      "/data/repos/Frolic/.github/workflows/generate-docs.yml"
+    ],
+    "Multiple service instances per host": [
+      "/data/repos/Frolic/electron/release-scripts/linux.sh",
+      "/data/repos/Frolic/electron/release-scripts/macos.sh",
+      "/data/repos/Frolic/electron/release-scripts/windows-canary.sh",
+      "/data/repos/Frolic/electron/release-scripts/windows.sh"
+    ],
+    "Service deployment platform": [
+      "/data/repos/Frolic/.github/workflows/generate-docs.yml",
+      "/data/repos/Frolic/electron/package.json",
+      "/data/repos/Frolic/electron/release-scripts/linux.sh",
+      "/data/repos/Frolic/electron/release-scripts/macos.sh",
+      "/data/repos/Frolic/electron/release-scripts/windows-canary.sh",
+      "/data/repos/Frolic/electron/release-scripts/windows.sh",
+      "/data/repos/Frolic/electron/tsconfig-main.json",
+      "/data/repos/Frolic/electron/tsconfig-renderer.json",
+      "/data/repos/Frolic/package.json",
+      "/data/repos/Frolic/scss/package.json",
+      "/data/repos/Frolic/tsconfig.json",
+      "/data/repos/Frolic/tslint.json"
+    ],
+    "Service instance per VM": [
+      "/data/repos/Frolic/.github/workflows/generate-docs.yml",
+      "/data/repos/Frolic/.run/Debug.run.xml"
+    ],
+    "Service mesh": [
+      "/data/repos/Frolic/.github/workflows/generate-docs.yml",
+      "/data/repos/Frolic/electron/package.json",
+      "/data/repos/Frolic/electron/tsconfig-main.json",
+      "/data/repos/Frolic/electron/tsconfig-renderer.json",
+      "/data/repos/Frolic/package.json",
+      "/data/repos/Frolic/scss/package.json",
+      "/data/repos/Frolic/tsconfig.json",
+      "/data/repos/Frolic/tslint.json"
+    ]
+  },
+  "_metadata": {
+    "experiment": {
+      "run_number": 1
+    },
+    "reproducibility": {
+      "configuration": {
+        "thresholds": {
+          "high_priority": 0.5,
+          "medium_priority": 0.3,
+          "min_priority_score": 0.1,
+          "judge_confidence": 5
+        },
+        "weight_scheme": "llm_dominant",
+        "random_seed": 1761608150
+      }
+    },
+    "models": {
+      "planner": "gpt-5-nano-2025-08-07",
+      "investigator": "gpt-5-nano-2025-08-07",
+      "judge": "gpt-5-nano-2025-08-07",
+      "embedding": "jinaai/jina-embeddings-v2-base-code"
+    },
+    "priority_weights": {
+      "keyword": 0.2,
+      "embedding": 0.1,
+      "graph": 0.0,
+      "llm": 0.7
+    },
+    "source_log": "detection_20251027_233550.log"
+  }
+}

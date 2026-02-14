@@ -1,0 +1,552 @@
+pattern_name: "Multiple service instances per host"
+description: |
+  How are services packaged and deployed? Run multiple instances of different services on a host (Physical or Virtual machine).
+  There are various ways of deploying a service instance on a shared host including:
+  - Deploy each service instance as an OS process (e.g., multiple Java processes; one Tomcat/Jetty instance per service instance)
+  - Deploy multiple service instances in the same runtime (e.g., multiple web applications in a single Tomcat/Jetty, or OSGi bundles in a single JVM)
+repository_fingerprint:
+  glob_patterns:
+    # --- Tier 1: The Spear (High-Confidence & High-Diversity Keyword Search) ---
+    # These files explicitly configure multiple services/processes to run on the same host
+    - glob: "**/*.service" # systemd unit files hosting multiple services on one machine
+      search_method: "keyword"
+      keywords: ["[Unit]", "[Service]", "ExecStart=", "WantedBy=multi-user.target"]
+    - glob: "**/*@.service" # systemd template units for multi-instance on one host
+      search_method: "keyword"
+      keywords: ["[Unit]", "[Service]", "ExecStart=", "%i"]
+    - glob: "**/supervisord.conf" # supervisord with multiple programs
+      search_method: "keyword"
+      keywords: ["[program:", "numprocs", "command=", "autostart", "autorestart"]
+    - glob: "**/supervisor*.conf"
+      search_method: "keyword"
+      keywords: ["[program:", "group:", "command=", "numprocs", "startretries"]
+    - glob: "**/monit*.conf" # Monit supervising multiple local processes
+      search_method: "keyword"
+      keywords: ["check process", "start program", "stop program"]
+    - glob: "**/init/*.conf" # Upstart jobs
+      search_method: "keyword"
+      keywords: ["start on", "stop on", "exec", "respawn", "instance"]
+    - glob: "**/init.d/*" # SysV init scripts controlling local daemons
+      search_method: "keyword"
+      keywords: ["start)", "stop)", "status)", "start-stop-daemon", "daemon"]
+    - glob: "**/launchd/*.plist" # macOS launchd service definitions
+      search_method: "keyword"
+      keywords: ["Label", "ProgramArguments", "KeepAlive", "RunAtLoad"]
+    - glob: "**/ecosystem.config.js" # PM2 multi-app configuration
+      search_method: "keyword"
+      keywords: ["module.exports", "apps:", "script", "instances", "exec_mode"]
+    - glob: "**/pm2*.json"
+      search_method: "keyword"
+      keywords: ["apps", "script", "instances", "name"]
+    - glob: "**/Procfile" # Foreman/Heroku-style multi-process per host
+      search_method: "keyword"
+      keywords: ["web:", "worker:", "queue:", "command"]
+    - glob: "**/conf/server.xml" # Tomcat hosting multiple webapps
+      search_method: "keyword"
+      keywords: ["<Engine", "<Host", "<Context", "appBase", "docBase"]
+    - glob: "**/jetty*.xml" # Jetty contexts for multiple apps
+      search_method: "keyword"
+      keywords: ["<Configure", "ContextHandler", "contextPath", "war"]
+    - glob: "**/contexts/*.xml" # Jetty/Tomcat context descriptors
+      search_method: "keyword"
+      keywords: ["<Context", "docBase", "path", "contextPath"]
+    - glob: "**/features*.xml" # Apache Karaf/OSGi features referencing multiple bundles
+      search_method: "keyword"
+      keywords: ["<features", "<feature", "<bundle"]
+    - glob: "**/MANIFEST.MF" # OSGi bundles co-located in one container
+      search_method: "keyword"
+      keywords: ["Bundle-SymbolicName", "Bundle-Version", "Import-Package", "Export-Package"]
+    - glob: "**/nginx*.conf" # Nginx proxying to multiple local services on same host
+      search_method: "keyword"
+      keywords: ["upstream", "proxy_pass", "127.0.0.1:", "localhost:"]
+    - glob: "**/httpd*.conf" # Apache httpd proxy to local services
+      search_method: "keyword"
+      keywords: ["ProxyPass", "ProxyPassReverse", "127.0.0.1:", "localhost:"]
+    - glob: "**/*.ps1" # Windows services defined via PowerShell
+      search_method: "keyword"
+      keywords: ["New-Service", "New-ItemProperty", "Set-Service", "Start-Service"]
+    - glob: "**/*.bat"
+      search_method: "keyword"
+      keywords: ["sc create", "nssm install", "start", "stop"]
+
+    # --- Tier 2: The Cast Net (Contextual & Suggestive Embedding Search) ---
+    # Infra-as-code and config management orchestrating multiple local services on a single host
+    - glob: "**/ansible/**/*.y*ml"
+      search_method: "keyword"
+      keywords: ["systemd:", "service:", "state: started", "enabled: true", "loop:"]
+    - glob: "**/playbooks/**/*.y*ml"
+      search_method: "keyword"
+      keywords: ["systemd:", "supervisorctl", "monit", "service:"]
+    - glob: "**/puppet/**/*.pp"
+      search_method: "keyword"
+      keywords: ["service {", "ensure => running", "enable => true"]
+    - glob: "**/salt/**/*.sls"
+      search_method: "keyword"
+      keywords: ["service.running", "enable: true", "watch:", "require:"]
+    - glob: "**/chef/**/*.rb"
+      search_method: "keyword"
+      keywords: ["systemd_unit", "service", "action :enable", "action [:enable, :start]"]
+    - glob: "**/Makefile"
+      search_method: "keyword"
+      keywords: ["start-", "stop-", "run-", "java -jar", "gunicorn", "celery"]
+    - glob: "**/*.sh"
+      search_method: "keyword"
+      keywords: ["java -jar", "nohup", "&", "exec", "celery -A", "gunicorn", "node", "pm2 start"]
+    - glob: "**/runit/**/run"
+      search_method: "keyword"
+      keywords: ["#!/bin/sh", "exec", "sv", "2>&1"]
+
+    # --- Tier 3: The Trawler (Broad Catch-all Embedding Search) ---
+    # General directories that may contain per-host multi-service packaging and scripts
+    - glob: "**/deploy/**/*"
+    - glob: "**/ops/**/*"
+    - glob: "**/scripts/**/*"
+    - glob: "**/config/**/*"
+    - glob: "**/init/**/*"
+    - glob: "**/etc/**/*"
+    - glob: "**/infra/**/*"
+    
+positive_examples:
+  - |
+    # 1. systemd: Two independent services and a target to start both on the same host
+    # /etc/systemd/system/orders.service
+    [Unit]
+    Description=Orders Service
+    After=network.target
+    [Service]
+    ExecStart=/usr/bin/java -jar /opt/services/orders/orders.jar --server.port=8081
+    Restart=always
+    User=svc
+    [Install]
+    WantedBy=multi-user.target
+    # /etc/systemd/system/customers.service
+    [Unit]
+    Description=Customers Service
+    After=network.target
+    [Service]
+    ExecStart=/usr/bin/java -jar /opt/services/customers/customers.jar --server.port=8082
+    Restart=always
+    User=svc
+    [Install]
+    WantedBy=multi-user.target
+    # /etc/systemd/system/microservices.target
+    [Unit]
+    Description=Start all microservices on this host
+    Requires=orders.service customers.service
+    After=orders.service customers.service
+    [Install]
+    WantedBy=multi-user.target
+  - |
+    # 2. systemd template unit: Multiple instances on the same host using @ notation
+    # /etc/systemd/system/app@.service
+    [Unit]
+    Description=Generic App Instance %i
+    After=network.target
+    [Service]
+    ExecStart=/usr/bin/java -jar /opt/apps/%i/%i.jar --server.port=%I_PORT
+    Environment=JAVA_OPTS=-Xms256m -Xmx512m
+    Restart=on-failure
+    User=svc
+    [Install]
+    WantedBy=multi-user.target
+    # Enable two instances on different ports
+    # systemctl enable --now app@orders.service
+    # systemctl enable --now app@catalog.service
+  - |
+    # 3. supervisord: Multiple programs co-located on one VM
+    [supervisord]
+    nodaemon=true
+    logfile=/var/log/supervisord.log
+    [program:orders]
+    command=/usr/bin/java -jar /opt/services/orders/orders.jar --server.port=8081
+    autostart=true
+    autorestart=true
+    stdout_logfile=/var/log/orders.out.log
+    stderr_logfile=/var/log/orders.err.log
+    [program:customers]
+    command=/usr/bin/java -jar /opt/services/customers/customers.jar --server.port=8082
+    autostart=true
+    autorestart=true
+    stdout_logfile=/var/log/customers.out.log
+    stderr_logfile=/var/log/customers.err.log
+  - |
+    # 4. Upstart: Two jobs on the same host
+    # /etc/init/orders.conf
+    description "Orders Service"
+    start on started network
+    stop on runlevel [!2345]
+    respawn
+    exec /usr/bin/java -jar /opt/services/orders/orders.jar --server.port=8081
+    # /etc/init/customers.conf
+    description "Customers Service"
+    start on started network
+    stop on runlevel [!2345]
+    respawn
+    exec /usr/bin/java -jar /opt/services/customers/customers.jar --server.port=8082
+  - |
+    # 5. Monit: Monitor and manage multiple local services
+    set daemon 30
+    set logfile /var/log/monit.log
+    check process orders with pidfile /var/run/orders.pid
+      start program = "/bin/systemctl start orders"
+      stop program  = "/bin/systemctl stop orders"
+    check process customers with pidfile /var/run/customers.pid
+      start program = "/bin/systemctl start customers"
+      stop program  = "/bin/systemctl stop customers"
+  - |
+    # 6. macOS launchd: Two LaunchDaemons on one host
+    # /Library/LaunchDaemons/com.example.orders.plist
+    <?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+     "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+    <plist version="1.0"><dict>
+      <key>Label</key><string>com.example.orders</string>
+      <key>ProgramArguments</key><array>
+        <string>/usr/bin/java</string><string>-jar</string>
+        <string>/opt/services/orders/orders.jar</string><string>--server.port=8081</string>
+      </array>
+      <key>RunAtLoad</key><true/>
+      <key>KeepAlive</key><true/>
+    </dict></plist>
+    ---
+    # /Library/LaunchDaemons/com.example.customers.plist
+    <?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+     "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+    <plist version="1.0"><dict>
+      <key>Label</key><string>com.example.customers</string>
+      <key>ProgramArguments</key><array>
+        <string>/usr/bin/java</string><string>-jar</string>
+        <string>/opt/services/customers/customers.jar</string><string>--server.port=8082</string>
+      </array>
+      <key>RunAtLoad</key><true/>
+      <key>KeepAlive</key><true/>
+    </dict></plist>
+  - |
+    # 7. Windows PowerShell: Register two Windows Services on the same machine
+    New-Service -Name "OrdersService" -BinaryPathName 'C:\Program Files\Java\bin\java.exe -jar C:\apps\orders\orders.jar --server.port=8081' -DisplayName "Orders Service" -StartupType Automatic
+    New-Service -Name "CustomersService" -BinaryPathName 'C:\Program Files\Java\bin\java.exe -jar C:\apps\customers\customers.jar --server.port=8082' -DisplayName "Customers Service" -StartupType Automatic
+    Start-Service OrdersService
+    Start-Service CustomersService
+  - |
+    # 8. Windows NSSM: Install multiple services on a single host
+    nssm install OrdersService "C:\Program Files\Java\bin\java.exe" "-jar C:\apps\orders\orders.jar --server.port=8081"
+    nssm install CustomersService "C:\Program Files\Java\bin\java.exe" "-jar C:\apps\customers\customers.jar --server.port=8082"
+    nssm start OrdersService
+    nssm start CustomersService
+  - |
+    # 9. PM2 ecosystem: Co-locating multiple node services
+    module.exports = {
+      apps: [
+        {
+          name: "orders",
+          script: "orders/server.js",
+          instances: 2,
+          exec_mode: "cluster",
+          env: { PORT: 3001 }
+        },
+        {
+          name: "customers",
+          script: "customers/server.js",
+          instances: 1,
+          env: { PORT: 3002 }
+        }
+      ]
+    }
+  - |
+    # 10. Procfile: Multiple processes on a single box via foreman
+    web: java -jar orders/orders.jar --server.port=8081
+    worker: java -jar customers/customers.jar --server.port=8082
+  - |
+    # 11. Tomcat: Multiple webapps in a single container (shared JVM)
+    # conf/server.xml (partial)
+    <Server>
+      <Service name="Catalina">
+        <Engine name="Catalina" defaultHost="localhost">
+          <Host name="localhost" appBase="webapps">
+            <Context docBase="/opt/tomcat/webapps/orders.war" path="/orders"/>
+            <Context docBase="/opt/tomcat/webapps/customers.war" path="/customers"/>
+          </Host>
+        </Engine>
+      </Service>
+    </Server>
+  - |
+    # 12. Tomcat context descriptors: Multiple services deployed to same Tomcat
+    # conf/Catalina/localhost/orders.xml
+    <Context docBase="/opt/apps/orders.war" path="/orders"/>
+    # conf/Catalina/localhost/customers.xml
+    <Context docBase="/opt/apps/customers.war" path="/customers"/>
+  - |
+    # 13. Jetty: Two webapps (contexts) on the same Jetty instance
+    # etc/jetty.xml (partial)
+    <Configure id="Server" class="org.eclipse.jetty.server.Server">
+      <Call name="addBean"><Arg>
+        <New class="org.eclipse.jetty.deploy.DeploymentManager">
+          <Set name="contexts"><Ref refid="Contexts"/></Set>
+          <Set name="monitoredDirName">/opt/jetty/webapps</Set>
+        </New>
+      </Arg></Call>
+    </Configure>
+    # /opt/jetty/webapps/orders.xml
+    <Configure class="org.eclipse.jetty.webapp.WebAppContext">
+      <Set name="contextPath">/orders</Set>
+      <Set name="war">/opt/apps/orders.war</Set>
+    </Configure>
+    # /opt/jetty/webapps/customers.xml
+    <Configure class="org.eclipse.jetty.webapp.WebAppContext">
+      <Set name="contextPath">/customers</Set>
+      <Set name="war">/opt/apps/customers.war</Set>
+    </Configure>
+  - |
+    # 14. Apache Karaf (OSGi): Deploy multiple bundles/features in one JVM
+    # etc/org.apache.karaf.features.cfg (partial)
+    featuresBoot=standard,enterprise,aries-blueprint,web
+    # custom features.xml
+    <features name="example-features" xmlns="http://karaf.apache.org/xmlns/features/v1.4.0">
+      <feature name="orders-feature" version="1.0.0">
+        <bundle>mvn:com.example/orders/1.0.0</bundle>
+      </feature>
+      <feature name="customers-feature" version="1.0.0">
+        <bundle>mvn:com.example/customers/1.0.0</bundle>
+      </feature>
+    </features>
+  - |
+    # 15. Nginx: Reverse proxy to multiple local services on one host
+    events {}
+    http {
+      upstream orders_upstream { server 127.0.0.1:8081; }
+      upstream customers_upstream { server 127.0.0.1:8082; }
+      server {
+        listen 80;
+        location /orders/ { proxy_pass http://orders_upstream/; }
+        location /customers/ { proxy_pass http://customers_upstream/; }
+      }
+    }
+  - |
+    # 16. Apache httpd: ProxyPass to multiple on-host services
+    <VirtualHost *:80>
+      ServerName app.local
+      ProxyPreserveHost On
+      ProxyPass /orders http://127.0.0.1:8081
+      ProxyPassReverse /orders http://127.0.0.1:8081
+      ProxyPass /customers http://127.0.0.1:8082
+      ProxyPassReverse /customers http://127.0.0.1:8082
+    </VirtualHost>
+  - |
+    # 17. runit: Two services directories for co-located daemons
+    # /etc/service/orders/run
+    #!/bin/sh
+    exec /usr/bin/java -jar /opt/services/orders/orders.jar --server.port=8081 2>&1
+    # /etc/service/customers/run
+    #!/bin/sh
+    exec /usr/bin/java -jar /opt/services/customers/customers.jar --server.port=8082 2>&1
+  - |
+    # 18. systemd: Separate services for API and worker on same host
+    # api.service
+    [Unit]
+    Description=Python API
+    After=network.target
+    [Service]
+    WorkingDirectory=/opt/api
+    ExecStart=/usr/bin/gunicorn -w 4 -b 0.0.0.0:5000 app:app
+    Restart=always
+    User=svc
+    [Install]
+    WantedBy=multi-user.target
+    # worker.service
+    [Unit]
+    Description=Celery Worker
+    After=network.target
+    [Service]
+    WorkingDirectory=/opt/api
+    ExecStart=/usr/bin/celery -A app.celery worker -Q default -c 2
+    Restart=always
+    User=svc
+    [Install]
+    WantedBy=multi-user.target
+  - |
+    # 19. supervisord: Scale out a single service with multiple local instances
+    [program:search]
+    command=/usr/bin/java -jar /opt/services/search/search.jar --server.port=%(process_num)s911
+    numprocs=3
+    process_name=%(program_name)s_%(process_num)02d
+    autostart=true
+    autorestart=true
+  - |
+    # 20. Ansible: Provision multiple services on one VM with systemd
+    - hosts: app_servers
+      become: yes
+      tasks:
+        - name: Install orders.service
+          copy: src=orders.service dest=/etc/systemd/system/orders.service mode=0644
+        - name: Install customers.service
+          copy: src=customers.service dest=/etc/systemd/system/customers.service mode=0644
+        - name: Reload systemd
+          command: systemctl daemon-reload
+        - name: Enable and start services
+          systemd:
+            name: "{{ item }}"
+            state: started
+            enabled: yes
+          loop:
+            - orders
+            - customers
+  - |
+    # 21. SysV init: Two init.d scripts on the same host
+    # /etc/init.d/orders
+    #!/bin/sh
+    case "$1" in
+      start) start-stop-daemon --start --exec /usr/bin/java -- -jar /opt/orders/orders.jar --server.port=8081 ;;
+      stop)  start-stop-daemon --stop --exec /usr/bin/java ;;
+      *) echo "Usage: {start|stop}" ; exit 1 ;;
+    esac
+    # /etc/init.d/customers
+    #!/bin/sh
+    case "$1" in
+      start) start-stop-daemon --start --exec /usr/bin/java -- -jar /opt/customers/customers.jar --server.port=8082 ;;
+      stop)  start-stop-daemon --stop --exec /usr/bin/java ;;
+      *) echo "Usage: {start|stop}" ; exit 1 ;;
+    esac
+  - |
+    # 22. Puppet: Ensure multiple services are running/enabled on a single node
+    service { 'orders':
+      ensure => running,
+      enable => true,
+    }
+    service { 'customers':
+      ensure => running,
+      enable => true,
+    }
+  - |
+    # 23. SaltStack: Two services on the same minion
+    orders:
+      service.running:
+        - enable: True
+    customers:
+      service.running:
+        - enable: True
+  - |
+    # 24. PM2 CLI: Start multiple processes and save
+    pm2 start orders/server.js --name orders --instances 2 --env PORT=3001
+    pm2 start customers/server.js --name customers --env PORT=3002
+    pm2 save
+  - |
+    # 25. Bash startup script: Launch multiple processes on one host
+    #!/usr/bin/env bash
+    nohup java -jar /opt/services/orders/orders.jar --server.port=8081 > /var/log/orders.log 2>&1 &
+    nohup java -jar /opt/services/customers/customers.jar --server.port=8082 > /var/log/customers.log 2>&1 &
+    echo $! > /var/run/multi-start.pid
+  - |
+    # 26. Gunicorn + Celery: Co-located services behind Nginx
+    # systemd units shown; Nginx proxies to localhost:5000 and 5555
+    [Unit]
+    Description=Gunicorn API
+    [Service]
+    ExecStart=/usr/local/bin/gunicorn -w 4 -b 127.0.0.1:5000 app:app
+    ---
+    [Unit]
+    Description=Celery Flower
+    [Service]
+    ExecStart=/usr/local/bin/celery -A app.celery flower --port=5555
+  - |
+    # 27. Apache httpd vhosts to multiple local ports for path-based routing
+    <VirtualHost *:80>
+      ServerName services.local
+      ProxyPreserveHost On
+      ProxyPass /api/ http://127.0.0.1:5000/
+      ProxyPassReverse /api/ http://127.0.0.1:5000/
+      ProxyPass /metrics/ http://127.0.0.1:9100/
+      ProxyPassReverse /metrics/ http://127.0.0.1:9100/
+    </VirtualHost>
+  - |
+    # 28. OSGi MANIFEST snippets: Multiple bundles deployed in one container
+    Manifest-Version: 1.0
+    Bundle-ManifestVersion: 2
+    Bundle-Name: Orders Bundle
+    Bundle-SymbolicName: com.example.orders
+    Bundle-Version: 1.0.0
+    Import-Package: org.osgi.framework;version="[1.8,2)"
+    ---
+    Manifest-Version: 1.0
+    Bundle-ManifestVersion: 2
+    Bundle-Name: Customers Bundle
+    Bundle-SymbolicName: com.example.customers
+    Bundle-Version: 1.0.0
+    Import-Package: org.osgi.framework;version="[1.8,2)"
+  - |
+    # 29. Makefile shortcuts to manage multiple local services
+    start-orders:
+    	@systemctl start orders
+    start-customers:
+    	@systemctl start customers
+    start-all: start-orders start-customers
+  - |
+    # 30. Combined reverse proxy and local daemons for same-host multiplexing
+    # Nginx maps paths to multiple local service instances
+    http {
+      server {
+        listen 80;
+        location /orders/ { proxy_pass http://127.0.0.1:8081/; }
+        location /customers/ { proxy_pass http://127.0.0.1:8082/; }
+      }
+    }
+negative_examples:
+  - |
+    # ANTI-PATTERN: One service per VM (Service Instance per Host)
+    # Each microservice is given its own dedicated VM instead of co-locating multiple services.
+    resource "aws_instance" "orders" {
+      ami           = "ami-123456"
+      instance_type = "t3.small"
+      user_data     = "systemctl start orders"
+    }
+    resource "aws_instance" "customers" {
+      ami           = "ami-123456"
+      instance_type = "t3.small"
+      user_data     = "systemctl start customers"
+    }
+  - |
+    # ANTI-PATTERN: Single monolith process handling multiple bounded contexts
+    # This collapses multiple services into one process instead of multiple service instances per host.
+    FROM openjdk:17-jre
+    COPY monolith.jar /app/monolith.jar
+    CMD ["java", "-jar", "/app/monolith.jar"]
+  - |
+    # ANTI-PATTERN: Service-per-container on an orchestration platform
+    # Each service runs in its own isolated container/pod; not representative of multiple services per bare host/VM.
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: orders
+    spec:
+      template:
+        spec:
+          containers:
+          - name: orders
+            image: example/orders:latest
+    ---
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: customers
+    spec:
+      template:
+        spec:
+          containers:
+          - name: customers
+            image: example/customers:latest
+  - |
+    # ANTI-PATTERN: Multiple processes inside a single container
+    # Using supervisord/s6 within one container to run multiple services is "multiple services per container", not "per host".
+    FROM ubuntu:22.04
+    RUN apt-get update && apt-get install -y supervisor
+    COPY supervisord.conf /etc/supervisor/conf.d/services.conf
+    CMD ["/usr/bin/supervisord", "-n"]
+  - |
+    # ANTI-PATTERN: Serverless functions per function (FaaS)
+    # Each function is isolated and not co-located processes on a host.
+    resources:
+      Resources:
+        OrdersFunction:
+          Type: AWS::Lambda::Function
+        CustomersFunction:
+          Type: AWS::Lambda::Function

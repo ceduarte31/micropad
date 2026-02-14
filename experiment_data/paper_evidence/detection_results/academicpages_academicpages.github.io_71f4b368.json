@@ -1,0 +1,136 @@
+{
+  "summary": {
+    "repository_name": "academicpages/academicpages.github.io",
+    "detected_patterns": [
+      "Service instance per container"
+    ],
+    "total_patterns_scanned": 9,
+    "timestamp": "2025-10-29T04:02:06.609556",
+    "run_id": "71f4b368"
+  },
+  "patterns": {
+    "Server-side service discovery": false,
+    "Service registry": false,
+    "3rd Party Registration": false,
+    "Single Service Instance per Host": false,
+    "Service instance per container": true,
+    "Multiple service instances per host": false,
+    "Service deployment platform": false,
+    "Service instance per VM": false,
+    "Service mesh": false
+  },
+  "scanned_files_per_pattern": {
+    "Server-side service discovery": [
+      "/data/repos/academicpages.github.io/.github/workflows/scrape_talks.yml",
+      "/data/repos/academicpages.github.io/docker-compose.yaml"
+    ],
+    "Service registry": [
+      "/data/repos/academicpages.github.io/.github/ISSUE_TEMPLATE/bug_report.md",
+      "/data/repos/academicpages.github.io/.github/ISSUE_TEMPLATE/feature_request.md",
+      "/data/repos/academicpages.github.io/.github/workflows/scrape_talks.yml",
+      "/data/repos/academicpages.github.io/CONTRIBUTING.md",
+      "/data/repos/academicpages.github.io/README.md",
+      "/data/repos/academicpages.github.io/_drafts/post-draft.md",
+      "/data/repos/academicpages.github.io/_pages/404.md",
+      "/data/repos/academicpages.github.io/_pages/about.md",
+      "/data/repos/academicpages.github.io/_pages/archive-layout-with-content.md",
+      "/data/repos/academicpages.github.io/_pages/cv-json.md",
+      "/data/repos/academicpages.github.io/_pages/cv.md",
+      "/data/repos/academicpages.github.io/_pages/markdown.md",
+      "/data/repos/academicpages.github.io/_pages/non-menu-page.md",
+      "/data/repos/academicpages.github.io/_pages/sitemap.md",
+      "/data/repos/academicpages.github.io/_pages/terms.md",
+      "/data/repos/academicpages.github.io/_portfolio/portfolio-1.md",
+      "/data/repos/academicpages.github.io/_posts/2012-08-14-blog-post-1.md",
+      "/data/repos/academicpages.github.io/_posts/2013-08-14-blog-post-2.md",
+      "/data/repos/academicpages.github.io/_posts/2014-08-14-blog-post-3.md",
+      "/data/repos/academicpages.github.io/_posts/2015-08-14-blog-post-4.md",
+      "/data/repos/academicpages.github.io/_posts/2199-01-01-future-post.md",
+      "/data/repos/academicpages.github.io/_publications/2009-10-01-paper-title-number-1.md",
+      "/data/repos/academicpages.github.io/_publications/2010-10-01-paper-title-number-2.md",
+      "/data/repos/academicpages.github.io/_publications/2015-10-01-paper-title-number-3.md",
+      "/data/repos/academicpages.github.io/_publications/2024-02-17-paper-title-number-4.md",
+      "/data/repos/academicpages.github.io/_publications/2025-06-08-paper-title-number-5.md",
+      "/data/repos/academicpages.github.io/_talks/2012-03-01-talk-1.md",
+      "/data/repos/academicpages.github.io/_talks/2013-03-01-tutorial-1.md",
+      "/data/repos/academicpages.github.io/_talks/2014-02-01-talk-2.md",
+      "/data/repos/academicpages.github.io/_talks/2014-03-01-talk-3.md",
+      "/data/repos/academicpages.github.io/_teaching/2014-spring-teaching-1.md",
+      "/data/repos/academicpages.github.io/_teaching/2015-spring-teaching-2.md",
+      "/data/repos/academicpages.github.io/assets/js/_main.js",
+      "/data/repos/academicpages.github.io/assets/js/collapse.js",
+      "/data/repos/academicpages.github.io/assets/js/plugins/jquery.greedy-navigation.js",
+      "/data/repos/academicpages.github.io/assets/js/theme.js",
+      "/data/repos/academicpages.github.io/docker-compose.yaml",
+      "/data/repos/academicpages.github.io/markdown_generator/publications.py",
+      "/data/repos/academicpages.github.io/markdown_generator/pubsFromBib.py",
+      "/data/repos/academicpages.github.io/markdown_generator/readme.md",
+      "/data/repos/academicpages.github.io/markdown_generator/talks.py",
+      "/data/repos/academicpages.github.io/scripts/cv_markdown_to_json.py",
+      "/data/repos/academicpages.github.io/scripts/update_cv_json.sh",
+      "/data/repos/academicpages.github.io/talkmap.py",
+      "/data/repos/academicpages.github.io/talkmap/leaflet_dist/leaflet.markercluster-src.js",
+      "/data/repos/academicpages.github.io/talkmap/leaflet_dist/leaflet.markercluster.js",
+      "/data/repos/academicpages.github.io/talkmap/org-locations.js"
+    ],
+    "3rd Party Registration": [
+      "/data/repos/academicpages.github.io/docker-compose.yaml"
+    ],
+    "Single Service Instance per Host": [
+      "/data/repos/academicpages.github.io/.github/workflows/scrape_talks.yml"
+    ],
+    "Service instance per container": [
+      "/data/repos/academicpages.github.io/Dockerfile",
+      "/data/repos/academicpages.github.io/docker-compose.yaml"
+    ],
+    "Multiple service instances per host": [
+      "/data/repos/academicpages.github.io/Dockerfile",
+      "/data/repos/academicpages.github.io/docker-compose.yaml"
+    ],
+    "Service deployment platform": [
+      "/data/repos/academicpages.github.io/docker-compose.yaml"
+    ],
+    "Service instance per VM": [
+      "/data/repos/academicpages.github.io/.github/workflows/scrape_talks.yml"
+    ],
+    "Service mesh": [
+      "/data/repos/academicpages.github.io/Dockerfile",
+      "/data/repos/academicpages.github.io/Gemfile",
+      "/data/repos/academicpages.github.io/README.md",
+      "/data/repos/academicpages.github.io/_config.yml",
+      "/data/repos/academicpages.github.io/_config_docker.yml",
+      "/data/repos/academicpages.github.io/docker-compose.yaml",
+      "/data/repos/academicpages.github.io/talkmap_out.ipynb"
+    ]
+  },
+  "_metadata": {
+    "experiment": {
+      "run_number": 1
+    },
+    "reproducibility": {
+      "configuration": {
+        "thresholds": {
+          "high_priority": 0.5,
+          "medium_priority": 0.3,
+          "min_priority_score": 0.1,
+          "judge_confidence": 5
+        },
+        "weight_scheme": "llm_dominant",
+        "random_seed": 1761710526
+      }
+    },
+    "models": {
+      "planner": "gpt-5-nano-2025-08-07",
+      "investigator": "gpt-5-nano-2025-08-07",
+      "judge": "gpt-5-nano-2025-08-07",
+      "embedding": "jinaai/jina-embeddings-v2-base-code"
+    },
+    "priority_weights": {
+      "keyword": 0.2,
+      "embedding": 0.1,
+      "graph": 0.0,
+      "llm": 0.7
+    },
+    "source_log": "detection_20251029_040206.log"
+  }
+}

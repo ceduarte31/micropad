@@ -1,0 +1,908 @@
+pattern_name: "Service mesh"
+description: |
+  How are cross-cutting concerns implemented consistently across services without changing application code?
+  Introduce a dedicated service mesh data plane (per-pod proxy or sidecarless dataplane) and a control plane to provide
+  uniform, policy-driven traffic management, security, observability, and reliability.
+
+  This pattern externalizes and standardizes cross-cutting concerns:
+  - Externalized configuration: Centralize service discovery, routing, retry/breaker policies, TLS/mTLS, and egress controls in mesh CRDs.
+    Application credentials and endpoints for external dependencies (databases, message brokers) are referenced from ConfigMaps/Secrets and
+    consumed by services via environment variables or volumes rather than hardcoding them.
+  - Logging: Enable proxy access logs and application log forwarding via sidecars/daemon agents; keep application logging frameworks
+    (e.g., log4j/logback) configured through ConfigMaps to avoid embedding environment specifics in code. Mesh telemetry funnels request logs.
+  - Health checks: Use Kubernetes liveness/readiness probes for workload health. Mesh policies (e.g., outlier detection) passively eject
+    unhealthy upstreams to maintain availability.
+  - Metrics: Emit mesh-level metrics (e.g., Envoy/Istio/Linkerd/Kuma) and scrape application metrics using Prometheus annotations/ServiceMonitors.
+    Mesh control plane exposes service-level golden signals (latency, traffic, errors, saturation).
+  - Distributed tracing: Enable transparent context propagation (W3C traceparent/tracecontext and/or B3) through mesh proxies and export spans
+    to a tracing backend via OpenTelemetry/Jaeger/Zipkin providers. Each inbound request receives a unique trace ID that is propagated
+    across service hops by the mesh and the instrumented application.
+
+repository_fingerprint:
+  glob_patterns:
+    # --- Tier 1: The Spear (High-Confidence & Mesh-Specific Files) ---
+    - glob: "**/istio*.y*ml"
+      search_method: "keyword"
+      keywords: ["VirtualService", "DestinationRule", "Gateway", "ServiceEntry", "PeerAuthentication", "AuthorizationPolicy", "Sidecar", "EnvoyFilter", "Telemetry", "WasmPlugin"]
+    - glob: "**/linkerd*.y*ml"
+      search_method: "keyword"
+      keywords: ["linkerd.io/inject", "ServiceProfile", "TrafficSplit", "viz", "tap.linkerd.io"]
+    - glob: "**/consul*.y*ml"
+      search_method: "keyword"
+      keywords: ["consul.hashicorp.com/connect-inject", "ServiceDefaults", "ServiceIntentions", "proxy-defaults"]
+    - glob: "**/*.hcl"
+      search_method: "keyword"
+      keywords: ["connect {", "intention", "transparent_proxy", "mesh ="]
+    - glob: "**/kuma*.y*ml"
+      search_method: "keyword"
+      keywords: ["Mesh", "TrafficPermission", "TrafficRoute", "MeshTrace", "MeshAccessLog"]
+    - glob: "**/osm*.y*ml"
+      search_method: "keyword"
+      keywords: ["openservicemesh.io/monitored-by", "openservicemesh.io/sidecar-injection", "TrafficSplit", "HTTPRouteGroup", "TCPRoute"]
+    - glob: "**/appmesh*.y*ml"
+      search_method: "keyword"
+      keywords: ["VirtualNode", "VirtualService", "VirtualRouter", "meshName", "backendDefaults"]
+    - glob: "**/*app-mesh*.y*ml"
+      search_method: "keyword"
+      keywords: ["VirtualNode", "VirtualService", "VirtualRouter"]
+    - glob: "**/cilium*.y*ml"
+      search_method: "keyword"
+      keywords: ["CiliumEnvoyConfig", "CiliumNetworkPolicy", "L7", "HTTP"]
+    - glob: "**/envoy*.y*ml"
+      search_method: "keyword"
+      keywords: ["static_resources:", "listeners:", "clusters:", "tracing:", "bootstrap:"]
+    - glob: "**/opentelemetry*.y*ml"
+      search_method: "keyword"
+      keywords: ["receivers:", "exporters:", "processors:", "service:", "pipelines:"]
+    - glob: "**/prometheus*.y*ml"
+      search_method: "keyword"
+      keywords: ["ServiceMonitor", "PodMonitor", "scrape", "prometheus.io/scrape"]
+    - glob: "**/gateway*.y*ml"
+      search_method: "keyword"
+      keywords: ["GatewayClass", "Gateway", "HTTPRoute", "TLSRoute", "GRPCRoute"]
+
+    # --- Tier 2: The Cast Net (Contextual Mesh Indicators) ---
+    - glob: "**/deployment.y*ml"
+      search_method: "keyword"
+      keywords: ["sidecar.istio.io/inject", "linkerd.io/inject", "consul.hashicorp.com/connect-inject", "openservicemesh.io/sidecar-injection", "appmesh.k8s.aws/sidecarInjectorWebhook"]
+    - glob: "**/namespace.y*ml"
+      search_method: "keyword"
+      keywords: ["istio-injection", "linkerd.io/inject", "openservicemesh.io/monitored-by", "mesh"]
+    - glob: "**/values*.y*ml"
+      search_method: "keyword"
+      keywords: ["istio", "linkerd", "consul", "kuma", "osm", "appmesh", "mtls", "meshConfig", "pilot", "controlPlane"]
+    - glob: "**/service.y*ml"
+      search_method: "keyword"
+      keywords: ["prometheus.io/scrape", "appProtocol", "mesh"]
+    - glob: "**/configmap.y*ml"
+      search_method: "keyword"
+      keywords: ["meshConfig", "log4j2.xml", "logback.xml", "otel-collector", "envoy.yaml"]
+    - glob: "**/secret.y*ml"
+      search_method: "keyword"
+      keywords: ["tls", "ca.crt", "mesh", "credentials", "password", "api_key"]
+
+    # --- Tier 3: The Trawler (Broad Catch-all) ---
+    - glob: "**/helm/**/*.y*ml"
+    - glob: "**/charts/**/*.y*ml"
+    - glob: "**/k8s/**/*.y*ml"
+    - glob: "**/kubernetes/**/*.y*ml"
+    - glob: "**/manifests/**/*.y*ml"
+    - glob: "**/config/**/*.y*ml"
+    - glob: "**/deploy/**/*.y*ml"
+    - glob: "**/*.tf"
+      search_method: "keyword"
+      keywords: ["aws_appmesh", "consul", "istio", "linkerd", "kuma", "osm"]
+    - glob: "**/*.json"
+      search_method: "keyword"
+      keywords: ["AWS::AppMesh::VirtualNode", "AWS::AppMesh::Mesh", "containerDefinitions", "envoy"]
+    - glob: "**/.github/workflows/*.y*ml"
+    - glob: "**/.gitlab-ci.yml"
+    - glob: "**/azure-pipelines.yml"
+    - glob: "**/.circleci/config.yml"
+    - glob: "**/Jenkinsfile"
+
+positive_examples:
+  - |
+    # 1. Istio VirtualService and DestinationRule for canary release with subsets
+    apiVersion: networking.istio.io/v1beta1
+    kind: DestinationRule
+    metadata:
+      name: checkout
+    spec:
+      host: checkout.default.svc.cluster.local
+      trafficPolicy:
+        tls:
+          mode: ISTIO_MUTUAL
+      subsets:
+      - name: v1
+        labels:
+          version: v1
+      - name: v2
+        labels:
+          version: v2
+    ---
+    apiVersion: networking.istio.io/v1beta1
+    kind: VirtualService
+    metadata:
+      name: checkout
+    spec:
+      hosts:
+      - checkout
+      http:
+      - route:
+        - destination:
+            host: checkout
+            subset: v1
+          weight: 90
+        - destination:
+            host: checkout
+            subset: v2
+          weight: 10
+        retries:
+          attempts: 3
+          perTryTimeout: 1s
+        timeout: 5s
+  - |
+    # 2. Istio Ingress Gateway exposing productpage via TLS
+    apiVersion: networking.istio.io/v1beta1
+    kind: Gateway
+    metadata:
+      name: web-gateway
+      namespace: default
+    spec:
+      selector:
+        istio: ingressgateway
+      servers:
+      - port:
+          number: 443
+          name: https
+          protocol: HTTPS
+        hosts: ["product.example.com"]
+        tls:
+          mode: SIMPLE
+          credentialName: web-gateway-cert
+    ---
+    apiVersion: networking.istio.io/v1beta1
+    kind: VirtualService
+    metadata:
+      name: productpage
+    spec:
+      hosts: ["product.example.com"]
+      gateways: ["web-gateway"]
+      http:
+      - match:
+        - uri:
+            prefix: /
+        route:
+        - destination:
+            host: productpage
+            port:
+              number: 9080
+  - |
+    # 3. Istio mTLS policy with PeerAuthentication and matching DestinationRule
+    apiVersion: security.istio.io/v1beta1
+    kind: PeerAuthentication
+    metadata:
+      name: default
+      namespace: default
+    spec:
+      mtls:
+        mode: STRICT
+    ---
+    apiVersion: networking.istio.io/v1beta1
+    kind: DestinationRule
+    metadata:
+      name: default-mtls
+      namespace: default
+    spec:
+      host: "*.default.svc.cluster.local"
+      trafficPolicy:
+        tls:
+          mode: ISTIO_MUTUAL
+  - |
+    # 4. Istio AuthorizationPolicy restricting access to inventory only from orders service account
+    apiVersion: security.istio.io/v1beta1
+    kind: AuthorizationPolicy
+    metadata:
+      name: inventory-authz
+      namespace: default
+    spec:
+      selector:
+        matchLabels:
+          app: inventory
+      rules:
+      - from:
+        - source:
+            principals: ["cluster.local/ns/default/sa/orders-sa"]
+        to:
+        - operation:
+            methods: ["GET"]
+            paths: ["/stock/*"]
+  - |
+    # 5. Istio Telemetry enabling tracing and custom metrics via OpenTelemetry
+    apiVersion: telemetry.istio.io/v1alpha1
+    kind: Telemetry
+    metadata:
+      name: mesh-telemetry
+      namespace: istio-system
+    spec:
+      selector: {}
+      tracing:
+      - providers:
+        - name: otlp
+        randomSamplingPercentage: 100
+      accessLogging:
+      - providers:
+        - name: envoy
+        disabled: false
+      metrics:
+      - providers:
+        - name: prometheus
+  - |
+    # 6. Istio Sidecar to constrain egress and ServiceEntry for external DB
+    apiVersion: networking.istio.io/v1beta1
+    kind: Sidecar
+    metadata:
+      name: limit-egress
+      namespace: default
+    spec:
+      workloadSelector:
+        labels:
+          app: payments
+      egress:
+      - hosts:
+        - "./*"
+        - "istio-system/*"
+        - "external-apis/*"
+    ---
+    apiVersion: networking.istio.io/v1beta1
+    kind: ServiceEntry
+    metadata:
+      name: external-db
+      namespace: external-apis
+    spec:
+      hosts:
+      - "db.prod.example.com"
+      ports:
+      - number: 5432
+        name: tcp-postgres
+        protocol: TCP
+      resolution: DNS
+      location: MESH_EXTERNAL
+  - |
+    # 7. Externalized configuration: ConfigMap for endpoints and Secret for credentials
+    apiVersion: v1
+    kind: ConfigMap
+    metadata:
+      name: app-config
+      namespace: default
+    data:
+      DATABASE_URL: "jdbc:postgresql://db.prod.example.com:5432/appdb"
+      MQ_BROKER_URL: "amqps://broker.prod.example.com:5671"
+      FEATURE_TOGGLE_FOO: "true"
+      LOGGING_CONFIG: "/etc/logging/logback.xml"
+    ---
+    apiVersion: v1
+    kind: Secret
+    metadata:
+      name: app-secrets
+      namespace: default
+    type: Opaque
+    stringData:
+      DB_USERNAME: "app_user"
+      DB_PASSWORD: "REDACTED_CHANGE_ME"
+      MQ_USERNAME: "app_mq_user"
+      MQ_PASSWORD: "REDACTED_CHANGE_ME"
+  - |
+    # 8. Deployment annotated for mesh injection, health checks, metrics, and tracing
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: orders
+      namespace: default
+      annotations:
+        sidecar.istio.io/inject: "true"
+    spec:
+      replicas: 2
+      selector:
+        matchLabels:
+          app: orders
+          version: v1
+      template:
+        metadata:
+          labels:
+            app: orders
+            version: v1
+          annotations:
+            prometheus.io/scrape: "true"
+            prometheus.io/port: "8081"
+            prometheus.io/path: "/metrics"
+        spec:
+          serviceAccountName: orders-sa
+          containers:
+          - name: orders
+            image: ghcr.io/example/orders:1.2.3
+            ports:
+            - containerPort: 8080
+            envFrom:
+            - configMapRef:
+                name: app-config
+            - secretRef:
+                name: app-secrets
+            env:
+            - name: OTEL_EXPORTER_OTLP_ENDPOINT
+              value: "http://otel-collector:4317"
+            - name: OTEL_SERVICE_NAME
+              value: "orders"
+            - name: OTEL_PROPAGATORS
+              value: "tracecontext,baggage,b3"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dlogging.config=/etc/logging/logback.xml"
+            volumeMounts:
+            - name: logging-config
+              mountPath: /etc/logging
+            livenessProbe:
+              httpGet:
+                path: /health/live
+                port: 8080
+              initialDelaySeconds: 20
+              periodSeconds: 10
+            readinessProbe:
+              httpGet:
+                path: /health/ready
+                port: 8080
+              initialDelaySeconds: 10
+              periodSeconds: 5
+          volumes:
+          - name: logging-config
+            configMap:
+              name: app-config
+              items:
+              - key: LOGGING_CONFIG
+                path: logback.xml
+  - |
+    # 9. OpenTelemetry Collector to receive traces/metrics and export to Tempo/Prometheus
+    apiVersion: v1
+    kind: ConfigMap
+    metadata:
+      name: otel-collector-config
+      namespace: observability
+    data:
+      otel-collector-config.yaml: |
+        receivers:
+          otlp:
+            protocols:
+              grpc:
+              http:
+        processors:
+          batch: {}
+        exporters:
+          otlp:
+            endpoint: tempo:4317
+            tls:
+              insecure: true
+          prometheus:
+            endpoint: 0.0.0.0:8889
+        service:
+          pipelines:
+            traces:
+              receivers: [otlp]
+              processors: [batch]
+              exporters: [otlp]
+            metrics:
+              receivers: [otlp]
+              processors: [batch]
+              exporters: [prometheus]
+    ---
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: otel-collector
+      namespace: observability
+    spec:
+      replicas: 1
+      selector:
+        matchLabels: {app: otel-collector}
+      template:
+        metadata:
+          labels: {app: otel-collector}
+        spec:
+          containers:
+          - name: otel-collector
+            image: otel/opentelemetry-collector:0.96.0
+            args: ["--config=/conf/otel-collector-config.yaml"]
+            ports:
+            - containerPort: 4317
+            - containerPort: 4318
+            - containerPort: 8889
+            volumeMounts:
+            - name: config
+              mountPath: /conf
+          volumes:
+          - name: config
+            configMap:
+              name: otel-collector-config
+              items:
+              - key: otel-collector-config.yaml
+                path: otel-collector-config.yaml
+  - |
+    # 10. Prometheus Operator ServiceMonitor for scraping app metrics
+    apiVersion: monitoring.coreos.com/v1
+    kind: ServiceMonitor
+    metadata:
+      name: orders-sm
+      namespace: observability
+      labels:
+        release: prometheus
+    spec:
+      selector:
+        matchLabels:
+          app: orders
+      namespaceSelector:
+        matchNames: ["default"]
+      endpoints:
+      - port: http
+        targetPort: 8081
+        interval: 15s
+        path: /metrics
+  - |
+    # 11. Linkerd: Namespace injection, ServiceProfile, and TrafficSplit
+    apiVersion: v1
+    kind: Namespace
+    metadata:
+      name: bookstore
+      labels:
+        linkerd.io/inject: enabled
+    ---
+    apiVersion: linkerd.io/v1alpha2
+    kind: ServiceProfile
+    metadata:
+      name: books.buy.bookstore.svc.cluster.local
+      namespace: bookstore
+    spec:
+      routes:
+      - name: GET /books
+        condition:
+          method: GET
+          pathRegex: /books
+        isRetryable: true
+      - name: GET /books/{id}
+        condition:
+          method: GET
+          pathRegex: /books/[^/]+
+        timeout: 2s
+    ---
+    apiVersion: split.smi-spec.io/v1alpha2
+    kind: TrafficSplit
+    metadata:
+      name: books-split
+      namespace: bookstore
+    spec:
+      service: books
+      backends:
+      - service: books-v1
+        weight: 90
+      - service: books-v2
+        weight: 10
+  - |
+    # 12. Consul Connect injection with ServiceIntentions (deny by default)
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: web
+      namespace: default
+      annotations:
+        consul.hashicorp.com/connect-inject: "true"
+    spec:
+      selector:
+        matchLabels: {app: web}
+      template:
+        metadata:
+          labels: {app: web}
+        spec:
+          containers:
+          - name: web
+            image: hashicorpdemoapp/web:latest
+            ports:
+            - containerPort: 9090
+    ---
+    apiVersion: consul.hashicorp.com/v1alpha1
+    kind: ServiceIntentions
+    metadata:
+      name: web
+      namespace: default
+    spec:
+      destination:
+        name: web
+      sources:
+      - name: api
+        action: allow
+      - name: "*"
+        action: deny
+  - |
+    # 13. Open Service Mesh (OSM) with SMI HTTPRouteGroup and TrafficSplit
+    apiVersion: v1
+    kind: Namespace
+    metadata:
+      name: bookstore
+      labels:
+        openservicemesh.io/monitored-by: osm
+        openservicemesh.io/sidecar-injection: enabled
+    ---
+    apiVersion: specs.smi-spec.io/v1alpha4
+    kind: HTTPRouteGroup
+    metadata:
+      name: bookstore-routes
+      namespace: bookstore
+    spec:
+      matches:
+      - name: get-books
+        methods: ["GET"]
+        pathRegex: "/books.*"
+    ---
+    apiVersion: split.smi-spec.io/v1alpha2
+    kind: TrafficSplit
+    metadata:
+      name: bookstore-split
+      namespace: bookstore
+    spec:
+      service: bookstore
+      backends:
+      - service: bookstore-v1
+        weight: 80
+      - service: bookstore-v2
+        weight: 20
+  - |
+    # 14. Kuma Mesh with mTLS, tracing, access logs, and TrafficPermission
+    apiVersion: kuma.io/v1alpha1
+    kind: Mesh
+    metadata:
+      name: default
+    spec:
+      mtls:
+        enabledBackend: ca-1
+        backends:
+        - name: ca-1
+          type: builtin
+      tracing:
+        defaultBackend: otlp
+        backends:
+        - name: otlp
+          type: otlp
+          conf:
+            endpoint: otel-collector.observability:4317
+            insecure: true
+      logging:
+        defaultBackend: std
+        backends:
+        - name: std
+          type: file
+          conf:
+            path: /tmp/kuma-access.log
+    ---
+    apiVersion: kuma.io/v1alpha1
+    kind: TrafficPermission
+    mesh: default
+    metadata:
+      name: allow-orders-to-inventory
+    spec:
+      sources:
+      - match:
+          kuma.io/service: orders
+      destinations:
+      - match:
+          kuma.io/service: inventory
+  - |
+    # 15. AWS App Mesh VirtualNode/VirtualService/VirtualRouter (K8s CRDs)
+    apiVersion: appmesh.k8s.aws/v1beta2
+    kind: VirtualNode
+    metadata:
+      name: reviews-vn
+      namespace: default
+    spec:
+      meshName: shop
+      podSelector:
+        matchLabels:
+          app: reviews
+      listeners:
+      - portMapping:
+          port: 9080
+          protocol: http
+        healthCheck:
+          protocol: http
+          path: /health/ready
+          intervalMillis: 5000
+          timeoutMillis: 2000
+          healthyThreshold: 2
+          unhealthyThreshold: 2
+      serviceDiscovery:
+        dns:
+          hostname: reviews.default.svc.cluster.local
+    ---
+    apiVersion: appmesh.k8s.aws/v1beta2
+    kind: VirtualRouter
+    metadata:
+      name: reviews-vr
+      namespace: default
+    spec:
+      meshName: shop
+      listeners:
+      - portMapping:
+          port: 9080
+          protocol: http
+      routes:
+      - name: default
+        httpRoute:
+          match:
+            prefix: /
+          action:
+            weightedTargets:
+            - virtualNodeRef:
+                name: reviews-vn
+              weight: 1
+    ---
+    apiVersion: appmesh.k8s.aws/v1beta2
+    kind: VirtualService
+    metadata:
+      name: reviews
+      namespace: default
+    spec:
+      meshName: shop
+      provider:
+        virtualRouter:
+          virtualRouterRef:
+            name: reviews-vr
+  - |
+    # 16. Istio DestinationRule with outlier detection (passive health) and connection pool
+    apiVersion: networking.istio.io/v1beta1
+    kind: DestinationRule
+    metadata:
+      name: catalog-policy
+      namespace: default
+    spec:
+      host: catalog
+      trafficPolicy:
+        connectionPool:
+          http:
+            http1MaxPendingRequests: 1000
+            maxRequestsPerConnection: 100
+          tcp:
+            maxConnections: 100
+        outlierDetection:
+          consecutive5xxErrors: 5
+          interval: 5s
+          baseEjectionTime: 30s
+          maxEjectionPercent: 50
+  - |
+    # 17. Istio WasmPlugin to enrich logs with request headers
+    apiVersion: extensions.istio.io/v1alpha1
+    kind: WasmPlugin
+    metadata:
+      name: enrich-logs
+      namespace: istio-system
+    spec:
+      selector:
+        matchLabels:
+          app: orders
+      url: oci://ghcr.io/example/wasm-filters/enrich-logs:1.0.0
+      phase: STATS
+      pluginConfig:
+        add_headers:
+          - "x-request-id"
+          - "x-b3-traceid"
+          - "traceparent"
+  - |
+    # 18. Istio meshConfig (ConfigMap) enabling access logs and tracing provider
+    apiVersion: v1
+    kind: ConfigMap
+    metadata:
+      name: istio
+      namespace: istio-system
+    data:
+      mesh: |
+        defaultConfig:
+          tracing:
+            sampling: 100
+            zipkin:
+              address: "otel-collector.observability:9411"
+          accessLogFile: /dev/stdout
+          proxyMetadata:
+            ISTIO_META_DNS_AUTO_ALLOCATE: "true"
+        enableTracing: true
+  - |
+    # 19. Gateway API resources (Istio implementation) for HTTP routing
+    apiVersion: gateway.networking.k8s.io/v1
+    kind: GatewayClass
+    metadata:
+      name: istio
+    spec:
+      controllerName: istio.io/gateway-controller
+    ---
+    apiVersion: gateway.networking.k8s.io/v1
+    kind: Gateway
+    metadata:
+      name: public-gw
+      namespace: default
+    spec:
+      gatewayClassName: istio
+      listeners:
+      - name: https
+        port: 443
+        protocol: HTTPS
+        tls:
+          mode: Terminate
+          certificateRefs:
+          - name: web-gateway-cert
+    ---
+    apiVersion: gateway.networking.k8s.io/v1
+    kind: HTTPRoute
+    metadata:
+      name: shop-route
+      namespace: default
+    spec:
+      parentRefs:
+      - name: public-gw
+      hostnames: ["shop.example.com"]
+      rules:
+      - matches:
+        - path:
+            type: PathPrefix
+            value: /
+        backendRefs:
+        - name: frontend
+          port: 8080
+  - |
+    # 20. Application logging configuration externalized (logback.xml via ConfigMap)
+    apiVersion: v1
+    kind: ConfigMap
+    metadata:
+      name: logback-config
+      namespace: default
+    data:
+      logback.xml: |
+        <configuration scan="true">
+          <property name="LOG_LEVEL" value="${LOG_LEVEL:-INFO}"/>
+          <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder>
+              <pattern>%d{yyyy-MM-dd'T'HH:mm:ss.SSSZ} %-5level [%X{trace_id}] [%thread] %logger{36} - %msg%n</pattern>
+            </encoder>
+          </appender>
+          <root level="${LOG_LEVEL}">
+            <appender-ref ref="STDOUT"/>
+          </root>
+        </configuration>
+  - |
+    # 21. Cilium Envoy config for L7 HTTP policy (mesh-like traffic mgmt)
+    apiVersion: cilium.io/v2
+    kind: CiliumEnvoyConfig
+    metadata:
+      name: web-egress
+      namespace: default
+    spec:
+      services:
+      - listener:
+          name: web_egress_listener
+          address:
+            socket_address:
+              address: 0.0.0.0
+              port_value: 15001
+          filter_chains:
+          - filters:
+            - name: envoy.filters.network.http_connection_manager
+              typed_config:
+                "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager
+                stat_prefix: web_egress
+                route_config:
+                  name: web_egress_routes
+                  virtual_hosts:
+                  - name: all
+                    domains: ["*"]
+                    routes:
+                    - match: { prefix: "/" }
+                      route: { cluster: upstream }
+        backends:
+        - name: upstream
+          address:
+            socket_address:
+              address: example.org
+              port_value: 443
+  - |
+    # 22. Istio EnvoyFilter to add request ID if missing (server-side)
+    apiVersion: networking.istio.io/v1alpha3
+    kind: EnvoyFilter
+    metadata:
+      name: add-request-id
+      namespace: default
+    spec:
+      workloadSelector:
+        labels:
+          app: inventory
+      configPatches:
+      - applyTo: HTTP_FILTER
+        match:
+          context: SIDECAR_INBOUND
+          listener:
+            filterChain:
+              filter:
+                name: "envoy.filters.network.http_connection_manager"
+        patch:
+          operation: INSERT_BEFORE
+          value:
+            name: envoy.filters.http.router
+            typed_config:
+              "@type": type.googleapis.com/envoy.extensions.filters.http.router.v3.Router
+      - applyTo: NETWORK_FILTER
+        match:
+          context: SIDECAR_INBOUND
+        patch:
+          operation: MERGE
+          value:
+            name: envoy.filters.network.http_connection_manager
+            typed_config:
+              "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager
+              request_id_extension:
+                typed_config:
+                  "@type": type.googleapis.com/envoy.extensions.request_id.uuid.v3.UuidRequestIdConfig
+negative_examples:
+  - |
+    # ANTI-PATTERN: Hardcoded endpoints and credentials in application.properties (no mesh, no externalization)
+    spring.datasource.url=jdbc:postgresql://10.0.1.25:5432/appdb
+    spring.datasource.username=app_user
+    spring.datasource.password=supersecret
+    broker.url=amqp://10.0.2.10:5672
+    feature.toggle.foo=true
+  - |
+    # ANTI-PATTERN: Disabling mesh sidecar injection and using hostNetwork to bypass policies
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: bypass-mesh
+      annotations:
+        sidecar.istio.io/inject: "false"
+    spec:
+      template:
+        spec:
+          hostNetwork: true
+          containers:
+          - name: app
+            image: insecure/app:latest
+            env:
+            - name: SERVICE_URL
+              value: "http://10.1.2.3:8080"
+  - |
+    # ANTI-PATTERN: Sole reliance on API Gateway for east-west traffic (no mesh or service-level policies)
+    apiVersion: networking.k8s.io/v1
+    kind: Ingress
+    metadata:
+      name: only-gateway
+    spec:
+      rules:
+      - host: internal.example.com
+        http:
+          paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: backend
+                port:
+                  number: 8080
+  - |
+    # ANTI-PATTERN: Client library circuit breaking and tracing hardcoded in app (tight coupling)
+    const axios = require('axios');
+    const CircuitBreaker = require('opossum');
+    const options = { timeout: 3000, errorThresholdPercentage: 50, resetTimeout: 30000 };
+    const breaker = new CircuitBreaker((url) => axios.get(url), options);
+    // Hardcoded downstream URL and no mesh policies
+    breaker.fire('http://inventory.default.svc.cluster.local:8080/stock/42')
+      .then(console.log).catch(console.error);
+  - |
+    # ANTI-PATTERN: Permissive mesh with mTLS disabled globally
+    apiVersion: security.istio.io/v1beta1
+    kind: PeerAuthentication
+    metadata:
+      name: default
+      namespace: default
+    spec:
+      mtls:
+        mode: DISABLE

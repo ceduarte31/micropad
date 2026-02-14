@@ -1,0 +1,94 @@
+{
+  "summary": {
+    "repository_name": "http4s/http4s",
+    "detected_patterns": [],
+    "total_patterns_scanned": 9,
+    "timestamp": "2025-10-29T23:38:34.478018",
+    "run_id": "c7e88a9d"
+  },
+  "patterns": {
+    "Server-side service discovery": false,
+    "Service registry": false,
+    "3rd Party Registration": false,
+    "Single Service Instance per Host": false,
+    "Service instance per container": false,
+    "Multiple service instances per host": false,
+    "Service deployment platform": false,
+    "Service instance per VM": false,
+    "Service mesh": false
+  },
+  "scanned_files_per_pattern": {
+    "Server-side service discovery": [
+      "/data/repos/http4s/.github/workflows/ci.yml",
+      "/data/repos/http4s/.github/workflows/clean.yml"
+    ],
+    "Service registry": [
+      "/data/repos/http4s/docs/docs/service.md"
+    ],
+    "3rd Party Registration": [
+      "/data/repos/http4s/.github/release.yml",
+      "/data/repos/http4s/.github/workflows/ci.yml",
+      "/data/repos/http4s/.github/workflows/clean.yml",
+      "/data/repos/http4s/docs/laika/versionInfo.json"
+    ],
+    "Single Service Instance per Host": [
+      "/data/repos/http4s/.github/workflows/ci.yml",
+      "/data/repos/http4s/.github/workflows/clean.yml"
+    ],
+    "Service instance per container": [
+      "/data/repos/http4s/.github/workflows/ci.yml",
+      "/data/repos/http4s/.github/workflows/clean.yml"
+    ],
+    "Multiple service instances per host": [
+      "/data/repos/http4s/docs/docs/deployment.md"
+    ],
+    "Service deployment platform": [
+      "/data/repos/http4s/.github/workflows/ci.yml",
+      "/data/repos/http4s/.github/workflows/clean.yml",
+      "/data/repos/http4s/docs/laika/versionInfo.json"
+    ],
+    "Service instance per VM": [
+      "/data/repos/http4s/.github/workflows/ci.yml",
+      "/data/repos/http4s/.github/workflows/clean.yml",
+      "/data/repos/http4s/docs/src/main/resources/logback.xml",
+      "/data/repos/http4s/examples/docker/src/main/resources/logback.xml",
+      "/data/repos/http4s/examples/ember/src/main/resources/logback.xml",
+      "/data/repos/http4s/examples/src/main/resources/logback.xml",
+      "/data/repos/http4s/tests/shared/src/main/resources/logback-test.xml"
+    ],
+    "Service mesh": [
+      "/data/repos/http4s/docs/docs/integrations.md",
+      "/data/repos/http4s/docs/docs/service.md"
+    ]
+  },
+  "_metadata": {
+    "experiment": {
+      "run_number": 1
+    },
+    "reproducibility": {
+      "configuration": {
+        "thresholds": {
+          "high_priority": 0.5,
+          "medium_priority": 0.3,
+          "min_priority_score": 0.1,
+          "judge_confidence": 5
+        },
+        "weight_scheme": "llm_dominant",
+        "random_seed": 1761781114
+      }
+    },
+    "models": {
+      "planner": "gpt-5-nano-2025-08-07",
+      "investigator": "gpt-5-nano-2025-08-07",
+      "judge": "gpt-5-nano-2025-08-07",
+      "embedding": "jinaai/jina-embeddings-v2-base-code"
+    },
+    "priority_weights": {
+      "keyword": 0.2,
+      "embedding": 0.1,
+      "graph": 0.0,
+      "llm": 0.7
+    },
+    "source_log": "detection_20251029_233834.log"
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "summary": {
+    "repository_name": "scalacenter/scala-debug-adapter",
+    "detected_patterns": [],
+    "total_patterns_scanned": 9,
+    "timestamp": "2025-10-31T04:51:07.278889",
+    "run_id": "a669f873"
+  },
+  "patterns": {
+    "Server-side service discovery": false,
+    "Service registry": false,
+    "3rd Party Registration": false,
+    "Single Service Instance per Host": false,
+    "Service instance per container": false,
+    "Multiple service instances per host": false,
+    "Service deployment platform": false,
+    "Service instance per VM": false,
+    "Service mesh": false
+  },
+  "scanned_files_per_pattern": {
+    "Server-side service discovery": [
+      "/data/repos/scala-debug-adapter/.github/workflows/ci.yml",
+      "/data/repos/scala-debug-adapter/.github/workflows/dependency-graph.yml",
+      "/data/repos/scala-debug-adapter/.github/workflows/release-expression-compiler.yml",
+      "/data/repos/scala-debug-adapter/.github/workflows/release-full.yml"
+    ],
+    "Service registry": [
+      "/data/repos/scala-debug-adapter/.github/workflows/ci.yml",
+      "/data/repos/scala-debug-adapter/.github/workflows/dependency-graph.yml",
+      "/data/repos/scala-debug-adapter/.github/workflows/release-expression-compiler.yml",
+      "/data/repos/scala-debug-adapter/.github/workflows/release-full.yml",
+      "/data/repos/scala-debug-adapter/CONTRIBUTING.md",
+      "/data/repos/scala-debug-adapter/README.md",
+      "/data/repos/scala-debug-adapter/modules/sbt-plugin/src/main/java/ch/epfl/scala/debugadapter/sbtplugin/AnnotatedFingerscan.java",
+      "/data/repos/scala-debug-adapter/modules/sbt-plugin/src/main/java/ch/epfl/scala/debugadapter/sbtplugin/SubclassFingerscan.java",
+      "/data/repos/scala-debug-adapter/modules/sbt-plugin/src/sbt-test/debug-session/debug-java/withG/src/main/java/example/Main.java",
+      "/data/repos/scala-debug-adapter/modules/sbt-plugin/src/sbt-test/debug-session/debug-java/withGSpecialized/src/main/java/example/Main.java",
+      "/data/repos/scala-debug-adapter/modules/sbt-plugin/src/sbt-test/debug-session/debug-java/withoutG/src/main/java/example/Main.java",
+      "/data/repos/scala-debug-adapter/modules/sbt-plugin/src/sbt-test/debug-session/scala-collection-compat/project/build.properties",
+      "/data/repos/scala-debug-adapter/project/build.properties"
+    ],
+    "3rd Party Registration": [
+      "/data/repos/scala-debug-adapter/.github/dependabot.yml",
+      "/data/repos/scala-debug-adapter/.github/workflows/ci.yml",
+      "/data/repos/scala-debug-adapter/.github/workflows/dependency-graph.yml",
+      "/data/repos/scala-debug-adapter/.github/workflows/release-expression-compiler.yml",
+      "/data/repos/scala-debug-adapter/.github/workflows/release-full.yml"
+    ],
+    "Single Service Instance per Host": [
+      "/data/repos/scala-debug-adapter/.github/workflows/ci.yml",
+      "/data/repos/scala-debug-adapter/.github/workflows/dependency-graph.yml",
+      "/data/repos/scala-debug-adapter/.github/workflows/release-expression-compiler.yml",
+      "/data/repos/scala-debug-adapter/.github/workflows/release-full.yml"
+    ],
+    "Service instance per container": [
+      "/data/repos/scala-debug-adapter/.github/workflows/ci.yml",
+      "/data/repos/scala-debug-adapter/.github/workflows/dependency-graph.yml",
+      "/data/repos/scala-debug-adapter/.github/workflows/release-expression-compiler.yml",
+      "/data/repos/scala-debug-adapter/.github/workflows/release-full.yml"
+    ],
+    "Multiple service instances per host": [],
+    "Service deployment platform": [
+      "/data/repos/scala-debug-adapter/.github/workflows/ci.yml",
+      "/data/repos/scala-debug-adapter/.github/workflows/dependency-graph.yml",
+      "/data/repos/scala-debug-adapter/.github/workflows/release-expression-compiler.yml",
+      "/data/repos/scala-debug-adapter/.github/workflows/release-full.yml"
+    ],
+    "Service instance per VM": [
+      "/data/repos/scala-debug-adapter/.github/workflows/ci.yml",
+      "/data/repos/scala-debug-adapter/.github/workflows/dependency-graph.yml",
+      "/data/repos/scala-debug-adapter/.github/workflows/release-expression-compiler.yml",
+      "/data/repos/scala-debug-adapter/.github/workflows/release-full.yml"
+    ],
+    "Service mesh": [
+      "/data/repos/scala-debug-adapter/.github/workflows/ci.yml",
+      "/data/repos/scala-debug-adapter/.github/workflows/dependency-graph.yml",
+      "/data/repos/scala-debug-adapter/.github/workflows/release-expression-compiler.yml",
+      "/data/repos/scala-debug-adapter/.github/workflows/release-full.yml"
+    ]
+  },
+  "_metadata": {
+    "experiment": {
+      "run_number": 1
+    },
+    "reproducibility": {
+      "configuration": {
+        "thresholds": {
+          "high_priority": 0.5,
+          "medium_priority": 0.3,
+          "min_priority_score": 0.1,
+          "judge_confidence": 5
+        },
+        "weight_scheme": "llm_dominant",
+        "random_seed": 1761886267
+      }
+    },
+    "models": {
+      "planner": "gpt-5-nano-2025-08-07",
+      "investigator": "gpt-5-nano-2025-08-07",
+      "judge": "gpt-5-nano-2025-08-07",
+      "embedding": "jinaai/jina-embeddings-v2-base-code"
+    },
+    "priority_weights": {
+      "keyword": 0.2,
+      "embedding": 0.1,
+      "graph": 0.0,
+      "llm": 0.7
+    },
+    "source_log": "detection_20251031_045107.log"
+  }
+}

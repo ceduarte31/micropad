@@ -1,0 +1,177 @@
+{
+  "summary": {
+    "repository_name": "Freika/dawarich",
+    "detected_patterns": [
+      "Server-side service discovery",
+      "Service instance per container",
+      "Multiple service instances per host",
+      "Service deployment platform"
+    ],
+    "total_patterns_scanned": 9,
+    "timestamp": "2025-10-27T22:58:13.172552",
+    "run_id": "bc573d79"
+  },
+  "patterns": {
+    "Server-side service discovery": true,
+    "Service registry": false,
+    "3rd Party Registration": false,
+    "Single Service Instance per Host": false,
+    "Service instance per container": true,
+    "Multiple service instances per host": true,
+    "Service deployment platform": true,
+    "Service instance per VM": false,
+    "Service mesh": false
+  },
+  "scanned_files_per_pattern": {
+    "Server-side service discovery": [
+      "/data/repos/dawarich/.devcontainer/docker-compose.yml",
+      "/data/repos/dawarich/Procfile",
+      "/data/repos/dawarich/Procfile.dev",
+      "/data/repos/dawarich/Procfile.production",
+      "/data/repos/dawarich/docker/docker-compose.production.yml",
+      "/data/repos/dawarich/docker/docker-compose.yml",
+      "/data/repos/dawarich/docs/How_to_install_Dawarich_in_k8s.md",
+      "/data/repos/dawarich/docs/How_to_install_Dawarich_on_Synology.md",
+      "/data/repos/dawarich/docs/How_to_install_Dawarich_using_Docker.md",
+      "/data/repos/dawarich/docs/how_to_setup_reverse_proxy.md",
+      "/data/repos/dawarich/docs/synology/docker-compose.yml"
+    ],
+    "Service registry": [
+      "/data/repos/dawarich/.circleci/config.yml",
+      "/data/repos/dawarich/Procfile",
+      "/data/repos/dawarich/Procfile.dev",
+      "/data/repos/dawarich/Procfile.production",
+      "/data/repos/dawarich/Procfile.prometheus.dev",
+      "/data/repos/dawarich/docker/Dockerfile.dev",
+      "/data/repos/dawarich/docker/docker-compose.production.yml",
+      "/data/repos/dawarich/docker/docker-compose.yml",
+      "/data/repos/dawarich/docker/sidekiq-entrypoint.sh",
+      "/data/repos/dawarich/docker/web-entrypoint.sh",
+      "/data/repos/dawarich/docs/How_to_install_Dawarich_using_Docker.md",
+      "/data/repos/dawarich/lib/json_stream_handler.rb",
+      "/data/repos/dawarich/spec/requests/api/v1/health_spec.rb",
+      "/data/repos/dawarich/spec/support/redis.rb",
+      "/data/repos/dawarich/spec/swagger/api/v1/health_controller_spec.rb",
+      "/data/repos/dawarich/swagger/v1/swagger.yaml"
+    ],
+    "3rd Party Registration": [
+      "/data/repos/dawarich/.devcontainer/docker-compose.yml",
+      "/data/repos/dawarich/docker/docker-compose.production.yml",
+      "/data/repos/dawarich/docker/docker-compose.yml",
+      "/data/repos/dawarich/docs/synology/docker-compose.yml"
+    ],
+    "Single Service Instance per Host": [
+      "/data/repos/dawarich/Procfile",
+      "/data/repos/dawarich/Procfile.dev",
+      "/data/repos/dawarich/Procfile.production",
+      "/data/repos/dawarich/Procfile.prometheus.dev",
+      "/data/repos/dawarich/app.json",
+      "/data/repos/dawarich/config/schedule.yml",
+      "/data/repos/dawarich/config/sidekiq.yml",
+      "/data/repos/dawarich/docker/Dockerfile.dev",
+      "/data/repos/dawarich/docker/Dockerfile.prod",
+      "/data/repos/dawarich/docker/docker-compose.production.yml",
+      "/data/repos/dawarich/docker/docker-compose.yml",
+      "/data/repos/dawarich/docker/sidekiq-entrypoint.sh",
+      "/data/repos/dawarich/docker/web-entrypoint.sh",
+      "/data/repos/dawarich/docs/How_to_install_Dawarich_in_k8s.md",
+      "/data/repos/dawarich/docs/How_to_install_Dawarich_on_Synology.md",
+      "/data/repos/dawarich/docs/How_to_install_Dawarich_using_Docker.md",
+      "/data/repos/dawarich/docs/synology/docker-compose.yml",
+      "/data/repos/dawarich/docs/synology/spk.tgz",
+      "/data/repos/dawarich/postgresql.conf.example"
+    ],
+    "Service instance per container": [
+      "/data/repos/dawarich/.circleci/config.yml",
+      "/data/repos/dawarich/.devcontainer/Dockerfile",
+      "/data/repos/dawarich/.devcontainer/devcontainer.json",
+      "/data/repos/dawarich/.devcontainer/docker-compose.yml",
+      "/data/repos/dawarich/.github/workflows/build_and_push.yml",
+      "/data/repos/dawarich/.github/workflows/ci.yml",
+      "/data/repos/dawarich/Procfile",
+      "/data/repos/dawarich/Procfile.dev",
+      "/data/repos/dawarich/Procfile.production",
+      "/data/repos/dawarich/Procfile.prometheus.dev",
+      "/data/repos/dawarich/docker/Dockerfile.dev",
+      "/data/repos/dawarich/docker/Dockerfile.prod",
+      "/data/repos/dawarich/docker/docker-compose.production.yml",
+      "/data/repos/dawarich/docker/docker-compose.yml",
+      "/data/repos/dawarich/docker/sidekiq-entrypoint.sh",
+      "/data/repos/dawarich/docker/web-entrypoint.sh",
+      "/data/repos/dawarich/docs/How_to_install_Dawarich_using_Docker.md",
+      "/data/repos/dawarich/docs/synology/docker-compose.yml"
+    ],
+    "Multiple service instances per host": [
+      "/data/repos/dawarich/.devcontainer/docker-compose.yml",
+      "/data/repos/dawarich/Procfile",
+      "/data/repos/dawarich/Procfile.dev",
+      "/data/repos/dawarich/Procfile.production",
+      "/data/repos/dawarich/bin/dev",
+      "/data/repos/dawarich/docker/Dockerfile.dev",
+      "/data/repos/dawarich/docker/Dockerfile.prod",
+      "/data/repos/dawarich/docker/docker-compose.production.yml",
+      "/data/repos/dawarich/docker/docker-compose.yml",
+      "/data/repos/dawarich/docker/sidekiq-entrypoint.sh",
+      "/data/repos/dawarich/docker/web-entrypoint.sh"
+    ],
+    "Service deployment platform": [
+      "/data/repos/dawarich/.circleci/config.yml",
+      "/data/repos/dawarich/.devcontainer/Dockerfile",
+      "/data/repos/dawarich/.devcontainer/devcontainer.json",
+      "/data/repos/dawarich/.devcontainer/docker-compose.yml",
+      "/data/repos/dawarich/Procfile",
+      "/data/repos/dawarich/Procfile.dev",
+      "/data/repos/dawarich/Procfile.production",
+      "/data/repos/dawarich/app.json",
+      "/data/repos/dawarich/docker/Dockerfile.dev",
+      "/data/repos/dawarich/docker/Dockerfile.prod",
+      "/data/repos/dawarich/docker/docker-compose.production.yml",
+      "/data/repos/dawarich/docker/docker-compose.yml",
+      "/data/repos/dawarich/docker/sidekiq-entrypoint.sh",
+      "/data/repos/dawarich/docker/web-entrypoint.sh"
+    ],
+    "Service instance per VM": [
+      "/data/repos/dawarich/.github/workflows/build_and_push.yml",
+      "/data/repos/dawarich/.github/workflows/ci.yml"
+    ],
+    "Service mesh": [
+      "/data/repos/dawarich/app/controllers/api/v1/health_controller.rb",
+      "/data/repos/dawarich/app/services/prometheus_metrics.rb",
+      "/data/repos/dawarich/config/initializers/prometheus.rb",
+      "/data/repos/dawarich/docker/docker-compose.yml",
+      "/data/repos/dawarich/docs/How_to_install_Dawarich_in_k8s.md",
+      "/data/repos/dawarich/docs/How_to_install_Dawarich_using_Docker.md",
+      "/data/repos/dawarich/docs/how_to_setup_reverse_proxy.md"
+    ]
+  },
+  "_metadata": {
+    "experiment": {
+      "run_number": 1
+    },
+    "reproducibility": {
+      "configuration": {
+        "thresholds": {
+          "high_priority": 0.5,
+          "medium_priority": 0.3,
+          "min_priority_score": 0.1,
+          "judge_confidence": 5
+        },
+        "weight_scheme": "llm_dominant",
+        "random_seed": 1761605893
+      }
+    },
+    "models": {
+      "planner": "gpt-5-nano-2025-08-07",
+      "investigator": "gpt-5-nano-2025-08-07",
+      "judge": "gpt-5-nano-2025-08-07",
+      "embedding": "jinaai/jina-embeddings-v2-base-code"
+    },
+    "priority_weights": {
+      "keyword": 0.2,
+      "embedding": 0.1,
+      "graph": 0.0,
+      "llm": 0.7
+    },
+    "source_log": "detection_20251027_225813.log"
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "summary": {
+    "repository_name": "Path-of-Terraria/PathOfTerraria",
+    "detected_patterns": [],
+    "total_patterns_scanned": 9,
+    "timestamp": "2025-10-28T20:38:42.218901",
+    "run_id": "b9843db7"
+  },
+  "patterns": {
+    "Server-side service discovery": false,
+    "Service registry": false,
+    "3rd Party Registration": false,
+    "Single Service Instance per Host": false,
+    "Service instance per container": false,
+    "Multiple service instances per host": false,
+    "Service deployment platform": false,
+    "Service instance per VM": false,
+    "Service mesh": false
+  },
+  "scanned_files_per_pattern": {
+    "Server-side service discovery": [
+      "/data/repos/PathOfTerraria/.github/workflows/ci.yml"
+    ],
+    "Service registry": [
+      "/data/repos/PathOfTerraria/Common/Data/AffixRegistry.cs",
+      "/data/repos/PathOfTerraria/Common/Data/MobRegistry.cs",
+      "/data/repos/PathOfTerraria/Common/Data/Models/PassiveConnection.cs",
+      "/data/repos/PathOfTerraria/Common/Data/Models/PassiveData.cs",
+      "/data/repos/PathOfTerraria/Common/Data/Models/PassivePosition.cs",
+      "/data/repos/PathOfTerraria/Common/Data/PassiveRegistry.cs",
+      "/data/repos/PathOfTerraria/Common/Data/Passives/Passives-dev.json",
+      "/data/repos/PathOfTerraria/Common/Data/Passives/Passives.json",
+      "/data/repos/PathOfTerraria/Common/Data/Passives/Passives.json.bak"
+    ],
+    "3rd Party Registration": [
+      "/data/repos/PathOfTerraria/Common/Data/MobRegistry.cs",
+      "/data/repos/PathOfTerraria/Common/Data/PassiveRegistry.cs"
+    ],
+    "Single Service Instance per Host": [
+      "/data/repos/PathOfTerraria/PathOfTerraria.csproj",
+      "/data/repos/PathOfTerraria/PathOfTerraria.sln",
+      "/data/repos/PathOfTerraria/PathOfTerraria.sln.DotSettings",
+      "/data/repos/PathOfTerraria/PoTMod.cs",
+      "/data/repos/PathOfTerraria/Properties/launchSettings.json",
+      "/data/repos/PathOfTerraria/build.txt",
+      "/data/repos/PathOfTerraria/description.txt",
+      "/data/repos/PathOfTerraria/scripts/increment-version.py"
+    ],
+    "Service instance per container": [
+      "/data/repos/PathOfTerraria/.github/workflows/ci.yml"
+    ],
+    "Multiple service instances per host": [],
+    "Service deployment platform": [
+      "/data/repos/PathOfTerraria/PathOfTerraria.csproj",
+      "/data/repos/PathOfTerraria/PathOfTerraria.sln",
+      "/data/repos/PathOfTerraria/Properties/launchSettings.json"
+    ],
+    "Service instance per VM": [
+      "/data/repos/PathOfTerraria/.github/workflows/ci.yml",
+      "/data/repos/PathOfTerraria/lib/HousingAPI.xml",
+      "/data/repos/PathOfTerraria/lib/NPCUtils.xml",
+      "/data/repos/PathOfTerraria/lib/SubworldLibrary.xml"
+    ],
+    "Service mesh": [
+      "/data/repos/PathOfTerraria/Common/Systems/Synchronization/Handler.cs",
+      "/data/repos/PathOfTerraria/Common/Systems/Synchronization/Handlers/ExperienceHandler.cs",
+      "/data/repos/PathOfTerraria/Common/Systems/Synchronization/Handlers/HotbarPotionHandler.cs",
+      "/data/repos/PathOfTerraria/Common/Systems/Synchronization/Handlers/MapDevice/ConsumeMapDeviceHandler.cs",
+      "/data/repos/PathOfTerraria/Common/Systems/Synchronization/Handlers/MapDevice/PlaceMapInDeviceHandler.cs",
+      "/data/repos/PathOfTerraria/Common/Systems/Synchronization/Handlers/RequestCheckSectionHandler.cs",
+      "/data/repos/PathOfTerraria/Common/Systems/Synchronization/Handlers/SpawnNPCOnServerHandler.cs",
+      "/data/repos/PathOfTerraria/Common/Systems/Synchronization/Handlers/SpawnSentryNPCHandler.cs",
+      "/data/repos/PathOfTerraria/Common/Systems/Synchronization/Handlers/SyncGuardianAngelHandler.cs",
+      "/data/repos/PathOfTerraria/Common/Systems/Synchronization/Handlers/SyncNewConditionalDropPlayerHandler.cs",
+      "/data/repos/PathOfTerraria/Common/Systems/Synchronization/Networking.cs"
+    ]
+  },
+  "_metadata": {
+    "experiment": {
+      "run_number": 1
+    },
+    "reproducibility": {
+      "configuration": {
+        "thresholds": {
+          "high_priority": 0.5,
+          "medium_priority": 0.3,
+          "min_priority_score": 0.1,
+          "judge_confidence": 5
+        },
+        "weight_scheme": "llm_dominant",
+        "random_seed": 1761683922
+      }
+    },
+    "models": {
+      "planner": "gpt-5-nano-2025-08-07",
+      "investigator": "gpt-5-nano-2025-08-07",
+      "judge": "gpt-5-nano-2025-08-07",
+      "embedding": "jinaai/jina-embeddings-v2-base-code"
+    },
+    "priority_weights": {
+      "keyword": 0.2,
+      "embedding": 0.1,
+      "graph": 0.0,
+      "llm": 0.7
+    },
+    "source_log": "detection_20251028_203842.log"
+  }
+}

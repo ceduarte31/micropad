@@ -1,0 +1,156 @@
+{
+  "summary": {
+    "repository_name": "gyroflow/gyroflow",
+    "detected_patterns": [],
+    "total_patterns_scanned": 9,
+    "timestamp": "2025-10-29T21:38:30.009731",
+    "run_id": "f2266542"
+  },
+  "patterns": {
+    "Server-side service discovery": false,
+    "Service registry": false,
+    "3rd Party Registration": false,
+    "Single Service Instance per Host": false,
+    "Service instance per container": false,
+    "Multiple service instances per host": false,
+    "Service deployment platform": false,
+    "Service instance per VM": false,
+    "Service mesh": false
+  },
+  "scanned_files_per_pattern": {
+    "Server-side service discovery": [
+      "/data/repos/gyroflow/.github/workflows/release.yml"
+    ],
+    "Service registry": [
+      "/data/repos/gyroflow/.cargo/config.toml",
+      "/data/repos/gyroflow/.github/workflows/release.yml",
+      "/data/repos/gyroflow/CODE_OF_CONDUCT.md",
+      "/data/repos/gyroflow/CONTRIBUTING.md",
+      "/data/repos/gyroflow/Cargo.toml",
+      "/data/repos/gyroflow/README.md",
+      "/data/repos/gyroflow/_deployment/android/src/xyz/gyroflow/MainActivity.java",
+      "/data/repos/gyroflow/src/core/Cargo.toml",
+      "/data/repos/gyroflow/src/core/gpu/shader_builder/Cargo.toml",
+      "/data/repos/gyroflow/src/core/gpu/shader_builder/rust-toolchain.toml",
+      "/data/repos/gyroflow/src/core/gpu/stabilize_spirv/Cargo.toml",
+      "/data/repos/gyroflow/src/qt_gpu/compiled/compile_shaders.sh",
+      "/data/repos/gyroflow/src/ui/Util.js"
+    ],
+    "3rd Party Registration": [
+      "/data/repos/gyroflow/.devcontainer/devcontainer.json",
+      "/data/repos/gyroflow/.github/ISSUE_TEMPLATE/bug_report.yml",
+      "/data/repos/gyroflow/.github/ISSUE_TEMPLATE/config.yml",
+      "/data/repos/gyroflow/.github/ISSUE_TEMPLATE/feature_request.yml",
+      "/data/repos/gyroflow/.github/workflows/release.yml",
+      "/data/repos/gyroflow/.vscode/launch.json",
+      "/data/repos/gyroflow/.vscode/tasks.json",
+      "/data/repos/gyroflow/_deployment/ios/Resources/Images.xcassets/AppIcon.appiconset/Contents.json",
+      "/data/repos/gyroflow/_deployment/ios/Resources/Images.xcassets/Contents.json",
+      "/data/repos/gyroflow/_deployment/linux/AppImageBuilder.yml",
+      "/data/repos/gyroflow/_deployment/mac/Gyroflow.app/Contents/Resources/Images.xcassets/AppIcon.appiconset/Contents.json"
+    ],
+    "Single Service Instance per Host": [
+      "/data/repos/gyroflow/.github/workflows/release.yml"
+    ],
+    "Service instance per container": [
+      "/data/repos/gyroflow/.devcontainer/Dockerfile",
+      "/data/repos/gyroflow/.devcontainer/devcontainer.json"
+    ],
+    "Multiple service instances per host": [
+      "/data/repos/gyroflow/_deployment/windows/Gyroflow_with_console.bat",
+      "/data/repos/gyroflow/resources/translations/_extract_crowdin.bat",
+      "/data/repos/gyroflow/resources/translations/_release_texts.bat",
+      "/data/repos/gyroflow/resources/translations/_update_texts.bat",
+      "/data/repos/gyroflow/src/qt_gpu/compiled/compile_shaders.sh"
+    ],
+    "Service deployment platform": [
+      "/data/repos/gyroflow/.cargo/config.toml",
+      "/data/repos/gyroflow/.devcontainer/Dockerfile",
+      "/data/repos/gyroflow/.devcontainer/devcontainer.json",
+      "/data/repos/gyroflow/.git/HEAD",
+      "/data/repos/gyroflow/Cargo.lock",
+      "/data/repos/gyroflow/Cargo.toml",
+      "/data/repos/gyroflow/Justfile",
+      "/data/repos/gyroflow/LICENSE",
+      "/data/repos/gyroflow/README.md",
+      "/data/repos/gyroflow/_deployment/android/AndroidManifest.xml",
+      "/data/repos/gyroflow/_deployment/android/res/mipmap-anydpi-v26/icon.xml",
+      "/data/repos/gyroflow/_deployment/android/res/xml/qtprovider_paths.xml",
+      "/data/repos/gyroflow/_deployment/android/src/xyz/gyroflow/MainActivity.java",
+      "/data/repos/gyroflow/_deployment/ios/Info.plist",
+      "/data/repos/gyroflow/_deployment/ios/LaunchScreen.storyboard",
+      "/data/repos/gyroflow/_deployment/ios/PkgInfo",
+      "/data/repos/gyroflow/_deployment/ios/PrivacyInfo.xcprivacy",
+      "/data/repos/gyroflow/_deployment/ios/Resources/Images.xcassets/AppIcon.appiconset/Contents.json",
+      "/data/repos/gyroflow/_deployment/ios/Resources/Images.xcassets/Contents.json",
+      "/data/repos/gyroflow/_deployment/linux/AppImageBuilder.yml",
+      "/data/repos/gyroflow/_deployment/mac/Gyroflow.app/Contents/Info.plist",
+      "/data/repos/gyroflow/_deployment/mac/Gyroflow.app/Contents/Resources/GyroflowDocument.icns",
+      "/data/repos/gyroflow/_deployment/mac/Gyroflow.app/Contents/Resources/Images.xcassets/AppIcon.appiconset/Contents.json",
+      "/data/repos/gyroflow/_deployment/mac/Gyroflow.app/Contents/Resources/qt.conf",
+      "/data/repos/gyroflow/_deployment/windows/AppxManifest.xml",
+      "/data/repos/gyroflow/_deployment/windows/Gyroflow_with_console.bat",
+      "/data/repos/gyroflow/_deployment/windows/msi_installer/installer.wixproj",
+      "/data/repos/gyroflow/_deployment/windows/msi_installer/installer.wxs",
+      "/data/repos/gyroflow/_deployment/windows/msi_installer/installer_msix.xml",
+      "/data/repos/gyroflow/_scripts/android.just",
+      "/data/repos/gyroflow/_scripts/common.just",
+      "/data/repos/gyroflow/_scripts/ios.just",
+      "/data/repos/gyroflow/_scripts/linux.just",
+      "/data/repos/gyroflow/_scripts/macos.just",
+      "/data/repos/gyroflow/_scripts/windows.just",
+      "/data/repos/gyroflow/build.rs",
+      "/data/repos/gyroflow/src/cli.rs",
+      "/data/repos/gyroflow/src/core/lib.rs",
+      "/data/repos/gyroflow/src/ui/App.qml",
+      "/data/repos/gyroflow/src/ui/main_window.qml"
+    ],
+    "Service instance per VM": [
+      "/data/repos/gyroflow/.github/workflows/release.yml",
+      "/data/repos/gyroflow/_deployment/android/AndroidManifest.xml",
+      "/data/repos/gyroflow/_deployment/android/res/mipmap-anydpi-v26/icon.xml",
+      "/data/repos/gyroflow/_deployment/android/res/xml/qtprovider_paths.xml",
+      "/data/repos/gyroflow/_deployment/windows/AppxManifest.xml",
+      "/data/repos/gyroflow/_deployment/windows/msi_installer/installer_msix.xml"
+    ],
+    "Service mesh": [
+      "/data/repos/gyroflow/.devcontainer/devcontainer.json",
+      "/data/repos/gyroflow/.github/workflows/release.yml",
+      "/data/repos/gyroflow/.vscode/launch.json",
+      "/data/repos/gyroflow/.vscode/tasks.json",
+      "/data/repos/gyroflow/_deployment/ios/Resources/Images.xcassets/AppIcon.appiconset/Contents.json",
+      "/data/repos/gyroflow/_deployment/ios/Resources/Images.xcassets/Contents.json",
+      "/data/repos/gyroflow/_deployment/mac/Gyroflow.app/Contents/Resources/Images.xcassets/AppIcon.appiconset/Contents.json"
+    ]
+  },
+  "_metadata": {
+    "experiment": {
+      "run_number": 1
+    },
+    "reproducibility": {
+      "configuration": {
+        "thresholds": {
+          "high_priority": 0.5,
+          "medium_priority": 0.3,
+          "min_priority_score": 0.1,
+          "judge_confidence": 5
+        },
+        "weight_scheme": "llm_dominant",
+        "random_seed": 1761773909
+      }
+    },
+    "models": {
+      "planner": "gpt-5-nano-2025-08-07",
+      "investigator": "gpt-5-nano-2025-08-07",
+      "judge": "gpt-5-nano-2025-08-07",
+      "embedding": "jinaai/jina-embeddings-v2-base-code"
+    },
+    "priority_weights": {
+      "keyword": 0.2,
+      "embedding": 0.1,
+      "graph": 0.0,
+      "llm": 0.7
+    },
+    "source_log": "detection_20251029_213829.log"
+  }
+}

@@ -1,0 +1,219 @@
+{
+  "summary": {
+    "repository_name": "Part-DB/Part-DB-server",
+    "detected_patterns": [
+      "Service instance per container",
+      "Multiple service instances per host",
+      "Service deployment platform"
+    ],
+    "total_patterns_scanned": 9,
+    "timestamp": "2025-10-28T19:54:09.168565",
+    "run_id": "27d21cd0"
+  },
+  "patterns": {
+    "Server-side service discovery": false,
+    "Service registry": false,
+    "3rd Party Registration": false,
+    "Single Service Instance per Host": false,
+    "Service instance per container": true,
+    "Multiple service instances per host": true,
+    "Service deployment platform": true,
+    "Service instance per VM": false,
+    "Service mesh": false
+  },
+  "scanned_files_per_pattern": {
+    "Server-side service discovery": [
+      "/data/repos/Part-DB-server/.docker/frankenphp/Caddyfile",
+      "/data/repos/Part-DB-server/.docker/frankenphp/worker.Caddyfile",
+      "/data/repos/Part-DB-server/.docker/symfony.conf",
+      "/data/repos/Part-DB-server/docs/installation/nginx.md",
+      "/data/repos/Part-DB-server/src/Form/InfoProviderSystem/FieldToProviderMappingType.php",
+      "/data/repos/Part-DB-server/src/Form/InfoProviderSystem/GlobalFieldMappingType.php",
+      "/data/repos/Part-DB-server/src/Form/InfoProviderSystem/PartProviderConfigurationType.php",
+      "/data/repos/Part-DB-server/src/Form/InfoProviderSystem/ProviderSelectType.php",
+      "/data/repos/Part-DB-server/src/Services/InfoProviderSystem/BulkInfoProviderService.php",
+      "/data/repos/Part-DB-server/src/Services/InfoProviderSystem/ProviderRegistry.php",
+      "/data/repos/Part-DB-server/src/Services/InfoProviderSystem/Providers/DigikeyProvider.php",
+      "/data/repos/Part-DB-server/src/Services/InfoProviderSystem/Providers/Element14Provider.php",
+      "/data/repos/Part-DB-server/src/Services/InfoProviderSystem/Providers/EmptyProvider.php",
+      "/data/repos/Part-DB-server/src/Services/InfoProviderSystem/Providers/InfoProviderInterface.php",
+      "/data/repos/Part-DB-server/src/Services/InfoProviderSystem/Providers/LCSCProvider.php",
+      "/data/repos/Part-DB-server/src/Services/InfoProviderSystem/Providers/MouserProvider.php",
+      "/data/repos/Part-DB-server/src/Services/InfoProviderSystem/Providers/OEMSecretsProvider.php",
+      "/data/repos/Part-DB-server/src/Services/InfoProviderSystem/Providers/OctopartProvider.php",
+      "/data/repos/Part-DB-server/src/Services/InfoProviderSystem/Providers/PollinProvider.php",
+      "/data/repos/Part-DB-server/src/Services/InfoProviderSystem/Providers/ReicheltProvider.php",
+      "/data/repos/Part-DB-server/src/Services/InfoProviderSystem/Providers/TMEClient.php",
+      "/data/repos/Part-DB-server/src/Services/InfoProviderSystem/Providers/TMEProvider.php",
+      "/data/repos/Part-DB-server/src/Services/InfoProviderSystem/Providers/TestProvider.php",
+      "/data/repos/Part-DB-server/src/Settings/InfoProviderSystem/DigikeySettings.php",
+      "/data/repos/Part-DB-server/src/Settings/InfoProviderSystem/Element14Settings.php",
+      "/data/repos/Part-DB-server/src/Settings/InfoProviderSystem/InfoProviderGeneralSettings.php",
+      "/data/repos/Part-DB-server/src/Settings/InfoProviderSystem/InfoProviderSettings.php",
+      "/data/repos/Part-DB-server/src/Settings/InfoProviderSystem/LCSCSettings.php",
+      "/data/repos/Part-DB-server/src/Settings/InfoProviderSystem/MouserSettings.php",
+      "/data/repos/Part-DB-server/src/Settings/InfoProviderSystem/OEMSecretsSettings.php",
+      "/data/repos/Part-DB-server/src/Settings/InfoProviderSystem/OctopartSettings.php",
+      "/data/repos/Part-DB-server/src/Settings/InfoProviderSystem/PollinSettings.php",
+      "/data/repos/Part-DB-server/src/Settings/InfoProviderSystem/ReicheltSettings.php",
+      "/data/repos/Part-DB-server/src/Settings/InfoProviderSystem/TMESettings.php",
+      "/data/repos/Part-DB-server/templates/info_providers/providers_list/providers_list.html.twig"
+    ],
+    "Service registry": [
+      "/data/repos/Part-DB-server/config/packages/http_discovery.yaml",
+      "/data/repos/Part-DB-server/src/Services/InfoProviderSystem/BulkInfoProviderService.php",
+      "/data/repos/Part-DB-server/src/Services/InfoProviderSystem/ProviderRegistry.php",
+      "/data/repos/Part-DB-server/src/Services/InfoProviderSystem/Providers/DigikeyProvider.php",
+      "/data/repos/Part-DB-server/src/Services/InfoProviderSystem/Providers/EmptyProvider.php",
+      "/data/repos/Part-DB-server/src/Services/InfoProviderSystem/Providers/InfoProviderInterface.php",
+      "/data/repos/Part-DB-server/src/Services/InfoProviderSystem/Providers/LCSCProvider.php",
+      "/data/repos/Part-DB-server/src/Services/InfoProviderSystem/Providers/MouserProvider.php",
+      "/data/repos/Part-DB-server/tests/Services/InfoProviderSystem/ProviderRegistryTest.php"
+    ],
+    "3rd Party Registration": [
+      "/data/repos/Part-DB-server/.docker/apache2-foreground",
+      "/data/repos/Part-DB-server/.docker/frankenphp/Caddyfile",
+      "/data/repos/Part-DB-server/.docker/frankenphp/conf.d/app.dev.ini",
+      "/data/repos/Part-DB-server/.docker/frankenphp/conf.d/app.ini",
+      "/data/repos/Part-DB-server/.docker/frankenphp/conf.d/app.prod.ini",
+      "/data/repos/Part-DB-server/.docker/frankenphp/docker-entrypoint.sh",
+      "/data/repos/Part-DB-server/.docker/frankenphp/worker.Caddyfile",
+      "/data/repos/Part-DB-server/.docker/partdb-entrypoint.sh",
+      "/data/repos/Part-DB-server/.docker/symfony.conf",
+      "/data/repos/Part-DB-server/.github/workflows/assets_artifact_build.yml",
+      "/data/repos/Part-DB-server/.github/workflows/docker_build.yml",
+      "/data/repos/Part-DB-server/.github/workflows/docker_frankenphp.yml",
+      "/data/repos/Part-DB-server/.github/workflows/static_analysis.yml",
+      "/data/repos/Part-DB-server/.github/workflows/tests.yml",
+      "/data/repos/Part-DB-server/Dockerfile",
+      "/data/repos/Part-DB-server/Dockerfile-frankenphp",
+      "/data/repos/Part-DB-server/Procfile",
+      "/data/repos/Part-DB-server/ecs.php"
+    ],
+    "Single Service Instance per Host": [
+      "/data/repos/Part-DB-server/.docker/apache2-foreground",
+      "/data/repos/Part-DB-server/.docker/frankenphp/Caddyfile",
+      "/data/repos/Part-DB-server/.docker/frankenphp/conf.d/app.dev.ini",
+      "/data/repos/Part-DB-server/.docker/frankenphp/conf.d/app.ini",
+      "/data/repos/Part-DB-server/.docker/frankenphp/conf.d/app.prod.ini",
+      "/data/repos/Part-DB-server/.docker/frankenphp/docker-entrypoint.sh",
+      "/data/repos/Part-DB-server/.docker/frankenphp/worker.Caddyfile",
+      "/data/repos/Part-DB-server/.docker/partdb-entrypoint.sh",
+      "/data/repos/Part-DB-server/.docker/symfony.conf",
+      "/data/repos/Part-DB-server/.github/workflows/docker_build.yml",
+      "/data/repos/Part-DB-server/.github/workflows/docker_frankenphp.yml",
+      "/data/repos/Part-DB-server/Dockerfile",
+      "/data/repos/Part-DB-server/Dockerfile-frankenphp",
+      "/data/repos/Part-DB-server/Procfile"
+    ],
+    "Service instance per container": [
+      "/data/repos/Part-DB-server/.docker/apache2-foreground",
+      "/data/repos/Part-DB-server/.docker/frankenphp/Caddyfile",
+      "/data/repos/Part-DB-server/.docker/frankenphp/conf.d/app.dev.ini",
+      "/data/repos/Part-DB-server/.docker/frankenphp/conf.d/app.ini",
+      "/data/repos/Part-DB-server/.docker/frankenphp/conf.d/app.prod.ini",
+      "/data/repos/Part-DB-server/.docker/frankenphp/docker-entrypoint.sh",
+      "/data/repos/Part-DB-server/.docker/frankenphp/worker.Caddyfile",
+      "/data/repos/Part-DB-server/.docker/partdb-entrypoint.sh",
+      "/data/repos/Part-DB-server/.docker/symfony.conf",
+      "/data/repos/Part-DB-server/.github/workflows/assets_artifact_build.yml",
+      "/data/repos/Part-DB-server/.github/workflows/docker_build.yml",
+      "/data/repos/Part-DB-server/.github/workflows/docker_frankenphp.yml",
+      "/data/repos/Part-DB-server/Dockerfile",
+      "/data/repos/Part-DB-server/Dockerfile-frankenphp"
+    ],
+    "Multiple service instances per host": [
+      "/data/repos/Part-DB-server/.docker/apache2-foreground",
+      "/data/repos/Part-DB-server/.docker/frankenphp/Caddyfile",
+      "/data/repos/Part-DB-server/.docker/frankenphp/conf.d/app.dev.ini",
+      "/data/repos/Part-DB-server/.docker/frankenphp/conf.d/app.ini",
+      "/data/repos/Part-DB-server/.docker/frankenphp/conf.d/app.prod.ini",
+      "/data/repos/Part-DB-server/.docker/frankenphp/docker-entrypoint.sh",
+      "/data/repos/Part-DB-server/.docker/frankenphp/worker.Caddyfile",
+      "/data/repos/Part-DB-server/.docker/partdb-entrypoint.sh",
+      "/data/repos/Part-DB-server/.docker/symfony.conf",
+      "/data/repos/Part-DB-server/Dockerfile",
+      "/data/repos/Part-DB-server/Dockerfile-frankenphp",
+      "/data/repos/Part-DB-server/Procfile"
+    ],
+    "Service deployment platform": [
+      "/data/repos/Part-DB-server/.docker/apache2-foreground",
+      "/data/repos/Part-DB-server/.docker/frankenphp/Caddyfile",
+      "/data/repos/Part-DB-server/.docker/frankenphp/conf.d/app.dev.ini",
+      "/data/repos/Part-DB-server/.docker/frankenphp/conf.d/app.ini",
+      "/data/repos/Part-DB-server/.docker/frankenphp/conf.d/app.prod.ini",
+      "/data/repos/Part-DB-server/.docker/frankenphp/docker-entrypoint.sh",
+      "/data/repos/Part-DB-server/.docker/frankenphp/worker.Caddyfile",
+      "/data/repos/Part-DB-server/.docker/partdb-entrypoint.sh",
+      "/data/repos/Part-DB-server/.docker/symfony.conf",
+      "/data/repos/Part-DB-server/.github/workflows/docker_build.yml",
+      "/data/repos/Part-DB-server/.github/workflows/docker_frankenphp.yml",
+      "/data/repos/Part-DB-server/Dockerfile",
+      "/data/repos/Part-DB-server/Dockerfile-frankenphp",
+      "/data/repos/Part-DB-server/Procfile",
+      "/data/repos/Part-DB-server/docs/installation/installation_docker.md",
+      "/data/repos/Part-DB-server/docs/installation/kubernetes.md"
+    ],
+    "Service instance per VM": [
+      "/data/repos/Part-DB-server/.github/workflows/assets_artifact_build.yml",
+      "/data/repos/Part-DB-server/.github/workflows/docker_build.yml",
+      "/data/repos/Part-DB-server/.github/workflows/docker_frankenphp.yml",
+      "/data/repos/Part-DB-server/.github/workflows/static_analysis.yml",
+      "/data/repos/Part-DB-server/.github/workflows/tests.yml",
+      "/data/repos/Part-DB-server/Makefile",
+      "/data/repos/Part-DB-server/public/icon/browserconfig.xml",
+      "/data/repos/Part-DB-server/tests/assets/partkeepr_import_test.xml"
+    ],
+    "Service mesh": [
+      "/data/repos/Part-DB-server/.docker/apache2-foreground",
+      "/data/repos/Part-DB-server/.docker/frankenphp/Caddyfile",
+      "/data/repos/Part-DB-server/.docker/frankenphp/conf.d/app.dev.ini",
+      "/data/repos/Part-DB-server/.docker/frankenphp/docker-entrypoint.sh",
+      "/data/repos/Part-DB-server/.docker/frankenphp/worker.Caddyfile",
+      "/data/repos/Part-DB-server/Dockerfile",
+      "/data/repos/Part-DB-server/Dockerfile-frankenphp",
+      "/data/repos/Part-DB-server/docs/installation/kubernetes.md",
+      "/data/repos/Part-DB-server/src/EventSubscriber/LogSystem/LogLogoutEventSubscriber.php",
+      "/data/repos/Part-DB-server/src/EventSubscriber/LogSystem/SecurityEventLoggerSubscriber.php",
+      "/data/repos/Part-DB-server/src/EventSubscriber/RedirectToHttpsSubscriber.php",
+      "/data/repos/Part-DB-server/src/Events/SecurityEvent.php",
+      "/data/repos/Part-DB-server/src/Events/SecurityEvents.php",
+      "/data/repos/Part-DB-server/src/Exceptions/LogEntryObsoleteException.php",
+      "/data/repos/Part-DB-server/src/Services/LogSystem/EventLogger.php",
+      "/data/repos/Part-DB-server/src/Twig/LogExtension.php",
+      "/data/repos/Part-DB-server/tests/Services/LogSystem/EventCommentHelperTest.php",
+      "/data/repos/Part-DB-server/tests/Services/LogSystem/EventLoggerTest.php",
+      "/data/repos/Part-DB-server/tests/Services/LogSystem/TimeTravelTest.php"
+    ]
+  },
+  "_metadata": {
+    "experiment": {
+      "run_number": 1
+    },
+    "reproducibility": {
+      "configuration": {
+        "thresholds": {
+          "high_priority": 0.5,
+          "medium_priority": 0.3,
+          "min_priority_score": 0.1,
+          "judge_confidence": 5
+        },
+        "weight_scheme": "llm_dominant",
+        "random_seed": 1761681249
+      }
+    },
+    "models": {
+      "planner": "gpt-5-nano-2025-08-07",
+      "investigator": "gpt-5-nano-2025-08-07",
+      "judge": "gpt-5-nano-2025-08-07",
+      "embedding": "jinaai/jina-embeddings-v2-base-code"
+    },
+    "priority_weights": {
+      "keyword": 0.2,
+      "embedding": 0.1,
+      "graph": 0.0,
+      "llm": 0.7
+    },
+    "source_log": "detection_20251028_195409.log"
+  }
+}

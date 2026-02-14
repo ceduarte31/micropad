@@ -1,0 +1,545 @@
+pattern_name: "Service registry"
+description: |
+  How do clients of a service (in Client-side discovery) and/or routers (in Server-side discovery) know about the available instances of a service?
+  Implement a service registry, which is a database of services and their instances (addresses, ports, metadata, health), enabling dynamic discovery, health-based routing, and decoupled configuration.
+repository_fingerprint:
+  glob_patterns:
+    # --- Tier 1: The Spear (High-Confidence & High-Diversity Keyword Search) ---
+    # Netflix Eureka (server/client) configurations and dependencies
+    - glob: "**/*application*.y*ml"
+      search_method: "keyword"
+      keywords: ["eureka.client.serviceUrl", "eureka.instance", "spring.cloud.discovery", "spring.cloud.netflix.eureka", "spring.cloud.consul", "spring.cloud.zookeeper.discovery", "spring.cloud.kubernetes.discovery"]
+    - glob: "**/*.properties"
+      search_method: "keyword"
+      keywords: ["eureka.client.serviceUrl", "eureka.instance.hostname", "spring.cloud.discovery.enabled", "spring.cloud.consul.host", "spring.cloud.zookeeper.connect-string"]
+    - glob: "**/*.java"
+      search_method: "keyword"
+      keywords: ["@EnableEurekaServer", "@EnableDiscoveryClient", "DiscoveryClient", "EurekaClient", "ServiceDiscoveryBuilder", "ServiceInstanceBuilder"]
+    - glob: "**/pom.xml"
+      search_method: "keyword"
+      keywords: ["spring-cloud-starter-netflix-eureka-server", "spring-cloud-starter-netflix-eureka-client", "spring-cloud-starter-consul-discovery", "spring-cloud-starter-zookeeper-discovery", "spring-cloud-starter-kubernetes-discovery"]
+    - glob: "**/build.gradle*"
+      search_method: "keyword"
+      keywords: ["spring-cloud-starter-netflix-eureka-server", "spring-cloud-starter-netflix-eureka-client", "spring-cloud-starter-consul-discovery", "spring-cloud-starter-zookeeper-discovery", "spring-cloud-starter-kubernetes-discovery"]
+    # Consul configs and service definitions
+    - glob: "**/consul*.hcl"
+      search_method: "keyword"
+      keywords: ["service {", "server = true", "connect {", "datacenter", "ui = true"]
+    - glob: "**/consul.d/**/*.json"
+      search_method: "keyword"
+      keywords: ["\"service\":", "\"name\":", "\"port\":", "\"checks\"", "\"ID\""]
+    - glob: "**/consul*.json"
+      search_method: "keyword"
+      keywords: ["\"service\":", "\"name\":", "\"port\":", "\"checks\"", "\"ID\""]
+    # Zookeeper configs
+    - glob: "**/zoo.cfg"
+      search_method: "keyword"
+      keywords: ["tickTime", "initLimit", "syncLimit", "server.", "clientPort"]
+    # etcd configs and code
+    - glob: "**/etcd*.y*ml"
+      search_method: "keyword"
+      keywords: ["initial-cluster", "listen-peer-urls", "advertise-client-urls", "data-dir"]
+    - glob: "**/*.go"
+      search_method: "keyword"
+      keywords: ["go.etcd.io/etcd/client/v3", "clientv3.New", "consul/api", "ServiceRegistration", "Register", "lease.Grant"]
+    - glob: "**/*.py"
+      search_method: "keyword"
+      keywords: ["consul.Consul(", "kazoo.client", "etcd3.client(", "py_eureka_client", "register_instance"]
+    - glob: "**/*.js"
+      search_method: "keyword"
+      keywords: ["eureka-js-client", "node-consul", "node-zookeeper-client", "nacos", "etcd3"]
+    # Orchestrator/infra with service discovery integration
+    - glob: "**/docker-compose*.y*ml"
+      search_method: "keyword"
+      keywords: ["consul", "eureka", "zookeeper", "nacos", "registrator", "etcd"]
+    - glob: "**/*.tf"
+      search_method: "keyword"
+      keywords: ["aws_service_discovery", "cloudmap", "AWS::ServiceDiscovery", "serviceRegistries", "consul"]
+    - glob: "**/cloudformation/**/*.*"
+      search_method: "keyword"
+      keywords: ["AWS::ServiceDiscovery::PrivateDnsNamespace", "AWS::ServiceDiscovery::Service", "DnsConfig", "NamespaceId"]
+    - glob: "**/ecs-*.json"
+      search_method: "keyword"
+      keywords: ["serviceRegistries", "registryArn", "awsVpcConfiguration"]
+    - glob: "**/traefik*.y*ml"
+      search_method: "keyword"
+      keywords: ["providers.consulCatalog", "consulCatalog:"]
+    - glob: "**/nomad*.hcl"
+      search_method: "keyword"
+      keywords: ["service {", "provider = \"consul\"", "check {", "name ="]
+    - glob: "**/helm/**/*values*.y*ml"
+      search_method: "keyword"
+      keywords: ["global.name: consul", "server:", "ui:", "eureka", "zookeeper"]
+    - glob: "**/k8s/**/*.y*ml"
+      search_method: "keyword"
+      keywords: ["consul.hashicorp.com", "eureka", "zookeeper", "headless", "clusterIP: None"]
+
+    # --- Tier 2: The Cast Net (Contextual & Suggestive Embedding Search) ---
+    - glob: "**/bootstrap.y*ml"
+      search_method: "keyword"
+      keywords: ["spring.cloud.consul", "spring.cloud.discovery", "spring.application.name"]
+    - glob: "**/*.toml"
+      search_method: "keyword"
+      keywords: ["backend = \"etcd\"", "backend = \"consul\"", "prefix = \"/services\""]
+    - glob: "**/*.sh"
+      search_method: "keyword"
+      keywords: ["etcdctl", "consul catalog", "consul services", "eureka", "nacos"]
+    - glob: "**/values.y*ml"
+      search_method: "keyword"
+      keywords: ["serviceDiscovery", "cloudMap", "consul", "zookeeper"]
+    - glob: "**/*.md"
+      search_method: "keyword"
+      keywords: ["service registry", "service discovery", "Eureka", "Consul", "Zookeeper", "Cloud Map"]
+
+    # --- Tier 3: The Trawler (Broad Catch-all Embedding Search) ---
+    - glob: "**/helm/**/*.y*ml"
+    - glob: "**/charts/**/*.y*ml"
+    - glob: "**/k8s/**/*.y*ml"
+    - glob: "**/kubernetes/**/*.y*ml"
+    - glob: "**/manifests/**/*.y*ml"
+    - glob: "**/config/**/*.y*ml"
+    - glob: "**/deploy/**/*.y*ml"
+    - glob: "**/*.hcl"
+    - glob: "**/*.gradle*"
+    - glob: "**/Jenkinsfile"
+    - glob: "**/.github/workflows/*.y*ml"
+    - glob: "**/.gitlab-ci.yml"
+    - glob: "**/azure-pipelines.yml"
+    - glob: "**/.circleci/config.yml"
+
+positive_examples:
+  - |
+    # 1. Spring Boot Eureka Server (application.yml)
+    server:
+      port: 8761
+    eureka:
+      client:
+        register-with-eureka: false
+        fetch-registry: false
+      server:
+        enable-self-preservation: false
+    spring:
+      application:
+        name: eureka-server
+  - |
+    # 2. Java Eureka Server Application
+    @SpringBootApplication
+    @EnableEurekaServer
+    public class RegistryApplication {
+      public static void main(String[] args) {
+        SpringApplication.run(RegistryApplication.class, args);
+      }
+    }
+  - |
+    # 3. Spring Boot Eureka Client (application.yml)
+    server:
+      port: 0
+    spring:
+      application:
+        name: orders
+    eureka:
+      client:
+        serviceUrl:
+          defaultZone: http://eureka:8761/eureka/
+        fetchRegistry: true
+        registerWithEureka: true
+      instance:
+        preferIpAddress: true
+  - |
+    # 4. Docker Compose: Eureka Server + Clients
+    version: "3.8"
+    services:
+      eureka:
+        image: netflixoss/eureka:1.4.12
+        ports: ["8761:8761"]
+        environment:
+          EUREKA_INSTANCE_HOSTNAME: eureka
+      inventory:
+        build: ./inventory
+        environment:
+          - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka/
+      orders:
+        build: ./orders
+        environment:
+          - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka/
+        depends_on: [eureka]
+  - |
+    # 5. Consul Agent Server (HCL)
+    datacenter = "dc1"
+    server     = true
+    bootstrap_expect = 1
+    ui = true
+    client_addr = "0.0.0.0"
+  - |
+    # 6. Consul Service Registration (JSON)
+    {
+      "service": {
+        "ID": "web-1",
+        "Name": "web",
+        "Tags": ["v1", "blue"],
+        "Address": "10.0.1.23",
+        "Port": 8080,
+        "Checks": [
+          {
+            "HTTP": "http://10.0.1.23:8080/health",
+            "Interval": "10s",
+            "DeregisterCriticalServiceAfter": "1m"
+          }
+        ]
+      }
+    }
+  - |
+    # 7. Node.js Register with Consul
+    const consul = require('consul')();
+    consul.agent.service.register({
+      id: 'payments-1',
+      name: 'payments',
+      address: process.env.POD_IP || '127.0.0.1',
+      port: 9000,
+      check: { http: `http://${process.env.POD_IP || '127.0.0.1'}:9000/health`, interval: '10s' }
+    }, err => { if (err) throw err; });
+  - |
+    # 8. Go Register with Consul (TTL/health)
+    package main
+    import ( "log"; consul "github.com/hashicorp/consul/api" )
+    func main() {
+      c, _ := consul.NewClient(consul.Config{})
+      reg := &consul.AgentServiceRegistration{
+        ID: "users-1", Name: "users", Port: 8081, Address: "10.0.2.5",
+        Check: &consul.AgentServiceCheck{TTL: "15s"}
+      }
+      if err := c.Agent().ServiceRegister(reg); err != nil { log.Fatal(err) }
+      // heartbeat
+      _ = c.Agent().UpdateTTL("service:users-1", "ok", "pass")
+    }
+  - |
+    # 9. Python Register with etcd (lease-based)
+    import etcd3, socket
+    cli = etcd3.client(host='etcd', port=2379)
+    lease = cli.lease(30)
+    key = f"/services/cart/{socket.gethostname()}"
+    cli.put(key, "10.0.0.7:8080", lease=lease)
+  - |
+    # 10. Zookeeper Service Registration with Curator (Ephemeral Node)
+    CuratorFramework client = CuratorFrameworkFactory.newClient("zookeeper:2181", new ExponentialBackoffRetry(1000, 3));
+    client.start();
+    client.create().creatingParentsIfNeeded().withMode(CreateMode.EPHEMERAL)
+      .forPath("/services/shipping/instance-1", "10.0.0.9:8082".getBytes());
+  - |
+    # 11. Apache Curator Service Discovery Recipe
+    ServiceInstance<String> instance = ServiceInstance.<String>builder()
+      .name("billing").address("10.0.0.12").port(9090).build();
+    ServiceDiscovery<String> discovery = ServiceDiscoveryBuilder.builder(String.class)
+      .basePath("/discovery").client(client).build();
+    discovery.registerService(instance);
+  - |
+    # 12. Spring Cloud Consul Discovery (bootstrap.yml)
+    spring:
+      application:
+        name: catalog
+      cloud:
+        consul:
+          host: consul
+          port: 8500
+        discovery:
+          enabled: true
+  - |
+    # 13. Docker Compose: Consul + Registrator
+    version: "3.8"
+    services:
+      consul:
+        image: consul:1.16
+        ports: ["8500:8500"]
+        command: ["agent","-server","-bootstrap-expect=1","-ui","-client=0.0.0.0"]
+      registrator:
+        image: gliderlabs/registrator:latest
+        network_mode: "host"
+        command: "-ip 127.0.0.1 consul://localhost:8500"
+        volumes: ["/var/run/docker.sock:/tmp/docker.sock"]
+        depends_on: [consul]
+  - |
+    # 14. Kubernetes: Headless Service (built-in registry DNS records)
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: ratings
+    spec:
+      clusterIP: None
+      selector:
+        app: ratings
+      ports:
+      - port: 9080
+        name: http
+  - |
+    # 15. ECS Service with Cloud Map Service Registry
+    {
+      "serviceName": "api",
+      "serviceRegistries": [
+        {
+          "registryArn": "arn:aws:servicediscovery:us-east-1:123456789012:service/srv-abc123"
+        }
+      ],
+      "networkConfiguration": {
+        "awsvpcConfiguration": { "subnets": ["subnet-1"], "assignPublicIp": "ENABLED" }
+      }
+    }
+  - |
+    # 16. CloudFormation: AWS Cloud Map Namespace + Service
+    Resources:
+      PrivateNS:
+        Type: AWS::ServiceDiscovery::PrivateDnsNamespace
+        Properties:
+          Name: svc.local
+          Vpc: vpc-1234abcd
+      OrdersService:
+        Type: AWS::ServiceDiscovery::Service
+        Properties:
+          Name: orders
+          NamespaceId: !Ref PrivateNS
+          DnsConfig:
+            DnsRecords:
+              - Type: A
+                TTL: 10
+  - |
+    # 17. Nomad Job with Consul Service Stanza
+    job "payments" {
+      group "grp" {
+        task "svc" {
+          driver = "docker"
+          config { image = "payments:latest" }
+          service {
+            name = "payments"
+            port = "http"
+            check { type = "http" path = "/health" interval = "10s" timeout = "2s" }
+          }
+          resources { network { port "http" { to = 8080 } } }
+        }
+      }
+    }
+  - |
+    # 18. Traefik Consul Catalog Provider
+    providers:
+      consulCatalog:
+        endpoint:
+          address: "consul:8500"
+        exposedByDefault: false
+  - |
+    # 19. etcd Cluster (Compose) for Registry-Backed Discovery
+    version: "3.8"
+    services:
+      etcd:
+        image: quay.io/coreos/etcd:v3.5.12
+        environment:
+          - ETCD_LISTEN_CLIENT_URLS=http://0.0.0.0:2379
+          - ETCD_ADVERTISE_CLIENT_URLS=http://etcd:2379
+        ports: ["2379:2379"]
+  - |
+    # 20. Spring Cloud Kubernetes Discovery (application.yml)
+    spring:
+      application:
+        name: shipping
+      cloud:
+        kubernetes:
+          discovery:
+            enabled: true
+            all-namespaces: false
+  - |
+    # 21. Python + Consul Registration
+    import consul, socket
+    c = consul.Consul(host='consul', port=8500)
+    addr = socket.gethostbyname(socket.gethostname())
+    c.agent.service.register('inventory', service_id='inventory-'+addr, address=addr, port=8080,
+                             check=consul.Check.http(f'http://{addr}:8080/health', '10s'))
+  - |
+    # 22. Go Register with etcd using Lease KeepAlive
+    cli, _ := clientv3.New(clientv3.Config{Endpoints: []string{"etcd:2379"}})
+    lease, _ := cli.Grant(context.Background(), 30)
+    key := "/services/search/" + hostname
+    cli.Put(context.Background(), key, "10.0.0.33:8080", clientv3.WithLease(lease.ID))
+    ch, _ := cli.KeepAlive(context.Background(), lease.ID)
+    for range ch {}
+  - |
+    # 23. Nacos Registry (Spring Boot application.yml)
+    spring:
+      application:
+        name: pricing
+      cloud:
+        nacos:
+          discovery:
+            server-addr: nacos:8848
+            namespace: public
+  - |
+    # 24. Nacos Server (Docker Compose)
+    version: '3.8'
+    services:
+      nacos:
+        image: nacos/nacos-server:2.2.3
+        environment:
+          - MODE=standalone
+        ports:
+          - "8848:8848"
+  - |
+    # 25. Zookeeper Helm Values Enabling 3-node Ensemble (Service Registry Backend)
+    replicas: 3
+    service:
+      type: ClusterIP
+    persistence:
+      enabled: true
+  - |
+    # 26. Spring Boot (pom.xml) with Eureka Client Dependency
+    <project>
+      <dependencies>
+        <dependency>
+          <groupId>org.springframework.cloud</groupId>
+          <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+      </dependencies>
+    </project>
+  - |
+    # 27. Service Discovery with SmallRye Stork (Quarkus)
+    quarkus.stork.orders.service-discovery.type=consul
+    quarkus.stork.orders.service-discovery.consul.host=consul
+    quarkus.stork.orders.service-discovery.consul.port=8500
+  - |
+    # 28. Kubernetes: Consul Connect Injection with Service Defaults
+    apiVersion: consul.hashicorp.com/v1alpha1
+    kind: ServiceDefaults
+    metadata:
+      name: payments
+    spec:
+      protocol: http
+  - |
+    # 29. Eureka JS Client Registration
+    const Eureka = require('eureka-js-client').Eureka;
+    const client = new Eureka({
+      instance: {
+        app: 'gateway',
+        hostName: 'gateway-1',
+        ipAddr: '10.0.0.21',
+        port: { '$': 8080, '@enabled': true },
+        vipAddress: 'gateway',
+        healthCheckUrl: 'http://10.0.0.21:8080/health'
+      },
+      eureka: { host: 'eureka', port: 8761, servicePath: '/eureka/apps/' }
+    });
+    client.start();
+  - |
+    # 30. Spring Cloud Zookeeper Discovery (application.yml)
+    spring:
+      application:
+        name: reviews
+      cloud:
+        zookeeper:
+          connect-string: zookeeper:2181
+        discovery:
+          enabled: true
+  - |
+    # 31. Consul Service Resolver (Traffic to Subset)
+    Kind = "service-resolver"
+    Name = "web"
+    DefaultSubset = "v1"
+    Subsets = {
+      v1 = { Filter = "Service.Tags contains \"v1\"" }
+      v2 = { Filter = "Service.Tags contains \"v2\"" }
+    }
+  - |
+    # 32. Helm values for Consul with UI and Sync Catalog
+    global:
+      name: consul
+    ui:
+      enabled: true
+    syncCatalog:
+      enabled: true
+  - |
+    # 33. etcdctl Script Registering Service Endpoint
+    #!/usr/bin/env bash
+    ETCDCTL_API=3 etcdctl --endpoints=http://etcd:2379 put /services/email/$(hostname) "10.0.0.44:7070" --lease=$(ETCDCTL_API=3 etcdctl lease grant 60 -w fields | awk '/ID/ {print $2}')
+  - |
+    # 34. Kubernetes EndpointSlice (manual example of registry entries)
+    apiVersion: discovery.k8s.io/v1
+    kind: EndpointSlice
+    metadata:
+      name: carts-slice
+      labels:
+        kubernetes.io/service-name: carts
+    addressType: IPv4
+    endpoints:
+    - addresses: ["10.244.2.15"]
+    ports:
+    - name: http
+      port: 8080
+  - |
+    # 35. Traefik: Use Consul Catalog Tags as Routers
+    providers:
+      consulCatalog:
+        endpoint:
+          address: "consul:8500"
+        exposedByDefault: false
+    tcp:
+      routers: {}
+      services: {}
+
+negative_examples:
+  - |
+    # ANTI-PATTERN: Hardcoded Service Endpoints in Config (no registry)
+    orders.url=http://10.0.0.12:8080
+    inventory.url=http://10.0.0.15:8080
+    shipping.url=http://10.0.0.19:8080
+  - |
+    # ANTI-PATTERN: Static NGINX Upstream List
+    upstream orders_upstream {
+      server 10.0.0.12:8080;
+      server 10.0.0.15:8080;
+    }
+    server {
+      location / { proxy_pass http://orders_upstream; }
+    }
+  - |
+    # ANTI-PATTERN: Hosts File as "Registry"
+    10.0.0.12 orders
+    10.0.0.15 inventory
+    10.0.0.19 shipping
+  - |
+    # ANTI-PATTERN: Manual JSON File of Instances
+    {
+      "orders": ["10.0.0.12:8080", "10.0.0.15:8080"],
+      "inventory": ["10.0.0.19:8080"]
+    }
+  - |
+    # ANTI-PATTERN: Environment Variable with Static List of Peers
+    SERVICE_ENDPOINTS=10.0.0.12:8080,10.0.0.15:8080,10.0.0.19:8080
+  - |
+    # ANTI-PATTERN: Custom MySQL Table as Ad-hoc Service Registry
+    CREATE TABLE services (name VARCHAR(50), host VARCHAR(50), port INT);
+    INSERT INTO services VALUES ('orders','10.0.0.12',8080);
+    -- No health checks, TTLs, or dynamic updates
+  - |
+    # ANTI-PATTERN: Single Load Balancer with Hardwired Backend
+    backend orders-backend
+      server s1 10.0.0.12:8080 check
+    frontend orders
+      bind *:80
+      default_backend orders-backend
+  - |
+    # ANTI-PATTERN: Static YAML Inventory Used at Build-Time Only
+    services:
+      orders:
+        - 10.0.0.12:8080
+        - 10.0.0.15:8080
+      payments:
+        - 10.0.0.22:9090
+  - |
+    # ANTI-PATTERN: Kubernetes Service Without Selectors + No Controller Updating Endpoints
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: orphan-service
+    spec:
+      ports:
+      - port: 8080
+      selector: {} # never populated; not tied to any Pods
+  - |
+    # ANTI-PATTERN: Custom Script Grepping Logs for IPs to Build Routing Table
+    #!/usr/bin/env bash
+    grep "listening on" app.log | awk '{print $NF}' > targets.txt
+    cat targets.txt | xargs -I {} echo "proxy_pass http://{};" > nginx.conf

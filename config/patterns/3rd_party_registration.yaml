@@ -1,0 +1,470 @@
+pattern_name: "3rd Party Registration"
+description: |
+  How are service instances registered with and unregistered from the service registry?
+  A 3rd party registrar is responsible for registering and unregistering a service instance with the service registry.
+  When the service instance starts up, the registrar observes it (process, container, task, or endpoint) and registers it with metadata and health checks.
+  When the service instance shuts down or becomes unhealthy, the registrar automatically deregisters it from the registry.
+  This decouples applications from registry client libraries and standardizes registration across heterogeneous platforms (VMs, containers, on-prem, and cloud).
+repository_fingerprint:
+  glob_patterns:
+    # --- Tier 1: The Spear (High-Confidence & High-Diversity Keyword Search) ---
+    # These files explicitly configure external registrars and orchestrator-managed registration
+    - glob: "**/docker-compose*.y*ml"
+      search_method: "keyword"
+      keywords: ["registrator", "gliderlabs/registrator", "CONSUL_ADDR", "EUREKA_URL", "CLOUDMAP_NAMESPACE_ID", "SERVICE_NAME"]
+    - glob: "**/compose.y*ml"
+      search_method: "keyword"
+      keywords: ["registrator", "gliderlabs/registrator", "CONSUL_ADDR", "EUREKA_URL", "CLOUDMAP_NAMESPACE_ID", "SERVICE_NAME"]
+    - glob: "**/consul.d/**/*.json"
+      search_method: "keyword"
+      keywords: ["\"service\"", "\"name\"", "\"port\"", "\"checks\"", "\"check\"", "\"deregister_critical_service_after\""]
+    - glob: "**/consul.d/**/*.hcl"
+      search_method: "keyword"
+      keywords: ["service", "name", "port", "checks", "deregister_critical_service_after"]
+    - glob: "**/*nerve*.json"
+      search_method: "keyword"
+      keywords: ["zk_hosts", "services", "host", "port", "checks", "zk_path"]
+    - glob: "**/*synapse*.y*ml"
+      search_method: "keyword"
+      keywords: ["services:", "haproxy:", "discovery:", "zookeeper:", "watch:", "bind_address:"]
+    - glob: "**/*eureka*sidecar*.y*ml"
+      search_method: "keyword"
+      keywords: ["eureka:", "sidecar:", "sidecar.port", "sidecar.health-uri", "eureka.client.serviceUrl"]
+    - glob: "**/deployment.y*ml"
+      search_method: "keyword"
+      keywords: ["eureka-sidecar", "gliderlabs/registrator", "consul-k8s", "catalog-sync", "cloud-map"]
+    - glob: "**/ecs-*.json"
+      search_method: "keyword"
+      keywords: ["serviceRegistries", "registryArn", "awsVpcConfiguration", "awsvpc"]
+    - glob: "**/cloudformation/**/*.y*ml"
+      search_method: "keyword"
+      keywords: ["AWS::ServiceDiscovery::Service", "AWS::ServiceDiscovery::PrivateDnsNamespace", "ServiceRegistries"]
+    - glob: "**/*.nomad"
+      search_method: "keyword"
+      keywords: ["service {", "check {", "check_restart", "consul", "provider = \"consul\""]
+    - glob: "**/systemd/*.service"
+      search_method: "keyword"
+      keywords: ["ExecStartPre", "ExecStopPost", "consul services register", "consul services deregister"]
+    - glob: "**/k8s/**/*.y*ml"
+      search_method: "keyword"
+      keywords: ["consul-k8s", "catalog-sync", "ServiceSync", "cloud-map", "service-registry"]
+    - glob: "**/helm/**/*values*.y*ml"
+      search_method: "keyword"
+      keywords: ["syncCatalog", "catalog", "connectInject", "serviceSync", "cloudMap"]
+
+    # --- Tier 2: The Cast Net (Contextual & Suggestive Embedding Search) ---
+    # Broader configs and IaC that often carry 3rd party registration hooks
+    - glob: "**/*.y*ml"
+      search_method: "keyword"
+      keywords: ["registrator", "eureka-sidecar", "sidecar.health-uri", "consul-k8s", "catalog-sync", "AWS::ServiceDiscovery", "CloudMap", "ServiceRegistries", "zookeeper", "nerve", "synapse"]
+    - glob: "**/*.json"
+      search_method: "keyword"
+      keywords: ["serviceRegistries", "\"services\":", "\"check\":", "\"zk_hosts\"", "\"deregister_critical_service_after\"", "\"HealthCheckConfig\""]
+    - glob: "**/*.tf"
+      search_method: "keyword"
+      keywords: ["aws_service_discovery_service", "aws_service_discovery_private_dns_namespace", "service_registries", "aws_cloud_map_service", "consul_service"]
+    - glob: "**/*.hcl"
+      search_method: "keyword"
+      keywords: ["service", "checks", "deregister", "consul", "provider"]
+
+    # --- Tier 3: The Trawler (Broad Catch-all Embedding Search) ---
+    # General configuration and deployment files that might contain third-party registration patterns
+    - glob: "**/helm/**/*.y*ml"
+    - glob: "**/charts/**/*.y*ml"
+    - glob: "**/k8s/**/*.y*ml"
+    - glob: "**/kubernetes/**/*.y*ml"
+    - glob: "**/manifests/**/*.y*ml"
+    - glob: "**/config/**/*.y*ml"
+    - glob: "**/deploy/**/*.y*ml"
+    - glob: "**/cloudformation/**/*.json"
+    - glob: "**/*.nomad"
+    - glob: "**/*.tf"
+    - glob: "**/Tiltfile"
+    - glob: "**/.github/workflows/*.y*ml"
+    - glob: "**/.gitlab-ci.yml"
+    - glob: "**/Jenkinsfile"
+positive_examples:
+  - |
+    # 1. Docker Compose with Consul and Gliderlabs Registrator
+    version: '3.8'
+    services:
+      consul:
+        image: consul:1.16
+        command: agent -dev -client=0.0.0.0
+        ports:
+          - "8500:8500"
+      app:
+        image: nginx:alpine
+        environment:
+          - SERVICE_NAME=web
+          - SERVICE_TAGS=urlprefix-/web
+        ports:
+          - "8080:80"
+      registrator:
+        image: gliderlabs/registrator:latest
+        command: -internal -cleanup -resync=10 -retry-attempts=3 consul://consul:8500
+        volumes:
+          - /var/run/docker.sock:/tmp/docker.sock
+        depends_on:
+          - consul
+          - app
+  - |
+    # 2. Consul Service Definition (JSON) consumed by a registrar/agent
+    {
+      "service": {
+        "name": "orders",
+        "id": "orders-1",
+        "port": 7001,
+        "tags": ["v1", "http"],
+        "checks": [
+          {
+            "http": "http://localhost:7001/health",
+            "interval": "10s",
+            "timeout": "2s",
+            "deregister_critical_service_after": "1m"
+          }
+        ]
+      }
+    }
+  - |
+    # 3. Systemd unit using Consul CLI to register/deregister on start/stop
+    [Unit]
+    Description=Orders Service
+    After=network-online.target consul.service
+    Requires=consul.service
+
+    [Service]
+    ExecStartPre=/usr/bin/consul services register /etc/consul.d/orders.json
+    ExecStart=/usr/local/bin/orders
+    ExecStopPost=/usr/bin/consul services deregister -id=orders-1
+    Restart=on-failure
+
+    [Install]
+    WantedBy=multi-user.target
+  - |
+    # 4. Nerve (Airbnb) registrar for Zookeeper
+    {
+      "instance_id": "payments-1",
+      "zk_hosts": ["zk1:2181", "zk2:2181"],
+      "zk_path": "/services/payments",
+      "services": {
+        "payments": {
+          "host": "127.0.0.1",
+          "port": 9000,
+          "checks": [
+            {
+              "type": "http",
+              "uri": "/health",
+              "timeout": 1,
+              "rise": 2,
+              "fall": 2,
+              "interval": 2
+            }
+          ]
+        }
+      }
+    }
+  - |
+    # 5. Synapse consumer (for completeness) reading registration from ZK to configure HAProxy
+    # Note: Synapse is not a registrar; it consumes registry data produced by Nerve.
+    haproxy:
+      reload_command: "service haproxy reload"
+      config_file_path: "/etc/haproxy/haproxy.cfg"
+    services:
+      payments:
+        default_servers: 1
+        discovery:
+          method: "zookeeper"
+          hosts:
+            - "zk1:2181"
+            - "zk2:2181"
+          path: "/services/payments"
+        haproxy:
+          port: 8080
+          server_options: "check inter 2000 rise 2 fall 2"
+  - |
+    # 6. Spring Cloud Eureka Sidecar application.yml for non-JVM service registration
+    eureka:
+      client:
+        serviceUrl:
+          defaultZone: http://eureka:8761/eureka/
+    sidecar:
+      port: 5000
+      health-uri: http://localhost:5000/health
+    server:
+      port: 8079
+    spring:
+      application:
+        name: python-orders-sidecar
+  - |
+    # 7. Kubernetes Deployment running an Eureka Sidecar that registers an external app
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: orders-with-eureka-sidecar
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          app: orders
+      template:
+        metadata:
+          labels:
+            app: orders
+        spec:
+          containers:
+          - name: orders
+            image: myorg/orders:latest
+            ports:
+            - containerPort: 5000
+          - name: eureka-sidecar
+            image: myorg/eureka-sidecar:latest
+            env:
+            - name: EUREKA_SERVER
+              value: http://eureka:8761/eureka/
+            - name: SIDECAR_PORT
+              value: "5000"
+            - name: SIDECAR_HEALTH_URI
+              value: http://localhost:5000/health
+  - |
+    # 8. Kubernetes Consul catalog-sync (consul-k8s) registers K8s Services into Consul
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: consul-catalog-sync
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          app: consul-catalog-sync
+      template:
+        metadata:
+          labels:
+            app: consul-catalog-sync
+        spec:
+          serviceAccountName: consul-catalog-sync
+          containers:
+          - name: consul-k8s
+            image: hashicorp/consul-k8s:latest
+            args:
+            - "controller"
+            - "-enable-sync=true"
+            - "-log-level=info"
+            env:
+            - name: CONSUL_HTTP_ADDR
+              value: "http://consul-server:8500"
+  - |
+    # 9. Helm values enabling Consul catalog sync
+    global:
+      name: consul
+    syncCatalog:
+      enabled: true
+      default:
+        addK8SNamespaceSuffix: false
+      toConsul:
+        enabled: true
+      toK8S:
+        enabled: false
+    connectInject:
+      enabled: false
+  - |
+    # 10. AWS ECS Service with Cloud Map serviceRegistries
+    {
+      "serviceName": "inventory",
+      "taskDefinition": "inventory:5",
+      "desiredCount": 2,
+      "launchType": "FARGATE",
+      "networkConfiguration": {
+        "awsvpcConfiguration": {
+          "subnets": ["subnet-abc", "subnet-def"],
+          "assignPublicIp": "ENABLED"
+        }
+      },
+      "serviceRegistries": [
+        {
+          "registryArn": "arn:aws:servicediscovery:us-east-1:123456789012:service/srv-abc123"
+        }
+      ]
+    }
+  - |
+    # 11. CloudFormation for AWS Cloud Map (Service Discovery) registration
+    Resources:
+      AppNamespace:
+        Type: AWS::ServiceDiscovery::PrivateDnsNamespace
+        Properties:
+          Name: corp.local
+          Vpc: vpc-123456
+      InventoryService:
+        Type: AWS::ServiceDiscovery::Service
+        Properties:
+          Name: inventory
+          NamespaceId: !Ref AppNamespace
+          HealthCheckConfig:
+            Type: HTTP
+            ResourcePath: /health
+            FailureThreshold: 3
+  - |
+    # 12. Terraform: Cloud Map service + ECS service with service_registries
+    resource "aws_service_discovery_private_dns_namespace" "ns" {
+      name = "corp.local"
+      vpc  = "vpc-123456"
+    }
+
+    resource "aws_service_discovery_service" "svc" {
+      name = "billing"
+      dns_config {
+        namespace_id = aws_service_discovery_private_dns_namespace.ns.id
+        dns_records {
+          ttl  = 10
+          type = "A"
+        }
+      }
+      health_check_config {
+        type             = "HTTP"
+        resource_path    = "/health"
+        failure_threshold = 3
+      }
+    }
+
+    resource "aws_ecs_service" "billing" {
+      name            = "billing"
+      cluster         = "app-cluster"
+      task_definition = "billing:12"
+      desired_count   = 2
+
+      service_registries {
+        registry_arn = aws_service_discovery_service.svc.arn
+      }
+    }
+  - |
+    # 13. Nomad job registering service into Consul (orchestrator as 3rd party registrar)
+    job "shipping" {
+      datacenters = ["dc1"]
+      group "shipping" {
+        task "svc" {
+          driver = "docker"
+          config {
+            image = "myorg/shipping:latest"
+            ports = ["http"]
+          }
+          service {
+            name = "shipping"
+            port = "http"
+            tags = ["v1", "http"]
+            check {
+              type     = "http"
+              path     = "/health"
+              interval = "10s"
+              timeout  = "2s"
+            }
+          }
+        }
+        network {
+          port "http" { static = 8080 }
+        }
+      }
+    }
+  - |
+    # 14. Docker Swarm with global Registrator service
+    version: "3.8"
+    services:
+      registrator:
+        image: gliderlabs/registrator:latest
+        command: -resync=10 consul://consul:8500
+        volumes:
+          - /var/run/docker.sock:/tmp/docker.sock
+        deploy:
+          mode: global
+      consul:
+        image: consul:1.16
+        command: agent -dev -client=0.0.0.0
+        ports:
+          - "8500:8500"
+  - |
+    # 15. Minimal Bash registrar for etcd ephemeral key with TTL (auto-deregister on exit)
+    # Demonstrates a lightweight 3rd-party registrar process.
+    # Requires: ETCDCTL_ENDPOINTS env var set
+    # Registers service under /services/users/instances/$HOSTNAME with a 30s TTL lease
+    # and revokes the lease on shutdown.
+    #!/usr/bin/env bash
+    set -euo pipefail
+    NAME="users"
+    HOST="${HOSTNAME:-instance}"
+    ADDR="${SERVICE_ADDR:-127.0.0.1:8080}"
+    LEASE=$(etcdctl lease grant 30 | awk '{print $2}')
+    trap "etcdctl lease revoke ${LEASE}" EXIT
+    etcdctl put "/services/${NAME}/instances/${HOST}" "${ADDR}" --lease="${LEASE}"
+    while true; do etcdctl lease keep-alive "${LEASE}" >/dev/null; sleep 10; done
+  - |
+    # 16. Consul HCL service definition with auto-deregister semantics
+    service {
+      name = "catalog"
+      id   = "catalog-1"
+      port = 8080
+      tags = ["http", "v2"]
+      check {
+        http     = "http://localhost:8080/health"
+        interval = "10s"
+        timeout  = "2s"
+        deregister_critical_service_after = "1m"
+      }
+    }
+negative_examples:
+  - |
+    # ANTI-PATTERN: Self-registration inside the application (no 3rd party registrar)
+    # The app directly embeds Eureka client and registers itself.
+    eureka:
+      client:
+        register-with-eureka: true
+        serviceUrl:
+          defaultZone: http://eureka:8761/eureka/
+    spring:
+      application:
+        name: orders
+  - |
+    # ANTI-PATTERN: Static upstreams in a load balancer (no dynamic registry)
+    # Hard-coded backends means no registration or deregistration occurs.
+    upstream api_upstream {
+      server 10.0.1.12:8080;
+      server 10.0.1.13:8080;
+    }
+    server {
+      listen 80;
+      location / {
+        proxy_pass http://api_upstream;
+      }
+    }
+  - |
+    # ANTI-PATTERN: One-time manual registration with no lifecycle management
+    # Registers once via curl but never deregisters on shutdown/failure.
+    curl -X PUT http://consul:8500/v1/agent/service/register -d '{
+      "Name":"payment","Port":9000
+    }'
+  - |
+    # ANTI-PATTERN: Kubernetes Service only (DNS) assumed to be a registry
+    # ClusterIP Service provides stable DNS, but it's not a service registry integration.
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: users
+    spec:
+      selector:
+        app: users
+      ports:
+      - port: 80
+        targetPort: 8080
+  - |
+    # ANTI-PATTERN: Application writes to etcd directly as part of its core logic
+    # Ties business code to registry SDKs instead of using a 3rd party registrar.
+    import etcd3
+    c = etcd3.client(host='etcd', port=2379)
+    c.put('/services/orders/instances/instance1', '10.0.0.5:7001')
+  - |
+    # ANTI-PATTERN: Using only an external load balancer DNS without registry-based discovery
+    # No service instance registration/unregistration is performed.
+    Resources:
+      ALB:
+        Type: AWS::ElasticLoadBalancingV2::LoadBalancer
+        Properties:
+          Name: app-alb
+          Scheme: internet-facing

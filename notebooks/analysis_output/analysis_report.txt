@@ -1,0 +1,95 @@
+
+================================================================================
+REDACTED ANALYSIS REPORT
+================================================================================
+Generated: 2026-02-11 22:18:35
+
+DATASET
+-------
+Total Repositories: 190
+Analyzed Repositories: 192
+Patterns Tracked: 9
+
+OVERALL PERFORMANCE
+------------------
+Precision: 0.4957
+Recall: 0.3276
+F1-Score: 0.3945
+Accuracy: 0.7953
+
+Confusion Matrix:
+  TP: 114
+  FP: 116
+  FN: 234
+  TN: 1246
+
+FILES GENERATED
+---------------
+
+Figures (42):
+  - extensions_3rd_Party_Registration.png
+  - extensions_Multiple_service_instances_per_host.png
+  - extensions_Server-side_service_discovery.png
+  - extensions_Service_deployment_platform.png
+  - extensions_Service_instance_per_VM.png
+  - extensions_Service_instance_per_container.png
+  - extensions_Service_mesh.png
+  - extensions_Service_registry.png
+  - extensions_Single_Service_Instance_per_Host.png
+  - file_analysis_funnel.png
+  - filenames_3rd_Party_Registration.png
+  - filenames_Multiple_service_instances_per_host.png
+  - filenames_Server-side_service_discovery.png
+  - filenames_Service_deployment_platform.png
+  - filenames_Service_instance_per_VM.png
+  - filenames_Service_instance_per_container.png
+  - filenames_Service_mesh.png
+  - filenames_Service_registry.png
+  - filenames_Single_Service_Instance_per_Host.png
+  - ground_truth_distribution.png
+  - metric_evolution.png
+  - per_pattern_performance.png
+  - repository_popularity_maturity.png
+  - repository_size_metrics.png
+  - survey_completion_rates.png
+  - survey_completion_status.png
+  - survey_countries.png
+  - survey_demographics.png
+  - survey_demographics_overview.png
+  - survey_experience.png
+  - survey_likert_combined.png
+  - survey_microservice_knowledge.png
+  - survey_ms_develop.png
+  - survey_ms_develop_likert.png
+  - survey_ms_familiar.png
+  - survey_ms_familiar_likert.png
+  - survey_repo_understanding.png
+  - survey_repo_understanding_likert.png
+  - survey_repository_knowledge.png
+  - survey_response_rate.png
+  - survey_top10_countries.png
+  - top_10_languages.png
+
+Tables (20):
+  - f1_vs_fdi_comparison.csv
+  - f1_vs_prevalence_comparison.csv
+  - file_dominance_index.csv
+  - metric_evolution.csv
+  - outlier_analysis.csv
+  - overall_metrics.csv
+  - pattern_file_extensions.csv
+  - pattern_top_filenames_detected.csv
+  - per_pattern_file_statistics.csv
+  - per_pattern_metrics.csv
+  - per_repository_detection_effectiveness.csv
+  - repository_file_analysis.csv
+  - survey_completion_rates.csv
+  - survey_countries.csv
+  - survey_experience.csv
+  - survey_microservice_knowledge.csv
+  - survey_ms_develop.csv
+  - survey_ms_familiar.csv
+  - survey_repo_understanding.csv
+  - survey_repository_knowledge.csv
+
+================================================================================

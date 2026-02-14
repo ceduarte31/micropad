@@ -1,0 +1,4617 @@
+[
+  {
+    "repository": "ImranR98/Obtainium",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "FinalForEach/Cosmic-Reach-Localization",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "AprilRobotics/apriltag",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "shshemi/tabiew",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "DeepMIMO/DeepMIMO",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "coinjar/react-native-wagmi-charts",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "plbstl/first-contribution",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "EWSoftware/SHFB",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "mhogomchungu/media-downloader",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "ADOdb/ADOdb",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "gyroflow/gyroflow",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "StephanU/MyGekko",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "PHPMailer/PHPMailer",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "yuin/goldmark",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "pylint-dev/pylint",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "android/nowinandroid",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "aperechnev/ChessKit",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "swcarpentry/shell-novice",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "teo-tsirpanis/Farkle",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "jsinger67/parol",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "misbahansori/originui-vue",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "cornradio/pausemygame",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "google/aarch64-esr-decoder",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "PerformanC/ReZygisk",
+    "accuracy": 1.0,
+    "patterns_in_survey": 1,
+    "tp_count": 1,
+    "tn_count": 8,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [
+      "Multiple service instances per host"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "ForNeVeR/AvaloniaRider",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "IAS-Astrophysics/athenak",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "EarthyScience/Browzarr",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "richgrov/simulo",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "wikimedia/mediawiki-extensions-Scribunto",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "hafaio/repub",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "tomtomwombat/fastbloom",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "typelevel/fs2",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "stratis-storage/stratis-cli",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "phi-ag/argon2",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "kelseykm/vcard4",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "micahkepe/radion",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "pandas-dev/pandas-stubs",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "ology/Music",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "MusculoskeletalAtlasProject/mapclient",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "Olical/conjure",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "microsoft/azure-devops-extension-tasks",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "euslisp/EusLisp",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "cms-sw/cmsdist",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "distantcam/AutoCtor",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "MewPurPur/GodSVG",
+    "accuracy": 1.0,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 9,
+    "fp_count": 0,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": []
+  },
+  {
+    "repository": "osbuild/bootc-image-builder",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 8,
+    "fp_count": 1,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Service instance per container"
+    ],
+    "fn_patterns": []
+  },
+  {
+    "repository": "xuxueli/xxl-job",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 3,
+    "tp_count": 2,
+    "tn_count": 6,
+    "fp_count": 0,
+    "fn_count": 1,
+    "tp_patterns": [
+      "Service instance per container",
+      "Service registry"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per VM",
+      "Service mesh",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Multiple service instances per host"
+    ]
+  },
+  {
+    "repository": "MultiMote/niimblue",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 2,
+    "tp_count": 1,
+    "tn_count": 7,
+    "fp_count": 0,
+    "fn_count": 1,
+    "tp_patterns": [
+      "Service instance per container"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "Koishi-Satori/EirinFixed",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 1,
+    "tp_count": 0,
+    "tn_count": 8,
+    "fp_count": 0,
+    "fn_count": 1,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Multiple service instances per host"
+    ]
+  },
+  {
+    "repository": "konflux-ci/integration-service",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 3,
+    "tp_count": 2,
+    "tn_count": 6,
+    "fp_count": 0,
+    "fn_count": 1,
+    "tp_patterns": [
+      "Service deployment platform",
+      "Service instance per container"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service instance per VM",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Service mesh"
+    ]
+  },
+  {
+    "repository": "scalacenter/scala-debug-adapter",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 1,
+    "tp_count": 0,
+    "tn_count": 8,
+    "fp_count": 0,
+    "fn_count": 1,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Service instance per VM"
+    ]
+  },
+  {
+    "repository": "academicpages/academicpages.github.io",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 8,
+    "fp_count": 1,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Service instance per container"
+    ],
+    "fn_patterns": []
+  },
+  {
+    "repository": "MunGell/awesome-for-beginners",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 1,
+    "tp_count": 0,
+    "tn_count": 8,
+    "fp_count": 0,
+    "fn_count": 1,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "hcengineering/huly-selfhost",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 5,
+    "tp_count": 4,
+    "tn_count": 4,
+    "fp_count": 0,
+    "fn_count": 1,
+    "tp_patterns": [
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Service instance per VM",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Service mesh"
+    ]
+  },
+  {
+    "repository": "tramhao/termusic",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 8,
+    "fp_count": 1,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Multiple service instances per host"
+    ],
+    "fn_patterns": []
+  },
+  {
+    "repository": "KevinnZou/compose-webview-multiplatform",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 1,
+    "tp_count": 0,
+    "tn_count": 8,
+    "fp_count": 0,
+    "fn_count": 1,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "xjh22222228/nav",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 1,
+    "tp_count": 0,
+    "tn_count": 8,
+    "fp_count": 0,
+    "fn_count": 1,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "KDE/kde-linux",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 8,
+    "fp_count": 1,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Multiple service instances per host"
+    ],
+    "fn_patterns": []
+  },
+  {
+    "repository": "TheTumultuousUnicornOfDarkness/CPU-X",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 8,
+    "fp_count": 1,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Service instance per VM"
+    ],
+    "fn_patterns": []
+  },
+  {
+    "repository": "Oaklight/onehub_prices",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 1,
+    "tp_count": 0,
+    "tn_count": 8,
+    "fp_count": 0,
+    "fn_count": 1,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Service deployment platform"
+    ]
+  },
+  {
+    "repository": "webpro-nl/knip",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 8,
+    "fp_count": 1,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Multiple service instances per host"
+    ],
+    "fn_patterns": []
+  },
+  {
+    "repository": "CloudCannon/rosey",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 8,
+    "fp_count": 1,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Service deployment platform"
+    ],
+    "fn_patterns": []
+  },
+  {
+    "repository": "nextcloud/contacts",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 1,
+    "tp_count": 0,
+    "tn_count": 8,
+    "fp_count": 0,
+    "fn_count": 1,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Multiple service instances per host"
+    ]
+  },
+  {
+    "repository": "SergioRibera/Simplemoji",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 8,
+    "fp_count": 1,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Service deployment platform"
+    ],
+    "fn_patterns": []
+  },
+  {
+    "repository": "biblioverse/biblioteca",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 2,
+    "tp_count": 2,
+    "tn_count": 6,
+    "fp_count": 1,
+    "fn_count": 0,
+    "tp_patterns": [
+      "Multiple service instances per host",
+      "Service instance per container"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Service deployment platform"
+    ],
+    "fn_patterns": []
+  },
+  {
+    "repository": "datastax/langflow-client-ts",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 1,
+    "tp_count": 0,
+    "tn_count": 8,
+    "fp_count": 0,
+    "fn_count": 1,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "lloydrichards/shadcn-storybook-registry",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 1,
+    "tp_count": 0,
+    "tn_count": 8,
+    "fp_count": 0,
+    "fn_count": 1,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Service deployment platform"
+    ]
+  },
+  {
+    "repository": "haskell/hie-bios",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 1,
+    "tp_count": 0,
+    "tn_count": 8,
+    "fp_count": 0,
+    "fn_count": 1,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "nhasan/FlightIntel",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 2,
+    "tp_count": 1,
+    "tn_count": 7,
+    "fp_count": 0,
+    "fn_count": 1,
+    "tp_patterns": [
+      "Multiple service instances per host"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Service instance per container"
+    ]
+  },
+  {
+    "repository": "online-go/online-go.com",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 2,
+    "tp_count": 1,
+    "tn_count": 7,
+    "fp_count": 0,
+    "fn_count": 1,
+    "tp_patterns": [
+      "Service instance per container"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Multiple service instances per host"
+    ]
+  },
+  {
+    "repository": "btcpayserver/btcpayserver",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 2,
+    "tp_count": 2,
+    "tn_count": 6,
+    "fp_count": 1,
+    "fn_count": 0,
+    "tp_patterns": [
+      "Multiple service instances per host",
+      "Service instance per container"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Service deployment platform"
+    ],
+    "fn_patterns": []
+  },
+  {
+    "repository": "romanvht/ByeByeDPI",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 8,
+    "fp_count": 1,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Multiple service instances per host"
+    ],
+    "fn_patterns": []
+  },
+  {
+    "repository": "SimonScholz/qr-code-with-logo",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 1,
+    "tp_count": 0,
+    "tn_count": 8,
+    "fp_count": 0,
+    "fn_count": 1,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Service deployment platform"
+    ]
+  },
+  {
+    "repository": "karlseguin/websocket.zig",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 8,
+    "fp_count": 1,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Multiple service instances per host"
+    ],
+    "fn_patterns": []
+  },
+  {
+    "repository": "josueBarretogit/manga-tui",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 8,
+    "fp_count": 1,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Service instance per container"
+    ],
+    "fn_patterns": []
+  },
+  {
+    "repository": "QuentinFuxa/WhisperLiveKit",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 2,
+    "tp_count": 1,
+    "tn_count": 7,
+    "fp_count": 0,
+    "fn_count": 1,
+    "tp_patterns": [
+      "Service instance per container"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "opencontainers/runc",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 8,
+    "fp_count": 1,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Multiple service instances per host"
+    ],
+    "fn_patterns": []
+  },
+  {
+    "repository": "lite-xl/lite-xl",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 8,
+    "fp_count": 1,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Service deployment platform"
+    ],
+    "fn_patterns": []
+  },
+  {
+    "repository": "disneystreaming/smithy4s",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 8,
+    "fp_count": 1,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Multiple service instances per host"
+    ],
+    "fn_patterns": []
+  },
+  {
+    "repository": "Strumenta/antlr-kotlin",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 1,
+    "tp_count": 0,
+    "tn_count": 8,
+    "fp_count": 0,
+    "fn_count": 1,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Service registry"
+    ]
+  },
+  {
+    "repository": "TheNathannator/RB4InstrumentMapper",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 8,
+    "fp_count": 1,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Multiple service instances per host"
+    ],
+    "fn_patterns": []
+  },
+  {
+    "repository": "netwide-assembler/nasm",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 8,
+    "fp_count": 1,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Multiple service instances per host"
+    ],
+    "fn_patterns": []
+  },
+  {
+    "repository": "FlexMeasures/flexmeasures",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 4,
+    "tp_count": 3,
+    "tn_count": 5,
+    "fp_count": 0,
+    "fn_count": 1,
+    "tp_patterns": [
+      "Multiple service instances per host",
+      "Service deployment platform",
+      "Service instance per container"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Service instance per VM"
+    ]
+  },
+  {
+    "repository": "HuLaSpark/HuLa",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 8,
+    "fp_count": 1,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Service instance per container"
+    ],
+    "fn_patterns": []
+  },
+  {
+    "repository": "utilityai/llama-cpp-rs",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 1,
+    "tp_count": 0,
+    "tn_count": 8,
+    "fp_count": 0,
+    "fn_count": 1,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "Orinks/AccessiWeather",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 1,
+    "tp_count": 1,
+    "tn_count": 7,
+    "fp_count": 1,
+    "fn_count": 0,
+    "tp_patterns": [
+      "Service deployment platform"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry"
+    ],
+    "fp_patterns": [
+      "Single Service Instance per Host"
+    ],
+    "fn_patterns": []
+  },
+  {
+    "repository": "acim/go-reflex",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 8,
+    "fp_count": 1,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Service instance per container"
+    ],
+    "fn_patterns": []
+  },
+  {
+    "repository": "Pennyw0rth/NetExec",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 2,
+    "tp_count": 1,
+    "tn_count": 7,
+    "fp_count": 0,
+    "fn_count": 1,
+    "tp_patterns": [
+      "Service instance per container"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Multiple service instances per host"
+    ]
+  },
+  {
+    "repository": "pact-foundation/pact-python",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 8,
+    "fp_count": 1,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Service instance per container"
+    ],
+    "fn_patterns": []
+  },
+  {
+    "repository": "throneproj/Throne",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 2,
+    "tp_count": 1,
+    "tn_count": 7,
+    "fp_count": 0,
+    "fn_count": 1,
+    "tp_patterns": [
+      "Single Service Instance per Host"
+    ],
+    "tn_patterns": [
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "3rd Party Registration"
+    ]
+  },
+  {
+    "repository": "Path-of-Terraria/PathOfTerraria",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 1,
+    "tp_count": 0,
+    "tn_count": 8,
+    "fp_count": 0,
+    "fn_count": 1,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "Delgan/loguru",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 8,
+    "fp_count": 1,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Multiple service instances per host"
+    ],
+    "fn_patterns": []
+  },
+  {
+    "repository": "MIT-SPARK/config_utilities",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 8,
+    "fp_count": 1,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "3rd Party Registration"
+    ],
+    "fn_patterns": []
+  },
+  {
+    "repository": "TeamNewPipe/NewPipe",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 8,
+    "fp_count": 1,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Multiple service instances per host"
+    ],
+    "fn_patterns": []
+  },
+  {
+    "repository": "Frolic-chat/Frolic",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 1,
+    "tp_count": 0,
+    "tn_count": 8,
+    "fp_count": 0,
+    "fn_count": 1,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Service registry"
+    ]
+  },
+  {
+    "repository": "leviarista/github-profile-header-generator",
+    "accuracy": 0.8888888888888888,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 8,
+    "fp_count": 1,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Service instance per container"
+    ],
+    "fn_patterns": []
+  },
+  {
+    "repository": "aha-oida/aha-secret",
+    "accuracy": 0.7777777777777778,
+    "patterns_in_survey": 3,
+    "tp_count": 2,
+    "tn_count": 5,
+    "fp_count": 1,
+    "fn_count": 1,
+    "tp_patterns": [
+      "Multiple service instances per host",
+      "Service instance per container"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Service deployment platform"
+    ],
+    "fn_patterns": [
+      "Service instance per VM"
+    ]
+  },
+  {
+    "repository": "shibatch/SSRC",
+    "accuracy": 0.7777777777777778,
+    "patterns_in_survey": 2,
+    "tp_count": 0,
+    "tn_count": 7,
+    "fp_count": 0,
+    "fn_count": 2,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Multiple service instances per host",
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "zwldarren/akshare-one",
+    "accuracy": 0.7777777777777778,
+    "patterns_in_survey": 2,
+    "tp_count": 0,
+    "tn_count": 7,
+    "fp_count": 0,
+    "fn_count": 2,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Service instance per container",
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "vuejs/language-tools",
+    "accuracy": 0.7777777777777778,
+    "patterns_in_survey": 1,
+    "tp_count": 0,
+    "tn_count": 7,
+    "fp_count": 1,
+    "fn_count": 1,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry"
+    ],
+    "fp_patterns": [
+      "Service deployment platform"
+    ],
+    "fn_patterns": [
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "ibizaman/skarabox",
+    "accuracy": 0.7777777777777778,
+    "patterns_in_survey": 2,
+    "tp_count": 1,
+    "tn_count": 6,
+    "fp_count": 1,
+    "fn_count": 1,
+    "tp_patterns": [
+      "Multiple service instances per host"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry"
+    ],
+    "fp_patterns": [
+      "Single Service Instance per Host"
+    ],
+    "fn_patterns": [
+      "Server-side service discovery"
+    ]
+  },
+  {
+    "repository": "thrushlang/thrushc",
+    "accuracy": 0.7777777777777778,
+    "patterns_in_survey": 3,
+    "tp_count": 1,
+    "tn_count": 6,
+    "fp_count": 0,
+    "fn_count": 2,
+    "tp_patterns": [
+      "Service deployment platform"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service instance per container",
+      "Service mesh",
+      "Service registry"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Service instance per VM",
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "felladrin/MiniSearch",
+    "accuracy": 0.7777777777777778,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 7,
+    "fp_count": 2,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Multiple service instances per host",
+      "Service instance per container"
+    ],
+    "fn_patterns": []
+  },
+  {
+    "repository": "ripple/craft",
+    "accuracy": 0.7777777777777778,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 7,
+    "fp_count": 2,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per VM",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Service instance per container",
+      "Service mesh"
+    ],
+    "fn_patterns": []
+  },
+  {
+    "repository": "DrKJeff16/project.nvim",
+    "accuracy": 0.7777777777777778,
+    "patterns_in_survey": 2,
+    "tp_count": 0,
+    "tn_count": 7,
+    "fp_count": 0,
+    "fn_count": 2,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Service deployment platform",
+      "Service mesh"
+    ]
+  },
+  {
+    "repository": "HiDiHo01/Buienalarm",
+    "accuracy": 0.7777777777777778,
+    "patterns_in_survey": 2,
+    "tp_count": 0,
+    "tn_count": 7,
+    "fp_count": 0,
+    "fn_count": 2,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Multiple service instances per host",
+      "Service deployment platform"
+    ]
+  },
+  {
+    "repository": "pangenome/impg",
+    "accuracy": 0.7777777777777778,
+    "patterns_in_survey": 2,
+    "tp_count": 0,
+    "tn_count": 7,
+    "fp_count": 0,
+    "fn_count": 2,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Service instance per container",
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "Part-DB/Part-DB-server",
+    "accuracy": 0.7777777777777778,
+    "patterns_in_survey": 3,
+    "tp_count": 2,
+    "tn_count": 5,
+    "fp_count": 1,
+    "fn_count": 1,
+    "tp_patterns": [
+      "Service deployment platform",
+      "Service instance per container"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Multiple service instances per host"
+    ],
+    "fn_patterns": [
+      "Service instance per VM"
+    ]
+  },
+  {
+    "repository": "Freika/dawarich",
+    "accuracy": 0.7777777777777778,
+    "patterns_in_survey": 2,
+    "tp_count": 2,
+    "tn_count": 5,
+    "fp_count": 2,
+    "fn_count": 0,
+    "tp_patterns": [
+      "Multiple service instances per host",
+      "Service instance per container"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Server-side service discovery",
+      "Service deployment platform"
+    ],
+    "fn_patterns": []
+  },
+  {
+    "repository": "MCSManager/MCSManager",
+    "accuracy": 0.7777777777777778,
+    "patterns_in_survey": 3,
+    "tp_count": 2,
+    "tn_count": 5,
+    "fp_count": 1,
+    "fn_count": 1,
+    "tp_patterns": [
+      "Multiple service instances per host",
+      "Service instance per container"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per VM",
+      "Service mesh"
+    ],
+    "fp_patterns": [
+      "Service registry"
+    ],
+    "fn_patterns": [
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "JaKooLit/NixOS-Hyprland",
+    "accuracy": 0.7777777777777778,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 7,
+    "fp_count": 2,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry"
+    ],
+    "fp_patterns": [
+      "Multiple service instances per host",
+      "Single Service Instance per Host"
+    ],
+    "fn_patterns": []
+  },
+  {
+    "repository": "fuzziqersoftware/newserv",
+    "accuracy": 0.7777777777777778,
+    "patterns_in_survey": 3,
+    "tp_count": 1,
+    "tn_count": 6,
+    "fp_count": 0,
+    "fn_count": 2,
+    "tp_patterns": [
+      "Service instance per container"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service mesh",
+      "Service registry"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Service instance per VM",
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "mquintus/l33tcode-testcase-generator",
+    "accuracy": 0.7777777777777778,
+    "patterns_in_survey": 2,
+    "tp_count": 0,
+    "tn_count": 7,
+    "fp_count": 0,
+    "fn_count": 2,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Service instance per container",
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "suyash-thakur/js-good-first-issues-finder",
+    "accuracy": 0.7777777777777778,
+    "patterns_in_survey": 2,
+    "tp_count": 0,
+    "tn_count": 7,
+    "fp_count": 0,
+    "fn_count": 2,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Service deployment platform",
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "NotoChen/Jetbrains-Help",
+    "accuracy": 0.7777777777777778,
+    "patterns_in_survey": 5,
+    "tp_count": 3,
+    "tn_count": 4,
+    "fp_count": 0,
+    "fn_count": 2,
+    "tp_patterns": [
+      "Multiple service instances per host",
+      "Service deployment platform",
+      "Service instance per container"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service mesh",
+      "Service registry"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Service instance per VM",
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "eko5624/mpv-win64",
+    "accuracy": 0.7777777777777778,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 7,
+    "fp_count": 2,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Multiple service instances per host",
+      "Service deployment platform"
+    ],
+    "fn_patterns": []
+  },
+  {
+    "repository": "mostafaalagamy/Metrolist",
+    "accuracy": 0.7777777777777778,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 7,
+    "fp_count": 2,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Multiple service instances per host",
+      "Service deployment platform"
+    ],
+    "fn_patterns": []
+  },
+  {
+    "repository": "civictheme/monorepo-drupal",
+    "accuracy": 0.7777777777777778,
+    "patterns_in_survey": 5,
+    "tp_count": 3,
+    "tn_count": 4,
+    "fp_count": 0,
+    "fn_count": 2,
+    "tp_patterns": [
+      "Multiple service instances per host",
+      "Service deployment platform",
+      "Service instance per container"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service instance per VM",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Service mesh",
+      "Service registry"
+    ]
+  },
+  {
+    "repository": "sheepzh/time-tracker-4-browser",
+    "accuracy": 0.7777777777777778,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 7,
+    "fp_count": 2,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Multiple service instances per host",
+      "Service deployment platform"
+    ],
+    "fn_patterns": []
+  },
+  {
+    "repository": "0x2142/frigate-notify",
+    "accuracy": 0.7777777777777778,
+    "patterns_in_survey": 2,
+    "tp_count": 1,
+    "tn_count": 6,
+    "fp_count": 1,
+    "fn_count": 1,
+    "tp_patterns": [
+      "Service instance per container"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Service deployment platform"
+    ],
+    "fn_patterns": [
+      "Multiple service instances per host"
+    ]
+  },
+  {
+    "repository": "chigwell/telegram-mcp",
+    "accuracy": 0.7777777777777778,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 7,
+    "fp_count": 2,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Multiple service instances per host",
+      "Service instance per container"
+    ],
+    "fn_patterns": []
+  },
+  {
+    "repository": "SkyUOI/OurChat",
+    "accuracy": 0.7777777777777778,
+    "patterns_in_survey": 4,
+    "tp_count": 3,
+    "tn_count": 4,
+    "fp_count": 1,
+    "fn_count": 1,
+    "tp_patterns": [
+      "Multiple service instances per host",
+      "Service deployment platform",
+      "Service instance per container"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Service instance per VM",
+      "Service mesh",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Server-side service discovery"
+    ],
+    "fn_patterns": [
+      "Service registry"
+    ]
+  },
+  {
+    "repository": "lpradel/steam-web-api-java",
+    "accuracy": 0.7777777777777778,
+    "patterns_in_survey": 1,
+    "tp_count": 0,
+    "tn_count": 7,
+    "fp_count": 1,
+    "fn_count": 1,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Service deployment platform"
+    ],
+    "fn_patterns": [
+      "Multiple service instances per host"
+    ]
+  },
+  {
+    "repository": "awslabs/cdk-eks-blueprints",
+    "accuracy": 0.7777777777777778,
+    "patterns_in_survey": 4,
+    "tp_count": 3,
+    "tn_count": 4,
+    "fp_count": 1,
+    "fn_count": 1,
+    "tp_patterns": [
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service mesh"
+    ],
+    "tn_patterns": [
+      "Multiple service instances per host",
+      "Service instance per VM",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Service instance per container"
+    ],
+    "fn_patterns": [
+      "3rd Party Registration"
+    ]
+  },
+  {
+    "repository": "vishvananda/netlink",
+    "accuracy": 0.7777777777777778,
+    "patterns_in_survey": 2,
+    "tp_count": 0,
+    "tn_count": 7,
+    "fp_count": 0,
+    "fn_count": 2,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service mesh",
+      "Service registry"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Service instance per VM",
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "adamzammit/limesurvey-docker",
+    "accuracy": 0.7777777777777778,
+    "patterns_in_survey": 1,
+    "tp_count": 1,
+    "tn_count": 6,
+    "fp_count": 2,
+    "fn_count": 0,
+    "tp_patterns": [
+      "Service instance per container"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Multiple service instances per host",
+      "Service deployment platform"
+    ],
+    "fn_patterns": []
+  },
+  {
+    "repository": "thephpleague/commonmark",
+    "accuracy": 0.7777777777777778,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 7,
+    "fp_count": 2,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Multiple service instances per host",
+      "Service instance per container"
+    ],
+    "fn_patterns": []
+  },
+  {
+    "repository": "Zavy86/WikiDocs",
+    "accuracy": 0.7777777777777778,
+    "patterns_in_survey": 2,
+    "tp_count": 1,
+    "tn_count": 6,
+    "fp_count": 1,
+    "fn_count": 1,
+    "tp_patterns": [
+      "Service instance per container"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry"
+    ],
+    "fp_patterns": [
+      "Multiple service instances per host"
+    ],
+    "fn_patterns": [
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "wgzhao/Addax",
+    "accuracy": 0.7777777777777778,
+    "patterns_in_survey": 1,
+    "tp_count": 1,
+    "tn_count": 6,
+    "fp_count": 2,
+    "fn_count": 0,
+    "tp_patterns": [
+      "Single Service Instance per Host"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry"
+    ],
+    "fp_patterns": [
+      "Service deployment platform",
+      "Service instance per container"
+    ],
+    "fn_patterns": []
+  },
+  {
+    "repository": "trpc/trpc",
+    "accuracy": 0.7777777777777778,
+    "patterns_in_survey": 3,
+    "tp_count": 2,
+    "tn_count": 5,
+    "fp_count": 1,
+    "fn_count": 1,
+    "tp_patterns": [
+      "Multiple service instances per host",
+      "Service instance per container"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry"
+    ],
+    "fp_patterns": [
+      "Service deployment platform"
+    ],
+    "fn_patterns": [
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "PretendoNetwork/BOSS",
+    "accuracy": 0.7777777777777778,
+    "patterns_in_survey": 3,
+    "tp_count": 1,
+    "tn_count": 6,
+    "fp_count": 0,
+    "fn_count": 2,
+    "tp_patterns": [
+      "Service instance per container"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Multiple service instances per host",
+      "Service deployment platform"
+    ]
+  },
+  {
+    "repository": "open-webui/mcpo",
+    "accuracy": 0.7777777777777778,
+    "patterns_in_survey": 2,
+    "tp_count": 1,
+    "tn_count": 6,
+    "fp_count": 1,
+    "fn_count": 1,
+    "tp_patterns": [
+      "Service instance per container"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Service deployment platform"
+    ],
+    "fn_patterns": [
+      "Multiple service instances per host"
+    ]
+  },
+  {
+    "repository": "Cleanuparr/Cleanuparr",
+    "accuracy": 0.7777777777777778,
+    "patterns_in_survey": 2,
+    "tp_count": 1,
+    "tn_count": 6,
+    "fp_count": 1,
+    "fn_count": 1,
+    "tp_patterns": [
+      "Single Service Instance per Host"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry"
+    ],
+    "fp_patterns": [
+      "Service deployment platform"
+    ],
+    "fn_patterns": [
+      "Service instance per container"
+    ]
+  },
+  {
+    "repository": "SocketSomeone/nestjs-resilience",
+    "accuracy": 0.7777777777777778,
+    "patterns_in_survey": 2,
+    "tp_count": 0,
+    "tn_count": 7,
+    "fp_count": 0,
+    "fn_count": 2,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "Multiple service instances per host",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery"
+    ]
+  },
+  {
+    "repository": "phcurado/daisy_ui_components",
+    "accuracy": 0.7777777777777778,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 7,
+    "fp_count": 2,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Multiple service instances per host",
+      "Service instance per container"
+    ],
+    "fn_patterns": []
+  },
+  {
+    "repository": "sappho192/Tokenizers.DotNet",
+    "accuracy": 0.7777777777777778,
+    "patterns_in_survey": 2,
+    "tp_count": 0,
+    "tn_count": 7,
+    "fp_count": 0,
+    "fn_count": 2,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Multiple service instances per host",
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "renode/renode",
+    "accuracy": 0.7777777777777778,
+    "patterns_in_survey": 1,
+    "tp_count": 0,
+    "tn_count": 7,
+    "fp_count": 1,
+    "fn_count": 1,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Multiple service instances per host"
+    ],
+    "fn_patterns": [
+      "Service registry"
+    ]
+  },
+  {
+    "repository": "HKUDS/LightRAG",
+    "accuracy": 0.6666666666666666,
+    "patterns_in_survey": 4,
+    "tp_count": 2,
+    "tn_count": 4,
+    "fp_count": 1,
+    "fn_count": 2,
+    "tp_patterns": [
+      "Multiple service instances per host",
+      "Service instance per container"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service mesh",
+      "Service registry"
+    ],
+    "fp_patterns": [
+      "Service deployment platform"
+    ],
+    "fn_patterns": [
+      "Service instance per VM",
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "Yubico/Yubico.NET.SDK",
+    "accuracy": 0.6666666666666666,
+    "patterns_in_survey": 1,
+    "tp_count": 0,
+    "tn_count": 6,
+    "fp_count": 2,
+    "fn_count": 1,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry"
+    ],
+    "fp_patterns": [
+      "Multiple service instances per host",
+      "Service instance per container"
+    ],
+    "fn_patterns": [
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "kortix-ai/suna",
+    "accuracy": 0.6666666666666666,
+    "patterns_in_survey": 3,
+    "tp_count": 1,
+    "tn_count": 5,
+    "fp_count": 1,
+    "fn_count": 2,
+    "tp_patterns": [
+      "Service instance per container"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service instance per VM",
+      "Service mesh",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Multiple service instances per host"
+    ],
+    "fn_patterns": [
+      "Service deployment platform",
+      "Service registry"
+    ]
+  },
+  {
+    "repository": "iiab/iiab",
+    "accuracy": 0.6666666666666666,
+    "patterns_in_survey": 3,
+    "tp_count": 2,
+    "tn_count": 4,
+    "fp_count": 2,
+    "fn_count": 1,
+    "tp_patterns": [
+      "Service deployment platform",
+      "Service instance per VM"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Service instance per container",
+      "Service mesh",
+      "Service registry"
+    ],
+    "fp_patterns": [
+      "Multiple service instances per host",
+      "Server-side service discovery"
+    ],
+    "fn_patterns": [
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "xapi-project/xen-api",
+    "accuracy": 0.6666666666666666,
+    "patterns_in_survey": 1,
+    "tp_count": 0,
+    "tn_count": 6,
+    "fp_count": 2,
+    "fn_count": 1,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service mesh",
+      "Service registry"
+    ],
+    "fp_patterns": [
+      "Multiple service instances per host",
+      "Single Service Instance per Host"
+    ],
+    "fn_patterns": [
+      "Service instance per VM"
+    ]
+  },
+  {
+    "repository": "wpovernight/woocommerce-pdf-invoices-packing-slips",
+    "accuracy": 0.6666666666666666,
+    "patterns_in_survey": 3,
+    "tp_count": 0,
+    "tn_count": 6,
+    "fp_count": 0,
+    "fn_count": 3,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "Server-side service discovery",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Service deployment platform"
+    ]
+  },
+  {
+    "repository": "Cantara/xorcery",
+    "accuracy": 0.6666666666666666,
+    "patterns_in_survey": 8,
+    "tp_count": 5,
+    "tn_count": 1,
+    "fp_count": 0,
+    "fn_count": 3,
+    "tp_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service instance per container",
+      "Service registry"
+    ],
+    "tn_patterns": [
+      "Service deployment platform"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Service instance per VM",
+      "Service mesh",
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "welovemedia/ffmate",
+    "accuracy": 0.6666666666666666,
+    "patterns_in_survey": 4,
+    "tp_count": 1,
+    "tn_count": 5,
+    "fp_count": 0,
+    "fn_count": 3,
+    "tp_patterns": [
+      "Service instance per container"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service instance per VM",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Multiple service instances per host",
+      "Service deployment platform",
+      "Service mesh"
+    ]
+  },
+  {
+    "repository": "GoogleCloudPlatform/accelerated-platforms",
+    "accuracy": 0.6666666666666666,
+    "patterns_in_survey": 5,
+    "tp_count": 4,
+    "tn_count": 2,
+    "fp_count": 2,
+    "fn_count": 1,
+    "tp_patterns": [
+      "Multiple service instances per host",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service mesh"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Service instance per VM"
+    ],
+    "fp_patterns": [
+      "Server-side service discovery",
+      "Single Service Instance per Host"
+    ],
+    "fn_patterns": [
+      "Service registry"
+    ]
+  },
+  {
+    "repository": "eeditiones/tei-publisher-components",
+    "accuracy": 0.6666666666666666,
+    "patterns_in_survey": 2,
+    "tp_count": 1,
+    "tn_count": 5,
+    "fp_count": 2,
+    "fn_count": 1,
+    "tp_patterns": [
+      "Service instance per container"
+    ],
+    "tn_patterns": [
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service instance per VM",
+      "Service mesh",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Service deployment platform",
+      "Service registry"
+    ],
+    "fn_patterns": [
+      "3rd Party Registration"
+    ]
+  },
+  {
+    "repository": "Hydepwns/raxol",
+    "accuracy": 0.6666666666666666,
+    "patterns_in_survey": 2,
+    "tp_count": 2,
+    "tn_count": 4,
+    "fp_count": 3,
+    "fn_count": 0,
+    "tp_patterns": [
+      "Multiple service instances per host",
+      "Single Service Instance per Host"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service instance per VM",
+      "Service mesh"
+    ],
+    "fp_patterns": [
+      "Service deployment platform",
+      "Service instance per container",
+      "Service registry"
+    ],
+    "fn_patterns": []
+  },
+  {
+    "repository": "remsky/Kokoro-FastAPI",
+    "accuracy": 0.6666666666666666,
+    "patterns_in_survey": 5,
+    "tp_count": 3,
+    "tn_count": 3,
+    "fp_count": 1,
+    "fn_count": 2,
+    "tp_patterns": [
+      "Multiple service instances per host",
+      "Service deployment platform",
+      "Service instance per container"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Service mesh",
+      "Service registry"
+    ],
+    "fp_patterns": [
+      "Server-side service discovery"
+    ],
+    "fn_patterns": [
+      "Service instance per VM",
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "boyter/scc",
+    "accuracy": 0.6666666666666666,
+    "patterns_in_survey": 0,
+    "tp_count": 0,
+    "tn_count": 6,
+    "fp_count": 3,
+    "fn_count": 0,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry"
+    ],
+    "fp_patterns": [
+      "Service deployment platform",
+      "Service instance per container",
+      "Single Service Instance per Host"
+    ],
+    "fn_patterns": []
+  },
+  {
+    "repository": "PowerShell/DSC",
+    "accuracy": 0.6666666666666666,
+    "patterns_in_survey": 2,
+    "tp_count": 0,
+    "tn_count": 6,
+    "fp_count": 1,
+    "fn_count": 2,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service instance per container",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Multiple service instances per host"
+    ],
+    "fn_patterns": [
+      "Service deployment platform",
+      "Service instance per VM"
+    ]
+  },
+  {
+    "repository": "bnjbvr/cargo-machete",
+    "accuracy": 0.6666666666666666,
+    "patterns_in_survey": 2,
+    "tp_count": 0,
+    "tn_count": 6,
+    "fp_count": 1,
+    "fn_count": 2,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service mesh",
+      "Service registry"
+    ],
+    "fp_patterns": [
+      "Service instance per container"
+    ],
+    "fn_patterns": [
+      "Service instance per VM",
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "RoboJackets/apiary",
+    "accuracy": 0.6666666666666666,
+    "patterns_in_survey": 6,
+    "tp_count": 3,
+    "tn_count": 3,
+    "fp_count": 0,
+    "fn_count": 3,
+    "tp_patterns": [
+      "Multiple service instances per host",
+      "Service deployment platform",
+      "Service instance per container"
+    ],
+    "tn_patterns": [
+      "Service instance per VM",
+      "Service mesh",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service registry"
+    ]
+  },
+  {
+    "repository": "nanvix/nanvix",
+    "accuracy": 0.6666666666666666,
+    "patterns_in_survey": 5,
+    "tp_count": 2,
+    "tn_count": 4,
+    "fp_count": 0,
+    "fn_count": 3,
+    "tp_patterns": [
+      "Multiple service instances per host",
+      "Service instance per VM"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service mesh",
+      "Service registry"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Service deployment platform",
+      "Service instance per container",
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "jinek/Consolonia",
+    "accuracy": 0.6666666666666666,
+    "patterns_in_survey": 3,
+    "tp_count": 0,
+    "tn_count": 6,
+    "fp_count": 0,
+    "fn_count": 3,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "Giveth/impact-graph",
+    "accuracy": 0.5555555555555556,
+    "patterns_in_survey": 5,
+    "tp_count": 2,
+    "tn_count": 3,
+    "fp_count": 1,
+    "fn_count": 3,
+    "tp_patterns": [
+      "Multiple service instances per host",
+      "Service instance per container"
+    ],
+    "tn_patterns": [
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Service deployment platform"
+    ],
+    "fn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service instance per VM"
+    ]
+  },
+  {
+    "repository": "LukeGus/Termix",
+    "accuracy": 0.5555555555555556,
+    "patterns_in_survey": 3,
+    "tp_count": 0,
+    "tn_count": 5,
+    "fp_count": 1,
+    "fn_count": 3,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per VM",
+      "Service registry"
+    ],
+    "fp_patterns": [
+      "Multiple service instances per host"
+    ],
+    "fn_patterns": [
+      "Service instance per container",
+      "Service mesh",
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "globus/globus-compute",
+    "accuracy": 0.5555555555555556,
+    "patterns_in_survey": 6,
+    "tp_count": 2,
+    "tn_count": 3,
+    "fp_count": 0,
+    "fn_count": 4,
+    "tp_patterns": [
+      "Service instance per container",
+      "Single Service Instance per Host"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service mesh"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Multiple service instances per host",
+      "Service deployment platform",
+      "Service instance per VM",
+      "Service registry"
+    ]
+  },
+  {
+    "repository": "m1k1o/neko",
+    "accuracy": 0.5555555555555556,
+    "patterns_in_survey": 4,
+    "tp_count": 2,
+    "tn_count": 3,
+    "fp_count": 2,
+    "fn_count": 2,
+    "tp_patterns": [
+      "Multiple service instances per host",
+      "Service deployment platform"
+    ],
+    "tn_patterns": [
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Server-side service discovery",
+      "Service instance per container"
+    ],
+    "fn_patterns": [
+      "3rd Party Registration",
+      "Service instance per VM"
+    ]
+  },
+  {
+    "repository": "jellyfin/jellyfin-ffmpeg",
+    "accuracy": 0.5555555555555556,
+    "patterns_in_survey": 2,
+    "tp_count": 0,
+    "tn_count": 5,
+    "fp_count": 2,
+    "fn_count": 2,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry"
+    ],
+    "fp_patterns": [
+      "Multiple service instances per host",
+      "Service deployment platform"
+    ],
+    "fn_patterns": [
+      "Service instance per container",
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "mcollovati/quarkus-hilla",
+    "accuracy": 0.5555555555555556,
+    "patterns_in_survey": 4,
+    "tp_count": 0,
+    "tn_count": 5,
+    "fp_count": 0,
+    "fn_count": 4,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service mesh",
+      "Service registry"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Multiple service instances per host",
+      "Service instance per container",
+      "Service instance per VM",
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "joedwards32/CS2",
+    "accuracy": 0.5555555555555556,
+    "patterns_in_survey": 5,
+    "tp_count": 1,
+    "tn_count": 4,
+    "fp_count": 0,
+    "fn_count": 4,
+    "tp_patterns": [
+      "Service instance per container"
+    ],
+    "tn_patterns": [
+      "Service deployment platform",
+      "Service instance per VM",
+      "Service mesh",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service registry"
+    ]
+  },
+  {
+    "repository": "MindfulLearner/dima-portfolio",
+    "accuracy": 0.5555555555555556,
+    "patterns_in_survey": 4,
+    "tp_count": 0,
+    "tn_count": 5,
+    "fp_count": 0,
+    "fn_count": 4,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Service instance per container",
+      "Service mesh",
+      "Service registry"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per VM",
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "DavidHDev/react-bits",
+    "accuracy": 0.5555555555555556,
+    "patterns_in_survey": 4,
+    "tp_count": 0,
+    "tn_count": 5,
+    "fp_count": 0,
+    "fn_count": 4,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service registry"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "3rd Party Registration",
+      "Service deployment platform",
+      "Service mesh",
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "joswayski/averagedatabase",
+    "accuracy": 0.5555555555555556,
+    "patterns_in_survey": 5,
+    "tp_count": 1,
+    "tn_count": 4,
+    "fp_count": 0,
+    "fn_count": 4,
+    "tp_patterns": [
+      "Service instance per container"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service instance per VM",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Multiple service instances per host",
+      "Service deployment platform",
+      "Service mesh",
+      "Service registry"
+    ]
+  },
+  {
+    "repository": "malwaredb/malwaredb-rs",
+    "accuracy": 0.5555555555555556,
+    "patterns_in_survey": 4,
+    "tp_count": 1,
+    "tn_count": 4,
+    "fp_count": 1,
+    "fn_count": 3,
+    "tp_patterns": [
+      "Single Service Instance per Host"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service mesh"
+    ],
+    "fp_patterns": [
+      "Service registry"
+    ],
+    "fn_patterns": [
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM"
+    ]
+  },
+  {
+    "repository": "cshum/imagor",
+    "accuracy": 0.5555555555555556,
+    "patterns_in_survey": 5,
+    "tp_count": 2,
+    "tn_count": 3,
+    "fp_count": 1,
+    "fn_count": 3,
+    "tp_patterns": [
+      "Service deployment platform",
+      "Service instance per container"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service mesh"
+    ],
+    "fp_patterns": [
+      "Multiple service instances per host"
+    ],
+    "fn_patterns": [
+      "Service instance per VM",
+      "Service registry",
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "mobilecoinfoundation/mobilecoin",
+    "accuracy": 0.5555555555555556,
+    "patterns_in_survey": 5,
+    "tp_count": 3,
+    "tn_count": 2,
+    "fp_count": 2,
+    "fn_count": 2,
+    "tp_patterns": [
+      "Service deployment platform",
+      "Service instance per container",
+      "Single Service Instance per Host"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Service instance per VM"
+    ],
+    "fp_patterns": [
+      "Multiple service instances per host",
+      "Server-side service discovery"
+    ],
+    "fn_patterns": [
+      "Service mesh",
+      "Service registry"
+    ]
+  },
+  {
+    "repository": "Snawoot/opera-proxy",
+    "accuracy": 0.5555555555555556,
+    "patterns_in_survey": 1,
+    "tp_count": 0,
+    "tn_count": 5,
+    "fp_count": 3,
+    "fn_count": 1,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Service deployment platform",
+      "Service instance per VM",
+      "Service mesh",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Server-side service discovery",
+      "Service instance per container",
+      "Service registry"
+    ],
+    "fn_patterns": [
+      "Multiple service instances per host"
+    ]
+  },
+  {
+    "repository": "pgerke/homebridge-freeathome-local-api",
+    "accuracy": 0.5555555555555556,
+    "patterns_in_survey": 4,
+    "tp_count": 0,
+    "tn_count": 5,
+    "fp_count": 0,
+    "fn_count": 4,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service mesh",
+      "Service registry"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Multiple service instances per host",
+      "Service instance per container",
+      "Service instance per VM",
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "hydro-dev/Hydro",
+    "accuracy": 0.5555555555555556,
+    "patterns_in_survey": 5,
+    "tp_count": 2,
+    "tn_count": 3,
+    "fp_count": 1,
+    "fn_count": 3,
+    "tp_patterns": [
+      "Multiple service instances per host",
+      "Service instance per container"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service registry"
+    ],
+    "fp_patterns": [
+      "Service deployment platform"
+    ],
+    "fn_patterns": [
+      "Service instance per VM",
+      "Service mesh",
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "1Solon/Home-Server-Configuration",
+    "accuracy": 0.5555555555555556,
+    "patterns_in_survey": 6,
+    "tp_count": 3,
+    "tn_count": 2,
+    "fp_count": 1,
+    "fn_count": 3,
+    "tp_patterns": [
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Service instance per VM"
+    ],
+    "fp_patterns": [
+      "Multiple service instances per host"
+    ],
+    "fn_patterns": [
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "redimp/otterwiki",
+    "accuracy": 0.5555555555555556,
+    "patterns_in_survey": 3,
+    "tp_count": 2,
+    "tn_count": 3,
+    "fp_count": 3,
+    "fn_count": 1,
+    "tp_patterns": [
+      "Multiple service instances per host",
+      "Service instance per container"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Service instance per VM",
+      "Service registry"
+    ],
+    "fp_patterns": [
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service mesh"
+    ],
+    "fn_patterns": [
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "payjoin/rust-payjoin",
+    "accuracy": 0.5555555555555556,
+    "patterns_in_survey": 1,
+    "tp_count": 0,
+    "tn_count": 5,
+    "fp_count": 3,
+    "fn_count": 1,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry"
+    ],
+    "fp_patterns": [
+      "Multiple service instances per host",
+      "Service deployment platform",
+      "Service instance per container"
+    ],
+    "fn_patterns": [
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "firecrawl/firecrawl-mcp-server",
+    "accuracy": 0.4444444444444444,
+    "patterns_in_survey": 4,
+    "tp_count": 1,
+    "tn_count": 3,
+    "fp_count": 2,
+    "fn_count": 3,
+    "tp_patterns": [
+      "Multiple service instances per host"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [
+      "Service deployment platform",
+      "Service instance per container"
+    ],
+    "fn_patterns": [
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry"
+    ]
+  },
+  {
+    "repository": "accrescent/accrescent",
+    "accuracy": 0.4444444444444444,
+    "patterns_in_survey": 5,
+    "tp_count": 0,
+    "tn_count": 4,
+    "fp_count": 0,
+    "fn_count": 5,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Service instance per VM",
+      "Service mesh",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service registry"
+    ]
+  },
+  {
+    "repository": "carrot-hu23/dst-admin-go",
+    "accuracy": 0.4444444444444444,
+    "patterns_in_survey": 3,
+    "tp_count": 1,
+    "tn_count": 3,
+    "fp_count": 3,
+    "fn_count": 2,
+    "tp_patterns": [
+      "Service instance per container"
+    ],
+    "tn_patterns": [
+      "Server-side service discovery",
+      "Service mesh",
+      "Service registry"
+    ],
+    "fp_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Service deployment platform"
+    ],
+    "fn_patterns": [
+      "Service instance per VM",
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "http4s/http4s",
+    "accuracy": 0.4444444444444444,
+    "patterns_in_survey": 5,
+    "tp_count": 0,
+    "tn_count": 4,
+    "fp_count": 0,
+    "fn_count": 5,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Service mesh",
+      "Service registry"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "spring-rs/spring-rs",
+    "accuracy": 0.4444444444444444,
+    "patterns_in_survey": 7,
+    "tp_count": 2,
+    "tn_count": 2,
+    "fp_count": 0,
+    "fn_count": 5,
+    "tp_patterns": [
+      "Multiple service instances per host",
+      "Service instance per container"
+    ],
+    "tn_patterns": [
+      "Server-side service discovery",
+      "Service mesh"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "3rd Party Registration",
+      "Service deployment platform",
+      "Service instance per VM",
+      "Service registry",
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "Abhinandan-Kushwaha/react-native-gifted-charts",
+    "accuracy": 0.4444444444444444,
+    "patterns_in_survey": 5,
+    "tp_count": 0,
+    "tn_count": 4,
+    "fp_count": 0,
+    "fn_count": 5,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service mesh"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service registry",
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "openshift/csi-operator",
+    "accuracy": 0.4444444444444444,
+    "patterns_in_survey": 6,
+    "tp_count": 2,
+    "tn_count": 2,
+    "fp_count": 1,
+    "fn_count": 4,
+    "tp_patterns": [
+      "Service deployment platform",
+      "Service instance per container"
+    ],
+    "tn_patterns": [
+      "Service instance per VM",
+      "Service mesh"
+    ],
+    "fp_patterns": [
+      "Server-side service discovery"
+    ],
+    "fn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Service registry",
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "resf/distro-tools",
+    "accuracy": 0.4444444444444444,
+    "patterns_in_survey": 2,
+    "tp_count": 1,
+    "tn_count": 3,
+    "fp_count": 4,
+    "fn_count": 1,
+    "tp_patterns": [
+      "Service instance per container"
+    ],
+    "tn_patterns": [
+      "3rd Party Registration",
+      "Service instance per VM",
+      "Service registry"
+    ],
+    "fp_patterns": [
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service mesh"
+    ],
+    "fn_patterns": [
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "lipku/LiveTalking",
+    "accuracy": 0.3333333333333333,
+    "patterns_in_survey": 7,
+    "tp_count": 1,
+    "tn_count": 2,
+    "fp_count": 0,
+    "fn_count": 6,
+    "tp_patterns": [
+      "Service instance per container"
+    ],
+    "tn_patterns": [
+      "Service instance per VM",
+      "Single Service Instance per Host"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service mesh",
+      "Service registry"
+    ]
+  },
+  {
+    "repository": "Comfy-Org/registry-web",
+    "accuracy": 0.3333333333333333,
+    "patterns_in_survey": 6,
+    "tp_count": 0,
+    "tn_count": 3,
+    "fp_count": 0,
+    "fn_count": 6,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "Server-side service discovery",
+      "Service instance per VM",
+      "Service mesh"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service registry",
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "lyfe00011/levanter",
+    "accuracy": 0.3333333333333333,
+    "patterns_in_survey": 9,
+    "tp_count": 3,
+    "tn_count": 0,
+    "fp_count": 0,
+    "fn_count": 6,
+    "tp_patterns": [
+      "Multiple service instances per host",
+      "Service deployment platform",
+      "Service instance per container"
+    ],
+    "tn_patterns": [],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "gaureshpai/hseruag",
+    "accuracy": 0.3333333333333333,
+    "patterns_in_survey": 6,
+    "tp_count": 0,
+    "tn_count": 3,
+    "fp_count": 0,
+    "fn_count": 6,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "Service deployment platform",
+      "Service instance per VM",
+      "Service registry"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service instance per container",
+      "Service mesh",
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "VoucherDesenvSenacHub/galeria-voucher",
+    "accuracy": 0.2222222222222222,
+    "patterns_in_survey": 7,
+    "tp_count": 0,
+    "tn_count": 2,
+    "fp_count": 0,
+    "fn_count": 7,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "Multiple service instances per host",
+      "Service instance per VM"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "3rd Party Registration",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "Azure/aaz",
+    "accuracy": 0.1111111111111111,
+    "patterns_in_survey": 9,
+    "tp_count": 1,
+    "tn_count": 0,
+    "fp_count": 0,
+    "fn_count": 8,
+    "tp_patterns": [
+      "Service instance per VM"
+    ],
+    "tn_patterns": [],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "3rd Party Registration",
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ]
+  },
+  {
+    "repository": "pluja/awesome-privacy",
+    "accuracy": 0.1111111111111111,
+    "patterns_in_survey": 8,
+    "tp_count": 0,
+    "tn_count": 1,
+    "fp_count": 0,
+    "fn_count": 8,
+    "tp_patterns": [],
+    "tn_patterns": [
+      "3rd Party Registration"
+    ],
+    "fp_patterns": [],
+    "fn_patterns": [
+      "Multiple service instances per host",
+      "Server-side service discovery",
+      "Service deployment platform",
+      "Service instance per container",
+      "Service instance per VM",
+      "Service mesh",
+      "Service registry",
+      "Single Service Instance per Host"
+    ]
+  }
+]

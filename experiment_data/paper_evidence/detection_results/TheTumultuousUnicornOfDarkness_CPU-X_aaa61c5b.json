@@ -1,0 +1,145 @@
+{
+  "summary": {
+    "repository_name": "TheTumultuousUnicornOfDarkness/CPU-X",
+    "detected_patterns": [
+      "Service instance per VM"
+    ],
+    "total_patterns_scanned": 9,
+    "timestamp": "2025-10-29T02:44:29.654116",
+    "run_id": "aaa61c5b"
+  },
+  "patterns": {
+    "Server-side service discovery": false,
+    "Service registry": false,
+    "3rd Party Registration": false,
+    "Single Service Instance per Host": false,
+    "Service instance per container": false,
+    "Multiple service instances per host": false,
+    "Service deployment platform": false,
+    "Service instance per VM": true,
+    "Service mesh": false
+  },
+  "scanned_files_per_pattern": {
+    "Server-side service discovery": [
+      "/data/repos/CPU-X/.github/workflows/appimage_continuous.yml",
+      "/data/repos/CPU-X/.github/workflows/appimage_versioned.yml",
+      "/data/repos/CPU-X/.github/workflows/linux.yml",
+      "/data/repos/CPU-X/.github/workflows/lock_threads.yml",
+      "/data/repos/CPU-X/.github/workflows/update_pot_file.yml"
+    ],
+    "Service registry": [
+      "/data/repos/CPU-X/.github/ISSUE_TEMPLATE.md",
+      "/data/repos/CPU-X/.github/ISSUE_TEMPLATE/bug_report.md",
+      "/data/repos/CPU-X/.github/ISSUE_TEMPLATE/feature_request.md",
+      "/data/repos/CPU-X/.github/ISSUE_TEMPLATE/libcpuid.md",
+      "/data/repos/CPU-X/.github/workflows/appimage_continuous.yml",
+      "/data/repos/CPU-X/.github/workflows/appimage_versioned.yml",
+      "/data/repos/CPU-X/.github/workflows/linux.yml",
+      "/data/repos/CPU-X/.github/workflows/lock_threads.yml",
+      "/data/repos/CPU-X/.github/workflows/update_pot_file.yml",
+      "/data/repos/CPU-X/CONTRIBUTING.md",
+      "/data/repos/CPU-X/ChangeLog.md",
+      "/data/repos/CPU-X/README.md",
+      "/data/repos/CPU-X/scripts/build_appimage.sh",
+      "/data/repos/CPU-X/scripts/build_cpu_x.sh",
+      "/data/repos/CPU-X/scripts/build_libcpuid.sh",
+      "/data/repos/CPU-X/scripts/bump_cpu_x_version.sh",
+      "/data/repos/CPU-X/scripts/check_new_strings.sh",
+      "/data/repos/CPU-X/scripts/patch_dmidecode.sh",
+      "/data/repos/CPU-X/src/core/bandwidth/README.md",
+      "/data/repos/CPU-X/src/core/dmidecode/README.md",
+      "/data/repos/CPU-X/tests/awk/test_regex.sh",
+      "/data/repos/CPU-X/tests/common.sh",
+      "/data/repos/CPU-X/tests/grep/test_regex.sh",
+      "/data/repos/CPU-X/vagrant/bootstrap_common.sh"
+    ],
+    "3rd Party Registration": [
+      "/data/repos/CPU-X/.github/workflows/appimage_continuous.yml",
+      "/data/repos/CPU-X/.github/workflows/appimage_versioned.yml",
+      "/data/repos/CPU-X/.github/workflows/linux.yml",
+      "/data/repos/CPU-X/.github/workflows/lock_threads.yml",
+      "/data/repos/CPU-X/.github/workflows/update_pot_file.yml"
+    ],
+    "Single Service Instance per Host": [
+      "/data/repos/CPU-X/vagrant/Vagrantfile",
+      "/data/repos/CPU-X/vagrant/bootstrap_common.sh"
+    ],
+    "Service instance per container": [
+      "/data/repos/CPU-X/.github/workflows/appimage_continuous.yml",
+      "/data/repos/CPU-X/.github/workflows/appimage_versioned.yml",
+      "/data/repos/CPU-X/.github/workflows/linux.yml",
+      "/data/repos/CPU-X/.github/workflows/lock_threads.yml",
+      "/data/repos/CPU-X/.github/workflows/update_pot_file.yml"
+    ],
+    "Multiple service instances per host": [
+      "/data/repos/CPU-X/scripts/build_appimage.sh",
+      "/data/repos/CPU-X/scripts/build_cpu_x.sh",
+      "/data/repos/CPU-X/scripts/build_libcpuid.sh",
+      "/data/repos/CPU-X/scripts/bump_cpu_x_version.sh",
+      "/data/repos/CPU-X/scripts/check_new_strings.sh",
+      "/data/repos/CPU-X/scripts/patch_dmidecode.sh",
+      "/data/repos/CPU-X/tests/awk/test_regex.sh",
+      "/data/repos/CPU-X/tests/common.sh",
+      "/data/repos/CPU-X/tests/grep/test_regex.sh",
+      "/data/repos/CPU-X/vagrant/bootstrap_common.sh"
+    ],
+    "Service deployment platform": [
+      "/data/repos/CPU-X/.github/workflows/appimage_continuous.yml",
+      "/data/repos/CPU-X/.github/workflows/appimage_versioned.yml",
+      "/data/repos/CPU-X/.github/workflows/linux.yml",
+      "/data/repos/CPU-X/.github/workflows/lock_threads.yml",
+      "/data/repos/CPU-X/.github/workflows/update_pot_file.yml",
+      "/data/repos/CPU-X/scripts/build_appimage.sh",
+      "/data/repos/CPU-X/scripts/build_cpu_x.sh",
+      "/data/repos/CPU-X/scripts/build_libcpuid.sh",
+      "/data/repos/CPU-X/scripts/bump_cpu_x_version.sh",
+      "/data/repos/CPU-X/scripts/check_new_strings.sh",
+      "/data/repos/CPU-X/scripts/patch_dmidecode.sh",
+      "/data/repos/CPU-X/tests/awk/test_regex.sh",
+      "/data/repos/CPU-X/tests/common.sh",
+      "/data/repos/CPU-X/tests/grep/test_regex.sh",
+      "/data/repos/CPU-X/vagrant/bootstrap_common.sh"
+    ],
+    "Service instance per VM": [
+      "/data/repos/CPU-X/vagrant/Vagrantfile",
+      "/data/repos/CPU-X/vagrant/bootstrap_common.sh"
+    ],
+    "Service mesh": [
+      "/data/repos/CPU-X/.github/workflows/appimage_continuous.yml",
+      "/data/repos/CPU-X/.github/workflows/appimage_versioned.yml",
+      "/data/repos/CPU-X/.github/workflows/linux.yml",
+      "/data/repos/CPU-X/.github/workflows/lock_threads.yml",
+      "/data/repos/CPU-X/.github/workflows/update_pot_file.yml"
+    ]
+  },
+  "_metadata": {
+    "experiment": {
+      "run_number": 1
+    },
+    "reproducibility": {
+      "configuration": {
+        "thresholds": {
+          "high_priority": 0.5,
+          "medium_priority": 0.3,
+          "min_priority_score": 0.1,
+          "judge_confidence": 5
+        },
+        "weight_scheme": "llm_dominant",
+        "random_seed": 1761705869
+      }
+    },
+    "models": {
+      "planner": "gpt-5-nano-2025-08-07",
+      "investigator": "gpt-5-nano-2025-08-07",
+      "judge": "gpt-5-nano-2025-08-07",
+      "embedding": "jinaai/jina-embeddings-v2-base-code"
+    },
+    "priority_weights": {
+      "keyword": 0.2,
+      "embedding": 0.1,
+      "graph": 0.0,
+      "llm": 0.7
+    },
+    "source_log": "detection_20251029_024429.log"
+  }
+}
