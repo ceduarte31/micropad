@@ -108,11 +108,21 @@ echo "✓ PyTorch installed ($(python -c 'import torch; print(torch.__version__)
 # ============================================================================
 echo ""
 echo "── Step 5: micropad and its dependencies ──"
+# Skip tree-sitter/tree-sitter-languages: no release of tree-sitter-languages
+# has ever tracked tree-sitter's post-0.22 API, so the pinned versions here
+# have no wheel on newer Python - and the code already handles their absence
+# gracefully (code_parsers.py falls back to simpler parsers; the code-graph
+# signal they'd power isn't weighted in the default scoring either way).
+grep -v "^tree-sitter" requirements.txt > /tmp/micropad-requirements-native.txt
 PIP_EXTRA_INDEX_URL="https://download.pytorch.org/whl/$TORCH_PLATFORM" \
-    pip install --no-cache-dir -r requirements.txt
+    pip install --no-cache-dir -r /tmp/micropad-requirements-native.txt
+rm -f /tmp/micropad-requirements-native.txt
+# --no-deps: dependencies are already satisfied by the filtered install
+# above; without this, pyproject.toml's own tree-sitter-languages>=1.8.0
+# constraint gets re-resolved here and hits the same failure.
 PIP_EXTRA_INDEX_URL="https://download.pytorch.org/whl/$TORCH_PLATFORM" \
-    pip install --no-cache-dir -e .
-echo "✓ micropad and dependencies installed"
+    pip install --no-cache-dir --no-deps -e .
+echo "✓ micropad and dependencies installed (tree-sitter skipped)"
 
 # ============================================================================
 # STEP 6: Output directories (same relative paths settings.py already expects)

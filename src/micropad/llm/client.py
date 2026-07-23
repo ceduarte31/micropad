@@ -138,11 +138,23 @@ class LLMClient:
 
         self.openai_client = OpenAI(api_key=config.OLLAMA_API_KEY, base_url=config.OLLAMA_BASE_URL)
 
+    # Retryable errors are retried indefinitely (capped backoff, no giving
+    # up) rather than a bounded number of attempts - the provider is
+    # expected to eventually recover, and giving up early either crashes
+    # the whole scan (planning/judge calls) or silently reports "no
+    # evidence" (investigation calls) - both worse than waiting.
+    MAX_RETRY_WAIT_SECONDS = 60
+
     def _call_ollama(
-        self, system_prompt: str, user_prompt: str, operation: str, max_retries: int = 3
+        self, system_prompt: str, user_prompt: str, operation: str
     ) -> dict:
         """
-        Call Ollama Cloud via its OpenAI-compatible endpoint, with retry logic.
+        Call Ollama Cloud via its OpenAI-compatible endpoint.
+
+        Retryable errors (rate limits, timeouts, connection issues, 5xx) are
+        retried indefinitely with a capped exponential backoff. Non-retryable
+        errors (e.g. malformed requests) fail immediately - retrying those
+        would never help.
 
         Returns:
             dict with keys: 'content' (str), 'metadata' (dict)
@@ -159,7 +171,9 @@ class LLMClient:
         else:
             model = config.INVESTIGATOR_MODEL  # default
 
-        for attempt in range(max_retries):
+        attempt = 0
+        while True:
+            attempt += 1
             try:
                 self._log_request(run_id, "ollama", model, system_prompt, user_prompt, True)
 
@@ -174,6 +188,9 @@ class LLMClient:
 
                 if config.TEMPERATURE is not None:
                     request_kwargs["temperature"] = config.TEMPERATURE
+
+                if config.REASONING_EFFORT:
+                    request_kwargs["reasoning_effort"] = config.REASONING_EFFORT
 
                 response = self.openai_client.chat.completions.create(**request_kwargs)
 
@@ -228,24 +245,24 @@ class LLMClient:
                     ]
                 )
 
-                if not is_retryable or attempt == max_retries - 1:
+                if not is_retryable:
                     self._log_error(run_id, "ollama", model, e)
                     raise RuntimeError(
-                        f"Ollama Cloud call failed after {attempt + 1} attempts: {str(e)[:100]}"
+                        f"Ollama Cloud call failed (non-retryable): {str(e)[:200]}"
                     )
 
-                base_delay = 2**attempt
-                jitter = random.uniform(0, 0.1 * base_delay)
-                wait_time = base_delay + jitter
+                # Capped exponential backoff: grows up to MAX_RETRY_WAIT_SECONDS,
+                # then holds there - we keep retrying rather than giving up.
+                wait_time = min(2 ** min(attempt, 10), self.MAX_RETRY_WAIT_SECONDS)
+                wait_time += random.uniform(0, 0.1 * wait_time)
 
-                self.events_log.warning(
-                    f"Ollama Cloud call failed (attempt {attempt + 1}/{max_retries}), "
-                    f"retrying in {wait_time:.1f}s: {str(e)[:100]}"
-                )
+                if attempt == 1 or attempt % 5 == 0:
+                    self.events_log.warning(
+                        f"Ollama Cloud call failed (attempt {attempt}), still retrying "
+                        f"(waiting {wait_time:.0f}s): {str(e)[:150]}"
+                    )
 
                 time.sleep(wait_time)
-
-        raise RuntimeError(f"Ollama Cloud call failed after {max_retries} retries")
 
     def _log_request(
         self, run_id: str, provider: str, model: str, system: str, user: str, send_temp: bool

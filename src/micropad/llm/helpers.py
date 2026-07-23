@@ -2,10 +2,18 @@
 
 import json
 import logging
+import random
 import re  # Also add this if not present
+import time
 from typing import Any, Dict, List, Optional
 
 from micropad.config import settings as config
+
+# Same policy as llm/client.py's _call_ollama: retry retryable errors
+# indefinitely with a capped backoff rather than giving up - a categorizer
+# call that gives up silently degrades a pattern's candidate list instead of
+# crashing loudly, which is worse.
+_CATEGORIZER_MAX_RETRY_WAIT_SECONDS = 60
 
 # ---------- Generic Utilities ----------
 
@@ -129,16 +137,42 @@ def _call_llm_categorizer(prompt: str) -> str:
     if config.SEND_TEMPERATURE(model):
         kwargs["temperature"] = config.TEMPERATURE
 
-    try:
-        resp = client.chat.completions.create(**kwargs)
-        return resp.choices[0].message.content or ""
-    except Exception as e:
-        # Retry without temperature if needed
-        if config.SEND_TEMPERATURE(model) and "temperature" in str(e).lower():
-            del kwargs["temperature"]
+    if config.REASONING_EFFORT:
+        kwargs["reasoning_effort"] = config.REASONING_EFFORT
+
+    logger = logging.getLogger("events")
+    attempt = 0
+    while True:
+        attempt += 1
+        try:
             resp = client.chat.completions.create(**kwargs)
             return resp.choices[0].message.content or ""
-        raise
+        except Exception as e:
+            err_str = str(e).lower()
+
+            # Some models reject an explicit temperature value - drop it and
+            # retry immediately, no backoff needed for this case.
+            if "temperature" in kwargs and "temperature" in err_str:
+                del kwargs["temperature"]
+                continue
+
+            is_retryable = any(
+                x in err_str
+                for x in ["rate limit", "timeout", "connection", "overloaded", "429", "503", "500"]
+            )
+            if not is_retryable:
+                raise
+
+            wait_time = min(2 ** min(attempt, 10), _CATEGORIZER_MAX_RETRY_WAIT_SECONDS)
+            wait_time += random.uniform(0, 0.1 * wait_time)
+
+            if attempt == 1 or attempt % 5 == 0:
+                logger.warning(
+                    f"Ollama Cloud categorizer call failed (attempt {attempt}), still retrying "
+                    f"(waiting {wait_time:.0f}s): {str(e)[:150]}"
+                )
+
+            time.sleep(wait_time)
 
 
 # ---------- Public Categorization Functions ----------

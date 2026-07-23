@@ -92,6 +92,13 @@ PLANNER_MODEL_FALLBACK = os.getenv("PLANNER_MODEL_FALLBACK", PLANNER_MODEL)
 INVESTIGATOR_MODEL_FALLBACK = os.getenv("INVESTIGATOR_MODEL_FALLBACK", INVESTIGATOR_MODEL)
 JUDGE_MODEL_FALLBACK = os.getenv("JUDGE_MODEL_FALLBACK", JUDGE_MODEL)
 
+# Reasoning effort passed straight through to Ollama Cloud's API (e.g.
+# "low"/"medium"/"high"/"max" - accepted values are model-specific, see
+# https://ollama.com/library/<model> for what a given model supports).
+# Unset by default, in which case the request omits the field entirely and
+# the model uses its own default effort.
+REASONING_EFFORT = os.getenv("REASONING_EFFORT", "") or None
+
 # ============================================================================
 # EMBEDDING MODEL
 # ============================================================================

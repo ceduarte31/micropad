@@ -15,7 +15,6 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     author="MicroPAD Team",
-    author_email="ceduarte at fe dot up dot pt",
     url="https://github.com/ceduarte31/micropad",
     license="MIT",
 

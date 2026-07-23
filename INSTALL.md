@@ -2,6 +2,8 @@
 
 Step-by-step instructions to install and test MicroPAD.
 
+**Can't run Docker in your environment?** (e.g. some HPC/cloud interactive-job containers can't — see the FAQ they'd likely point you to on kernel capabilities Docker needs). Skip straight to the **Native Installation & Testing (No Docker)** section below instead.
+
 ---
 
 ## Prerequisites
@@ -145,6 +147,80 @@ Expect `True` and your GPU's name. If it says `False`, don't proceed to a real s
 **Run with GPU** by adding `-f docker-compose.yml -f docker-compose.gpu.yml` to any of the commands from Steps 4-6 (the commented-out "GPU variant" lines shown there use exactly this).
 
 **Multiple GPUs:** see the **GPU Acceleration** section in [README.md](README.md) for `batch_analyze_parallel.sh` — runs several batch workers concurrently, each on its own GPU, instead of one repo at a time.
+
+---
+
+## Native Installation & Testing (No Docker)
+
+Some environments can't run Docker at all — e.g. certain HPC/cloud interactive-job containers are missing kernel capabilities (`CAP_NET_ADMIN`) Docker needs for its own networking setup. This path installs MicroPAD directly on the host instead, into a Python virtual environment, and mirrors the same steps as the Docker path above.
+
+### Step 1: Prepare the Artifact
+
+```bash
+git clone https://github.com/ceduarte31/micropad.git && cd micropad
+```
+
+### Step 2: Run Native Setup
+
+```bash
+TORCH_PLATFORM=cu128 ./scripts/setup_native.sh   # omit, or set TORCH_PLATFORM=cpu, for CPU-only hosts
+source .venv/bin/activate   # needed in every new shell afterward
+```
+
+**Verify the GPU is actually detected** (skip if using `TORCH_PLATFORM=cpu`):
+```bash
+python -c "import torch; print(torch.cuda.is_available(), torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'none')"
+```
+Expect `True` and your GPU's name.
+
+### Step 3: Configure Ollama Cloud API Key
+
+```bash
+cp .env.example .env
+# set OLLAMA_API_KEY in .env
+```
+
+### Step 4: Get Repositories Onto the Machine
+
+Native mode has no volume-mount indirection like Docker's `TARGET_REPO_DIR`/`BATCH_REPOS_DIR` — you point directly at real paths on disk, so clone or copy repos there first:
+```bash
+mkdir -p ~/test_repos
+cd ~/test_repos
+git clone https://github.com/<owner>/<repo1>.git
+git clone https://github.com/<owner>/<repo2>.git
+cd -   # back to the micropad repo root
+```
+
+### Step 5: Seed the Vector Database
+
+Point `TARGET_REPO` at any repo you just cloned (seeding doesn't use its contents, but the config check requires a real path):
+```bash
+TARGET_REPO=~/test_repos/<repo1> python -m micropad.scripts.seed_database
+```
+
+### Step 6: Test MicroPAD on a Single Repository
+
+```bash
+TARGET_REPO=~/test_repos/<repo1> python -m micropad.core.scanner
+```
+
+**Output locations:** same as the Docker path — `.generated/micropad/logs/`, `.generated/micropad/detection_results/`.
+
+### Step 7: Test Batch Analysis (Optional)
+
+Scan every repo in `~/test_repos` in one run:
+```bash
+./batch_analyze.sh ~/test_repos
+```
+(`--list <file>` works the same as in Docker mode, for a specific ordered subset instead of everything in the folder.)
+
+### Step 8: Multiple GPUs — Parallel Batch (Optional)
+
+Same folder, plus a worker count — start with 2 before scaling to all your GPUs:
+```bash
+./batch_analyze_parallel_native.sh ~/test_repos 2
+```
+Watch `batch_results/worker_0_console.log` / `worker_1_console.log` to confirm workers are actually running concurrently on separate GPUs before scaling the worker count up.
 
 ---
 

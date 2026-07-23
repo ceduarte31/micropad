@@ -55,7 +55,6 @@ FROM python:3.11-slim
 ARG TORCH_PLATFORM=cpu
 
 # Metadata
-LABEL maintainer="ceduarte at fe dot up dot pt"
 LABEL description="MicroPAD+MicroREF - Empirical Microservices Architecture Research Framework"
 LABEL version="2.0.0"
 

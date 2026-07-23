@@ -80,6 +80,8 @@ docker compose run --rm micropad python -m micropad.core.scanner
 
 **Reproducibility:** All MicroPAD configuration variables (LLM models, prioritization weights, thresholds, analysis budgets, embedding model, random seed, etc.) are shipped with the exact same default values used in the paper experiments (see `src/micropad/config/settings.py`). Users only need to provide an Ollama Cloud API key — no configuration tuning is required to reproduce the paper's setup.
 
+**Model selection:** set `PLANNER_MODEL` / `INVESTIGATOR_MODEL` / `JUDGE_MODEL` in `.env` to any [Ollama Cloud model name](https://ollama.com/library) — each phase can use a different model, or all three can point at the same one (the default). Optionally set `REASONING_EFFORT` (e.g. `low`/`medium`/`high`/`max`) to control reasoning depth on models that support it — accepted values are model-specific, check the model's page on Ollama's library. Leave it unset to use the model's own default effort.
+
 ---
 
 ## Batch Analysis
@@ -186,6 +188,53 @@ To pin a single, non-parallel run to a specific GPU (e.g. GPU 2 on a multi-GPU b
 ```bash
 GPU_INDEX=2 docker compose -f docker-compose.yml -f docker-compose.gpu.yml run --rm micropad python -m micropad.core.scanner
 ```
+
+---
+
+## Native Setup (No Docker)
+
+Some environments can't run Docker at all — e.g. certain HPC/cloud interactive-job containers are missing kernel capabilities (`CAP_NET_ADMIN`) Docker needs for its own networking setup. `scripts/setup_native.sh` installs MicroPAD directly on the host instead, into a Python virtual environment — no Docker involved.
+
+**Setup (one-time):**
+```bash
+TORCH_PLATFORM=cu128 ./scripts/setup_native.sh   # omit, or set TORCH_PLATFORM=cpu, for CPU-only hosts
+source .venv/bin/activate   # needed in every new shell afterward
+
+cp .env.example .env
+# set OLLAMA_API_KEY in .env
+```
+
+**Move the repositories you want to analyze onto this machine first.** Native mode has no volume-mount indirection like Docker's `TARGET_REPO_DIR`/`BATCH_REPOS_DIR` — you point directly at real paths on disk, so clone or copy them somewhere first, e.g.:
+```bash
+mkdir -p ~/test_repos
+cd ~/test_repos
+git clone https://github.com/<owner>/<repo1>.git
+git clone https://github.com/<owner>/<repo2>.git
+cd -   # back to the micropad repo root
+```
+
+**Seed the vector database** (do this once, pointing `TARGET_REPO` at any repo you just cloned — seeding doesn't use its contents, but the config check requires a real path):
+```bash
+TARGET_REPO=~/test_repos/<repo1> python -m micropad.scripts.seed_database
+```
+
+**Then pick a mode:**
+- **Single repository** — set `TARGET_REPO` directly:
+  ```bash
+  TARGET_REPO=~/test_repos/<repo1> python -m micropad.core.scanner
+  ```
+- **Batch (every repo in a folder)** — pass the folder as the first argument:
+  ```bash
+  ./batch_analyze.sh ~/test_repos
+  ```
+  (`--list <file>` works the same as in Docker mode, for a specific ordered subset instead of everything in the folder)
+- **Parallel batch (multiple GPUs)** — same folder, plus a worker count (start with 2 before using all your GPUs):
+  ```bash
+  ./batch_analyze_parallel_native.sh ~/test_repos 2
+  ```
+  Watch `batch_results/worker_0_console.log` / `worker_1_console.log` to confirm workers are actually running concurrently on separate GPUs before scaling the worker count up.
+
+Output locations are the same as Docker mode either way: `.generated/micropad/logs/`, `.generated/micropad/detection_results/`, `batch_results/`.
 
 ---
 

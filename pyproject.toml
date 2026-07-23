@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.9"
 license = {text = "MIT"}
 authors = [
-    {name = "MicroPAD Team", email = "ceduarte at fe dot up dot pt"}
+    {name = "MicroPAD Team"}
 ]
 keywords = ["microservices", "architecture", "patterns", "ai", "llm", "detection"]
 classifiers = [
