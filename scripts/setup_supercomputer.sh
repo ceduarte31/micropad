@@ -85,9 +85,33 @@ else
     if [[ " $(id -nG "$USER") " != *" docker "* ]]; then
         echo "Adding $USER to the 'docker' group (avoids needing sudo for every docker command)..."
         sudo usermod -aG docker "$USER"
-        echo "⚠  You must log out and back in (or run: newgrp docker) for this to take effect."
+        # This script's own shell doesn't pick up the new group membership until
+        # a fresh login/newgrp - but since that's interactive and this is a
+        # non-interactive script, GROUP_JUST_ADDED below makes later steps use
+        # `sg docker -c "..."` instead, which works without either.
+        GROUP_JUST_ADDED=true
+        echo "⚠  Note: your CURRENT shell won't have docker-group access until you log out and"
+        echo "   back in (or run: newgrp docker). This script works around that for itself by"
+        echo "   using 'sg docker -c ...'; do the same in any of your own follow-on scripts."
     fi
 fi
+GROUP_JUST_ADDED="${GROUP_JUST_ADDED:-false}"
+
+# Run a docker command as the current user, working around a just-added group
+# membership not yet being active in this shell (see GROUP_JUST_ADDED above).
+run_as_docker_user() {
+    if [[ "$GROUP_JUST_ADDED" == "true" ]]; then
+        if ! command -v sg &>/dev/null; then
+            echo "✗ 'sg' command not found - can't apply the new docker group membership"
+            echo "  without it in this non-interactive script. Log out and back in (or run"
+            echo "  'newgrp docker' in an interactive shell), then re-run this script."
+            exit 1
+        fi
+        sg docker -c "$*"
+    else
+        "$@"
+    fi
+}
 
 # ============================================================================
 # STEP 4: Install nvidia-container-toolkit (only if not already present)
@@ -125,6 +149,19 @@ if [[ "$NEEDS_RESTART" == "true" ]]; then
     echo "✓ Docker restarted"
 else
     echo "Nothing changed this run - skipping restart (avoids disrupting anything already running)"
+fi
+
+# ============================================================================
+# STEP 6: Verify docker actually works for the current user, right now
+# ============================================================================
+echo ""
+echo "── Step 6: Verify Docker access ──"
+if run_as_docker_user docker info &>/dev/null; then
+    echo "✓ Docker is usable by $USER, without sudo, in this script run"
+else
+    echo "✗ Docker access check failed even via 'sg docker'."
+    echo "  If you were just added to the docker group, a full logout/login may still be needed."
+    exit 1
 fi
 
 # ============================================================================
