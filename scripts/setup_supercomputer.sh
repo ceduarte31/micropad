@@ -25,6 +25,14 @@ echo "MicroPAD GPU Host Setup"
 echo "═══════════════════════════════════════════════════════════════════════════"
 
 # ============================================================================
+# STEP 0: Refresh the package index once, up front
+# ============================================================================
+echo ""
+echo "── Step 0: apt update ──"
+sudo apt-get update
+echo "✓ Package index refreshed"
+
+# ============================================================================
 # STEP 1: Load the CUDA environment module (if this host uses one)
 # ============================================================================
 echo ""
@@ -61,7 +69,6 @@ if command -v docker &>/dev/null; then
 else
     echo "Docker not found - installing via the official Docker apt repository..."
 
-    sudo apt-get update
     sudo apt-get install -y ca-certificates curl gnupg
     sudo install -m 0755 -d /etc/apt/keyrings
 
@@ -81,35 +88,46 @@ else
     sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
     echo "✓ Docker installed ($(docker --version))"
-
-    if [[ " $(id -nG "$USER") " != *" docker "* ]]; then
-        echo "Adding $USER to the 'docker' group (avoids needing sudo for every docker command)..."
-        sudo usermod -aG docker "$USER"
-        # This script's own shell doesn't pick up the new group membership until
-        # a fresh login/newgrp - but since that's interactive and this is a
-        # non-interactive script, GROUP_JUST_ADDED below makes later steps use
-        # `sg docker -c "..."` instead, which works without either.
-        GROUP_JUST_ADDED=true
-        echo "⚠  Note: your CURRENT shell won't have docker-group access until you log out and"
-        echo "   back in (or run: newgrp docker). This script works around that for itself by"
-        echo "   using 'sg docker -c ...'; do the same in any of your own follow-on scripts."
-    fi
 fi
-GROUP_JUST_ADDED="${GROUP_JUST_ADDED:-false}"
 
-# Run a docker command as the current user, working around a just-added group
-# membership not yet being active in this shell (see GROUP_JUST_ADDED above).
+# Ensure $USER is a member of the docker group (this checks/updates the
+# system group database, /etc/group via NSS - independent of what's active
+# in any already-running shell, including this script's own).
+if [[ " $(id -nG "$USER") " != *" docker "* ]]; then
+    echo "Adding $USER to the 'docker' group (avoids needing sudo for every docker command)..."
+    sudo usermod -aG docker "$USER"
+    echo "✓ Added to /etc/group"
+else
+    echo "✓ $USER already in the docker group"
+fi
+
+# Separately: does *this shell's own* active group list (fixed since login,
+# NOT refreshed just because /etc/group changed - whether that change was
+# just now above or in some earlier run/by an admin) already include docker?
+# This, not the check above, is what determines if docker commands in this
+# script need to go through `sg docker -c` instead of running directly.
+if [[ " $(id -nG) " != *" docker "* ]]; then
+    DOCKER_GROUP_ACTIVE_IN_SHELL=false
+    echo "⚠  This shell session doesn't have 'docker' group access active yet"
+    echo "   (needs a fresh login or 'newgrp docker' to pick it up.) Using 'sg docker -c ...'"
+    echo "   to work around that for the rest of this script."
+else
+    DOCKER_GROUP_ACTIVE_IN_SHELL=true
+fi
+
+# Run a docker command as the current user, routing through `sg` if this
+# shell's own active groups don't include docker yet (see check above).
 run_as_docker_user() {
-    if [[ "$GROUP_JUST_ADDED" == "true" ]]; then
+    if [[ "$DOCKER_GROUP_ACTIVE_IN_SHELL" == "true" ]]; then
+        "$@"
+    else
         if ! command -v sg &>/dev/null; then
-            echo "✗ 'sg' command not found - can't apply the new docker group membership"
+            echo "✗ 'sg' command not found - can't apply the docker group membership"
             echo "  without it in this non-interactive script. Log out and back in (or run"
             echo "  'newgrp docker' in an interactive shell), then re-run this script."
             exit 1
         fi
         sg docker -c "$*"
-    else
-        "$@"
     fi
 }
 
@@ -139,16 +157,49 @@ else
 fi
 
 # ============================================================================
-# STEP 5: Restart Docker, but only if step 4 actually changed its config
+# STEP 5: Make sure the Docker daemon is actually running
 # ============================================================================
+# Two separate reasons this step can need to act:
+#   (a) nvidia-container-toolkit was just configured (NEEDS_RESTART) - the
+#       daemon needs a restart to pick that up, even if it's already running.
+#   (b) the daemon just isn't running at all, regardless of (a) - e.g. this
+#       host's init doesn't keep it resident across a `service ... start`.
+# Checked with sudo, since this is about the daemon's own state, independent
+# of the current user's docker-group membership (handled separately above).
+
+start_or_restart_docker() {
+    local mode="$1"  # "restart" or "start"
+    if [[ -d /run/systemd/system ]] && command -v systemctl &>/dev/null; then
+        sudo systemctl "$mode" docker
+        echo "✓ Docker ${mode}ed (systemctl)"
+    elif command -v service &>/dev/null; then
+        sudo service docker "$mode"
+        echo "✓ Docker ${mode}ed (service)"
+    else
+        echo "✗ Could not determine how to $mode Docker on this host (no systemd, no 'service' command)."
+        echo "  Start/restart it however this host actually manages Docker"
+        echo "  (e.g. 'sudo dockerd &', or ask whoever administers this machine)."
+        exit 1
+    fi
+}
+
 echo ""
-echo "── Step 5: Docker daemon restart ──"
+echo "── Step 5: Docker daemon ──"
 if [[ "$NEEDS_RESTART" == "true" ]]; then
     echo "nvidia-container-toolkit was just installed/configured - restarting Docker for it to take effect..."
-    sudo systemctl restart docker
-    echo "✓ Docker restarted"
+    start_or_restart_docker restart
+elif sudo docker info &>/dev/null; then
+    echo "✓ Docker daemon already running - nothing to do"
 else
-    echo "Nothing changed this run - skipping restart (avoids disrupting anything already running)"
+    echo "Docker daemon isn't running - starting it..."
+    start_or_restart_docker start
+    if ! sudo docker info &>/dev/null; then
+        echo "✗ Docker still isn't reachable after attempting to start it."
+        echo "  This host's init may not be keeping dockerd resident - check with whoever"
+        echo "  administers this machine, or try starting it manually: sudo dockerd &"
+        exit 1
+    fi
+    echo "✓ Docker daemon is now running and reachable"
 fi
 
 # ============================================================================
@@ -156,10 +207,16 @@ fi
 # ============================================================================
 echo ""
 echo "── Step 6: Verify Docker access ──"
-if run_as_docker_user docker info &>/dev/null; then
+if [[ "$DOCKER_GROUP_ACTIVE_IN_SHELL" == "true" ]]; then
+    echo "(checking directly - docker group already active in this shell)"
+else
+    echo "(checking via 'sg docker' - docker group not yet active in this shell)"
+fi
+if DOCKER_INFO_OUTPUT=$(run_as_docker_user docker info 2>&1); then
     echo "✓ Docker is usable by $USER, without sudo, in this script run"
 else
-    echo "✗ Docker access check failed even via 'sg docker'."
+    echo "✗ Docker access check failed. Output:"
+    echo "$DOCKER_INFO_OUTPUT" | sed 's/^/  /'
     echo "  If you were just added to the docker group, a full logout/login may still be needed."
     exit 1
 fi
