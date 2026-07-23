@@ -123,7 +123,13 @@ By default MicroPAD runs entirely on CPU. The only part of the pipeline that can
 
 **Prerequisites (one-time, per machine):**
 - An NVIDIA GPU with a working driver — check with `nvidia-smi` and note the driver/CUDA version shown
-- [`nvidia-container-toolkit`](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) installed and configured for Docker:
+- [`nvidia-container-toolkit`](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) installed and configured for Docker. On a fresh machine (e.g. a supercomputer/HPC VM) where Docker itself might not even be installed yet, `scripts/setup_supercomputer.sh` automates this:
+  ```bash
+  ./scripts/setup_supercomputer.sh
+  ```
+  It loads a `CUDA` environment module if this host uses one (`module load CUDA/12.8.0`), then installs Docker and `nvidia-container-toolkit` — but only the pieces not already present; it never touches or reinstalls anything that's already set up, and only restarts Docker if it actually changed something. Review the script before running it with `sudo` on a shared machine.
+
+  Or do it manually:
   ```bash
   curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg
   curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list | \

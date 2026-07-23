@@ -117,7 +117,34 @@ docker compose run --rm micropad-batch ./batch_analyze.sh /app/batch_repos
 
 **To analyze your own set of repos:** set `BATCH_REPOS_DIR` in `.env` to a host folder containing multiple cloned repos (one subdirectory per repo), then re-run the command above. Every subdirectory found there is scanned automatically — see the **Batch Analysis** section in [README.md](README.md) for the `--list` option (analyze a specific, ordered subset instead) and pause/stop controls.
 
-**GPU acceleration (optional):** both the single-repo and batch commands above can use a local NVIDIA GPU to speed up the embedding step. This needs one-time host setup (`nvidia-container-toolkit`) and an extra `-f docker-compose.gpu.yml` flag — see the **GPU Acceleration** section in [README.md](README.md) for the full walkthrough.
+### Step 7: Enable GPU Acceleration (Optional)
+
+The single-repo and batch commands above can use a local NVIDIA GPU to speed up the embedding step (pattern detection itself always runs on Ollama Cloud, regardless of local GPU). Skip this step entirely if you don't have a GPU — everything above already works fully on CPU.
+
+**One-time host setup.** On a fresh machine that doesn't already have Docker/`nvidia-container-toolkit` configured (e.g. a supercomputer/HPC VM), run:
+```bash
+./scripts/setup_supercomputer.sh
+```
+It installs only what's missing (loads a `CUDA` environment module if this host uses one, then Docker and `nvidia-container-toolkit`) and never touches anything already set up. Review it before running with `sudo` on a shared machine. If your machine already has Docker + `nvidia-container-toolkit` working, skip straight to the next part.
+
+**Configure and build.** In `.env`, set `TORCH_PLATFORM` to a CUDA tag matching your driver (check with `nvidia-smi`):
+```bash
+TORCH_PLATFORM=cu128
+```
+Then build with the GPU overlay:
+```bash
+docker compose -f docker-compose.yml -f docker-compose.gpu.yml build
+```
+
+**Verify the GPU is actually detected** before trusting a real run:
+```bash
+docker compose -f docker-compose.yml -f docker-compose.gpu.yml run --rm micropad python -c "import torch; print(torch.cuda.is_available(), torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'none')"
+```
+Expect `True` and your GPU's name. If it says `False`, don't proceed to a real scan yet — recheck the host setup step above.
+
+**Run with GPU** by adding `-f docker-compose.yml -f docker-compose.gpu.yml` to any of the commands from Steps 4-6 (the commented-out "GPU variant" lines shown there use exactly this).
+
+**Multiple GPUs:** see the **GPU Acceleration** section in [README.md](README.md) for `batch_analyze_parallel.sh` — runs several batch workers concurrently, each on its own GPU, instead of one repo at a time.
 
 ---
 
