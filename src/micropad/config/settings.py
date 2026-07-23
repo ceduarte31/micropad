@@ -17,6 +17,10 @@ os.environ["TOKENIZERS_PARALLELISM"] = "false"
 TARGET_REPO_PATH = Path(
     os.getenv("TARGET_REPO", "./target_repo")
 )
+# Host-side directory name for TARGET_REPO_PATH (which always mounts to the
+# same in-container path regardless of which host repo it actually is).
+# Empty in batch mode, where each repo already keeps its own distinct path.
+TARGET_REPO_NAME = os.getenv("TARGET_REPO_NAME", "")
 PATTERNS_DIR_PATH = Path(
     os.getenv("PATTERNS_DIR", "./config/patterns")
 )
@@ -64,54 +68,29 @@ RESULTS_OUTPUT_DIR = RESULTS_BASE_DIR
 
 
 # ============================================================================
-# AI PROVIDER CONFIGURATION
+# AI PROVIDER CONFIGURATION (Ollama Cloud, via its OpenAI-compatible endpoint)
 # ============================================================================
-AI_PROVIDER = os.getenv("AI_PROVIDER", "openai")  # 'openai' | 'ollama'
+OLLAMA_API_KEY = os.getenv("OLLAMA_API_KEY", "")  # MUST be set via environment
+OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "https://ollama.com/v1")
 
-# OpenAI Configuration
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")  # MUST be set via environment
-OPENAI_BASE_URL = os.getenv("OPENAI_BASE_URL", "https://api.openai.com/v1")
-
-if AI_PROVIDER == "openai" and not OPENAI_API_KEY:
+if not OLLAMA_API_KEY:
     raise RuntimeError(
-        "OPENAI_API_KEY environment variable is required but not set.\n"
-        "Set it with: export OPENAI_API_KEY='sk-...'"
+        "OLLAMA_API_KEY environment variable is required but not set.\n"
+        "Set it with: export OLLAMA_API_KEY='...'"
     )
 
 # ============================================================================
-# MODEL SELECTION (Provider-specific)
+# MODEL SELECTION
 # ============================================================================
+# See https://ollama.com/library for available cloud model names.
+PLANNER_MODEL = os.getenv("PLANNER_MODEL", "deepseek-v4-pro")
+INVESTIGATOR_MODEL = os.getenv("INVESTIGATOR_MODEL", "deepseek-v4-pro")
+JUDGE_MODEL = os.getenv("JUDGE_MODEL", "deepseek-v4-pro")
 
-# --- OLLAMA MODELS ---
-OLLAMA_PLANNER_MODEL = os.getenv("OLLAMA_PLANNER_MODEL", "llama3.1:70b")
-OLLAMA_INVESTIGATOR_MODEL = os.getenv("OLLAMA_INVESTIGATOR_MODEL", "llama3.1:70b")
-OLLAMA_JUDGE_MODEL = os.getenv("OLLAMA_JUDGE_MODEL", "llama3.1:70b")
-
-# Fallback models (if primary not available)
-OLLAMA_PLANNER_MODEL_FALLBACK = os.getenv("OLLAMA_PLANNER_MODEL_FALLBACK", "llama3.1:8b")
-OLLAMA_INVESTIGATOR_MODEL_FALLBACK = os.getenv("OLLAMA_INVESTIGATOR_MODEL_FALLBACK", "llama3.1:8b")
-OLLAMA_JUDGE_MODEL_FALLBACK = os.getenv("OLLAMA_JUDGE_MODEL_FALLBACK", "llama3.1:8b")
-
-# --- OPENAI MODELS (RECOMMENDED FOR HIGHEST ACCURACY) ---
-OPENAI_PLANNER_MODEL = os.getenv("OPENAI_PLANNER_MODEL", "gpt-5-nano-2025-08-07")
-OPENAI_INVESTIGATOR_MODEL = os.getenv("OPENAI_INVESTIGATOR_MODEL", "gpt-5-nano-2025-08-07")
-OPENAI_JUDGE_MODEL = os.getenv("OPENAI_JUDGE_MODEL", "gpt-5-nano-2025-08-07")
-
-# Active model selection based on provider
-if AI_PROVIDER == "openai":
-    PLANNER_MODEL = OPENAI_PLANNER_MODEL
-    INVESTIGATOR_MODEL = OPENAI_INVESTIGATOR_MODEL
-    JUDGE_MODEL = OPENAI_JUDGE_MODEL
-    PLANNER_MODEL_FALLBACK = OPENAI_PLANNER_MODEL
-    INVESTIGATOR_MODEL_FALLBACK = OPENAI_INVESTIGATOR_MODEL
-    JUDGE_MODEL_FALLBACK = OPENAI_JUDGE_MODEL
-else:
-    PLANNER_MODEL = OLLAMA_PLANNER_MODEL
-    INVESTIGATOR_MODEL = OLLAMA_INVESTIGATOR_MODEL
-    JUDGE_MODEL = OLLAMA_JUDGE_MODEL
-    PLANNER_MODEL_FALLBACK = OLLAMA_PLANNER_MODEL_FALLBACK
-    INVESTIGATOR_MODEL_FALLBACK = OLLAMA_INVESTIGATOR_MODEL_FALLBACK
-    JUDGE_MODEL_FALLBACK = OLLAMA_JUDGE_MODEL_FALLBACK
+# Fallback models (used if a primary model is unavailable)
+PLANNER_MODEL_FALLBACK = os.getenv("PLANNER_MODEL_FALLBACK", PLANNER_MODEL)
+INVESTIGATOR_MODEL_FALLBACK = os.getenv("INVESTIGATOR_MODEL_FALLBACK", INVESTIGATOR_MODEL)
+JUDGE_MODEL_FALLBACK = os.getenv("JUDGE_MODEL_FALLBACK", JUDGE_MODEL)
 
 # ============================================================================
 # EMBEDDING MODEL
@@ -428,7 +407,7 @@ if os.getenv("SKIP_CONFIG_VALIDATION", "").lower() != "true":
 def get_config_summary():
     """Get configuration summary for logging/reproducibility."""
     return {
-        "ai_provider": AI_PROVIDER,
+        "ai_provider": "ollama",
         "weight_scheme": WEIGHT_SCHEME,
         "experiment": {
             "run_number": RUN_NUMBER,

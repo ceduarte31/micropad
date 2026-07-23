@@ -7,7 +7,7 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        TORCH_PLATFORM: cpu  # CPU-only build (no GPU required)
+        TORCH_PLATFORM: ${TORCH_PLATFORM:-cpu}  # 'cpu' (default) or a CUDA tag e.g. 'cu128'
     image: micropad:2.0.0
     container_name: micropad-scanner
 
@@ -17,12 +17,15 @@ services:
 
     # Environment variables
     environment:
-      # AI Provider
-      - AI_PROVIDER=openai
-      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      # AI Provider (Ollama Cloud)
+      - OLLAMA_API_KEY=${OLLAMA_API_KEY}
 
       # Paths (using defaults from Dockerfile)
       - TARGET_REPO=/app/target_repo
+      # The host repo always mounts to the same in-container path above, so
+      # pass its real (host-side) directory name through separately for
+      # naming reports/filenames correctly.
+      - TARGET_REPO_NAME=${TARGET_REPO_DIR:-./target_repo}
       - PATTERNS_DIR=/app/generated_patterns
       - VECTOR_DB_PATH=./.generated/micropad/vectordb
 
@@ -44,8 +47,9 @@ services:
       # Configuration: .env file for tokens and settings
       - ./.env:/app/.env:ro
 
-      # Input: Repository to analyze
-      - ./target_repo:/app/target_repo:ro
+      # Input: Repository to analyze. Set TARGET_REPO_DIR in .env to point
+      # this at any single repo on the host (defaults to ./target_repo).
+      - ${TARGET_REPO_DIR:-./target_repo}:/app/target_repo:ro
 
       # Input: Pattern definitions
       - ./config/patterns:/app/generated_patterns:ro
@@ -79,6 +83,59 @@ services:
 
     # Command (override default if needed)
     command: python -m micropad.core.scanner
+
+  # ============================================================================
+  # MicroPAD Batch Analyzer (scans multiple repositories in sequence)
+  # ============================================================================
+  micropad-batch:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        TORCH_PLATFORM: ${TORCH_PLATFORM:-cpu}
+    image: micropad:2.0.0
+    container_name: micropad-batch
+
+    env_file:
+      - .env
+
+    environment:
+      - OLLAMA_API_KEY=${OLLAMA_API_KEY}
+      - PATTERNS_DIR=/app/generated_patterns
+      - VECTOR_DB_PATH=./.generated/micropad/vectordb
+      - JUDGE_CONFIDENCE_THRESHOLD=8
+      - MAX_FILES_PER_PATTERN=15
+      - GRAPH_ENABLED=true
+      - FILE_CACHE_ENABLED=true
+      - EMBEDDING_BATCH_SIZE=6
+      - RESULTS_BASE_DIR=./.generated/micropad/detection_results
+      - VERBOSE_MODE=true
+
+    volumes:
+      - ./.env:/app/.env:ro
+
+      # Input: repositories to batch-analyze, one subdirectory per repo.
+      # Set BATCH_REPOS_DIR to the host path containing them.
+      - ${BATCH_REPOS_DIR:-./target_repo}:/app/batch_repos:ro
+
+      - ./config/patterns:/app/generated_patterns:ro
+      - ./examples:/app/examples:ro
+      - ./experiment_data:/app/experiment_data
+
+      # Output: batch progress/cost logs (see batch_analyze.sh)
+      - ./batch_results:/app/batch_results
+
+      - ./.generated/micropad:/app/.generated/micropad
+      - ./.generated/microref:/app/.generated/microref
+
+    deploy:
+      resources:
+        reservations:
+          cpus: '2.0'
+          memory: 4G
+
+    networks:
+      - micropad-network
 
 # ============================================================================
 # Networks

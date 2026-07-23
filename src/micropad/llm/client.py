@@ -33,24 +33,6 @@ except ImportError:
 # ============================================================================
 
 
-# OpenAI Pricing (in USD per 1M tokens)
-# ============================================================================
-# IMPORTANT: OpenAI does NOT provide pricing via API - must be manually updated
-#
-# Last Updated: January 2025
-# Source: https://openai.com/api/pricing/
-#
-# To update pricing:
-#   1. Visit https://openai.com/api/pricing/
-#   2. Update values below (input/output per 1M tokens)
-#   3. Update "Last Updated" date above
-#   4. Pricing changes are announced at https://openai.com/blog
-# ============================================================================
-OPENAI_PRICING = {
-    "gpt-5-nano-2025-08-07": {"input": 0.05, "output": 0.40}
-}
-
-
 class TokenUsage:
     """Track token usage and costs across LLM calls."""
 
@@ -87,69 +69,36 @@ class TokenUsage:
     @staticmethod
     def calculate_cost(model: str, input_tokens: int, output_tokens: int) -> float:
         """
-        Calculate cost for OpenAI API call.
+        Calculate cost for an Ollama Cloud API call.
 
-        Args:
-            model: Model name (e.g., "gpt-4o", "gpt-4o-mini")
-            input_tokens: Number of input tokens
-            output_tokens: Number of output tokens
-
-        Returns:
-            Cost in USD
+        Ollama Cloud is a flat subscription rather than per-token billing,
+        so there is no meaningful per-call dollar cost to compute.
         """
-        # Normalize model name (handle versioned names)
-        model_key = model
-        if model not in OPENAI_PRICING:
-            # Try to find base model
-            for base_model in OPENAI_PRICING.keys():
-                if model.startswith(base_model):
-                    model_key = base_model
-                    break
-
-        if model_key not in OPENAI_PRICING:
-            # Unknown model - return 0 and log warning
-            logging.getLogger("events").warning(
-                f"Unknown model pricing for '{model}' - cost will be $0.00"
-            )
-            return 0.0
-
-        pricing = OPENAI_PRICING[model_key]
-        input_cost = (input_tokens / 1_000_000) * pricing["input"]
-        output_cost = (output_tokens / 1_000_000) * pricing["output"]
-
-        return input_cost + output_cost
+        return 0.0
 
 
 class LLMClient:
     """Centralized LLM calling with provider abstraction."""
 
     def __init__(self):
-        self.provider = config.AI_PROVIDER
         self.events_log = logging.getLogger("events")
         self.conv_log = logging.getLogger("conversations")
 
-        # ✅ NEW: Token usage tracker
         self.token_usage = TokenUsage()
 
-        if self.provider == "openai":
-            self._init_openai()
+        self._init_openai()
 
     def print_cost_summary(self):
         """Print and log comprehensive cost summary."""
         summary = self.token_usage.get_summary()
 
         print("\n" + "=" * 80)
-        print("API COST SUMMARY")
+        print("TOKEN USAGE SUMMARY")
         print("=" * 80)
 
         print(f"\nTotal Tokens: {summary['total_tokens']:,}")
         print(f"  Input:  {summary['total_input_tokens']:,}")
         print(f"  Output: {summary['total_output_tokens']:,}")
-
-        if summary['total_cost_usd'] > 0:
-            print(f"\nTotal Cost: ${summary['total_cost_usd']:.4f} USD")
-        else:
-            print(f"\nTotal Cost: $0.00 USD (using local model)")
 
         if summary['by_operation']:
             print("\nBreakdown by Operation:")
@@ -175,62 +124,29 @@ class LLMClient:
 
     def call_llm(self, system_prompt: str, user_prompt: str, operation: str) -> dict:
         """
-        Call configured LLM provider.
+        Call Ollama Cloud.
 
         Returns:
             dict with keys: 'content' (str), 'metadata' (dict)
         """
-        provider = config.AI_PROVIDER.lower()
-
-        if provider == "ollama":
-            return self._call_ollama(system_prompt, user_prompt, operation)
-        elif provider == "openai":
-            return self._call_openai(system_prompt, user_prompt, operation)
-        else:
-            raise ValueError(f"Unsupported LLM provider: {config.AI_PROVIDER}")
+        return self._call_ollama(system_prompt, user_prompt, operation)
 
     def _init_openai(self):
-        if not config.OPENAI_API_KEY:
-            raise RuntimeError("OPENAI_API_KEY required")
+        if not config.OLLAMA_API_KEY:
+            raise RuntimeError("OLLAMA_API_KEY required")
         from openai import OpenAI
 
-        self.openai_client = OpenAI(api_key=config.OPENAI_API_KEY, base_url=config.OPENAI_BASE_URL)
+        self.openai_client = OpenAI(api_key=config.OLLAMA_API_KEY, base_url=config.OLLAMA_BASE_URL)
 
-    def call(
-        self, model: str, system_prompt: str, user_prompt: str, operation: str = "llm_call"
-    ) -> str:
-        """Unified LLM call with automatic provider routing and token tracking."""
-        if self.provider == "openai":
-            return self._call_openai(model, system_prompt, user_prompt, operation)
-        else:
-            return self._call_ollama(model, system_prompt, user_prompt, operation)
-
-    def _build_request_kwargs(self, model: str, system: str, user: str, send_temp: bool) -> dict:
-        """Build request kwargs for OpenAI API."""
-        kwargs = {
-            "model": model,
-            "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}],
-        }
-        if send_temp and config.TEMPERATURE is not None:
-            kwargs["temperature"] = config.TEMPERATURE
-        return kwargs
-
-    def _is_temperature_error(self, e: Exception) -> bool:
-        """Check if error is temperature-related."""
-        err_str = str(e).lower()
-        return "unsupported_value" in err_str or "temperature" in err_str
-
-    def _call_openai(
+    def _call_ollama(
         self, system_prompt: str, user_prompt: str, operation: str, max_retries: int = 3
     ) -> dict:
         """
-        Call OpenAI API with retry logic.
+        Call Ollama Cloud via its OpenAI-compatible endpoint, with retry logic.
 
         Returns:
             dict with keys: 'content' (str), 'metadata' (dict)
         """
-        from openai import OpenAI
-
         run_id = generate_run_id()
 
         # Determine which model to use based on operation
@@ -243,29 +159,23 @@ class LLMClient:
         else:
             model = config.INVESTIGATOR_MODEL  # default
 
-        client = OpenAI(api_key=config.OPENAI_API_KEY)
-
         for attempt in range(max_retries):
             try:
-                self._log_request(run_id, "openai", model, system_prompt, user_prompt, True)
+                self._log_request(run_id, "ollama", model, system_prompt, user_prompt, True)
 
-                # Build request arguments dynamically
                 request_kwargs = {
                     "model": model,
                     "messages": [
                         {"role": "system", "content": system_prompt},
                         {"role": "user", "content": user_prompt},
                     ],
-                    # Note: The correct parameter name for v1+ of the OpenAI client is 'max_tokens'
-                    "max_completion_tokens": config.MAX_TOKENS,
+                    "max_tokens": config.MAX_TOKENS,
                 }
 
-                # Only add temperature if it is not None
                 if config.TEMPERATURE is not None:
                     request_kwargs["temperature"] = config.TEMPERATURE
 
-                # Make the call with the conditional arguments
-                response = client.chat.completions.create(**request_kwargs)
+                response = self.openai_client.chat.completions.create(**request_kwargs)
 
                 content = response.choices[0].message.content
 
@@ -274,27 +184,20 @@ class LLMClient:
                 output_tokens = response.usage.completion_tokens
                 total_tokens = response.usage.total_tokens
 
-                # Calculate cost
-                actual_model = response.model  # Use actual model returned by API for pricing
-                cost_usd = TokenUsage.calculate_cost(actual_model, input_tokens, output_tokens)
+                cost_usd = 0.0  # Ollama Cloud is a flat subscription, not per-token billed
 
-                # Record usage and cost
                 self.token_usage.record(operation, input_tokens, output_tokens, cost_usd)
+                self._log_response(run_id, "ollama", model, response, cost_usd)
 
-                # Log response with cost
-                self._log_response(run_id, "openai", model, response, cost_usd)
-
-                # Log per-call cost to events log
                 self.events_log.info(
-                    f"[{operation}] OpenAI API call: {input_tokens} in + {output_tokens} out = "
-                    f"{total_tokens} tokens | Cost: ${cost_usd:.4f}"
+                    f"[{operation}] Ollama Cloud API call: {input_tokens} in + {output_tokens} out = "
+                    f"{total_tokens} tokens"
                 )
 
-                # NEW: Build and return metadata
                 metadata = {
-                    "provider": "openai",
+                    "provider": "ollama",
                     "model": model,
-                    "model_version": actual_model,  # Actual version returned by API
+                    "model_version": response.model,  # Actual version returned by API
                     "run_id": run_id,
                     "timestamp": datetime.now().isoformat(),
                     "operation": operation,
@@ -303,7 +206,7 @@ class LLMClient:
                         "output": output_tokens,
                         "total": total_tokens,
                     },
-                    "cost_usd": round(cost_usd, 6),
+                    "cost_usd": 0.0,
                     "finish_reason": response.choices[0].finish_reason,
                 }
 
@@ -326,119 +229,9 @@ class LLMClient:
                 )
 
                 if not is_retryable or attempt == max_retries - 1:
-                    self._log_error(run_id, "openai", model, e)
-                    raise RuntimeError(
-                        f"OpenAI call failed after {attempt + 1} attempts: {str(e)[:100]}"
-                    )
-
-                base_delay = 2**attempt
-                jitter = random.uniform(0, 0.1 * base_delay)
-                wait_time = base_delay + jitter
-
-                self.events_log.warning(
-                    f"OpenAI call failed (attempt {attempt + 1}/{max_retries}), "
-                    f"retrying in {wait_time:.1f}s: {str(e)[:100]}"
-                )
-
-                time.sleep(wait_time)
-
-        raise RuntimeError(f"OpenAI call failed after {max_retries} retries")
-
-    def _openai_request(self, model: str, system: str, user: str, send_temp: bool):
-        """Make OpenAI API request."""
-        kwargs = {
-            "model": model,
-            "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}],
-        }
-        if send_temp and config.TEMPERATURE is not None:
-            kwargs["temperature"] = config.TEMPERATURE
-        return self.openai_client.chat.completions.create(**kwargs)
-
-    def _call_ollama(
-        self, system_prompt: str, user_prompt: str, operation: str, max_retries: int = 3
-    ) -> dict:
-        """
-        Call Ollama API with retry logic.
-
-        Returns:
-            dict with keys: 'content' (str), 'metadata' (dict)
-        """
-        import ollama
-
-        run_id = generate_run_id()
-
-        # Determine which model to use based on operation
-        if operation == "investigation":
-            model = config.INVESTIGATOR_MODEL
-        elif operation == "planning":
-            model = config.PLANNER_MODEL
-        elif operation == "deliberation":
-            model = config.JUDGE_MODEL
-        else:
-            model = config.INVESTIGATOR_MODEL  # default
-
-        for attempt in range(max_retries):
-            try:
-                self._log_request(run_id, "ollama", model, system_prompt, user_prompt, False)
-
-                response = ollama.chat(
-                    model=model,
-                    messages=[
-                        {"role": "system", "content": system_prompt},
-                        {"role": "user", "content": user_prompt},
-                    ],
-                    options={"num_ctx": config.MAX_CONTEXT_LENGTH, "cache_prompt": True},
-                )
-
-                content = response["message"]["content"]
-
-                # Estimate tokens (Ollama doesn't provide exact counts)
-                estimated_input = (len(system_prompt) + len(user_prompt)) // 4
-                estimated_output = len(content) // 4
-
-                # Ollama is free (local model)
-                cost_usd = 0.0
-
-                self.token_usage.record(operation, estimated_input, estimated_output, cost_usd)
-                self._log_response(run_id, "ollama", model, response, cost_usd)
-
-                # NEW: Build and return metadata
-                metadata = {
-                    "provider": "ollama",
-                    "model": model,
-                    "run_id": run_id,
-                    "timestamp": datetime.now().isoformat(),
-                    "operation": operation,
-                    "tokens": {
-                        "input": estimated_input,
-                        "output": estimated_output,
-                        "total": estimated_input + estimated_output,
-                    },
-                    "note": "Token counts are estimated",
-                }
-
-                return {"content": content, "metadata": metadata}
-
-            except Exception as e:
-                error_str = str(e).lower()
-
-                is_retryable = any(
-                    x in error_str
-                    for x in [
-                        "timeout",
-                        "connection",
-                        "overloaded",
-                        "busy",
-                        "cuda",
-                        "out of memory",
-                        "try again",
-                    ]
-                )
-
-                if not is_retryable or attempt == max_retries - 1:
                     self._log_error(run_id, "ollama", model, e)
                     raise RuntimeError(
-                        f"Ollama call failed after {attempt + 1} attempts: {str(e)[:100]}"
+                        f"Ollama Cloud call failed after {attempt + 1} attempts: {str(e)[:100]}"
                     )
 
                 base_delay = 2**attempt
@@ -446,13 +239,13 @@ class LLMClient:
                 wait_time = base_delay + jitter
 
                 self.events_log.warning(
-                    f"Ollama call failed (attempt {attempt + 1}/{max_retries}), "
+                    f"Ollama Cloud call failed (attempt {attempt + 1}/{max_retries}), "
                     f"retrying in {wait_time:.1f}s: {str(e)[:100]}"
                 )
 
                 time.sleep(wait_time)
 
-
+        raise RuntimeError(f"Ollama Cloud call failed after {max_retries} retries")
 
     def _log_request(
         self, run_id: str, provider: str, model: str, system: str, user: str, send_temp: bool

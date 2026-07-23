@@ -1844,6 +1844,7 @@ class PatternAnalyzer:
                         "is_evidence": True,
                         "keywords": file_data["keywords"],
                         "anti_keywords": file_data.get("anti_keywords", []),
+                        "_llm_metadata": ai_verdict.get("_llm_metadata", {}),
                     }
                 )
 

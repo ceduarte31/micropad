@@ -117,40 +117,28 @@ def _safe_json_load(raw: Optional[str]) -> Dict[str, Any]:
 # ---------- Core LLM Call (Single Entry Point) ----------
 
 
-# llm_helper.py - UPDATE to use config function
 def _call_llm_categorizer(prompt: str) -> str:
     model = config.PLANNER_MODEL
 
-    if config.AI_PROVIDER == "openai":
-        from openai import OpenAI
+    from openai import OpenAI
 
-        client = OpenAI(api_key=config.OPENAI_API_KEY, base_url=config.OPENAI_BASE_URL)
+    client = OpenAI(api_key=config.OLLAMA_API_KEY, base_url=config.OLLAMA_BASE_URL)
 
-        kwargs = {"model": model, "messages": [{"role": "user", "content": prompt}]}
+    kwargs = {"model": model, "messages": [{"role": "user", "content": prompt}]}
 
-        # ✅ USE CONFIG FUNCTION (don't duplicate logic)
-        if config.SEND_TEMPERATURE(model):
-            kwargs["temperature"] = config.TEMPERATURE
+    if config.SEND_TEMPERATURE(model):
+        kwargs["temperature"] = config.TEMPERATURE
 
-        try:
+    try:
+        resp = client.chat.completions.create(**kwargs)
+        return resp.choices[0].message.content or ""
+    except Exception as e:
+        # Retry without temperature if needed
+        if config.SEND_TEMPERATURE(model) and "temperature" in str(e).lower():
+            del kwargs["temperature"]
             resp = client.chat.completions.create(**kwargs)
             return resp.choices[0].message.content or ""
-        except Exception as e:
-            # Retry without temperature if needed
-            if config.SEND_TEMPERATURE(model) and "temperature" in str(e).lower():
-                del kwargs["temperature"]
-                resp = client.chat.completions.create(**kwargs)
-                return resp.choices[0].message.content or ""
-            raise
-    else:
-        import ollama
-
-        response = ollama.chat(
-            model=model,
-            messages=[{"role": "user", "content": prompt}],
-            options={"num_ctx": config.MAX_CONTEXT_LENGTH, "cache_prompt": True},
-        )
-        return response["message"]["content"]
+        raise
 
 
 # ---------- Public Categorization Functions ----------

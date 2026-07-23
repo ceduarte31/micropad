@@ -47,21 +47,29 @@ MicroREF was used to obtain the 190 repositories and recruit survey participants
 
 ## Quick Start
 
-**Prerequisites:** Docker 20.10+, Docker Compose 2.0+, OpenAI API key, 16 GB RAM (32 GB recommended)
+**Prerequisites:** Docker 20.10+, Docker Compose 2.0+, Ollama Cloud API key, 16 GB RAM (32 GB recommended)
 
-**Basic workflow:**
+**Basic workflow — analyze your own repository:**
 ```bash
 # 1. Set up environment
 cp .env.example .env
-# Edit .env and set OPENAI_API_KEY="sk-your-key-here"
+# Edit .env:
+#   OLLAMA_API_KEY="your-ollama-cloud-key-here"
+#   TARGET_REPO_DIR="/path/to/the/repository/you/want/to/analyze"
 
 # 2. Build and seed database
 docker compose build
 docker compose run micropad python -m micropad.scripts.seed_database
+# GPU variant (see GPU Acceleration below for one-time host setup):
+# docker compose -f docker-compose.yml -f docker-compose.gpu.yml run micropad python -m micropad.scripts.seed_database
 
-# 3. Run MicroPAD
-docker compose up
+# 3. Run MicroPAD — analyzes whatever TARGET_REPO_DIR points at
+docker compose run --rm micropad python -m micropad.core.scanner
+# GPU variant:
+# docker compose -f docker-compose.yml -f docker-compose.gpu.yml run --rm micropad python -m micropad.core.scanner
 ```
+
+**Don't have a repo ready to test with?** Leave `TARGET_REPO_DIR` unset — it defaults to `./target_repo`, which includes a small bundled sample repo (see **Quick Validation** below for a guided walkthrough of it). To analyze many repositories at once instead of just one, see **Batch Analysis** below.
 
 **For validation instructions,** see the **Artifact Validation** section below, which includes:
 - **Quick Validation** — Verify MicroPAD works on the included sample repository (15 min)
@@ -70,7 +78,81 @@ docker compose up
 
 **Note:** The scanner produces detection logs in `.generated/micropad/logs/` and JSON results in `.generated/micropad/detection_results/`. The Jupyter notebook uses pre-computed results to reproduce all paper statistics.
 
-**Reproducibility:** All MicroPAD configuration variables (LLM models, prioritization weights, thresholds, analysis budgets, embedding model, random seed, etc.) are shipped with the exact same default values used in the paper experiments (see `src/micropad/config/settings.py`). Users only need to provide an OpenAI API key — no configuration tuning is required to reproduce the paper's setup.
+**Reproducibility:** All MicroPAD configuration variables (LLM models, prioritization weights, thresholds, analysis budgets, embedding model, random seed, etc.) are shipped with the exact same default values used in the paper experiments (see `src/micropad/config/settings.py`). Users only need to provide an Ollama Cloud API key — no configuration tuning is required to reproduce the paper's setup.
+
+---
+
+## Batch Analysis
+
+To scan multiple repositories in one run, use the `micropad-batch` Docker Compose service, which wraps `batch_analyze.sh`.
+
+**Setup:**
+```bash
+# In .env, point BATCH_REPOS_DIR at a host directory containing your
+# cloned repos, one subdirectory per repo (defaults to ./target_repo):
+BATCH_REPOS_DIR="/path/to/your/cloned/repos"
+```
+
+**Run (analyzes every subdirectory found under `BATCH_REPOS_DIR`):**
+```bash
+docker compose build micropad-batch
+docker compose run --rm micropad-batch ./batch_analyze.sh /app/batch_repos
+# GPU variant (see GPU Acceleration below for one-time host setup):
+# docker compose -f docker-compose.yml -f docker-compose.gpu.yml run --rm micropad-batch ./batch_analyze.sh /app/batch_repos
+```
+Pass a second argument to resume from a specific position: `... /app/batch_repos 15`.
+
+**Or, to analyze a specific, ordered subset instead of everything in the folder**, pass `--list` with a text file (one repo per line, e.g. `owner/reponame`, `#` for comments — each entry must have a matching subdirectory, just the `reponame` part, under `BATCH_REPOS_DIR`):
+```bash
+docker compose run --rm micropad-batch ./batch_analyze.sh /app/batch_repos --list experiment_data/repos.txt
+# GPU variant:
+# docker compose -f docker-compose.yml -f docker-compose.gpu.yml run --rm micropad-batch ./batch_analyze.sh /app/batch_repos --list experiment_data/repos.txt
+```
+
+**Output:**
+- Per-repo scan logs and JSON results: `.generated/micropad/logs/` and `.generated/micropad/detection_results/` (same as a normal scan)
+- Batch progress and per-repo durations: `batch_results/batch_summary_*.log` and `batch_results/batch_durations_*.txt`
+
+**Controls while running:** `touch batch.pause` (pause after current repo) / `touch batch.stop` (stop gracefully after current repo).
+
+---
+
+## GPU Acceleration (Optional)
+
+By default MicroPAD runs entirely on CPU. The only part of the pipeline that can use a local GPU is the embedding step (semantic file scoring via `sentence-transformers`) — pattern detection itself runs on Ollama Cloud regardless of local GPU. GPU mode is opt-in and doesn't change anything for CPU-only setups.
+
+**Prerequisites (one-time, per machine):**
+- An NVIDIA GPU with a working driver — check with `nvidia-smi` and note the driver/CUDA version shown
+- [`nvidia-container-toolkit`](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) installed and configured for Docker:
+  ```bash
+  curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg
+  curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list | \
+    sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | \
+    sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
+  sudo apt-get update
+  sudo apt-get install -y nvidia-container-toolkit
+  sudo nvidia-ctk runtime configure --runtime=docker
+  sudo systemctl restart docker
+  ```
+  This is host/OS-level setup, independent of this repo — required once per machine (laptop, VM, cluster node) before any container on it can access a GPU, regardless of what's inside the image.
+
+**Setup:** in `.env`, set `TORCH_PLATFORM` to a CUDA tag matching your driver (see `nvidia-smi`'s reported CUDA version) — e.g. for recent GPUs, including Blackwell/RTX 50-series:
+```bash
+TORCH_PLATFORM=cu128
+```
+
+**Build and run:** add `-f docker-compose.gpu.yml` to any command — this layers GPU access on top of the normal compose file without changing default CPU behavior for anyone not using it:
+```bash
+docker compose -f docker-compose.yml -f docker-compose.gpu.yml build
+docker compose -f docker-compose.yml -f docker-compose.gpu.yml run --rm micropad python -m micropad.core.scanner
+```
+Batch mode works the same way: add `-f docker-compose.gpu.yml` to any `micropad-batch` command from the Batch Analysis section above.
+
+**Verify the GPU is actually detected** before a real run:
+```bash
+docker compose -f docker-compose.yml -f docker-compose.gpu.yml run --rm micropad python -c "import torch; print(torch.__version__, torch.cuda.is_available(), torch.cuda.get_device_name(0) if torch.cuda.is_available() else '')"
+```
+During a real scan, the console should print `GPU mode: X.XGB VRAM → batch size: N` instead of `CPU mode → batch size: 4`.
 
 ---
 
@@ -104,7 +186,7 @@ Per the [ICSA 2026 artifact evaluation guidelines](https://conf.researchr.org/tr
 ```bash
 # 1. Create environment file and set API key
 cp .env.example .env
-# Edit .env and set OPENAI_API_KEY="sk-your-key-here"
+# Edit .env and set OLLAMA_API_KEY="your-ollama-cloud-key-here"
 
 # 2. Build Docker image
 docker compose build
@@ -112,9 +194,13 @@ docker compose build
 # 3. Seed vector database
 mkdir -p .generated/micropad/vectordb .generated/micropad/logs
 docker compose run micropad python -m micropad.scripts.seed_database
+# GPU variant (see GPU Acceleration below for one-time host setup):
+# docker compose -f docker-compose.yml -f docker-compose.gpu.yml run micropad python -m micropad.scripts.seed_database
 
 # 4. Run analysis on included test repository
-docker compose up
+docker compose run --rm micropad python -m micropad.core.scanner
+# GPU variant:
+# docker compose -f docker-compose.yml -f docker-compose.gpu.yml run --rm micropad python -m micropad.core.scanner
 
 # 5. Verify output
 grep -i "detected" .generated/micropad/logs/detection_*.log
@@ -196,10 +282,14 @@ docker compose run --rm \
 git clone https://github.com/github/gitignore.git \
   .generated/microref/out/repositories/github_gitignore
 
-# Run MicroPAD on real code (ensure OPENAI_API_KEY is set in .env)
+# Run MicroPAD on real code (ensure OLLAMA_API_KEY is set in .env)
 docker compose run --rm \
   -e TARGET_REPO=/app/.generated/microref/out/repositories/github_gitignore \
   micropad python -m micropad.core.scanner
+# GPU variant (see GPU Acceleration below for one-time host setup):
+# docker compose -f docker-compose.yml -f docker-compose.gpu.yml run --rm \
+#   -e TARGET_REPO=/app/.generated/microref/out/repositories/github_gitignore \
+#   micropad python -m micropad.core.scanner
 ```
 
 **What this proves:**

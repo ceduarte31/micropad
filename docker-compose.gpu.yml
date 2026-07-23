@@ -1,0 +1,36 @@
+# ============================================================================
+# GPU Overlay for MicroPAD
+# ============================================================================
+# Optional overlay: layer this on top of docker-compose.yml to give the
+# containers access to an NVIDIA GPU. Does not change default (CPU) behavior
+# on its own.
+#
+# Requires on the host:
+#   - An NVIDIA GPU with a working driver (check: nvidia-smi)
+#   - nvidia-container-toolkit installed
+#   - TORCH_PLATFORM set to a CUDA tag matching your driver, e.g. in .env:
+#       TORCH_PLATFORM=cu128
+#
+# Usage:
+#   docker compose -f docker-compose.yml -f docker-compose.gpu.yml build
+#   docker compose -f docker-compose.yml -f docker-compose.gpu.yml run --rm micropad python -m micropad.core.scanner
+#   docker compose -f docker-compose.yml -f docker-compose.gpu.yml run --rm micropad-batch ./batch_analyze.sh /app/batch_repos
+# ============================================================================
+services:
+  micropad:
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+  micropad-batch:
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]

@@ -151,12 +151,22 @@ class ReportGenerator:
                         "Reproducibility requires identical: repository state, pattern definitions, model versions, and random seed",
                         "Different model versions may produce slightly different results even with same seed",
                         "Repository fingerprint verifies file structure but not file contents",
-                        (
-                            f"GPT-5-nano does not support temperature=0, expect ±1-2% variation between runs"
-                            if config.AI_PROVIDER == "openai"
-                            else "Using deterministic configuration"
-                        ),
+                        "Using deterministic configuration",
                     ],
                 },
             },
         }
+
+        with open(output_path, "w", encoding="utf-8") as f:
+            json.dump(final_data, f, indent=2, default=self._json_default)
+
+        print(f"\n📄 JSON report saved to: {output_path}")
+
+    @staticmethod
+    def _json_default(obj):
+        """Fallback JSON serializer for types like Path or numpy scalars."""
+        if isinstance(obj, Path):
+            return str(obj)
+        if hasattr(obj, "item"):  # numpy scalar (e.g. np.float32/np.int64)
+            return obj.item()
+        return str(obj)

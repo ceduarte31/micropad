@@ -19,7 +19,6 @@ import json
 import logging
 import platform
 import signal
-import subprocess
 import sys
 import time
 import traceback
@@ -79,11 +78,6 @@ def cleanup_gpu_resources():
         # Silent fail - not critical
         pass
 
-    # Also cleanup Ollama models if using Ollama
-    if config.AI_PROVIDER == "ollama":
-        cleanup_ollama_models()
-
-
 def signal_handler(sig, frame):
     """Handle Ctrl+C gracefully."""
     print(f"\n\n{Colors.YELLOW}⚠ Scan interrupted by user{Colors.END}")
@@ -98,92 +92,18 @@ signal.signal(signal.SIGTERM, signal_handler)  # Kill command
 atexit.register(cleanup_gpu_resources)  # Normal exit
 
 
-def cleanup_ollama_models():
-    """Unload all Ollama models from VRAM."""
-    try:
-        print_info("Cleaning up GPU memory...")
-        result = subprocess.run(["ollama", "stop"], capture_output=True, text=True, timeout=10)
-        if result.returncode == 0:
-            print_success("GPU memory released")
-        else:
-            # Silently fail - not critical
-            pass
-    except Exception:
-        # Don't fail the whole program if cleanup fails
-        pass
-
-
 def check_and_fallback_models():
-    """Check if primary models are available, fallback if not."""
-    # Skip model check if using OpenAI
-    if config.AI_PROVIDER == "openai":
-        print_info("Using OpenAI API - skipping Ollama model check")
-        if not config.OPENAI_API_KEY:
-            print_error("OPENAI_API_KEY not set!")
-            print_info("Set it with: export OPENAI_API_KEY='sk-...'", indent=1)
-            sys.exit(1)
-        print_success(f"OpenAI API key configured")
-        print_info(
-            f"Models: Planner={config.PLANNER_MODEL}, Investigator={config.INVESTIGATOR_MODEL}, Judge={config.JUDGE_MODEL}",
-            indent=1,
-        )
-        return
-
-    # Original Ollama check
-    import ollama
-
-    print_info("Checking Ollama models...")
-
-    try:
-        model_list = ollama.list()
-
-        if isinstance(model_list, dict) and "models" in model_list:
-            available_models = [m.get("name", m.get("model", "")) for m in model_list["models"]]
-        elif isinstance(model_list, list):
-            available_models = [m.get("name", m.get("model", "")) for m in model_list]
-        else:
-            available_models = [str(m) for m in getattr(model_list, "models", [])]
-
-        available_models = [m for m in available_models if m]
-
-        if not available_models:
-            print_warning("Could not parse models - will fail if models missing")
-            return
-
-        # Check and fallback each model
-        models_to_check = {
-            "PLANNER_MODEL": (config.PLANNER_MODEL, config.PLANNER_MODEL_FALLBACK),
-            "INVESTIGATOR_MODEL": (config.INVESTIGATOR_MODEL, config.INVESTIGATOR_MODEL_FALLBACK),
-            "JUDGE_MODEL": (config.JUDGE_MODEL, config.JUDGE_MODEL_FALLBACK),
-        }
-
-        changed = False
-        for var_name, (preferred, fallback) in models_to_check.items():
-            preferred_base = preferred.split(":")[0]
-            fallback_base = fallback.split(":")[0]
-
-            # Check if preferred model is available
-            if any(preferred_base in m for m in available_models):
-                print_success(f"Using {preferred} for {var_name}")
-            else:
-                # Try fallback
-                if any(fallback_base in m for m in available_models):
-                    print_warning(f"{preferred} not found, using {fallback}")
-                    setattr(config, var_name, fallback)
-                    changed = True
-                else:
-                    print_error(f"Neither {preferred} nor {fallback} available!")
-                    print(f"  Install with: ollama pull {preferred}")
-                    sys.exit(1)
-
-        if changed:
-            print_info("Some models were changed to fallbacks - performance may be reduced")
-        else:
-            print_success("All preferred models available - optimal performance!")
-
-    except Exception as e:
-        print_warning(f"Could not check models: {e}")
-        print_info("Continuing - will fail if models missing", indent=1)
+    """Verify Ollama Cloud is configured."""
+    print_info("Using Ollama Cloud - skipping local model check")
+    if not config.OLLAMA_API_KEY:
+        print_error("OLLAMA_API_KEY not set!")
+        print_info("Set it with: export OLLAMA_API_KEY='...'", indent=1)
+        sys.exit(1)
+    print_success("Ollama Cloud API key configured")
+    print_info(
+        f"Models: Planner={config.PLANNER_MODEL}, Investigator={config.INVESTIGATOR_MODEL}, Judge={config.JUDGE_MODEL}",
+        indent=1,
+    )
 
 
 def capture_model_info():
@@ -199,17 +119,10 @@ def capture_model_info():
     except Exception:
         pass
 
-    # Capture LLM versions based on provider
-    if config.AI_PROVIDER == "openai":
-        model_versions["ai_provider"] = "openai"
-        model_versions["planner_model"] = config.PLANNER_MODEL
-        model_versions["investigator_model"] = config.INVESTIGATOR_MODEL
-        model_versions["judge_model"] = config.JUDGE_MODEL
-    elif config.AI_PROVIDER == "ollama":
-        model_versions["ai_provider"] = "ollama"
-        model_versions["planner_model"] = config.PLANNER_MODEL
-        model_versions["investigator_model"] = config.INVESTIGATOR_MODEL
-        model_versions["judge_model"] = config.JUDGE_MODEL
+    model_versions["ai_provider"] = "ollama"
+    model_versions["planner_model"] = config.PLANNER_MODEL
+    model_versions["investigator_model"] = config.INVESTIGATOR_MODEL
+    model_versions["judge_model"] = config.JUDGE_MODEL
 
     return model_versions
 
@@ -502,7 +415,7 @@ def _run_pattern_analysis(repo_graph, parser, categorized_files, indexer, events
             verbose=config.VERBOSE_MODE,
             indexer=indexer,
         )
-        cost_tracker = CostTracker(config.AI_PROVIDER, config.INVESTIGATOR_MODEL)
+        cost_tracker = CostTracker("ollama", config.INVESTIGATOR_MODEL)
         cost_tracker.llm_client = analyzer.ai_agent.llm_client
         final_report = analyzer.analyze_patterns(parser.patterns, categorized_files)
         phase_3_time = time.time() - phase_3_start

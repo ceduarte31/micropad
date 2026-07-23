@@ -7,7 +7,7 @@ Step-by-step instructions to install and test MicroPAD.
 ## Prerequisites
 
 - **Docker** 20.10+ and Docker Compose 2.0+
-- **OpenAI API key**: Get one at https://platform.openai.com/account/api-keys
+- **Ollama Cloud API key**: Get one at https://ollama.com/settings/keys
 - **RAM**: 16 GB minimum (32 GB recommended)
 - **Disk space**: At least 8 GB free
 
@@ -34,18 +34,18 @@ unzip micropad.zip && cd micropad
 git clone https://github.com/ceduarte31/micropad.git && cd micropad
 ```
 
-### Step 2: Configure OpenAI API Key
+### Step 2: Configure Ollama Cloud API Key
 
-Set your OpenAI API key. Choose one option:
+Set your Ollama Cloud API key. Choose one option:
 
 **Option A: Export as environment variable**
 ```bash
-export OPENAI_API_KEY="sk-your-key-here"
+export OLLAMA_API_KEY="your-ollama-cloud-key-here"
 ```
 
 **Option B: Create a .env file**
 ```bash
-echo 'OPENAI_API_KEY=sk-your-key-here' > .env
+echo 'OLLAMA_API_KEY=your-ollama-cloud-key-here' > .env
 ```
 
 ### Step 3: Build Docker Image
@@ -61,6 +61,8 @@ Prepare the vector database for pattern detection:
 ```bash
 mkdir -p .generated/micropad/vectordb .generated/micropad/logs
 docker compose run --rm micropad python -m micropad.scripts.seed_database
+# GPU variant (see the "GPU Acceleration" section in README.md for one-time host setup):
+# docker compose -f docker-compose.yml -f docker-compose.gpu.yml run --rm micropad python -m micropad.scripts.seed_database
 ```
 
 **Expected output:** 
@@ -73,7 +75,9 @@ Once complete, you'll see: `✓ Vector database ready`
 
 Run pattern detection on the included example:
 ```bash
-docker compose run --rm micropad python -m micropad.core.scanner --directory target_repo/sample_repo
+docker compose run --rm -e TARGET_REPO=/app/target_repo/sample_repo micropad python -m micropad.core.scanner
+# GPU variant:
+# docker compose -f docker-compose.yml -f docker-compose.gpu.yml run --rm -e TARGET_REPO=/app/target_repo/sample_repo micropad python -m micropad.core.scanner
 ```
 
 **Expected output:** 
@@ -90,6 +94,30 @@ Verify the output:
 ```bash
 grep -i "detected" .generated/micropad/logs/detection_*.log
 ```
+
+### Step 6: Test Batch Analysis (Optional)
+
+Batch mode scans every repository inside a folder in one run, using `batch_analyze.sh` through the `micropad-batch` service. It shares the same image built in Step 3, so it only needs its own build the first time:
+```bash
+docker compose build micropad-batch
+```
+
+Run it against the same sample data used in Step 5 — `BATCH_REPOS_DIR` defaults to `./target_repo`, which contains the one `sample_repo` you already tested:
+```bash
+docker compose run --rm micropad-batch ./batch_analyze.sh /app/batch_repos
+# GPU variant:
+# docker compose -f docker-compose.yml -f docker-compose.gpu.yml run --rm micropad-batch ./batch_analyze.sh /app/batch_repos
+```
+
+**Expected output:** a progress banner reporting `Total repositories found: 1`, then the same kind of detection output as Step 5 for `sample_repo`, followed by a `BATCH ANALYSIS COMPLETE` summary.
+
+**Output locations:**
+- Per-repo logs and JSON results: same as Step 5 (`.generated/micropad/logs/`, `.generated/micropad/detection_results/`)
+- Batch progress and per-repo durations: `batch_results/batch_summary_*.log` and `batch_results/batch_durations_*.txt`
+
+**To analyze your own set of repos:** set `BATCH_REPOS_DIR` in `.env` to a host folder containing multiple cloned repos (one subdirectory per repo), then re-run the command above. Every subdirectory found there is scanned automatically — see the **Batch Analysis** section in [README.md](README.md) for the `--list` option (analyze a specific, ordered subset instead) and pause/stop controls.
+
+**GPU acceleration (optional):** both the single-repo and batch commands above can use a local NVIDIA GPU to speed up the embedding step. This needs one-time host setup (`nvidia-container-toolkit`) and an extra `-f docker-compose.gpu.yml` flag — see the **GPU Acceleration** section in [README.md](README.md) for the full walkthrough.
 
 ---
 
@@ -111,7 +139,7 @@ If you successfully see pattern detection output with confidence scores, **Micro
 |-------|----------|
 | Docker build fails | Ensure Docker has 8+ GB RAM allocated |
 | `ModuleNotFoundError` when running scanner | Run `docker compose build` again to rebuild the image |
-| API key error | Verify `OPENAI_API_KEY` is set in `.env` or terminal |
+| API key error | Verify `OLLAMA_API_KEY` is set in `.env` or terminal |
 | No logs generated | Check that `.generated/micropad/logs/` directory was created |
 | Vector database error | Ensure sufficient disk space (8+ GB) and run seed step again |
 | Permission denied errors | Try running with `sudo docker compose` commands |
@@ -122,7 +150,7 @@ If you successfully see pattern detection output with confidence scores, **Micro
 ## Next Steps
 
 After verifying the installation works:
-- **Analyze your own repository:** Replace the `--directory` argument with a path to any repository
+- **Analyze your own repository or repos:** set `TARGET_REPO_DIR` (single repo) or `BATCH_REPOS_DIR` (batch, see Step 6 above) in `.env` to real paths, in place of the sample data
 - **Explore configuration:** See `src/micropad/config/settings.py` for tunable parameters (LLM models, analysis budget, etc.)
 - **Review results:** Outputs are saved in `.generated/micropad/detection_results/` as JSON files
 - **Reproduce paper statistics:** See the "Full Validation" section in [README.md](README.md) for Jupyter notebook instructions

@@ -6,7 +6,9 @@
 # ============================================================================
 FROM python:3.11-slim AS builder
 
-# Build argument for PyTorch platform (cpu or cu118 for CUDA 11.8)
+# Build argument for PyTorch platform: 'cpu', or a CUDA tag such as 'cu128'
+# matching https://download.pytorch.org/whl/ (use cu128+ for Blackwell/RTX 50-series;
+# see driver's `nvidia-smi` CUDA Version to pick a compatible tag)
 ARG TORCH_PLATFORM=cpu
 
 # Set working directory
@@ -22,7 +24,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Copy requirements first (better layer caching)
 COPY requirements.txt .
 
-# Install PyTorch based on platform argument, then other dependencies
+# Install PyTorch based on platform argument, then other dependencies.
+# CPU build is pinned (known-good, unrelated to GPU support). CUDA builds are
+# floor-pinned and resolved against the matching download.pytorch.org index,
+# so newer GPU architectures (e.g. Blackwell) get whatever current release
+# actually supports them, rather than a stale hardcoded version.
 RUN if [ "$TORCH_PLATFORM" = "cpu" ]; then \
         pip install --no-cache-dir --user \
         --extra-index-url https://download.pytorch.org/whl/cpu \
@@ -30,8 +36,9 @@ RUN if [ "$TORCH_PLATFORM" = "cpu" ]; then \
         torchvision==0.15.2+cpu; \
     else \
         pip install --no-cache-dir --user \
-        torch==2.0.1 \
-        torchvision==0.15.2; \
+        --index-url https://download.pytorch.org/whl/$TORCH_PLATFORM \
+        "torch>=2.9.0" \
+        torchvision; \
     fi && \
     PIP_EXTRA_INDEX_URL=https://download.pytorch.org/whl/$TORCH_PLATFORM \
     pip install --no-cache-dir --user -r requirements.txt && \
@@ -89,6 +96,8 @@ COPY --chown=micropad:micropad src/ ./src/
 COPY --chown=micropad:micropad config/ ./config/
 COPY --chown=micropad:micropad pyproject.toml setup.py requirements.txt ./
 COPY --chown=micropad:micropad README.md LICENSE ./
+COPY --chown=micropad:micropad batch_analyze.sh ./batch_analyze.sh
+RUN chmod +x ./batch_analyze.sh
 
 # Install the package and cleanup (use extra index to prevent torch upgrade)
 RUN PIP_EXTRA_INDEX_URL=https://download.pytorch.org/whl/$TORCH_PLATFORM \

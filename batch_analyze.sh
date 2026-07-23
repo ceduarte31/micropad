@@ -2,14 +2,19 @@
 # ============================================================================
 # MicroPAD Batch Repository Analyzer
 # ============================================================================
-# Analyzes multiple repositories listed in a file, one at a time.
+# Analyzes multiple repositories, one at a time. By default, analyzes every
+# subdirectory found inside <repos_base_directory>. Pass --list to instead
+# analyze a specific, ordered set of repos from a text file.
 #
 # Usage:
-#   ./batch_analyze.sh <repos_list_file> <repos_base_directory> [start_line]
+#   ./batch_analyze.sh <repos_base_directory> [start_line]
+#   ./batch_analyze.sh <repos_base_directory> --list <repos_list_file> [start_line]
 #
-# Example:
-#   ./batch_analyze.sh experiment_data/repos.txt /path/to/cloned/repos
-#   ./batch_analyze.sh experiment_data/repos.txt /path/to/cloned/repos 5
+# Examples:
+#   ./batch_analyze.sh /path/to/cloned/repos
+#   ./batch_analyze.sh /path/to/cloned/repos 5
+#   ./batch_analyze.sh /path/to/cloned/repos --list experiment_data/repos.txt
+#   ./batch_analyze.sh /path/to/cloned/repos --list experiment_data/repos.txt 5
 #
 # Controls (while running):
 #   touch batch.pause  - Pause after current repo completes
@@ -20,22 +25,30 @@
 # Outputs:
 #   - Micropad's normal logs (logs/, conversations/, detection_results/)
 #   - batch_results/batch_summary_TIMESTAMP.log - Progress and timing
-#   - batch_results/batch_costs_TIMESTAMP.txt   - Aggregated costs
+#   - batch_results/batch_durations_TIMESTAMP.txt - Per-repo durations
 # ============================================================================
 
 set -euo pipefail  # Exit on error, undefined vars, pipe failures
 
 # ============================================================================
-# CONFIGURATION
+# ARGUMENT PARSING
 # ============================================================================
 
-REPOS_LIST_FILE="${1:-}"
-REPOS_BASE_DIR="${2:-}"
-START_LINE="${3:-1}"
+REPOS_BASE_DIR="${1:-}"
+shift || true
+
+REPOS_LIST_FILE=""
+if [[ "${1:-}" == "--list" ]]; then
+    REPOS_LIST_FILE="${2:-}"
+    shift 2 || true
+fi
+
+START_LINE="${1:-1}"
+
 BATCH_RESULTS_DIR="batch_results"
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 SUMMARY_LOG="$BATCH_RESULTS_DIR/batch_summary_${TIMESTAMP}.log"
-COSTS_LOG="$BATCH_RESULTS_DIR/batch_costs_${TIMESTAMP}.txt"
+DURATIONS_LOG="$BATCH_RESULTS_DIR/batch_durations_${TIMESTAMP}.txt"
 ERRORS_LOG="$BATCH_RESULTS_DIR/batch_errors_${TIMESTAMP}.log"
 
 # Control files
@@ -46,19 +59,15 @@ STOP_FILE="batch.stop"
 # VALIDATION
 # ============================================================================
 
-if [[ -z "$REPOS_LIST_FILE" ]] || [[ -z "$REPOS_BASE_DIR" ]]; then
+if [[ -z "$REPOS_BASE_DIR" ]]; then
     echo "Error: Missing arguments"
     echo ""
-    echo "Usage: $0 <repos_list_file> <repos_base_directory> [start_line]"
+    echo "Usage: $0 <repos_base_directory> [start_line]"
+    echo "       $0 <repos_base_directory> --list <repos_list_file> [start_line]"
     echo ""
-    echo "Example:"
-    echo "  $0 experiment_data/repos.txt /home/user/Projects/experiment_repos"
-    echo "  $0 experiment_data/repos.txt /home/user/Projects/experiment_repos 5"
-    exit 1
-fi
-
-if [[ ! -f "$REPOS_LIST_FILE" ]]; then
-    echo "Error: Repos list file not found: $REPOS_LIST_FILE"
+    echo "Examples:"
+    echo "  $0 /home/user/Projects/experiment_repos"
+    echo "  $0 /home/user/Projects/experiment_repos --list experiment_data/repos.txt"
     exit 1
 fi
 
@@ -67,11 +76,51 @@ if [[ ! -d "$REPOS_BASE_DIR" ]]; then
     exit 1
 fi
 
+if [[ -n "$REPOS_LIST_FILE" ]] && [[ ! -f "$REPOS_LIST_FILE" ]]; then
+    echo "Error: Repos list file not found: $REPOS_LIST_FILE"
+    exit 1
+fi
+
 # Validate start line is a positive integer
 if ! [[ "$START_LINE" =~ ^[0-9]+$ ]] || [[ "$START_LINE" -lt 1 ]]; then
     echo "Error: start_line must be a positive integer (got: $START_LINE)"
     exit 1
 fi
+
+# ============================================================================
+# BUILD REPO LIST
+# ============================================================================
+
+if [[ -n "$REPOS_LIST_FILE" ]]; then
+    # Curated/ordered mode: read repo names from the list file
+    # (skip comments and blank lines; keep only the part after the last "/")
+    mapfile -t REPO_NAMES < <(
+        grep -v '^#' "$REPOS_LIST_FILE" | grep -v '^[[:space:]]*$' | sed 's#.*/##'
+    )
+    SOURCE_DESC="$REPOS_LIST_FILE"
+else
+    # Auto-discover mode: every subdirectory of REPOS_BASE_DIR is a repo
+    mapfile -t REPO_NAMES < <(
+        find "$REPOS_BASE_DIR" -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | sort
+    )
+    SOURCE_DESC="all subdirectories of $REPOS_BASE_DIR"
+fi
+
+TOTAL_REPOS=${#REPO_NAMES[@]}
+
+if [[ "$TOTAL_REPOS" -eq 0 ]]; then
+    echo "Error: No repositories found ($SOURCE_DESC)"
+    exit 1
+fi
+
+if [[ "$START_LINE" -gt "$TOTAL_REPOS" ]]; then
+    echo "Error: start_line ($START_LINE) exceeds total repositories found ($TOTAL_REPOS)"
+    exit 1
+fi
+
+# Apply start_line by slicing the array
+REPO_NAMES=("${REPO_NAMES[@]:$((START_LINE - 1))}")
+REPOS_TO_PROCESS=${#REPO_NAMES[@]}
 
 # ============================================================================
 # SETUP
@@ -83,24 +132,21 @@ mkdir -p "$BATCH_RESULTS_DIR"
 # Initialize logs
 echo "═══════════════════════════════════════════════════════════════════════════" | tee "$SUMMARY_LOG"
 echo "MicroPAD Batch Analysis Started: $(date)" | tee -a "$SUMMARY_LOG"
-echo "Repos list: $REPOS_LIST_FILE" | tee -a "$SUMMARY_LOG"
+echo "Repos source: $SOURCE_DESC" | tee -a "$SUMMARY_LOG"
 echo "Repos base: $REPOS_BASE_DIR" | tee -a "$SUMMARY_LOG"
-echo "Starting at line: $START_LINE" | tee -a "$SUMMARY_LOG"
+echo "Starting at position: $START_LINE" | tee -a "$SUMMARY_LOG"
 echo "═══════════════════════════════════════════════════════════════════════════" | tee -a "$SUMMARY_LOG"
 echo "" | tee -a "$SUMMARY_LOG"
 
-# Initialize costs log
-echo "MicroPAD Batch Cost Summary" > "$COSTS_LOG"
-echo "Started: $(date)" >> "$COSTS_LOG"
-echo "Starting at line: $START_LINE" >> "$COSTS_LOG"
-echo "═══════════════════════════════════════════════════════════════════════════" >> "$COSTS_LOG"
-echo "" >> "$COSTS_LOG"
+# Initialize durations log
+echo "MicroPAD Batch Duration Summary" > "$DURATIONS_LOG"
+echo "Started: $(date)" >> "$DURATIONS_LOG"
+echo "Starting at position: $START_LINE" >> "$DURATIONS_LOG"
+echo "═══════════════════════════════════════════════════════════════════════════" >> "$DURATIONS_LOG"
+echo "" >> "$DURATIONS_LOG"
 
-# Count total repos
-TOTAL_REPOS=$(grep -v '^#' "$REPOS_LIST_FILE" | grep -v '^[[:space:]]*$' | wc -l)
-REPOS_TO_PROCESS=$((TOTAL_REPOS - START_LINE + 1))
-echo "Total repositories in file: $TOTAL_REPOS" | tee -a "$SUMMARY_LOG"
-echo "Repositories to process: $REPOS_TO_PROCESS (starting from line $START_LINE)" | tee -a "$SUMMARY_LOG"
+echo "Total repositories found: $TOTAL_REPOS" | tee -a "$SUMMARY_LOG"
+echo "Repositories to process: $REPOS_TO_PROCESS (starting from position $START_LINE)" | tee -a "$SUMMARY_LOG"
 echo "" | tee -a "$SUMMARY_LOG"
 
 # ============================================================================
@@ -119,18 +165,6 @@ format_duration() {
         printf "%dm %ds" $minutes $secs
     else
         printf "%ds" $secs
-    fi
-}
-
-extract_cost_from_log() {
-    # Try to extract cost from the latest operations log
-    local latest_log=$(ls -t logs/operations_*.log 2>/dev/null | head -1)
-
-    if [[ -n "$latest_log" ]] && [[ -f "$latest_log" ]]; then
-        # Look for cost line like: "Total API cost: $0.1234"
-        grep -oP 'Total API cost: \$\K[0-9.]+' "$latest_log" 2>/dev/null || echo "0.0000"
-    else
-        echo "0.0000"
     fi
 }
 
@@ -166,29 +200,11 @@ check_control_files() {
 # ============================================================================
 
 current_repo=0
-line_number=0
 successful=0
 failed=0
-total_cost=0
 batch_start_time=$(date +%s)
 
-# Read repos list (skip comments and empty lines)
-while IFS= read -r repo_name || [[ -n "$repo_name" ]]; do
-    # Skip comments and empty lines
-    [[ "$repo_name" =~ ^#.*$ ]] && continue
-    [[ -z "${repo_name// }" ]] && continue
-
-    # Increment line counter for non-empty, non-comment lines
-    line_number=$((line_number + 1))
-
-    # Skip lines before start line
-    if [[ $line_number -lt $START_LINE ]]; then
-        continue
-    fi
-
-    # Extract only the repo name (part after /)
-    repo_name=${repo_name##*/}
-
+for repo_name in "${REPO_NAMES[@]}"; do
     current_repo=$((current_repo + 1))
 
     # Calculate timing
@@ -207,7 +223,7 @@ while IFS= read -r repo_name || [[ -n "$repo_name" ]]; do
 
     # Print progress header
     echo "═══════════════════════════════════════════════════════════════════════════" | tee -a "$SUMMARY_LOG"
-    echo "[BATCH] Processing $current_repo/$REPOS_TO_PROCESS (line $line_number): $repo_name" | tee -a "$SUMMARY_LOG"
+    echo "[BATCH] Processing $current_repo/$REPOS_TO_PROCESS: $repo_name" | tee -a "$SUMMARY_LOG"
     echo "Started: $(date +%H:%M:%S) | Elapsed: $(format_duration $elapsed) | ETA: ~$eta_str" | tee -a "$SUMMARY_LOG"
     echo "Controls: touch batch.pause (pause) | touch batch.stop (stop after current)" | tee -a "$SUMMARY_LOG"
     echo "═══════════════════════════════════════════════════════════════════════════" | tee -a "$SUMMARY_LOG"
@@ -234,18 +250,13 @@ while IFS= read -r repo_name || [[ -n "$repo_name" ]]; do
         repo_end_time=$(date +%s)
         repo_duration=$((repo_end_time - repo_start_time))
 
-        # Extract cost from logs
-        repo_cost=$(extract_cost_from_log)
-        total_cost=$(echo "$total_cost + $repo_cost" | bc)
-
         echo "" | tee -a "$SUMMARY_LOG"
         echo "✓ Completed: $repo_name" | tee -a "$SUMMARY_LOG"
         echo "  Duration: $(format_duration $repo_duration)" | tee -a "$SUMMARY_LOG"
-        echo "  Cost: \$$repo_cost" | tee -a "$SUMMARY_LOG"
         echo "" | tee -a "$SUMMARY_LOG"
 
-        # Log to costs file
-        printf "%-40s  %10s  %s\n" "$repo_name" "\$$repo_cost" "$(format_duration $repo_duration)" >> "$COSTS_LOG"
+        # Log to durations file
+        printf "%-40s  %s\n" "$repo_name" "$(format_duration $repo_duration)" >> "$DURATIONS_LOG"
 
         successful=$((successful + 1))
     else
@@ -269,8 +280,7 @@ while IFS= read -r repo_name || [[ -n "$repo_name" ]]; do
     if ! check_control_files; then
         break  # Stop requested
     fi
-
-done < "$REPOS_LIST_FILE"
+done
 
 # ============================================================================
 # FINAL SUMMARY
@@ -288,28 +298,25 @@ echo "Finished: $(date)" | tee -a "$SUMMARY_LOG"
 echo "Total duration: $(format_duration $total_duration)" | tee -a "$SUMMARY_LOG"
 echo "" | tee -a "$SUMMARY_LOG"
 echo "Results:" | tee -a "$SUMMARY_LOG"
-echo "  Total repositories in file: $TOTAL_REPOS" | tee -a "$SUMMARY_LOG"
-echo "  Started from line: $START_LINE" | tee -a "$SUMMARY_LOG"
+echo "  Total repositories found: $TOTAL_REPOS" | tee -a "$SUMMARY_LOG"
+echo "  Started from position: $START_LINE" | tee -a "$SUMMARY_LOG"
 echo "  Processed: $current_repo" | tee -a "$SUMMARY_LOG"
 echo "  Successful: $successful" | tee -a "$SUMMARY_LOG"
 echo "  Failed: $failed" | tee -a "$SUMMARY_LOG"
 echo "" | tee -a "$SUMMARY_LOG"
-echo "Total API cost: \$$total_cost" | tee -a "$SUMMARY_LOG"
-echo "" | tee -a "$SUMMARY_LOG"
 echo "Logs saved to:" | tee -a "$SUMMARY_LOG"
 echo "  Summary: $SUMMARY_LOG" | tee -a "$SUMMARY_LOG"
-echo "  Costs: $COSTS_LOG" | tee -a "$SUMMARY_LOG"
+echo "  Durations: $DURATIONS_LOG" | tee -a "$SUMMARY_LOG"
 if [[ $failed -gt 0 ]]; then
     echo "  Errors: $ERRORS_LOG" | tee -a "$SUMMARY_LOG"
 fi
 echo "═══════════════════════════════════════════════════════════════════════════" | tee -a "$SUMMARY_LOG"
 
-# Append summary to costs log
-echo "" >> "$COSTS_LOG"
-echo "═══════════════════════════════════════════════════════════════════════════" >> "$COSTS_LOG"
-echo "TOTAL COST: \$$total_cost" >> "$COSTS_LOG"
-echo "Finished: $(date)" >> "$COSTS_LOG"
-echo "═══════════════════════════════════════════════════════════════════════════" >> "$COSTS_LOG"
+# Append summary to durations log
+echo "" >> "$DURATIONS_LOG"
+echo "═══════════════════════════════════════════════════════════════════════════" >> "$DURATIONS_LOG"
+echo "Finished: $(date)" >> "$DURATIONS_LOG"
+echo "═══════════════════════════════════════════════════════════════════════════" >> "$DURATIONS_LOG"
 
 # Exit with appropriate code
 if [[ $failed -gt 0 ]]; then
