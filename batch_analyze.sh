@@ -26,6 +26,11 @@
 #   - Micropad's normal logs (logs/, conversations/, detection_results/)
 #   - batch_results/batch_summary_TIMESTAMP.log - Progress and timing
 #   - batch_results/batch_durations_TIMESTAMP.txt - Per-repo durations
+#
+# Env vars:
+#   BATCH_TAG - optional suffix for log filenames (e.g. "shard0"), so
+#               multiple concurrent instances don't collide. Not needed for
+#               normal single-instance usage; see batch_analyze_parallel.sh.
 # ============================================================================
 
 set -euo pipefail  # Exit on error, undefined vars, pipe failures
@@ -45,11 +50,20 @@ fi
 
 START_LINE="${1:-1}"
 
+# Optional tag (e.g. shard index) to keep log filenames unique when multiple
+# instances of this script run concurrently (see batch_analyze_parallel.sh).
+# Not a CLI arg - set as an env var so it doesn't disturb normal usage.
+BATCH_TAG="${BATCH_TAG:-}"
+TAG_SUFFIX=""
+if [[ -n "$BATCH_TAG" ]]; then
+    TAG_SUFFIX="_${BATCH_TAG}"
+fi
+
 BATCH_RESULTS_DIR="batch_results"
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
-SUMMARY_LOG="$BATCH_RESULTS_DIR/batch_summary_${TIMESTAMP}.log"
-DURATIONS_LOG="$BATCH_RESULTS_DIR/batch_durations_${TIMESTAMP}.txt"
-ERRORS_LOG="$BATCH_RESULTS_DIR/batch_errors_${TIMESTAMP}.log"
+SUMMARY_LOG="$BATCH_RESULTS_DIR/batch_summary_${TIMESTAMP}${TAG_SUFFIX}.log"
+DURATIONS_LOG="$BATCH_RESULTS_DIR/batch_durations_${TIMESTAMP}${TAG_SUFFIX}.txt"
+ERRORS_LOG="$BATCH_RESULTS_DIR/batch_errors_${TIMESTAMP}${TAG_SUFFIX}.log"
 
 # Control files
 PAUSE_FILE="batch.pause"

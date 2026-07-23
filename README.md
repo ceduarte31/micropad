@@ -154,6 +154,33 @@ docker compose -f docker-compose.yml -f docker-compose.gpu.yml run --rm micropad
 ```
 During a real scan, the console should print `GPU mode: X.XGB VRAM → batch size: N` instead of `CPU mode → batch size: 4`.
 
+### Multiple GPUs: Parallel Batch Analysis
+
+If the host has more than one GPU (e.g. a multi-GPU server), `batch_analyze_parallel.sh` runs several batch workers concurrently, each pinned to its own GPU, each processing a distinct slice of the repository list — instead of scanning repos one at a time.
+
+Note this doesn't speed up a single scan (the embedding step is small enough that one GPU already finishes it in seconds); it speeds up processing *many* repos at once by running several scans in parallel. Requires the same GPU prerequisites above, on a machine with multiple GPUs.
+
+```bash
+./batch_analyze_parallel.sh /path/to/cloned/repos 8
+```
+This example uses 8 workers (GPUs 0-7), round-robin sharding the repos across them. It requires the GPU overlay's prerequisites already set up (see above). Works with `--list` too, same as `batch_analyze.sh`:
+```bash
+./batch_analyze_parallel.sh /path/to/cloned/repos 8 --list experiment_data/repos.txt
+```
+If more workers are requested than repos exist, it automatically reduces the worker count to match.
+
+**Before running many workers at once:** check your Ollama Cloud account's concurrency/rate limits. Running N workers means up to N concurrent API calls to Ollama Cloud — that may become the actual bottleneck before any GPU does.
+
+**Output locations (per worker N):**
+- `batch_results/worker_N_console.log` — full console output for that worker
+- `batch_results/batch_summary_*_workerN.log` and `batch_results/batch_durations_*_workerN.txt` — same as a normal `batch_analyze.sh` run, tagged per worker
+- Per-repo scan logs and JSON results: same shared locations as any scan (`.generated/micropad/logs/`, `.generated/micropad/detection_results/`)
+
+To pin a single, non-parallel run to a specific GPU (e.g. GPU 2 on a multi-GPU box) instead of the default GPU 0, set `GPU_INDEX` before the command:
+```bash
+GPU_INDEX=2 docker compose -f docker-compose.yml -f docker-compose.gpu.yml run --rm micropad python -m micropad.core.scanner
+```
+
 ---
 
 ## Artifact Validation

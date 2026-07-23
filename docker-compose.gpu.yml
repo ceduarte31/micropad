@@ -11,10 +11,16 @@
 #   - TORCH_PLATFORM set to a CUDA tag matching your driver, e.g. in .env:
 #       TORCH_PLATFORM=cu128
 #
+# GPU_INDEX (optional, defaults to "0"): which physical GPU this container
+# uses, matching the index shown in `nvidia-smi`. Only relevant on machines
+# with more than one GPU - e.g. for running multiple containers in parallel,
+# each pinned to a different GPU (see batch_analyze_parallel.sh).
+#
 # Usage:
 #   docker compose -f docker-compose.yml -f docker-compose.gpu.yml build
 #   docker compose -f docker-compose.yml -f docker-compose.gpu.yml run --rm micropad python -m micropad.core.scanner
 #   docker compose -f docker-compose.yml -f docker-compose.gpu.yml run --rm micropad-batch ./batch_analyze.sh /app/batch_repos
+#   GPU_INDEX=1 docker compose -f docker-compose.yml -f docker-compose.gpu.yml run --rm micropad-batch ./batch_analyze.sh /app/batch_repos
 # ============================================================================
 services:
   micropad:
@@ -23,7 +29,7 @@ services:
         reservations:
           devices:
             - driver: nvidia
-              count: 1
+              device_ids: ["${GPU_INDEX:-0}"]
               capabilities: [gpu]
 
   micropad-batch:
@@ -32,5 +38,5 @@ services:
         reservations:
           devices:
             - driver: nvidia
-              count: 1
+              device_ids: ["${GPU_INDEX:-0}"]
               capabilities: [gpu]
